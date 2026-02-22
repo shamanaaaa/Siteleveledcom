@@ -133,14 +133,14 @@ export function Footer() {
                   <Instagram size={18} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/"
                   className="text-[#F5F5F0]/40 hover:text-[#6C63FF] transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={18} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/mario.doman"
                   className="text-[#F5F5F0]/40 hover:text-[#6C63FF] transition-colors"
                   aria-label="Facebook"
                 >

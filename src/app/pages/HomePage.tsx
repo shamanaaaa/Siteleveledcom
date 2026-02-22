@@ -86,7 +86,7 @@ const portfolioProjects = [
     name: "nosekrst.sk",
     type: "Preprava a žeriavové práce",
     result: "Moderný firemný web",
-    accent: "#9F97FF",
+    accent: "#6C63FF",
     bars: [0.7, 0.45, 0.8, 0.6, 0.9],
     image: "/nosekrst-preview.png" as string | null,
     url: "https://www.nosekrst.sk" as string | null,
@@ -881,7 +881,12 @@ export function HomePage() {
               <AnimateIn key={i} delay={i * 0.1}>
                 <div className="group rounded-2xl border border-white/5 bg-[#111118] overflow-hidden hover:border-[#6C63FF]/20 transition-all duration-300 hover:shadow-[0_0_40px_rgba(108,99,255,0.06)] h-full flex flex-col">
                   {/* Screenshot – real image if available, else animated placeholder */}
-                  <div className="relative h-48 bg-[#0d0d14] overflow-hidden">
+                  <a
+                    href={project.url ?? undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative h-48 bg-[#0d0d14] overflow-hidden"
+                  >
                     {project.image ? (
                       <img
                         src={project.image}
@@ -917,7 +922,7 @@ export function HomePage() {
                         />
                       </>
                     )}
-                  </div>
+                  </a>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-2 mb-2">
                       <Globe size={14} className="text-[#F5F5F0]/30" />
@@ -1033,13 +1038,15 @@ export function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-16 items-center">
               <div className="md:col-span-2 flex justify-center">
                 <div className="relative">
-                  <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-[#6C63FF]/20 to-[#9F97FF]/10 border border-white/8 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#6C63FF] to-[#9F97FF] flex items-center justify-center">
-                      <span className="font-heading text-[1.5rem] text-white">DS</span>
-                    </div>
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden border border-white/8">
+                    <img
+                      src="/profile.jpg"
+                      alt="Mário Doman"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-lg bg-[#111118] border border-white/8 text-[0.75rem] text-[#F5F5F0]/50">
-                    DOMAN s.r.o.
+                    Mário Doman
                   </div>
                 </div>
               </div>
