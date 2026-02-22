@@ -200,6 +200,8 @@ export function HomePage() {
     notes: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -244,7 +246,7 @@ export function HomePage() {
     }));
   };
 
-  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
@@ -252,7 +254,28 @@ export function HomePage() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setSubmitError("");
+    setIsLoading(true);
+    try {
+      const res = await fetch("/api/navrh", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Server error");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Odoslanie zlyhalo. Skúste znova alebo napíšte na info@siteleveled.com"
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -790,13 +813,31 @@ export function HomePage() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-[#6C63FF] hover:bg-[#5b53e8] text-white rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(108,99,255,0.3)] text-[0.95rem]"
+                      disabled={isLoading}
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-[#6C63FF] hover:bg-[#5b53e8] disabled:opacity-60 disabled:cursor-not-allowed text-white rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(108,99,255,0.3)] text-[0.95rem]"
                     >
-                      Odoslať a získať návrh zadarmo <Send size={16} />
+                      {isLoading ? (
+                        <>
+                          <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z" />
+                          </svg>
+                          Odosielam...
+                        </>
+                      ) : (
+                        <>Odoslať a získať návrh zadarmo <Send size={16} /></>
+                      )}
                     </button>
-                    <p className="mt-3 text-[0.75rem] text-[#F5F5F0]/30">
-                      Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky.
-                    </p>
+                    {submitError && (
+                      <p className="mt-3 text-[0.8rem] text-red-400">
+                        {submitError}
+                      </p>
+                    )}
+                    {!submitError && (
+                      <p className="mt-3 text-[0.75rem] text-[#F5F5F0]/30">
+                        Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky.
+                      </p>
+                    )}
                   </div>
                 </motion.form>
               ) : (
