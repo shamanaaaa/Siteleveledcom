@@ -119,10 +119,10 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-3 text-[0.875rem] text-[#F5F5F0]/60">
               <a
-                href="mailto:info@siteleveled.com"
+                href="mailto:domansro@gmail.com"
                 className="hover:text-[#6C63FF] transition-colors"
               >
-                info@siteleveled.com
+                domansro@gmail.com
               </a>
               <div className="flex items-center gap-4 mt-2">
                 <a

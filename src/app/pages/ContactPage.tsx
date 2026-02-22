@@ -288,11 +288,11 @@ export function ContactPage() {
                     </h3>
                     <div className="space-y-4">
                       <a
-                        href="mailto:info@siteleveled.com"
+                        href="mailto:domansro@gmail.com"
                         className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60 hover:text-[#6C63FF] transition-colors"
                       >
                         <Mail size={18} className="text-[#6C63FF] shrink-0" />
-                        info@siteleveled.com
+                        domansro@gmail.com
                       </a>
                       <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
                         <Phone size={18} className="text-[#6C63FF] shrink-0" />

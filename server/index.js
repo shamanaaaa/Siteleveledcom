@@ -136,7 +136,7 @@ function buildConfirmationEmail(name) {
     <div style="padding:0 32px 28px;text-align:center;">
       <p style="margin:0;font-size:12px;color:#555;">
         Otázky? Napíšte nám na
-        <a href="mailto:info@siteleveled.com" style="color:#6C63FF;">info@siteleveled.com</a>
+        <a href="mailto:domansro@gmail.com" style="color:#6C63FF;">domansro@gmail.com</a>
       </p>
     </div>
 
@@ -195,6 +195,14 @@ app.post("/api/navrh", async (req, res) => {
     res.json({ ok: true });
   } catch (err) {
     console.error("Email send error:", err);
+    console.error("Form data was:", req.body);
+    console.error("SMTP config:", {
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      secure: process.env.SMTP_SECURE,
+      user: process.env.SMTP_USER ? "configured" : "missing",
+      pass: process.env.SMTP_PASS ? "configured" : "missing",
+    });
     res.status(500).json({ error: "Odoslanie emailu zlyhalo." });
   }
 });

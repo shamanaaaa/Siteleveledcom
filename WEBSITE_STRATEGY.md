@@ -605,7 +605,7 @@ Povedz nám viac... [textarea]
 ```
 
 **Vedľa formulára:**
-> 📧 info@siteleveled.com
+> 📧 domansro@gmail.com
 > 📞 +421 XXX XXX XXX
 > 🕐 Odpovieme do 24 hodín v pracovný deň
 > 📍 Slovensko (pracujeme remote, celá SR)
@@ -639,7 +639,7 @@ Povedz nám viac... [textarea]
 │                                                                  │
 │  Navigácia          Služby              Kontakt                  │
 │  ──────────         ──────────          ──────────               │
-│  Domov              Webdizajn           info@siteleveled.com     │
+│  Domov              Webdizajn           domansro@gmail.com     │
 │  O nás              SEO                +421 XXX XXX XXX         │
 │  Portfólio          Správa webu        LinkedIn                  │
 │  Cenník             Copywriting        Instagram                 │

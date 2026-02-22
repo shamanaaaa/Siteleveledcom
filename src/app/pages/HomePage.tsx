@@ -271,7 +271,7 @@ export function HomePage() {
       setSubmitError(
         err instanceof Error
           ? err.message
-          : "Odoslanie zlyhalo. Skúste znova alebo napíšte na info@siteleveled.com"
+          : "Odoslanie zlyhalo. Skúste znova alebo napíšte na domansro@gmail.com"
       );
     } finally {
       setIsLoading(false);
