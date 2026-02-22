@@ -7,7 +7,7 @@ const plans = [
   {
     name: "STARTER",
     subtitle: "Prvý krok",
-    audience: "Pre: Freelanceri, fotografov, remeselníkov",
+    audience: "Pre: Freelancerov, fotografov, remeselníkov",
     price: "890",
     priceNote: "jednorazovo",
     popular: false,

@@ -4,12 +4,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 const navLinks = [
-  { label: "Služby", href: "/sluzby" },
-  { label: "Portfólio", href: "/portfolio" },
-  { label: "Proces", href: "/proces" },
-  { label: "O nás", href: "/o-nas" },
-  { label: "Cenník", href: "/cennik" },
-  { label: "Blog", href: "/blog" },
+  { label: "Ako to funguje", hash: "ako-to-funguje" },
+  { label: "Portfólio", hash: "portfolio" },
+  { label: "Referencie", hash: "referencie" },
+  { label: "FAQ", hash: "faq" },
 ];
 
 export function Navbar() {
@@ -26,6 +24,13 @@ export function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -47,13 +52,15 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
-                to={link.href}
-                className={`text-[0.875rem] tracking-wide transition-colors duration-200 hover:text-[#6C63FF] ${
-                  location.pathname === link.href
-                    ? "text-[#6C63FF]"
-                    : "text-[#F5F5F0]/70"
-                }`}
+                key={link.hash}
+                to={`/#${link.hash}`}
+                onClick={(e) => {
+                  if (location.pathname === "/") {
+                    e.preventDefault();
+                    scrollTo(link.hash);
+                  }
+                }}
+                className="text-[0.875rem] tracking-wide transition-colors duration-200 hover:text-[#6C63FF] text-[#F5F5F0]/70"
               >
                 {link.label}
               </Link>
@@ -62,10 +69,16 @@ export function Navbar() {
 
           <div className="hidden lg:block">
             <Link
-              to="/kontakt"
+              to="/#formular"
+              onClick={(e) => {
+                if (location.pathname === "/") {
+                  e.preventDefault();
+                  scrollTo("formular");
+                }
+              }}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#6C63FF] hover:bg-[#5b53e8] text-white text-[0.875rem] rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_rgba(108,99,255,0.3)]"
             >
-              Nezáväzná konzultácia
+              Chcem návrh zadarmo
               <span className="text-[1rem]">→</span>
             </Link>
           </div>
@@ -92,18 +105,21 @@ export function Navbar() {
             <div className="flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <motion.div
-                  key={link.href}
+                  key={link.hash}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                 >
                   <Link
-                    to={link.href}
-                    className={`block py-3 text-[1.25rem] font-heading tracking-wide transition-colors ${
-                      location.pathname === link.href
-                        ? "text-[#6C63FF]"
-                        : "text-[#F5F5F0]/80 hover:text-[#6C63FF]"
-                    }`}
+                    to={`/#${link.hash}`}
+                    onClick={(e) => {
+                      setMobileOpen(false);
+                      if (location.pathname === "/") {
+                        e.preventDefault();
+                        scrollTo(link.hash);
+                      }
+                    }}
+                    className="block py-3 text-[1.25rem] font-heading tracking-wide transition-colors text-[#F5F5F0]/80 hover:text-[#6C63FF]"
                   >
                     {link.label}
                   </Link>
@@ -116,10 +132,17 @@ export function Navbar() {
                 className="mt-6"
               >
                 <Link
-                  to="/kontakt"
+                  to="/#formular"
+                  onClick={(e) => {
+                    setMobileOpen(false);
+                    if (location.pathname === "/") {
+                      e.preventDefault();
+                      scrollTo("formular");
+                    }
+                  }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#6C63FF] text-white rounded-lg text-[1rem]"
                 >
-                  Nezáväzná konzultácia →
+                  Chcem návrh zadarmo →
                 </Link>
               </motion.div>
             </div>
@@ -130,10 +153,16 @@ export function Navbar() {
       {/* Mobile floating CTA */}
       <div className="fixed bottom-6 left-4 right-4 z-50 lg:hidden">
         <Link
-          to="/kontakt"
+          to="/#formular"
+          onClick={(e) => {
+            if (location.pathname === "/") {
+              e.preventDefault();
+              scrollTo("formular");
+            }
+          }}
           className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#6C63FF] hover:bg-[#5b53e8] text-white rounded-xl shadow-[0_4px_30px_rgba(108,99,255,0.4)] text-[0.9rem]"
         >
-          Nezáväzná konzultácia →
+          Chcem návrh zadarmo →
         </Link>
       </div>
     </>

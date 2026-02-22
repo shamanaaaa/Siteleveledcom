@@ -17,7 +17,7 @@ const services = [
     icon: Code2,
     title: "Webdizajn & Vývoj",
     headline: "Weby na mieru. Bez kompromisov.",
-    text: "Navrhujeme a programujeme weby, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Vaša vízia.",
+    text: "Navrhujeme a programujeme weby, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Tvoja vízia.",
     includes: [
       "UI/UX dizajn (Figma prototyp)",
       "Responzívny vývoj (mobile-first)",

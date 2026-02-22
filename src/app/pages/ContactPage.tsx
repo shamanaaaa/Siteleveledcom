@@ -236,7 +236,7 @@ export function ContactPage() {
                           }
                           rows={5}
                           className="w-full px-4 py-3 rounded-xl bg-[#111118] border border-white/8 text-[#F5F5F0] placeholder:text-[#F5F5F0]/15 focus:outline-none focus:border-[#6C63FF]/40 transition-colors text-[0.9rem] resize-none"
-                          placeholder="Opíš nám svoj projekt, cieľe, alebo akékoľvek otázky..."
+                          placeholder="Opíš nám svoj projekt, ciele, alebo akékoľvek otázky..."
                         />
                       </div>
 

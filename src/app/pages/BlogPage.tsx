@@ -20,7 +20,7 @@ const posts = [
   },
   {
     id: 2,
-    title: "Koľko stojí dobrý web v roku 2025? Úprimný pohľad bez salespitchu",
+    title: `Koľko stojí dobrý web v roku ${new Date().getFullYear()}? Úprimný pohľad bez salespitchu`,
     excerpt:
       "Rozložíme si reálne náklady na tvorbu webu — od jednoduchej vizitky po e-commerce. Bez skrytých poplatkov.",
     category: "Marketing",
