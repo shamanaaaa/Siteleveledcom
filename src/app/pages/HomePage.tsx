@@ -868,8 +868,8 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn className="text-center mb-16">
             <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] leading-tight mb-4">
-              Takto môžu vyzerať{" "}
-              <span className="text-[#6C63FF]">aj vaše stránky.</span>
+              Príklady návrhov, ktoré sme vytvorili pre našich {" "}
+              <span className="text-[#6C63FF]">predošlých klientov.</span>
             </h2>
             <p className="text-[1rem] text-[#F5F5F0]/50">
               Ukážky reálnych projektov, ktoré sme dodali.
