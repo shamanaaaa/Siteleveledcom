@@ -872,7 +872,7 @@ export function HomePage() {
               <span className="text-[#6C63FF]">predošlých klientov.</span>
             </h2>
             <p className="text-[1rem] text-[#F5F5F0]/50">
-              Ukážky reálnych projektov, ktoré sme dodali.
+              Ukážky návrhov, ktoré sa  stali našimi projektmi.
             </p>
           </AnimateIn>
 
