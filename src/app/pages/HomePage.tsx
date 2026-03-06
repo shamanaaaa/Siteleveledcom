@@ -668,7 +668,7 @@ export function HomePage() {
                     </div>
                     {formData.hasWeb === "ano" && (
                       <input
-                        type="url"
+                        type="text"
                         value={formData.webUrl}
                         onChange={(e) => handleChange("webUrl", e.target.value)}
                         placeholder="https://váš-web.sk"
@@ -772,7 +772,7 @@ export function HomePage() {
                       <span className="text-[#F5F5F0]/25">(inšpirácia – voliteľné)</span>
                     </label>
                     <input
-                      type="url"
+                      type="text"
                       value={formData.inspiration}
                       onChange={(e) => handleChange("inspiration", e.target.value)}
                       placeholder="https://..."
