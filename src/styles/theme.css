@@ -41,6 +41,13 @@
   --sidebar-ring: #6C63FF;
   --neon-green: #1AFF8C;
   --electric-purple: #6C63FF;
+  --bg-deep: #06060B;
+  --surface-1: #101018;
+  --surface-2: #16161F;
+  --primary-soft: #9F97FF;
+  --violet-deep: #4B45C6;
+  --cyan: #00D9FF;
+  --border-strong: rgba(255, 255, 255, 0.14);
 }
 
 @theme inline {
@@ -86,6 +93,32 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-neon-green: var(--neon-green);
   --color-electric-purple: var(--electric-purple);
+  --color-bg-deep: var(--bg-deep);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-primary-soft: var(--primary-soft);
+  --color-violet-deep: var(--violet-deep);
+  --color-cyan: var(--cyan);
+  --color-border-strong: var(--border-strong);
+  --radius-card: 1.25rem;
+
+  --text-display: clamp(2.6rem, 1.2rem + 6.5vw, 5.75rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+  --text-display-2: clamp(2.2rem, 1rem + 4.5vw, 4.25rem);
+  --text-display-2--line-height: 1.05;
+  --text-display-2--letter-spacing: -0.02em;
+  --text-title: clamp(1.75rem, 1rem + 2.6vw, 3rem);
+  --text-title--line-height: 1.1;
+  --text-title--letter-spacing: -0.015em;
+
+  --animate-marquee: marquee 36s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @layer base {
@@ -146,5 +179,148 @@
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+
+  ::selection {
+    background: rgba(108, 99, 255, 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+/* ===== Dark Immersive 2.0 effect layer ===== */
+
+/* Aurora — pre-faded radial gradients drifting via transform only (no filter cost) */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+}
+
+.aurora::before {
+  width: min(760px, 90vw);
+  height: min(760px, 90vw);
+  left: var(--aurora-x1, -12%);
+  top: var(--aurora-y1, -28%);
+  background: radial-gradient(closest-side, var(--aurora-c1, rgba(108, 99, 255, 0.17)), transparent 70%);
+  animation: aurora-drift 26s ease-in-out infinite alternate;
+}
+
+.aurora::after {
+  width: min(620px, 75vw);
+  height: min(620px, 75vw);
+  right: var(--aurora-x2, -10%);
+  bottom: var(--aurora-y2, -22%);
+  background: radial-gradient(closest-side, var(--aurora-c2, rgba(0, 217, 255, 0.07)), transparent 70%);
+  animation: aurora-drift 32s ease-in-out infinite alternate-reverse;
+}
+
+.aurora--hero {
+  --aurora-c1: rgba(108, 99, 255, 0.2);
+  --aurora-c2: rgba(75, 69, 198, 0.14);
+  --aurora-y1: -22%;
+  --aurora-x2: 4%;
+  --aurora-y2: -35%;
+}
+
+.aurora--section {
+  --aurora-c1: rgba(108, 99, 255, 0.1);
+  --aurora-c2: rgba(0, 217, 255, 0.05);
+}
+
+.aurora--cta {
+  --aurora-c1: rgba(108, 99, 255, 0.22);
+  --aurora-c2: rgba(26, 255, 140, 0.06);
+  --aurora-x1: 18%;
+  --aurora-y1: -40%;
+  --aurora-x2: 14%;
+  --aurora-y2: -30%;
+}
+
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6%, 9%, 0) scale(1.18);
+  }
+}
+
+/* Film grain — static SVG noise, zero runtime cost */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Marquee edge fade */
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+/* Gradient text */
+.text-gradient-primary {
+  background: linear-gradient(120deg, #6C63FF 0%, #9F97FF 55%, #00D9FF 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Ghost / outlined display text (section numerals, footer wordmark) */
+.text-stroke-ghost {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  color: transparent;
+}
+
+/* Animated conic border (pricing highlight) */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.conic-border {
+  position: relative;
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    conic-gradient(from var(--border-angle), rgba(108, 99, 255, 0.9), rgba(0, 217, 255, 0.4), rgba(26, 255, 140, 0.35), rgba(108, 99, 255, 0.9)) border-box;
+  border: 1px solid transparent;
+  animation: border-spin 7s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee,
+  .aurora::before,
+  .aurora::after,
+  .conic-border {
+    animation: none !important;
   }
 }
