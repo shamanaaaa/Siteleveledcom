@@ -73,7 +73,7 @@ export function KineticHeading({
       {...viewProps}
     >
       {segments.map((segment, si) => (
-        <span key={si} aria-hidden className={segment.className}>
+        <span key={si} aria-hidden>
           {segment.text.split(" ").map((word, wi, words) => (
             <span
               key={wi}
@@ -81,7 +81,12 @@ export function KineticHeading({
               // clipped by the overflow mask (Ž, Š, ť, ľ, g, j, y)
               className="inline-block overflow-hidden align-bottom pt-[0.1em] -mt-[0.1em] pb-[0.12em] -mb-[0.12em]"
             >
-              <motion.span variants={wordVariants} className="inline-block will-change-transform">
+              {/* segment className (e.g. text-gradient-primary) must sit on the word:
+                  background-clip:text cannot paint through transformed child layers */}
+              <motion.span
+                variants={wordVariants}
+                className={`inline-block will-change-transform ${segment.className ?? ""}`}
+              >
                 {word}
                 {wi < words.length - 1 ? " " : ""}
               </motion.span>
