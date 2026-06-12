@@ -60,7 +60,16 @@ export function Navbar() {
               : "max-w-7xl border border-transparent px-6 py-4"
           }`}
         >
-          <Link to="/" className="group flex items-center gap-2">
+          <Link
+            to="/"
+            onClick={(e) => {
+              if (location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="group flex items-center gap-2"
+          >
             <span className="font-heading text-[1.35rem] tracking-tight text-[#F5F5F0]">
               SITE<span className="text-[#6C63FF]">LEVELED</span>
             </span>
