@@ -10,7 +10,7 @@ const portfolioProjects = [
     result: "Nárast dopytov o 60%",
     accent: "#6C63FF",
     bars: [0.8, 0.5, 0.9, 0.4, 0.7],
-    image: "/mdfoto-preview.png" as string | null,
+    image: "/mdfoto-preview.webp" as string | null,
     url: "https://www.mdfoto.sk" as string | null,
   },
   {
@@ -19,7 +19,7 @@ const portfolioProjects = [
     result: "Zvýšenie rezervácií o 40%",
     accent: "#1AFF8C",
     bars: [0.6, 0.85, 0.4, 0.75, 0.55],
-    image: "/zuzu-photo-preview.png" as string | null,
+    image: "/zuzu-photo-preview.webp" as string | null,
     url: "https://www.zuzu-photo.sk" as string | null,
   },
   {
@@ -28,7 +28,7 @@ const portfolioProjects = [
     result: "Moderný firemný web",
     accent: "#6C63FF",
     bars: [0.7, 0.45, 0.8, 0.6, 0.9],
-    image: "/nosekrst-preview.png" as string | null,
+    image: "/nosekrst-preview.webp" as string | null,
     url: "https://www.nosekrst.sk" as string | null,
   },
 ];
@@ -65,7 +65,7 @@ export function PortfolioSection() {
                         alt={`Screenshot ${project.name}`}
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-x-0 top-0 w-full transition-transform duration-[2800ms] ease-linear group-hover/glow:translate-y-[calc(-100%+13rem)]"
+                        className="absolute inset-x-0 top-0 w-full min-h-full object-cover object-top transition-transform duration-[2800ms] ease-linear group-hover/glow:translate-y-[calc(-100%+13rem)]"
                       />
                     ) : (
                       <>
