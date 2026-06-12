@@ -1,8 +1,12 @@
-import { Link } from "react-router";
 import { ArrowRight, Clock } from "lucide-react";
+import { useState } from "react";
+import { motion } from "motion/react";
 import { AnimateIn } from "../components/AnimateIn";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { useState } from "react";
+import { Aurora } from "../components/fx/Aurora";
+import { GlowCard } from "../components/fx/GlowCard";
+import { KineticHeading } from "../components/fx/KineticHeading";
+import { PageHero } from "../components/fx/PageHero";
 
 const categories = ["Všetky", "SEO", "Dizajn", "Marketing", "Case Studies"];
 
@@ -77,45 +81,40 @@ export function BlogPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-[#6C63FF]/5 rounded-full blur-[120px]" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <AnimateIn className="max-w-3xl">
-            <p className="text-[0.85rem] text-[#6C63FF] mb-4 tracking-wide uppercase">
-              Blog
-            </p>
-            <h1 className="font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] leading-[1.1] mb-6">
-              Poznatky z praxe.{" "}
-              <span className="text-[#6C63FF]">Nie teória.</span>
-            </h1>
-            <p className="text-[1.05rem] text-[#F5F5F0]/50 leading-relaxed">
-              Praktické tipy o weboch, SEO, dizajne a digitálnom marketingu pre
-              podnikateľov.
-            </p>
-          </AnimateIn>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Blog"
+        segments={[
+          { text: "Poznatky z praxe." },
+          { text: "Nie teória.", className: "text-gradient-primary" },
+        ]}
+        sub="Praktické tipy o weboch, SEO, dizajne a digitálnom marketingu pre podnikateľov."
+      />
 
       {/* Filters */}
       <section className="pb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap gap-3">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setActiveCategory(c)}
-                className={`px-5 py-2 rounded-full text-[0.85rem] transition-all duration-200 border ${
-                  activeCategory === c
-                    ? "bg-[#6C63FF] border-[#6C63FF] text-white"
-                    : "border-white/10 text-[#F5F5F0]/50 hover:border-white/20"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="inline-flex flex-wrap gap-1 rounded-2xl border border-white/8 bg-surface-1 p-1.5">
+            {categories.map((c) => {
+              const active = activeCategory === c;
+              return (
+                <button
+                  key={c}
+                  onClick={() => setActiveCategory(c)}
+                  className={`relative rounded-xl px-5 py-2 text-[0.85rem] transition-colors duration-200 ${
+                    active ? "text-white" : "text-[#F5F5F0]/50 hover:text-[#F5F5F0]/80"
+                  }`}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="blog-filter"
+                      className="absolute inset-0 rounded-xl bg-[#6C63FF] shadow-[0_4px_16px_rgba(108,99,255,0.35)]"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    />
+                  )}
+                  <span className="relative z-10">{c}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -123,38 +122,38 @@ export function BlogPage() {
       {/* Featured post */}
       {featured && (
         <section className="pb-12">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="mx-auto max-w-7xl px-6">
             <AnimateIn>
-              <div className="group rounded-2xl border border-white/5 bg-[#111118] overflow-hidden hover:border-[#6C63FF]/15 transition-all duration-300">
+              <GlowCard>
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="aspect-[16/10] lg:aspect-auto overflow-hidden">
+                  <div className="aspect-[16/10] overflow-hidden lg:aspect-auto">
                     <ImageWithFallback
                       src={featured.image}
                       alt={featured.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover/glow:scale-[1.04]"
                     />
                   </div>
-                  <div className="p-8 md:p-10 flex flex-col justify-center">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="px-3 py-1 rounded-full bg-[#6C63FF]/10 text-[#6C63FF] text-[0.75rem]">
+                  <div className="flex flex-col justify-center p-8 md:p-10">
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="rounded-full bg-[#6C63FF]/10 px-3 py-1 text-[0.75rem] text-[#9F97FF]">
                         {featured.category}
                       </span>
                       <span className="flex items-center gap-1 text-[0.75rem] text-[#F5F5F0]/30">
                         <Clock size={12} /> {featured.readTime}
                       </span>
                     </div>
-                    <h2 className="font-heading text-[1.35rem] sm:text-[1.5rem] text-[#F5F5F0] mb-4 group-hover:text-[#6C63FF] transition-colors">
+                    <h2 className="mb-4 font-heading text-[1.35rem] font-bold text-[#F5F5F0] transition-colors group-hover/glow:text-[#9F97FF] sm:text-[1.5rem]">
                       {featured.title}
                     </h2>
-                    <p className="text-[0.9rem] text-[#F5F5F0]/50 leading-relaxed mb-6">
+                    <p className="mb-6 text-[0.9rem] leading-relaxed text-[#F5F5F0]/50">
                       {featured.excerpt}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-[#6C63FF] text-[0.9rem]">
+                    <span className="inline-flex items-center gap-2 text-[0.9rem] text-[#9F97FF]">
                       Čítať ďalej <ArrowRight size={15} />
                     </span>
                   </div>
                 </div>
-              </div>
+              </GlowCard>
             </AnimateIn>
           </div>
         </section>
@@ -162,38 +161,40 @@ export function BlogPage() {
 
       {/* Blog grid */}
       <section className="pb-32">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((post, i) => (
-              <AnimateIn key={post.id} delay={i * 0.08}>
-                <div className="group rounded-2xl border border-white/5 bg-[#111118] overflow-hidden hover:border-[#6C63FF]/15 transition-all duration-300 h-full flex flex-col">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <ImageWithFallback
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-full bg-[#6C63FF]/10 text-[#6C63FF] text-[0.7rem]">
-                        {post.category}
-                      </span>
-                      <span className="flex items-center gap-1 text-[0.7rem] text-[#F5F5F0]/30">
-                        <Clock size={11} /> {post.readTime}
+              <AnimateIn key={post.id} delay={i * 0.08} className="h-full">
+                <GlowCard className="h-full">
+                  <div className="flex h-full flex-col">
+                    <div className="aspect-[16/10] overflow-hidden">
+                      <ImageWithFallback
+                        src={post.image}
+                        alt={post.title}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover/glow:scale-[1.04]"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <div className="mb-3 flex items-center gap-3">
+                        <span className="rounded-full bg-[#6C63FF]/10 px-3 py-1 text-[0.7rem] text-[#9F97FF]">
+                          {post.category}
+                        </span>
+                        <span className="flex items-center gap-1 text-[0.7rem] text-[#F5F5F0]/30">
+                          <Clock size={11} /> {post.readTime}
+                        </span>
+                      </div>
+                      <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0] transition-colors group-hover/glow:text-[#9F97FF]">
+                        {post.title}
+                      </h3>
+                      <p className="mb-4 flex-1 text-[0.8rem] leading-relaxed text-[#F5F5F0]/40">
+                        {post.excerpt}
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-[0.8rem] text-[#9F97FF]">
+                        Čítať ďalej <ArrowRight size={14} />
                       </span>
                     </div>
-                    <h3 className="font-heading text-[1.05rem] text-[#F5F5F0] mb-3 group-hover:text-[#6C63FF] transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-[0.8rem] text-[#F5F5F0]/40 leading-relaxed flex-1 mb-4">
-                      {post.excerpt}
-                    </p>
-                    <span className="inline-flex items-center gap-1 text-[#6C63FF] text-[0.8rem]">
-                      Čítať ďalej <ArrowRight size={14} />
-                    </span>
                   </div>
-                </div>
+                </GlowCard>
               </AnimateIn>
             ))}
           </div>
@@ -201,22 +202,28 @@ export function BlogPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-24 bg-[#0d0d14]">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <AnimateIn>
-            <h2 className="font-heading text-[1.5rem] sm:text-[1.75rem] leading-tight mb-4">
-              Dostávaj tipy priamo do mailu
-            </h2>
-            <p className="text-[0.9rem] text-[#F5F5F0]/40 mb-8">
+      <section className="relative overflow-hidden bg-bg-deep py-24">
+        <Aurora variant="cta" />
+        <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
+          <KineticHeading
+            as="h2"
+            segments={[
+              { text: "Dostávaj tipy" },
+              { text: "priamo do mailu.", className: "text-gradient-primary" },
+            ]}
+            className="mb-4 font-heading text-title font-bold"
+          />
+          <AnimateIn delay={0.15}>
+            <p className="mb-8 text-[0.9rem] text-[#F5F5F0]/40">
               Praktické poznatky o weboch a digitálnom marketingu. Žiadny spam.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <div className="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
               <input
                 type="email"
                 placeholder="tvoj@email.sk"
-                className="flex-1 px-4 py-3 rounded-xl bg-[#111118] border border-white/10 text-[#F5F5F0] placeholder:text-[#F5F5F0]/20 focus:outline-none focus:border-[#6C63FF]/30 text-[0.9rem]"
+                className="flex-1 rounded-full border border-white/10 bg-surface-1 px-5 py-3 text-[0.9rem] text-[#F5F5F0] placeholder:text-[#F5F5F0]/20 focus:border-[#6C63FF]/40 focus:outline-none"
               />
-              <button className="px-6 py-3 bg-[#6C63FF] hover:bg-[#5b53e8] text-white rounded-xl transition-all text-[0.9rem] whitespace-nowrap">
+              <button className="whitespace-nowrap rounded-full bg-[#6C63FF] px-6 py-3 text-[0.9rem] font-semibold text-white transition-all hover:bg-[#7B73FF] hover:shadow-[0_4px_24px_rgba(108,99,255,0.4)]">
                 Odoberať
               </button>
             </div>

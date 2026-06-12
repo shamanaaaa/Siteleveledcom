@@ -1,13 +1,17 @@
-import { Link } from "react-router";
+import { useRef } from "react";
 import {
   MessageCircle,
   Lightbulb,
   Code2,
   CheckCircle2,
   TrendingUp,
-  ArrowRight,
 } from "lucide-react";
+import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 import { AnimateIn } from "../components/AnimateIn";
+import { Aurora } from "../components/fx/Aurora";
+import { GlowCard } from "../components/fx/GlowCard";
+import { MagneticButton } from "../components/fx/MagneticButton";
+import { PageHero } from "../components/fx/PageHero";
 
 const steps = [
   {
@@ -53,55 +57,55 @@ const steps = [
 ];
 
 export function ProcessPage() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const reducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 0.75", "end 0.55"],
+  });
+  const lineScale = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
+
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 w-[500px] h-[500px] bg-[#6C63FF]/5 rounded-full blur-[120px]" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <AnimateIn className="max-w-3xl">
-            <p className="text-[0.85rem] text-[#6C63FF] mb-4 tracking-wide uppercase">
-              Proces
-            </p>
-            <h1 className="font-heading text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] leading-[1.1] mb-6">
-              Od nápadu po spustenie.{" "}
-              <span className="text-[#6C63FF]">Bez prekvapení.</span>
-            </h1>
-            <p className="text-[1.05rem] text-[#F5F5F0]/50 leading-relaxed max-w-2xl">
-              Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme
-              jasný, transparentný proces — vždy vieš, kde sme a čo bude ďalej.
-            </p>
-          </AnimateIn>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Proces"
+        segments={[
+          { text: "Od nápadu po spustenie." },
+          { text: "Bez prekvapení.", className: "text-gradient-primary" },
+        ]}
+        sub="Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy vieš, kde sme a čo bude ďalej."
+      />
 
       {/* Timeline */}
-      <section className="pb-32">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#6C63FF]/30 via-[#6C63FF]/10 to-[#1AFF8C]/20 hidden sm:block" />
+      <section className="pb-32 pt-4">
+        <div className="mx-auto max-w-4xl px-6">
+          <div ref={timelineRef} className="relative">
+            {/* Base line + scroll-linked progress line */}
+            <div className="absolute bottom-0 left-6 top-0 hidden w-px bg-white/8 sm:block md:left-1/2" />
+            <motion.div
+              aria-hidden
+              className="absolute bottom-0 left-6 top-0 hidden w-px origin-top bg-gradient-to-b from-[#6C63FF] via-[#9F97FF] to-[#1AFF8C] sm:block md:left-1/2"
+              style={reducedMotion ? undefined : { scaleY: lineScale }}
+            />
 
             <div className="space-y-12 md:space-y-16">
               {steps.map((step, i) => (
                 <AnimateIn
                   key={i}
-                  delay={i * 0.1}
+                  delay={i * 0.08}
                   direction={i % 2 === 0 ? "left" : "right"}
                 >
                   <div
-                    className={`relative flex flex-col md:flex-row items-start gap-6 md:gap-12 ${
+                    className={`relative flex flex-col items-start gap-6 md:flex-row md:gap-12 ${
                       i % 2 !== 0 ? "md:flex-row-reverse" : ""
                     }`}
                   >
                     {/* Number dot */}
-                    <div className="hidden sm:flex absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-2 items-center justify-center bg-[#0A0A0F] z-10" style={{ borderColor: step.color }}>
-                      <span
-                        className="font-heading text-[0.85rem]"
-                        style={{ color: step.color }}
-                      >
+                    <div
+                      className="absolute left-6 z-10 hidden h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-2 bg-[#0A0A0F] sm:flex md:left-1/2"
+                      style={{ borderColor: step.color, boxShadow: `0 0 24px ${step.color}30` }}
+                    >
+                      <span className="font-heading text-[0.85rem]" style={{ color: step.color }}>
                         {step.num}
                       </span>
                     </div>
@@ -109,52 +113,61 @@ export function ProcessPage() {
                     {/* Content */}
                     <div
                       className={`flex-1 ${
-                        i % 2 === 0
-                          ? "md:pr-16 md:text-right"
-                          : "md:pl-16 md:text-left"
+                        i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
                       }`}
                     >
-                      <div
-                        className={`p-6 md:p-8 rounded-2xl border border-white/5 bg-[#111118] hover:border-[#6C63FF]/15 transition-all duration-300 ${
-                          i % 2 === 0 ? "md:ml-0 md:mr-auto" : "md:mr-0 md:ml-auto"
-                        } max-w-md`}
+                      <GlowCard
+                        className={`max-w-md p-6 md:p-8 ${
+                          i % 2 === 0 ? "md:ml-0 md:mr-auto" : "md:ml-auto md:mr-0"
+                        }`}
                       >
-                        <div className={`flex items-center gap-3 mb-4 ${i % 2 === 0 ? "md:justify-end" : ""}`}>
+                        <span
+                          aria-hidden
+                          className={`pointer-events-none absolute -top-6 select-none font-heading text-[5.5rem] font-bold leading-none text-stroke-ghost ${
+                            i % 2 === 0 ? "left-2 md:left-2" : "right-2"
+                          }`}
+                        >
+                          {step.num}
+                        </span>
+                        <div
+                          className={`mb-4 flex items-center gap-3 ${
+                            i % 2 === 0 ? "md:justify-end" : ""
+                          }`}
+                        >
                           <div
-                            className="w-10 h-10 rounded-lg flex items-center justify-center"
-                            style={{
-                              backgroundColor: `${step.color}15`,
-                            }}
+                            className="flex h-10 w-10 items-center justify-center rounded-lg"
+                            style={{ backgroundColor: `${step.color}15` }}
                           >
-                            <step.icon
-                              size={20}
-                              style={{ color: step.color }}
-                            />
+                            <step.icon size={20} style={{ color: step.color }} />
                           </div>
-                          <span className="sm:hidden font-heading text-[0.85rem]" style={{ color: step.color }}>
+                          <span
+                            className="font-heading text-[0.85rem] sm:hidden"
+                            style={{ color: step.color }}
+                          >
                             {step.num}
                           </span>
                         </div>
-                        <h3 className="font-heading text-[1.15rem] text-[#F5F5F0] mb-3">
+                        <h3 className="mb-3 font-heading text-[1.15rem] font-bold text-[#F5F5F0]">
                           {step.title}
                         </h3>
-                        <p className="text-[0.875rem] text-[#F5F5F0]/50 leading-relaxed mb-4">
+                        <p className="mb-4 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">
                           {step.text}
                         </p>
                         <div
-                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[0.8rem]"
+                          className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 font-mono text-[0.75rem]"
                           style={{
-                            backgroundColor: `${step.color}10`,
+                            backgroundColor: `${step.color}0d`,
+                            borderColor: `${step.color}30`,
                             color: step.color,
                           }}
                         >
-                          Výstup: {step.output}
+                          <span className="opacity-60">→</span> Výstup: {step.output}
                         </div>
-                      </div>
+                      </GlowCard>
                     </div>
 
                     {/* Spacer for opposite side */}
-                    <div className="hidden md:block flex-1" />
+                    <div className="hidden flex-1 md:block" />
                   </div>
                 </AnimateIn>
               ))}
@@ -164,19 +177,17 @@ export function ProcessPage() {
       </section>
 
       {/* Duration note + CTA */}
-      <section className="py-24 bg-[#0d0d14]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden bg-bg-deep py-24">
+        <Aurora variant="cta" />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
-            <p className="text-[1rem] text-[#F5F5F0]/50 mb-8">
-              Priemerný projekt trvá{" "}
-              <span className="text-[#6C63FF]">3–6 týždňov</span>. Chceš začať?
+            <p className="mb-8 text-[1rem] text-[#F5F5F0]/50">
+              Priemerný projekt trvá <span className="text-[#9F97FF]">3–6 týždňov</span>. Chceš
+              začať?
             </p>
-            <Link
-              to="/kontakt"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#6C63FF] hover:bg-[#5b53e8] text-white rounded-xl transition-all duration-200 hover:shadow-[0_0_40px_rgba(108,99,255,0.3)]"
-            >
-              Dohodnúť konzultáciu <ArrowRight size={16} />
-            </Link>
+            <MagneticButton to="/kontakt" size="lg">
+              Dohodnúť konzultáciu
+            </MagneticButton>
           </AnimateIn>
         </div>
       </section>
