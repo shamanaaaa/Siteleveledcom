@@ -1,10 +1,13 @@
 import { Outlet, useLocation } from "react-router";
 import { useEffect } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { Grain } from "../fx/Grain";
 
 export function Layout() {
   const location = useLocation();
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     if (location.hash) {
@@ -14,16 +17,22 @@ export function Layout() {
         return;
       }
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [location.pathname, location.hash]);
 
   return (
-    <div className="min-h-screen bg-[#0A0A0F] text-[#F5F5F0] font-body">
+    <div className="min-h-screen bg-background text-foreground font-body">
       <Navbar />
-      <main>
+      <motion.main
+        key={location.pathname}
+        initial={reducedMotion ? false : { opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+      >
         <Outlet />
-      </main>
+      </motion.main>
       <Footer />
+      <Grain />
     </div>
   );
 }
