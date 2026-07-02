@@ -50,9 +50,23 @@ const projects = [
     image: "/nosekrst-preview.webp",
     url: "https://www.nosekrst.sk",
   },
+  {
+    id: "fotkynavyber",
+    title: "fotkynavyber.sk",
+    category: "SaaS pre fotografov",
+    tags: ["Fotografi", "Aplikácie"],
+    type: "Webová aplikácia",
+    challenge:
+      "Fotografi strácali čas dohadovaním, koľko fotiek si klient nakoniec vyberie a doobjedná. Chýbal systém, ktorý celý proces výberu a platieb zautomatizuje.",
+    solution:
+      "Webová aplikácia s online galériami, výberom fotiek, transparentnými cenami, automatickými e-mailovými notifikáciami a exportom do CSV — fotograf všetko spravuje z jedného dashboardu.",
+    results: "",
+    image: "/fotkynavyber-preview.webp",
+    url: "https://www.fotkynavyber.sk",
+  },
 ];
 
-const filterOptions = ["Všetky", "Fotografi", "B2B"];
+const filterOptions = ["Všetky", "Fotografi", "B2B", "Aplikácie"];
 
 export function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("Všetky");

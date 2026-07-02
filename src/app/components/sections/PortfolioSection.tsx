@@ -31,6 +31,15 @@ const portfolioProjects = [
     image: "/nosekrst-preview.webp" as string | null,
     url: "https://www.nosekrst.sk" as string | null,
   },
+  {
+    name: "fotkynavyber.sk",
+    type: "Webová aplikácia pre fotografov",
+    result: "Automatizovaný výber fotiek",
+    accent: "#1AFF8C",
+    bars: [0.55, 0.8, 0.5, 0.85, 0.65],
+    image: "/fotkynavyber-preview.webp" as string | null,
+    url: "https://www.fotkynavyber.sk" as string | null,
+  },
 ];
 
 export function PortfolioSection() {
@@ -47,7 +56,7 @@ export function PortfolioSection() {
           className="mb-16"
         />
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {portfolioProjects.map((project, i) => (
             <AnimateIn key={project.name} delay={i * 0.1} className="h-full">
               <GlowCard className="h-full">
