@@ -9,6 +9,7 @@ import { PricingPage } from "./pages/PricingPage";
 import { BlogPage } from "./pages/BlogPage";
 import { ContactPage } from "./pages/ContactPage";
 import { SeoAuditPage } from "./pages/SeoAuditPage";
+import { SeoAuditAdminPage } from "./pages/SeoAuditAdminPage";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
       { path: "blog", Component: BlogPage },
       { path: "kontakt", Component: ContactPage },
       { path: "seo-audit", Component: SeoAuditPage },
+      { path: "seo-audit/admin", Component: SeoAuditAdminPage },
       {
         path: "*",
         Component: HomePage,

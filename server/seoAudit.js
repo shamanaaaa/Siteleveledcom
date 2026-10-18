@@ -14,6 +14,7 @@ const TIMEOUT_MS = (Number(process.env.SEO_AUDIT_TIMEOUT_MIN) || 10) * 60 * 1000
 const RETENTION_MS = (Number(process.env.SEO_AUDIT_RETENTION_DAYS) || 30) * 24 * 60 * 60 * 1000;
 const REUSE_MS = 60 * 60 * 1000; // same site scanned within the last hour → reuse result
 const ACCESS_CODE = process.env.SEO_AUDIT_ACCESS_CODE || "";
+const ADMIN_TOKEN = process.env.SEO_AUDIT_ADMIN_TOKEN || "";
 const ROUTE_PREFIX = "/api/seo-audit";
 const CLI_BIN = path.join(__dirname, "node_modules", ".bin", "unlighthouse-ci");
 const CONFIG_FILE = path.join(__dirname, "unlighthouse.config.mjs");
@@ -141,10 +142,20 @@ function formatWait(ms) {
   return h ? `${h} h ${mins % 60} min` : `${mins} min`;
 }
 
-function codeMatches(given) {
+function secretMatches(given, expected) {
   const a = crypto.createHash("sha256").update(String(given || "")).digest();
-  const b = crypto.createHash("sha256").update(ACCESS_CODE).digest();
+  const b = crypto.createHash("sha256").update(expected).digest();
   return crypto.timingSafeEqual(a, b);
+}
+
+// Slow down password guessing on the owner overview: 10 wrong tokens per IP per hour
+const adminFailures = new Map();
+
+function adminLocked(ip) {
+  const since = Date.now() - 60 * 60 * 1000;
+  const recent = (adminFailures.get(ip) || []).filter((t) => t > since);
+  adminFailures.set(ip, recent);
+  return recent.length >= 10;
 }
 
 // ── Runner (one scan at a time) ─────────────────────────────
@@ -284,7 +295,7 @@ router.get("/config", (_req, res) => {
 router.post("/", async (req, res) => {
   const { url, accessCode } = req.body || {};
 
-  if (ACCESS_CODE && !codeMatches(accessCode)) {
+  if (ACCESS_CODE && !secretMatches(accessCode, ACCESS_CODE)) {
     return res.status(403).json({ error: "Nesprávny prístupový kód." });
   }
 
@@ -323,6 +334,26 @@ router.post("/", async (req, res) => {
 
   runNext();
   res.status(202).json(publicJob(job));
+});
+
+// Owner overview of every audit (disabled unless SEO_AUDIT_ADMIN_TOKEN is set)
+router.get("/admin/audits", (req, res) => {
+  if (!ADMIN_TOKEN) return res.status(404).json({ error: "Prehľad auditov nie je zapnutý (SEO_AUDIT_ADMIN_TOKEN)." });
+  if (adminLocked(req.ip)) return res.status(429).json({ error: "Príliš veľa nesprávnych pokusov. Skús to o hodinu." });
+
+  const token = (req.get("authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!secretMatches(token, ADMIN_TOKEN)) {
+    adminFailures.get(req.ip).push(Date.now());
+    return res.status(401).json({ error: "Nesprávne heslo." });
+  }
+
+  const audits = [...jobs.values()]
+    .sort((a, b) => b.createdAt - a.createdAt)
+    .map((job) => {
+      const { result, ...rest } = publicJob(job);
+      return result ? { ...rest, categories: result.categories, pageCount: result.pages.length } : rest;
+    });
+  res.json({ audits });
 });
 
 router.get("/:id", (req, res) => {

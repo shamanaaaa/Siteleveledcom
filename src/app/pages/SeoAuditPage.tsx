@@ -11,8 +11,8 @@ import { PageHero } from "../components/fx/PageHero";
 import { SectionHeading } from "../components/fx/SectionHeading";
 import { inputBase, inputDefaultBorder, inputErrorBorder, labelBase } from "../components/forms/fieldStyles";
 
-type Category = "performance" | "accessibility" | "best-practices" | "seo";
-type Scores = Record<Category, number | null>;
+export type Category = "performance" | "accessibility" | "best-practices" | "seo";
+export type Scores = Record<Category, number | null>;
 
 interface AuditJob {
   id: string;
@@ -29,7 +29,7 @@ interface AuditJob {
   };
 }
 
-const categories: { key: Category; label: string }[] = [
+export const categories: { key: Category; label: string }[] = [
   { key: "seo", label: "SEO" },
   { key: "performance", label: "Výkon" },
   { key: "accessibility", label: "Prístupnosť" },
@@ -72,7 +72,7 @@ const faqs = ({ maxPages, retentionDays }: AuditConfig) => [
   },
 ];
 
-const scoreColor = (score: number | null) =>
+export const scoreColor = (score: number | null) =>
   score === null ? "#F5F5F0" : score >= 90 ? "#1AFF8C" : score >= 50 ? "#f59e0b" : "#ef4444";
 
 function ScoreRing({ score, label }: { score: number | null; label: string }) {
