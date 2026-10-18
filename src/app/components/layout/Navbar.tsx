@@ -4,11 +4,13 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Aurora } from "../fx/Aurora";
 
-const navLinks = [
+// `hash` = section on the home page, `to` = its own route
+const navLinks: { label: string; hash?: string; to?: string }[] = [
   { label: "Ako to funguje", hash: "ako-to-funguje" },
   { label: "Portfólio", hash: "portfolio" },
   { label: "Referencie", hash: "referencie" },
   { label: "FAQ", hash: "faq" },
+  { label: "SEO audit", to: "/seo-audit" },
 ];
 
 export function Navbar() {
@@ -79,10 +81,10 @@ export function Navbar() {
           <div className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => (
               <Link
-                key={link.hash}
-                to={`/#${link.hash}`}
+                key={link.label}
+                to={link.to ?? `/#${link.hash}`}
                 onClick={(e) => {
-                  if (location.pathname === "/") {
+                  if (link.hash && location.pathname === "/") {
                     e.preventDefault();
                     scrollTo(link.hash);
                   }
@@ -136,17 +138,17 @@ export function Navbar() {
             <div className="relative flex flex-col">
               {navLinks.map((link, i) => (
                 <motion.div
-                  key={link.hash}
+                  key={link.label}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.06 + i * 0.07, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="border-b border-white/5"
                 >
                   <Link
-                    to={`/#${link.hash}`}
+                    to={link.to ?? `/#${link.hash}`}
                     onClick={(e) => {
                       setMobileOpen(false);
-                      if (location.pathname === "/") {
+                      if (link.hash && location.pathname === "/") {
                         e.preventDefault();
                         scrollTo(link.hash);
                       }

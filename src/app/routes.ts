@@ -8,6 +8,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { PricingPage } from "./pages/PricingPage";
 import { BlogPage } from "./pages/BlogPage";
 import { ContactPage } from "./pages/ContactPage";
+import { SeoAuditPage } from "./pages/SeoAuditPage";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       { path: "cennik", Component: PricingPage },
       { path: "blog", Component: BlogPage },
       { path: "kontakt", Component: ContactPage },
+      { path: "seo-audit", Component: SeoAuditPage },
       {
         path: "*",
         Component: HomePage,

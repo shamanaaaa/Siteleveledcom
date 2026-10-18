@@ -3,9 +3,13 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const path = require("path");
+const seoAudit = require("./seoAudit");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Behind a reverse proxy on the same host: take the client IP from X-Forwarded-For
+app.set("trust proxy", "loopback");
 
 // ── Middleware ──────────────────────────────────────────────
 app.use(cors());
@@ -206,6 +210,9 @@ app.post("/api/navrh", async (req, res) => {
     res.status(500).json({ error: "Odoslanie emailu zlyhalo." });
   }
 });
+
+// ── /api/seo-audit (customer SEO audit via Unlighthouse) ────
+app.use("/api/seo-audit", seoAudit);
 
 // ── Serve built frontend in production ──────────────────────
 if (process.env.NODE_ENV === "production") {

@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Portfólio", hash: "portfolio" },
   { label: "Referencie", hash: "referencie" },
   { label: "FAQ", hash: "faq" },
+  { label: "SEO audit zadarmo", href: "/seo-audit" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 
