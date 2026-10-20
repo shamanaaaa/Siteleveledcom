@@ -1,6 +1,6 @@
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import { Link } from "react-router";
-import { ExternalLink, Loader2, LogOut, RefreshCw } from "lucide-react";
+import { ExternalLink, Loader2, LogOut, RefreshCw, Search } from "lucide-react";
 import { GlowCard } from "../components/fx/GlowCard";
 import { MagneticButton } from "../components/fx/MagneticButton";
 import { PageHero } from "../components/fx/PageHero";
@@ -14,6 +14,7 @@ interface AdminAudit {
   createdAt: number;
   finishedAt: number | null;
   error?: string;
+  byOwner: boolean;
   categories?: Scores;
   pageCount?: number;
   reportUrl?: string;
@@ -66,6 +67,9 @@ export function SeoAuditAdminPage() {
   const [audits, setAudits] = useState<AdminAudit[] | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [site, setSite] = useState("");
+  const [startError, setStartError] = useState("");
+  const [starting, setStarting] = useState(false);
 
   const load = useCallback(async (t: string) => {
     setLoading(true);
@@ -115,6 +119,37 @@ export function SeoAuditAdminPage() {
     setInput("");
   };
 
+  // The owner's own audits skip the access code, daily limit and queue cap
+  const startAudit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!site.trim()) {
+      setStartError("Zadaj adresu webu.");
+      return;
+    }
+    setStartError("");
+    setStarting(true);
+    try {
+      const res = await fetch("/api/seo-audit/admin/audits", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ url: site }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (res.status === 401) {
+        logout();
+        setError(body.error || "Nesprávne heslo.");
+        return;
+      }
+      if (!res.ok) throw new Error(body.error || "Audit sa nepodarilo spustiť.");
+      setSite("");
+      load(token);
+    } catch (err) {
+      setStartError(err instanceof Error ? err.message : "Audit sa nepodarilo spustiť.");
+    } finally {
+      setStarting(false);
+    }
+  };
+
   const now = Date.now();
   const stats = audits && {
     today: audits.filter((a) => new Date(a.createdAt).toDateString() === new Date().toDateString()).length,
@@ -128,7 +163,7 @@ export function SeoAuditAdminPage() {
       <PageHero
         eyebrow="Pre majiteľa"
         segments={[{ text: "Prehľad" }, { text: "SEO auditov.", className: "text-gradient-primary" }]}
-        sub="Všetky audity spustené návštevníkmi za posledné obdobie."
+        sub="Všetky audity za posledné obdobie. Vlastné audity tu spustíš bez limitov."
       />
 
       <section className="pb-24 pt-4">
@@ -165,6 +200,40 @@ export function SeoAuditAdminPage() {
             </GlowCard>
           ) : (
             <>
+              <GlowCard className="mb-6 p-5 sm:p-6">
+                <form onSubmit={startAudit} noValidate>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
+                    <div className="flex-1">
+                      <label htmlFor="admin-audit-url" className={labelBase}>
+                        Nový audit
+                      </label>
+                      <input
+                        id="admin-audit-url"
+                        type="text"
+                        inputMode="url"
+                        autoComplete="url"
+                        placeholder="mojafirma.sk"
+                        value={site}
+                        onChange={(e) => setSite(e.target.value)}
+                        className={`${inputBase} ${startError ? inputErrorBorder : inputDefaultBorder}`}
+                      />
+                    </div>
+                    <MagneticButton type="submit" disabled={starting} arrow={false} className="shrink-0">
+                      {starting ? <Loader2 size={18} className="animate-spin" /> : <Search size={18} />}
+                      Spustiť audit
+                    </MagneticButton>
+                  </div>
+                  {startError && (
+                    <p role="alert" className="mt-3 text-[0.85rem] text-red-400">
+                      {startError}
+                    </p>
+                  )}
+                  <p className="mt-3 text-[0.8rem] text-[#F5F5F0]/35">
+                    Bez prístupového kódu a denného limitu. Web skontrolovaný nedávno sa zmeria znova.
+                  </p>
+                </form>
+              </GlowCard>
+
               <div className="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                 <div className="grid flex-1 grid-cols-2 gap-3 sm:max-w-2xl sm:grid-cols-4">
                   <Stat label="Dnes" value={stats!.today} />
@@ -228,6 +297,11 @@ export function SeoAuditAdminPage() {
                             >
                               {a.site.replace(/^https?:\/\//, "")}
                             </a>
+                            {a.byOwner && (
+                              <span className="ml-2 rounded-full bg-white/5 px-2 py-0.5 text-[0.7rem] text-[#F5F5F0]/50">
+                                admin
+                              </span>
+                            )}
                           </td>
                           <td className="px-3 py-3">
                             <span

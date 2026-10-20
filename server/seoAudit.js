@@ -158,6 +158,19 @@ function adminLocked(ip) {
   return recent.length >= 10;
 }
 
+// Owner endpoints take SEO_AUDIT_ADMIN_TOKEN as a Bearer token (disabled when it is unset)
+function requireAdmin(req, res, next) {
+  if (!ADMIN_TOKEN) return res.status(404).json({ error: "Prehľad auditov nie je zapnutý (SEO_AUDIT_ADMIN_TOKEN)." });
+  if (adminLocked(req.ip)) return res.status(429).json({ error: "Príliš veľa nesprávnych pokusov. Skús to o hodinu." });
+
+  const token = (req.get("authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!secretMatches(token, ADMIN_TOKEN)) {
+    adminFailures.get(req.ip).push(Date.now());
+    return res.status(401).json({ error: "Nesprávne heslo." });
+  }
+  next();
+}
+
 // ── Runner (one scan at a time) ─────────────────────────────
 function runNext() {
   if (running || !queue.length) return;
@@ -280,6 +293,29 @@ function publicJob(job) {
   return body;
 }
 
+// ── Starting audits ─────────────────────────────────────────
+/** Newest job for this site that is still in progress, or finished less than reuseMs ago */
+function findReusable(site, reuseMs) {
+  let found = null;
+  for (const j of jobs.values()) {
+    if (j.site !== site || (found && found.createdAt > j.createdAt)) continue;
+    if (j.status === "queued" || j.status === "running" || (j.status === "done" && Date.now() - j.finishedAt < reuseMs)) {
+      found = j;
+    }
+  }
+  return found;
+}
+
+function enqueue(site, extra = {}) {
+  const job = { id: crypto.randomUUID(), site, status: "queued", createdAt: Date.now(), ...extra };
+  fs.mkdirSync(jobDir(job.id), { recursive: true });
+  saveJob(job);
+  jobs.set(job.id, job);
+  queue.push(job.id);
+  runNext();
+  return job;
+}
+
 // ── Routes ──────────────────────────────────────────────────
 const router = express.Router();
 
@@ -307,12 +343,7 @@ router.post("/", async (req, res) => {
   }
 
   // Same site already in progress or freshly scanned → hand back that job
-  const existing = [...jobs.values()].find(
-    (j) =>
-      j.site === site &&
-      (j.status === "queued" || j.status === "running" ||
-        (j.status === "done" && Date.now() - j.finishedAt < REUSE_MS)),
-  );
+  const existing = findReusable(site, REUSE_MS);
   if (existing) return res.json(publicJob(existing));
 
   const wait = waitTime(req.ip);
@@ -325,35 +356,37 @@ router.post("/", async (req, res) => {
     return res.status(503).json({ error: "Práve prebieha veľa auditov. Skús to o pár minút." });
   }
 
-  const job = { id: crypto.randomUUID(), site, status: "queued", createdAt: Date.now() };
-  fs.mkdirSync(jobDir(job.id), { recursive: true });
-  saveJob(job);
-  jobs.set(job.id, job);
-  queue.push(job.id);
+  const job = enqueue(site);
   hits.get(req.ip).push(Date.now());
-
-  runNext();
   res.status(202).json(publicJob(job));
 });
 
-// Owner overview of every audit (disabled unless SEO_AUDIT_ADMIN_TOKEN is set)
-router.get("/admin/audits", (req, res) => {
-  if (!ADMIN_TOKEN) return res.status(404).json({ error: "Prehľad auditov nie je zapnutý (SEO_AUDIT_ADMIN_TOKEN)." });
-  if (adminLocked(req.ip)) return res.status(429).json({ error: "Príliš veľa nesprávnych pokusov. Skús to o hodinu." });
-
-  const token = (req.get("authorization") || "").replace(/^Bearer\s+/i, "");
-  if (!secretMatches(token, ADMIN_TOKEN)) {
-    adminFailures.get(req.ip).push(Date.now());
-    return res.status(401).json({ error: "Nesprávne heslo." });
-  }
-
+// Owner overview of every audit
+router.get("/admin/audits", requireAdmin, (_req, res) => {
   const audits = [...jobs.values()]
     .sort((a, b) => b.createdAt - a.createdAt)
     .map((job) => {
       const { result, ...rest } = publicJob(job);
-      return result ? { ...rest, categories: result.categories, pageCount: result.pages.length } : rest;
+      const row = { ...rest, byOwner: Boolean(job.byOwner) };
+      return result ? { ...row, categories: result.categories, pageCount: result.pages.length } : row;
     });
   res.json({ audits });
+});
+
+// Owner starts an audit: no access code, daily limit, queue cap or reuse of a recent result
+router.post("/admin/audits", requireAdmin, async (req, res) => {
+  let site;
+  try {
+    site = await normaliseSite(req.body?.url);
+  } catch (err) {
+    return res.status(400).json({ error: err.message });
+  }
+
+  // Only a scan of this site that is still running is handed back – a finished one gets re-run
+  const existing = findReusable(site, 0);
+  if (existing) return res.json(publicJob(existing));
+
+  res.status(202).json(publicJob(enqueue(site, { byOwner: true })));
 });
 
 router.get("/:id", (req, res) => {
