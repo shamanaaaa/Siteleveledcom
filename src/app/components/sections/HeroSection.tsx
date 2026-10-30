@@ -42,9 +42,9 @@ export function HeroSection() {
               transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#1AFF8C]/20 bg-[#1AFF8C]/5 px-4 py-1.5">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-[#1AFF8C]" />
+                <div className="h-2 w-2 rounded-full bg-[#1AFF8C]" />
                 <span className="text-[0.8rem] text-[#1AFF8C]">
-                  Voľné termíny tento týždeň: 3
+                  Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy
                 </span>
               </div>
             </motion.div>
@@ -90,7 +90,7 @@ export function HeroSection() {
               className="flex items-center justify-center gap-3 lg:justify-start"
             >
               <div className="flex -space-x-2">
-                {["MF", "ZK", "MH", "PK"].map((initials) => (
+                {["ZK", "JB"].map((initials) => (
                   <div
                     key={initials}
                     className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#0A0A0F] bg-gradient-to-br from-[#6C63FF] to-[#9F97FF] font-heading text-[0.6rem] text-white"
@@ -99,9 +99,9 @@ export function HeroSection() {
                   </div>
                 ))}
               </div>
-              <p className="text-[0.8rem] text-[#F5F5F0]/40">
-                Dôveruje nám <span className="text-[#F5F5F0]/70">40+ spokojných klientov</span>
-              </p>
+              <a href="#referencie" className="text-[0.8rem] text-[#F5F5F0]/40 transition-colors hover:text-[#F5F5F0]/70">
+                Klienti nás <span className="text-[#F5F5F0]/70">odporúčajú na Facebooku</span>
+              </a>
             </motion.div>
           </div>
 

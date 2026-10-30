@@ -182,8 +182,8 @@ export function ProcessPage() {
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
             <p className="mb-8 text-[1rem] text-[#F5F5F0]/50">
-              Priemerný projekt trvá <span className="text-[#9F97FF]">3–6 týždňov</span>. Chceš
-              začať?
+              Jednoduchý web je hotový do <span className="text-[#9F97FF]">7 dní</span>, e-shop do{" "}
+              <span className="text-[#9F97FF]">14 dní</span>. Chceš začať?
             </p>
             <MagneticButton to="/kontakt" size="lg">
               Dohodnúť konzultáciu

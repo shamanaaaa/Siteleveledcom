@@ -24,7 +24,6 @@ export interface CityClient {
   challenge: string;
   solution: string;
   perks: readonly string[];
-  testimonial?: { text: string; author: string };
   building: Lot & { style: BuildingStyle };
 }
 
@@ -35,16 +34,12 @@ export const CLIENTS: readonly CityClient[] = [
     url: "https://www.mdfoto.sk",
     category: "Fotografické štúdio",
     image: "/mdfoto-preview.webp",
-    result: "Nárast dopytov o 60%",
+    result: "Prezentačný + konverzný web",
     challenge:
       "Vytvoriť prémiový vizuálny zážitok, ktorý odzrkadľuje kvalitu fotografa a aktívne premieňa návštevníkov na rezervácie.",
     solution:
       "Dark-mode dizajn s elegantnou typografiou, optimalizovaná galéria s rýchlym načítaním, prominentné CTA pre rezervácie, lokálne SEO pre Nitru.",
     perks: ["Galéria s rýchlym načítaním", "Lokálne SEO pre Nitru", "Výrazné CTA na rezervácie"],
-    testimonial: {
-      text: "Návrh sme dostali na druhý deň a výsledná stránka nám priniesla viac objednávok hneď v prvom mesiaci.",
-      author: "Peter M.",
-    },
     building: { style: "studio", gx: 8, gy: 4 },
   },
   {
@@ -53,16 +48,12 @@ export const CLIENTS: readonly CityClient[] = [
     url: "https://www.zuzu-photo.sk",
     category: "Freelance fotografka",
     image: "/zuzu-photo-preview.webp",
-    result: "Zvýšenie rezervácií o 40%",
+    result: "Portfólio + kontakt",
     challenge:
       "Minimalistická, rýchla a osobná prezentácia — aby sa klientka sústredila na svoju prácu, nie na správu webu.",
     solution:
       "Čistý jednostránkový dizajn, optimalizovaná galéria, kontaktný formulár, napojenie na sociálne siete.",
     perks: ["Jednostránkový dizajn", "Kontaktný formulár", "Napojenie na sociálne siete"],
-    testimonial: {
-      text: "Výborná komunikácia a profesionálny prístup. Presne to, čo sme hľadali – rýchlo, bez komplikácií.",
-      author: "Zuzana K.",
-    },
     building: { style: "house", gx: 3, gy: 7 },
   },
   {
@@ -77,10 +68,6 @@ export const CLIENTS: readonly CityClient[] = [
     solution:
       "Štruktúrovaný obsah s dôrazom na služby a kontakt, technické SEO, schema markup pre lokálne vyhľadávanie.",
     perks: ["Technické SEO", "Schema markup", "Dôraz na služby a kontakt"],
-    testimonial: {
-      text: "Rýchlo, profesionálne a bez stresu. Odporúčam každému, kto chce naozaj dobrý web.",
-      author: "Martin H.",
-    },
     building: { style: "depot", gx: 0, gy: 9 },
   },
   {

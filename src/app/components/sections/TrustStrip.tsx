@@ -2,13 +2,19 @@ import { Marquee } from "../fx/Marquee";
 
 const items = [
   "Návrh do 24 hodín",
-  "40+ projektov",
+  "Web do 7 dní",
+  "E-shop do 14 dní",
+  "Platba až po spustení",
   "Bez záväzkov",
   "Žiadne skryté poplatky",
-  "5+ rokov skúseností",
   "mdfoto.sk",
   "zuzu-photo.sk",
   "nosekrst.sk",
+  "fotkynavyber.sk",
+  "sanifix.sk",
+  "zeriavynitra.sk",
+  "jogaslaskou.sk",
+  "springnitra.sk",
 ];
 
 export function TrustStrip() {

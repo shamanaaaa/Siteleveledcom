@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Star } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { AnimateIn } from "../components/AnimateIn";
@@ -18,7 +18,7 @@ const projects = [
       "Vytvoriť prémiový vizuálny zážitok, ktorý odzrkadľuje kvalitu fotografa a aktívne premieňa návštevníkov na rezervácie.",
     solution:
       "Dark-mode dizajn s elegantnou typografiou, optimalizovaná galéria s rýchlym načítaním, prominentné CTA pre rezervácie, lokálne SEO pre Nitru.",
-    results: "Organická návštevnosť ↑ | Priame rezervácie cez web ↑",
+    results: "",
     image: "/mdfoto-preview.webp",
     url: "https://www.mdfoto.sk",
   },
@@ -64,9 +64,65 @@ const projects = [
     image: "/fotkynavyber-preview.webp",
     url: "https://www.fotkynavyber.sk",
   },
+  {
+    id: "sanifix",
+    title: "sanifix.sk",
+    category: "Autorizovaný servis kúpeľňového vybavenia",
+    tags: ["E-shopy", "Aplikácie"],
+    type: "E-shop + servisný systém",
+    challenge:
+      "Spojiť predaj kúpeľňového vybavenia a objednávanie servisu autorizovaného servisného centra do jedného webu.",
+    solution:
+      "E-shop s produktmi, variantmi a akciami jednotlivých značiek, online nahlásenie servisu s výberom produktu a poruchy a administrácia servisných zákaziek.",
+    results: "",
+    image: "/sanifix-preview.webp",
+    url: "https://sanifix.sk",
+  },
+  {
+    id: "zeriavynitra",
+    title: "zeriavynitra.sk",
+    category: "Žeriavnícke práce a prenájom autožeriavov",
+    tags: ["B2B"],
+    type: "Firemný web",
+    challenge:
+      "Získavať dopyty na žeriavnícke práce a prenájom autožeriavov v Nitre a okolí – od stavebných firiem aj súkromných osôb.",
+    solution:
+      "Prehľad služieb a autožeriavov Demag AC 40 a AC 55 City, technický nákres žeriavu, spolupráca v piatich krokoch, časté otázky a formulár na nezáväzný dopyt. Telefón je vždy po ruke.",
+    results: "",
+    image: "/zeriavynitra-preview.webp",
+    url: "https://www.zeriavynitra.sk",
+  },
+  {
+    id: "jogaslaskou",
+    title: "jogaslaskou.sk",
+    category: "Jogové štúdio v Pezinku",
+    tags: ["Služby"],
+    type: "Prezentačný web",
+    challenge:
+      "Predstaviť jogové štúdio a jeho ponuku – skupinové a súkromné lekcie, eventy a pobyty – tak, aby sa nový návštevník rýchlo zorientoval a vybral si, ako začať.",
+    solution:
+      "Ponuka rozdelená do troch jasných krokov, popis priebehu lekcie, predstavenie lektorky, galéria z lekcií a pobytov, referencie a časté otázky.",
+    results: "",
+    image: "/jogaslaskou-preview.webp",
+    url: "https://www.jogaslaskou.sk",
+  },
+  {
+    id: "springnitra",
+    title: "springnitra.sk",
+    category: "Estetické štúdio v Nitre",
+    tags: ["Služby"],
+    type: "Prezentačný web",
+    challenge:
+      "Predstaviť estetické štúdio, jeho ošetrenia a prémiovú dermokozmetiku tak, aby si klientka rýchlo rezervovala termín.",
+    solution:
+      "Elegantný dizajn v teplých tónoch, predstavenie zakladateľky, prehľad služieb a značiek, samostatná stránka o Fusion Plasma, galéria, recenzie klientiek a napojenie na online rezerváciu termínov.",
+    results: "",
+    image: "/springnitra-preview.webp",
+    url: "https://www.springnitra.sk",
+  },
 ];
 
-const filterOptions = ["Všetky", "Fotografi", "B2B", "Aplikácie"];
+const filterOptions = ["Všetky", "Fotografi", "Služby", "B2B", "E-shopy", "Aplikácie"];
 
 export function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("Všetky");
@@ -216,16 +272,14 @@ export function PortfolioPage() {
       <section className="bg-[#0d0d14] py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <AnimateIn>
-            <div className="mb-6 flex items-center justify-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={20} className="fill-[#FFD93D] text-[#FFD93D]" />
-              ))}
-            </div>
             <blockquote className="mb-6 font-heading text-[1.25rem] italic leading-relaxed text-[#F5F5F0]/80 sm:text-[1.5rem]">
-              &ldquo;Mária nás prekvapila rýchlosťou a profesionalitou. Web sme spustili za 3
-              týždne a zákazníci si ho chvália.&rdquo;
+              &ldquo;Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná
+              komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte
+              lepšie, ako som čakala.&rdquo;
             </blockquote>
-            <p className="text-[0.875rem] text-[#F5F5F0]/40">— Klient, mdfoto.sk</p>
+            <p className="text-[0.875rem] text-[#F5F5F0]/40">
+              — Jaja Bieliková, odporúčanie na Facebooku
+            </p>
           </AnimateIn>
         </div>
       </section>

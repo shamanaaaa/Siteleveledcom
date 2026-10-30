@@ -114,12 +114,6 @@ export function LeadFormSection() {
     <section id="formular" className="py-24 md:py-32 bg-[#0d0d14]">
       <div className="max-w-3xl mx-auto px-6">
         <AnimateIn className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#6C63FF]/20 bg-[#6C63FF]/5 mb-6">
-            <div className="w-2 h-2 rounded-full bg-[#1AFF8C] animate-pulse" />
-            <span className="text-[0.8rem] text-[#F5F5F0]/60">
-              Voľné termíny tento týždeň: 3
-            </span>
-          </div>
           <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] leading-tight mb-4">
             Chcete návrh{" "}
             <span className="text-[#6C63FF]">zadarmo?</span>

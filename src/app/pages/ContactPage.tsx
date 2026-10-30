@@ -250,10 +250,13 @@ export function ContactPage() {
                         <Mail size={18} className="shrink-0 text-[#6C63FF]" />
                         domansro@gmail.com
                       </a>
-                      <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
+                      <a
+                        href="tel:+421910803993"
+                        className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
+                      >
                         <Phone size={18} className="shrink-0 text-[#6C63FF]" />
-                        +421 XXX XXX XXX
-                      </div>
+                        0910 803 993 (Mário Doman, vývojár)
+                      </a>
                       <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
                         <Clock size={18} className="shrink-0 text-[#6C63FF]" />
                         Odpovieme do 24 hodín v pracovný deň
@@ -270,7 +273,8 @@ export function ContactPage() {
                       Fakturačné údaje
                     </h3>
                     <div className="space-y-1 text-[0.85rem] text-[#F5F5F0]/50">
-                      <p className="text-[#F5F5F0]/80">doman s.r.o.</p>
+                      <p className="text-[#F5F5F0]/80">DOMAN s.r.o.</p>
+                      <p>IČO: 47 912 383</p>
                       <p>Konateľka: Mária Domanová</p>
                       <p>Ulica Funduše 1165/26</p>
                       <p>Cabaj-Čápor 951 17</p>

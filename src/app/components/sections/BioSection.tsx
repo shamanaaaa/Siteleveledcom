@@ -1,5 +1,5 @@
+import { Phone } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
-import { AnimatedCounter } from "../fx/AnimatedCounter";
 import { KineticHeading } from "../fx/KineticHeading";
 
 export function BioSection() {
@@ -21,7 +21,7 @@ export function BioSection() {
                 </div>
               </div>
               <div className="absolute -bottom-3 -right-3 rounded-lg border border-white/8 bg-surface-1 px-3 py-1.5 text-[0.75rem] text-[#F5F5F0]/60">
-                Mário Doman
+                Mário Doman · vývojár
               </div>
             </div>
           </AnimateIn>
@@ -38,9 +38,9 @@ export function BioSection() {
             <AnimateIn delay={0.15}>
               <div className="space-y-4 text-[0.95rem] leading-relaxed text-[#F5F5F0]/60">
                 <p>
-                  Webstránky robíme pre firmy, ktoré chcú rásť. Za DOMAN s.r.o. sme doteraz
-                  vytvorili <span className="text-[#F5F5F0]/90">40+ webov</span> pre slovenských
-                  podnikateľov.
+                  Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich{" "}
+                  <span className="text-[#F5F5F0]/90">Mário Doman</span>, spoločnosť DOMAN s.r.o.
+                  vedie konateľka <span className="text-[#F5F5F0]/90">Mária Domanová</span>.
                 </p>
                 <p>
                   Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať.
@@ -48,19 +48,13 @@ export function BioSection() {
                 </p>
               </div>
               <div className="mt-7 flex items-center gap-5">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="font-heading text-[1.6rem] font-bold text-[#F5F5F0]">
-                    <AnimatedCounter end={40} suffix="+" />
-                  </span>
-                  <span className="text-[0.8rem] text-[#F5F5F0]/40">projektov</span>
-                </div>
-                <div className="h-5 w-px bg-white/10" />
-                <div className="flex items-baseline gap-1.5">
-                  <span className="font-heading text-[1.6rem] font-bold text-[#F5F5F0]">
-                    <AnimatedCounter end={5} suffix="+" />
-                  </span>
-                  <span className="text-[0.8rem] text-[#F5F5F0]/40">rokov</span>
-                </div>
+                <a
+                  href="tel:+421910803993"
+                  className="flex items-center gap-2 font-heading text-[1.1rem] font-bold text-[#F5F5F0] transition-colors hover:text-[#9F97FF]"
+                >
+                  <Phone size={18} className="text-[#6C63FF]" />
+                  0910 803 993
+                </a>
               </div>
             </AnimateIn>
           </div>

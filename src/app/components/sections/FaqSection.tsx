@@ -21,11 +21,11 @@ const faqs = [
   },
   {
     q: "Koľko stojí kompletná webstránka?",
-    a: "Závisí od rozsahu a požiadaviek. V návrhu dostanete aj orientačnú cenovú ponuku – vopred, bez prekvapení.",
+    a: "Jednoduchý web od 300 €, e-shop od 1 000 €. Presná cena závisí od rozsahu – v návrhu dostanete aj cenovú ponuku, vopred a bez prekvapení. Zálohu neplatíte, platíte až po spustení webu.",
   },
   {
     q: "Ako dlho trvá výroba webu?",
-    a: "Štandardne 2–4 týždne od schválenia návrhu. Závisí od rozsahu projektu.",
+    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu.",
   },
 ];
 

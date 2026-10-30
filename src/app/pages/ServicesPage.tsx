@@ -19,13 +19,14 @@ const services = [
     icon: Code2,
     title: "Webdizajn & Vývoj",
     headline: "Weby na mieru. Bez kompromisov.",
-    text: "Navrhujeme a programujeme weby, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Tvoja vízia.",
+    text: "Navrhujeme a programujeme weby a e-shopy, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Tvoja vízia.",
     includes: [
       "UI/UX dizajn (Figma prototyp)",
       "Responzívny vývoj (mobile-first)",
       "CMS integrácia (správa obsahu bez kódovania)",
       "Testovanie naprieč prehliadačmi",
     ],
+    price: "Web od 300 € do 7 dní · E-shop od 1 000 € do 14 dní",
     cta: "Chcem web na mieru",
   },
   {
@@ -91,6 +92,7 @@ const services = [
       "Konkurenčná analýza",
       "Písomný akčný plán",
     ],
+    price: "SEO audit 199 €",
     cta: "Chcem audit môjho webu",
   },
 ];
@@ -154,19 +156,6 @@ export function ServicesPage() {
         </div>
       </section>
 
-      {/* Cross-sell banner */}
-      <section className="pb-12">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-center gap-3 rounded-xl border border-[#1AFF8C]/20 bg-[#1AFF8C]/5 p-4">
-            <div className="h-2 w-2 shrink-0 rounded-full bg-[#1AFF8C]" />
-            <p className="text-[0.85rem] text-[#F5F5F0]/70">
-              <span className="text-[#1AFF8C]">Najobľúbenejší balík:</span> Web + SEO + Správa —
-              kompletné riešenie pre tvoj biznis.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Services */}
       <section className="pb-32">
         <div className="mx-auto max-w-7xl px-6">
@@ -203,6 +192,11 @@ export function ServicesPage() {
                         <p className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/50">
                           {service.text}
                         </p>
+                        {service.price && (
+                          <p className="mt-5 inline-flex rounded-full bg-[#1AFF8C]/10 px-3 py-1 text-[0.8rem] text-[#1AFF8C]">
+                            {service.price}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <p className="mb-4 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/30">

@@ -71,6 +71,7 @@ export function Footer() {
               <p>IČO: 47 912 383</p>
               <p>Ulica Funduše 1165/26</p>
               <p>Cabaj-Čápor 951 17</p>
+              <p>Konateľka: Mária Domanová</p>
             </div>
           </div>
 
@@ -133,6 +134,9 @@ export function Footer() {
                 className="transition-colors hover:text-[#9F97FF]"
               >
                 domansro@gmail.com
+              </a>
+              <a href="tel:+421910803993" className="transition-colors hover:text-[#9F97FF]">
+                0910 803 993
               </a>
               <div className="mt-2 flex items-center gap-4">
                 <a

@@ -12,12 +12,12 @@ const benefits = [
   {
     icon: Zap,
     title: "Rýchlosť",
-    text: "Návrh do 24 hodín, web do 2–3 týždňov.",
+    text: "Návrh do 24 hodín, web do 7 dní, e-shop do 14 dní.",
   },
   {
     icon: Shield,
     title: "Transparentné ceny",
-    text: "Žiadne prekvapenia, všetko vopred.",
+    text: "Web od 300 €, e-shop od 1 000 €. Žiadna záloha – platíte až po spustení.",
   },
   {
     icon: MessageCircle,
@@ -27,7 +27,7 @@ const benefits = [
   {
     icon: BadgeCheck,
     title: "Skúsenosti",
-    text: "40+ projektov, 5+ rokov v brandži.",
+    text: "Weby, e-shopy aj webové aplikácie. Ukážky nájdete v portfóliu.",
   },
 ];
 

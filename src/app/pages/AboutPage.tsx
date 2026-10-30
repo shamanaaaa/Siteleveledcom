@@ -1,6 +1,5 @@
 import { Eye, Gem, HeartHandshake } from "lucide-react";
 import { AnimateIn } from "../components/AnimateIn";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { GlowCard } from "../components/fx/GlowCard";
 import { MagneticButton } from "../components/fx/MagneticButton";
 import { Marquee } from "../components/fx/Marquee";
@@ -21,7 +20,7 @@ const values = [
   {
     icon: HeartHandshake,
     title: "Dlhodobé partnerstvo",
-    text: "Môj úspech závisí od tvojho úspechu. To nie je klišé — je to obchodný model.",
+    text: "Náš úspech závisí od tvojho úspechu. To nie je klišé — je to obchodný model.",
   },
 ];
 
@@ -42,7 +41,7 @@ export function AboutPage() {
       <PageHero
         eyebrow="O nás"
         segments={[
-          { text: "Za siteleveled.com stojí človek.", br: true },
+          { text: "Za siteleveled.com stoja ľudia.", br: true },
           { text: "Nie anonymná agentúra.", className: "text-gradient-primary" },
         ]}
       />
@@ -56,9 +55,9 @@ export function AboutPage() {
               <div className="relative">
                 <div className="rounded-card bg-gradient-to-br from-[#6C63FF] via-[#9F97FF]/60 to-[#00D9FF]/50 p-[2px]">
                   <div className="overflow-hidden rounded-[calc(1.25rem-2px)]">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1634836023845-eddbfe9937da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRldmVsb3BlciUyMHdvcmtzcGFjZSUyMGxhcHRvcCUyMGRhcmt8ZW58MXx8fHwxNzcxNjk2OTYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                      alt="Mária Domanová - workspace"
+                    <img
+                      src="/profile.jpg"
+                      alt="Mário Doman, vývojár SiteLeveled"
                       className="aspect-[4/5] w-full object-cover"
                     />
                   </div>
@@ -84,7 +83,7 @@ export function AboutPage() {
             <AnimateIn direction="right">
               <div>
                 <h2 className="mb-6 font-heading text-[1.25rem] text-[#F5F5F0]/60">
-                  Mária Domanová — konateľka, vývojárka, stratégička.
+                  Mário Doman — vývojár. Mária Domanová — konateľka DOMAN s.r.o.
                 </h2>
 
                 <div className="mb-8 space-y-5 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">
@@ -94,14 +93,19 @@ export function AboutPage() {
                     account managerov.
                   </p>
                   <p>
-                    Som technicky orientovaná profesionálka s rokmi skúseností vo webovom vývoji,
-                    UX dizajne, SEO optimalizácii a automatizácii. Každý projekt vediem osobne — od
-                    prvého hovoru po finálne spustenie.
+                    Weby, e-shopy a webové aplikácie navrhuje a programuje{" "}
+                    <span className="text-[#F5F5F0]/80">Mário Doman</span>. Každý projekt vedie
+                    osobne — od prvého hovoru po finálne spustenie. Zavolať mu môžeš priamo na{" "}
+                    <a href="tel:+421910803993" className="text-[#9F97FF] hover:underline">
+                      0910 803 993
+                    </a>
+                    .
                   </p>
                   <p>
-                    <span className="text-[#F5F5F0]/80">doman s.r.o.</span> je právny základ
-                    projektu, ale siteleveled.com je moja osobná misia: pomáhať podnikateľom rásť
-                    cez silnú digitálnu prítomnosť.
+                    Za siteleveled.com stojí spoločnosť{" "}
+                    <span className="text-[#F5F5F0]/80">DOMAN s.r.o.</span>, ktorú vedie konateľka{" "}
+                    <span className="text-[#F5F5F0]/80">Mária Domanová</span>. Naša misia:
+                    pomáhať podnikateľom rásť cez silnú digitálnu prítomnosť.
                   </p>
                 </div>
 
@@ -111,12 +115,18 @@ export function AboutPage() {
                     Firemné údaje
                   </p>
                   <div className="space-y-1 text-[0.85rem] text-[#F5F5F0]/50">
-                    <p>
-                      <span className="text-[#F5F5F0]/80">Mária Domanová</span> — konateľka
-                    </p>
+                    <p className="text-[#F5F5F0]/80">DOMAN s.r.o.</p>
+                    <p>IČO: 47 912 383</p>
                     <p>Ulica Funduše 1165/26, Cabaj-Čápor 951 17</p>
-                    <p>Vznik funkcie: 27. 09. 2014</p>
-                    <p className="text-[#F5F5F0]/80">doman s.r.o.</p>
+                    <p>
+                      <span className="text-[#F5F5F0]/80">Mária Domanová</span> — konateľka (od 27. 09. 2014)
+                    </p>
+                    <p>
+                      <span className="text-[#F5F5F0]/80">Mário Doman</span> — vývojár,{" "}
+                      <a href="tel:+421910803993" className="text-[#9F97FF] hover:underline">
+                        0910 803 993
+                      </a>
+                    </p>
                   </div>
                 </GlowCard>
 
@@ -150,7 +160,7 @@ export function AboutPage() {
             eyebrow="Hodnoty"
             segments={[
               { text: "Hodnoty, na ktorých" },
-              { text: "staviam.", className: "text-gradient-primary" },
+              { text: "staviame.", className: "text-gradient-primary" },
             ]}
             className="mb-16"
           />

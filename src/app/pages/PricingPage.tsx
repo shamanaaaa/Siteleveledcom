@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight, Check, Star } from "lucide-react";
+import { ArrowRight, Check, Zap } from "lucide-react";
 import { AnimateIn } from "../components/AnimateIn";
 import { AnimatedCounter } from "../components/fx/AnimatedCounter";
 import { Aurora } from "../components/fx/Aurora";
@@ -13,73 +13,74 @@ const skFormat = (n: number) => n.toLocaleString("sk-SK");
 
 const plans = [
   {
-    name: "STARTER",
-    subtitle: "Prvý krok",
-    audience: "Pre: Freelancerov, fotografov, remeselníkov",
-    price: 890,
-    priceNote: "jednorazovo",
-    popular: false,
+    name: "WEB",
+    subtitle: "Jednoduchý web",
+    audience: "Pre: Živnostníkov, freelancerov, malé firmy",
+    price: 300,
+    from: true,
+    delivery: "Hotový do 7 dní",
+    badge: "Najrýchlejší štart",
+    link: null,
     features: [
-      "Jednoduchý prezentačný web (do 5 podstránok)",
-      "Responzívny dizajn",
+      "Prezentačný web na mieru",
+      "Responzívny dizajn pre mobil aj počítač",
       "Základné SEO nastavenie",
       "Kontaktný formulár",
-      "1 kolo revízií",
+      "Platíš až po spustení, bez zálohy",
     ],
     cta: "Mám záujem",
   },
   {
-    name: "BUSINESS",
-    subtitle: "Profesionálna prítomnosť",
-    audience: "Pre: Malé firmy, lokálne prevádzky, startupy",
-    price: 1990,
-    priceNote: "jednorazovo",
-    popular: true,
+    name: "E-SHOP",
+    subtitle: "Internetový obchod",
+    audience: "Pre: Firmy, ktoré chcú predávať online",
+    price: 1000,
+    from: true,
+    delivery: "Hotový do 14 dní",
+    badge: null,
+    link: null,
     features: [
-      "Web na mieru (5–15 podstránok)",
-      "Pokročilý UX/UI dizajn (Figma prototyp)",
-      "CMS — správa obsahu bez kódovania",
-      "SEO optimalizácia (technická + on-page)",
-      "Copywriting pre kľúčové stránky",
-      "3 kolá revízií",
-      "3 mesiace podpory po spustení",
+      "E-shop na mieru",
+      "Katalóg produktov a košík",
+      "Správa produktov a objednávok",
+      "Responzívny dizajn pre mobil aj počítač",
+      "Platíš až po spustení, bez zálohy",
     ],
     cta: "Mám záujem",
   },
   {
-    name: "PREMIUM",
-    subtitle: "Plná digitálna transformácia",
-    audience: "Pre: Ambiciózne firmy, e-commerce, dlhodobá spolupráca",
-    price: 3500,
-    priceNote: "individuálna cena",
-    popular: false,
+    name: "SEO AUDIT",
+    subtitle: "Kontrola webu",
+    audience: "Pre: Weby, ktoré Google nevidí tak, ako by mal",
+    price: 199,
+    from: false,
+    delivery: "Jednorazová cena",
+    badge: null,
     features: [
-      "Všetko z BUSINESS",
-      "Kompletný copywriting",
-      "Pokročilé SEO + obsahová stratégia",
-      "Marketing integrácia (Meta / Google Ads setup)",
-      "6 mesiacov mesačnej správy v cene",
+      "Analýza webu z pohľadu SEO",
+      "Konkrétne odporúčania na zlepšenie",
     ],
-    cta: "Nezáväzná ponuka",
+    link: { to: "/seo-audit", label: "Najprv si spusti automatickú kontrolu zadarmo" },
+    cta: "Mám záujem",
   },
 ];
 
 const faqs = [
   {
     q: "Ako dlho trvá vytvorenie webu?",
-    a: "Priemerný projekt trvá 3–6 týždňov v závislosti od rozsahu. Jednoduchý prezentačný web môže byť hotový za 2 týždne.",
+    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu. Samotný návrh dostaneš do 24 hodín.",
   },
   {
     q: "Aké sú platobné podmienky?",
-    a: "50% záloha pred začiatkom práce, 50% po spustení webu. Pri väčších projektoch je možnosť rozložiť platbu na splátky.",
+    a: "Žiadnu zálohu neplatíš. Za web platíš až po jeho spustení.",
   },
   {
     q: "Môžem si obsah spravovať sám?",
-    a: "Áno! Balíky BUSINESS a PREMIUM zahŕňajú CMS systém, cez ktorý si jednoducho upravíš texty, obrázky a obsah bez kódovania.",
+    a: "Áno. Ak chceš texty, obrázky alebo produkty upravovať sám, pripravíme web so správou obsahu bez kódovania. Dohodneme sa na tom pri návrhu.",
   },
   {
     q: "Čo ak nie som spokojný s dizajnom?",
-    a: "Každý balík obsahuje kolá revízií. Navyše, pred kódovaním vždy schvaľuješ dizajn vo Figme, takže prekvapenia nehrozia.",
+    a: "Dizajn vždy schvaľuješ ešte pred programovaním, takže prekvapenia nehrozia. A keďže platíš až po spustení, neriskuješ nič.",
   },
   {
     q: "Potrebujem aj hosting a doménu?",
@@ -99,12 +100,12 @@ function PlanContent({ plan }: { plan: (typeof plans)[number] }) {
       </div>
 
       <div className="mb-6">
-        <span className="text-[0.85rem] text-[#F5F5F0]/40">od</span>{" "}
+        {plan.from && <span className="text-[0.85rem] text-[#F5F5F0]/40">od </span>}
         <span className="font-heading text-[2.6rem] font-bold text-[#F5F5F0]">
           <AnimatedCounter end={plan.price} format={skFormat} duration={1.1} />
         </span>{" "}
         <span className="text-[0.85rem] text-[#F5F5F0]/40">&euro;</span>
-        <p className="mt-1 text-[0.75rem] text-[#F5F5F0]/30">{plan.priceNote}</p>
+        <p className="mt-1 text-[0.8rem] font-semibold text-[#1AFF8C]">{plan.delivery}</p>
       </div>
 
       <ul className="mb-8 flex-1 space-y-3">
@@ -118,10 +119,16 @@ function PlanContent({ plan }: { plan: (typeof plans)[number] }) {
         ))}
       </ul>
 
+      {plan.link && (
+        <Link to={plan.link.to} className="-mt-4 mb-8 text-[0.85rem] text-[#9F97FF] hover:underline">
+          {plan.link.label} →
+        </Link>
+      )}
+
       <Link
         to="/kontakt"
         className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-[0.9rem] font-semibold transition-all duration-200 ${
-          plan.popular
+          plan.badge
             ? "bg-[#6C63FF] text-white hover:bg-[#7B73FF] hover:shadow-[0_0_30px_rgba(108,99,255,0.4)]"
             : "border border-white/10 text-[#F5F5F0]/80 hover:border-[#6C63FF]/40 hover:text-white"
         }`}
@@ -141,7 +148,7 @@ export function PricingPage() {
           { text: "Investícia," },
           { text: "nie náklad.", className: "text-gradient-primary" },
         ]}
-        sub="Transparentné ceny. Žiadne prekvapenia. Každý web je na mieru — preto ponúkame orientačné balíky aj individuálne ponuky."
+        sub="Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíš až po spustení. Každý web je na mieru, presnú cenu dostaneš spolu s návrhom."
       />
 
       {/* Pricing cards */}
@@ -150,11 +157,11 @@ export function PricingPage() {
           <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:gap-8">
             {plans.map((plan, i) => (
               <AnimateIn key={plan.name} delay={i * 0.1} className="h-full">
-                {plan.popular ? (
+                {plan.badge ? (
                   <div className="conic-border relative h-full rounded-card p-8 lg:scale-[1.02]">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                       <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-[#6C63FF] px-4 py-1 text-[0.75rem] text-white shadow-[0_4px_16px_rgba(108,99,255,0.4)]">
-                        <Star size={12} className="fill-white" /> Najobľúbenejší
+                        <Zap size={12} className="fill-white" /> {plan.badge}
                       </span>
                     </div>
                     <PlanContent plan={plan} />
@@ -182,7 +189,7 @@ export function PricingPage() {
               <div className="text-right">
                 <span className="text-[0.8rem] text-[#F5F5F0]/40">od</span>{" "}
                 <span className="font-heading text-[1.5rem] font-bold text-[#9F97FF]">
-                  <AnimatedCounter end={79} duration={0.9} />
+                  <AnimatedCounter end={30} duration={0.9} />
                 </span>{" "}
                 <span className="text-[0.8rem] text-[#F5F5F0]/40">&euro;/mesiac</span>
               </div>
