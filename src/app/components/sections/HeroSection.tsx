@@ -3,8 +3,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import { Aurora } from "../fx/Aurora";
 import { KineticHeading } from "../fx/KineticHeading";
 import { MagneticButton } from "../fx/MagneticButton";
-import { SelfBuildingSite } from "../fx/SelfBuildingSite";
-import { Tilt } from "../fx/Tilt";
+import { PixelCity } from "../city/PixelCity";
 import { scrollToForm } from "../../lib/scroll";
 
 export function HeroSection() {
@@ -106,17 +105,14 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Self-building mockup */}
+          {/* Client city: every building is a client's website */}
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             style={reducedMotion ? undefined : { y: mockupY }}
           >
-            <Tilt max={4}>
-              <SelfBuildingSite className="hidden sm:block" />
-              <SelfBuildingSite compact className="sm:hidden" />
-            </Tilt>
+            <PixelCity />
           </motion.div>
         </div>
       </div>

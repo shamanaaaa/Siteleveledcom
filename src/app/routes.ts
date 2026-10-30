@@ -26,6 +26,8 @@ export const router = createBrowserRouter([
       { path: "kontakt", Component: ContactPage },
       { path: "seo-audit", Component: SeoAuditPage },
       { path: "seo-audit/admin", Component: SeoAuditAdminPage },
+      // Share link of a client's building in the hero city: the home page with it opened
+      { path: "mesto/:slug", Component: HomePage },
       {
         path: "*",
         Component: HomePage,

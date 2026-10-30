@@ -8,6 +8,8 @@ import { Grain } from "../fx/Grain";
 export function Layout() {
   const location = useLocation();
   const reducedMotion = useReducedMotion();
+  // /mesto/<client>/ is the home page with a building opened: no remount, no scroll reset
+  const pageKey = location.pathname.startsWith("/mesto/") ? "/" : location.pathname;
 
   useEffect(() => {
     if (location.hash) {
@@ -18,13 +20,13 @@ export function Layout() {
       }
     }
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [location.pathname, location.hash]);
+  }, [pageKey, location.hash]);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
       <Navbar />
       <motion.main
-        key={location.pathname}
+        key={pageKey}
         initial={reducedMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
