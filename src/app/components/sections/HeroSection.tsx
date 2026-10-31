@@ -90,9 +90,9 @@ export function HeroSection() {
               className="flex items-center justify-center gap-3 lg:justify-start"
             >
               <div className="flex -space-x-2">
-                {["ZK", "JB"].map((initials) => (
+                {["ZK", "ZK", "JB"].map((initials, i) => (
                   <div
-                    key={initials}
+                    key={i}
                     className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#0A0A0F] bg-gradient-to-br from-[#6C63FF] to-[#9F97FF] font-heading text-[0.6rem] text-white"
                   >
                     {initials}

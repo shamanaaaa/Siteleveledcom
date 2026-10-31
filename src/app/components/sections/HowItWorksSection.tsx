@@ -7,7 +7,7 @@ const steps = [
   {
     num: "1",
     title: "Vyplníte formulár",
-    sub: "2–3 minúty",
+    sub: "menej ako minúta",
     text: "Krátky formulár o vás a vašom projekte. Žiadne technické znalosti nie sú potrebné.",
     color: "#6C63FF",
   },

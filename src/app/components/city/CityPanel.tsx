@@ -9,7 +9,7 @@ import { scrollToForm } from "../../lib/scroll";
 export type PanelTarget = { kind: "client"; id: string } | { kind: "hq" | "construction" | "plot" };
 
 const QUESTS = [
-  { title: "Vyplníte formulár", sub: "2–3 minúty" },
+  { title: "Vyplníte formulár", sub: "menej ako minúta" },
   { title: "Do 24h dostanete návrh", sub: "profesionálny, na mieru" },
   { title: "Rozhodnete sa", sub: "bez záväzkov" },
 ];
@@ -198,7 +198,7 @@ export function CityPanel({ target, onClose }: { target: PanelTarget; onClose: (
         <Link to="/o-nas" className="mt-4 inline-block text-[0.85rem] text-[#9F97FF] hover:text-[#1AFF8C]">
           Kto za tým stojí →
         </Link>
-        <Cta prompt="Začnite prvým krokom – formulár zaberie 2–3 minúty." onClose={onClose} />
+        <Cta prompt="Začnite prvým krokom – formulár zaberie menej ako minútu." onClose={onClose} />
       </Window>
     ) : target.kind === "construction" ? (
       <Window kicker="Stavenisko">
