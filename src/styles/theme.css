@@ -129,6 +129,18 @@
       transform: translateY(-0.8cqw);
     }
   }
+
+  /* One grid cell towards the viewer per loop; the cell is 2.4cqw in HorizonWordmark */
+  --animate-grid-drift: grid-drift 1.8s linear infinite;
+
+  @keyframes grid-drift {
+    from {
+      transform: rotateX(70deg) translateY(-2.4cqw);
+    }
+    to {
+      transform: rotateX(70deg) translateY(0);
+    }
+  }
 }
 
 @layer base {

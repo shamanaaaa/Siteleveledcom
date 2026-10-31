@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 import { Aurora } from "../fx/Aurora";
+import { HorizonWordmark } from "../fx/HorizonWordmark";
 import { KineticHeading } from "../fx/KineticHeading";
 import { MagneticButton } from "../fx/MagneticButton";
 
@@ -22,7 +23,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="overflow-hidden border-t border-white/5">
+    <footer id="site-footer" className="overflow-hidden border-t border-white/5">
       {/* Pre-footer CTA */}
       <div className="relative overflow-hidden border-b border-white/5 bg-bg-deep">
         <Aurora variant="cta" />
@@ -54,7 +55,7 @@ export function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -181,12 +182,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Giant outlined wordmark */}
-      <div aria-hidden className="pointer-events-none select-none overflow-hidden leading-none">
-        <span className="-mb-[0.2em] block whitespace-nowrap text-center font-heading text-[12.5vw] font-extrabold tracking-tight text-stroke-ghost">
-          SITELEVELED
-        </span>
-      </div>
+      <HorizonWordmark />
     </footer>
   );
 }

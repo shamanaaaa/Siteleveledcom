@@ -16,7 +16,7 @@ const navLinks: { label: string; hash?: string; to?: string }[] = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [formOnScreen, setFormOnScreen] = useState(false);
+  const [ctaCovered, setCtaCovered] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -29,19 +29,29 @@ export function Navbar() {
     setMobileOpen(false);
   }, [location]);
 
-  // Hide the floating mobile CTA while the lead form is on screen so it
-  // never covers the submit button
+  // Hide the floating mobile CTA while the lead form or the footer is on screen so it
+  // never covers the submit button, the footer's own CTA or the closing wordmark
   useEffect(() => {
-    const el = document.getElementById("formular");
-    if (!el) {
-      setFormOnScreen(false);
+    const targets = [
+      document.getElementById("formular"),
+      document.getElementById("site-footer"),
+    ].filter((el): el is HTMLElement => el !== null);
+    if (targets.length === 0) {
+      setCtaCovered(false);
       return;
     }
+    const onScreen = new Set<Element>();
     const observer = new IntersectionObserver(
-      ([entry]) => setFormOnScreen(entry.isIntersecting),
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) onScreen.add(entry.target);
+          else onScreen.delete(entry.target);
+        }
+        setCtaCovered(onScreen.size > 0);
+      },
       { rootMargin: "0px 0px -15% 0px" }
     );
-    observer.observe(el);
+    targets.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [location.pathname]);
 
@@ -189,7 +199,7 @@ export function Navbar() {
 
       {/* Mobile floating CTA */}
       <AnimatePresence>
-        {!formOnScreen && !mobileOpen && (
+        {!ctaCovered && !mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
