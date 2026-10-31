@@ -44,6 +44,16 @@ const projects: Project[] = [
     },
   },
   {
+    name: "zuzu-photo.sk",
+    url: "https://www.zuzu-photo.sk",
+    image: "/zuzu-photo-preview.webp",
+    category: "Fotografka",
+    built: "Jednostránkové portfólio s galériou, kontaktom a napojením na sociálne siete.",
+    bg: "#1D1617",
+    accent: "#EDBBA6",
+    review: { text: "Mário je kreatívny, trpezlivý a hlavne veľmi šikovný.", author: "Zuzana Kondeková" },
+  },
+  {
     name: "sanifix.sk",
     url: "https://sanifix.sk",
     image: "/sanifix-preview.webp",
@@ -87,15 +97,6 @@ const projects: Project[] = [
     built: "Online galérie, výber fotiek, automatické e-maily a export do CSV v jednom dashboarde.",
     bg: "#1C1612",
     accent: "#E8A877",
-  },
-  {
-    name: "zuzu-photo.sk",
-    url: "https://www.zuzu-photo.sk",
-    image: "/zuzu-photo-preview.webp",
-    category: "Fotografka",
-    built: "Jednostránkové portfólio s galériou, kontaktom a napojením na sociálne siete.",
-    bg: "#1D1617",
-    accent: "#EDBBA6",
   },
 ];
 

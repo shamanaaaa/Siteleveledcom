@@ -6,6 +6,11 @@ import { SectionHeading } from "../fx/SectionHeading";
 // Recommendations from the SiteLeveled Facebook page, quoted as written
 const testimonials = [
   {
+    text: "Mária vrelo odporúčam každému, kto túži po svojej vysnívanej webovej stránke 😊 Tá moja je podľa mňa úplne dokonalá 😊 veď posúďte sami: zuzu-photo.sk. Mário je kreatívny, trpezlivý a hlavne veľmi šikovný. Ďakujem! 🙏🙏🙏👏",
+    author: "Zuzana Kondeková",
+    site: "zuzu-photo.sk",
+  },
+  {
     text: "Oceňujem ľudský a „polopatistický“ prístup, keďže nie som moc technický typ. Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky. Som veľmi spokojná a môžem odporúčať ďalej 🙂",
     author: "Zuzana Khala",
     site: "jogaslaskou.sk",
@@ -30,7 +35,7 @@ export function TestimonialsSection() {
           className="mb-16"
         />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <AnimateIn key={t.author} delay={i * 0.1} className="h-full">
               <GlowCard className="flex h-full flex-col p-8">

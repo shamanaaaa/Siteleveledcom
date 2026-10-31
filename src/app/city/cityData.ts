@@ -56,6 +56,10 @@ export const CLIENTS: readonly CityClient[] = [
     solution:
       "Čistý jednostránkový dizajn, optimalizovaná galéria, kontaktný formulár, napojenie na sociálne siete.",
     perks: ["Jednostránkový dizajn", "Kontaktný formulár", "Napojenie na sociálne siete"],
+    testimonial: {
+      text: "Mária vrelo odporúčam každému, kto túži po svojej vysnívanej webovej stránke 😊 Tá moja je podľa mňa úplne dokonalá 😊 veď posúďte sami: zuzu-photo.sk. Mário je kreatívny, trpezlivý a hlavne veľmi šikovný. Ďakujem! 🙏🙏🙏👏",
+      author: "Zuzana Kondeková",
+    },
     building: { style: "house", gx: 3, gy: 7 },
   },
   {

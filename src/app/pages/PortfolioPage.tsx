@@ -31,6 +31,10 @@ const projects = [
       "Minimalistická, rýchla a osobná prezentácia — aby sa klientka sústredila na svoju prácu, nie na správu webu.",
     solution:
       "Čistý jednostránkový dizajn, optimalizovaná galéria, kontaktný formulár, napojenie na sociálne siete.",
+    review: {
+      text: "Mário je kreatívny, trpezlivý a hlavne veľmi šikovný.",
+      author: "Zuzana Kondeková",
+    },
     image: "/zuzu-photo-preview.webp",
     url: "https://www.zuzu-photo.sk",
   },
