@@ -71,13 +71,15 @@ interface Palette extends Shades {
   lit2: string;
 }
 
-const PAL: Record<"violet" | "cyan" | "rose" | "cream" | "steel" | "lilac", Palette> = {
+const PAL: Record<"violet" | "cyan" | "rose" | "cream" | "steel" | "lilac" | "peach" | "champagne", Palette> = {
   violet: { top: "#5a52cc", left: "#3a3486", right: "#29245f", edge: "#9a93ff", glass: "#1c1942", lit: "#ffe9a8", lit2: "#c9c4ff" },
   cyan: { top: "#3aa3c7", left: "#1e6884", right: "#154a5f", edge: "#93f2ff", glass: "#10303f", lit: "#c4f7ff", lit2: "#ffe9a8" },
   rose: { top: "#a3567f", left: "#6c3456", right: "#4d243d", edge: "#ffa6d3", glass: "#2b1526", lit: "#ffd9a0", lit2: "#ffc6e4" },
   cream: { top: "#e6dfd0", left: "#bcb3a3", right: "#91897a", edge: "#fffaf0", glass: "#2b3b3a", lit: "#ffe39a", lit2: "#c3ffe0" },
   steel: { top: "#5e6579", left: "#41475b", right: "#2f3343", edge: "#9199b1", glass: "#1b1e29", lit: "#ffe9a8", lit2: "#ffd34d" },
   lilac: { top: "#8a84e8", left: "#5d57b8", right: "#443f8c", edge: "#c9c4ff", glass: "#26224f", lit: "#ffe9a8", lit2: "#c9c4ff" },
+  champagne: { top: "#ead2a4", left: "#b08a55", right: "#7f6238", edge: "#fff1d0", glass: "#2e2416", lit: "#ffeec4", lit2: "#ffc6dc" },
+  peach: { top: "#e7b393", left: "#b47457", right: "#87513c", edge: "#ffdcc6", glass: "#3a2420", lit: "#ffe2b8", lit2: "#ffd0dc" },
 };
 
 /* ── Geometry helpers ────────────────────────────────────── */
@@ -269,6 +271,17 @@ const CAMERA: Sprite = [
   "cccccccccccc",
 ];
 
+const HEART: Sprite = [
+  ".hh.hh.",
+  "hHhhhhh",
+  "hHhhhhh",
+  ".hhhhh.",
+  "..hhh..",
+  "...h...",
+];
+
+const FLOWER: Sprite = ["..p.p..", ".ppppp.", "ppPyPpp", ".ppppp.", "..p.p.."];
+
 /* ── Intro: the city builds itself when it first comes into view ── */
 
 export const INTRO_MS = 2600;
@@ -293,6 +306,8 @@ const STYLE: Record<BuildingStyle | "hq", { w: number; d: number; h: number; roo
   studio: { w: 2, d: 2, h: 34, roof: 13 },
   house: { w: 2, d: 2, h: 16, roof: 10 },
   depot: { w: 3, d: 2, h: 16, roof: 0 },
+  yoga: { w: 2, d: 2, h: 22, roof: 12 },
+  salon: { w: 2, d: 2, h: 22, roof: 12 },
 };
 
 function drawHQ(s: Surface, lot: Lot, h: number, full: boolean, t: number) {
@@ -424,6 +439,74 @@ function drawHouse(s: Surface, lot: Lot, h: number, full: boolean, t: number) {
     // round attic window in the gable
     const [gx0, gy0] = iso(lot.gx + 2, lot.gy + 1, h + 4);
     s.fill(gx0 - 1, gy0 - 1, 3, 2, P.lit);
+  }
+}
+
+function drawYoga(s: Surface, lot: Lot, h: number, full: boolean, t: number) {
+  const P = PAL.peach;
+  const b = box(lot.gx, lot.gy, 2, 2, 0, h);
+  paintBox(s, b, P);
+  // The studio in front hides most of the left face: a row of small high windows there,
+  // the tall practice-room windows and the door on the right face
+  windowGrid(s, b, "left", h, { colW: 3, gap: 3, rowH: 3, rowGap: 0, bottom: 14, top: 4, margin: 3 }, (col) =>
+    lit(61, col, 0, t, 0.7) ? P.lit2 : P.glass,
+  );
+  const side = faceColumns(b, "right");
+  const tall = Math.min(h - 7, 11);
+  for (const [k0, k1, bottom, height, glow] of [
+    [3, 7, 3, tall, lit(62, 0, 0, t, 0.9)],
+    [9, 13, 3, tall, lit(62, 1, 0, t, 0.9)],
+    [16, 20, 0, Math.min(h, 9), false],
+  ] as const) {
+    if (height <= 0) continue;
+    for (let k = k0; k < k1; k++) {
+      const door = bottom === 0;
+      const c = door ? (k === k0 || k === k1 - 1 ? P.edge : "#4a2a24") : glow ? P.lit : P.glass;
+      s.fill(side.x0 + k, side.base(k) - bottom - height, 1, height, c);
+    }
+  }
+  rim(s, b, P.edge);
+  if (!full) return;
+  // A mat on the roof terrace and a heart sign that slowly breathes in and out
+  fillPoly(s, [iso(lot.gx + 1 / 3, lot.gy + 7 / 6, h), iso(lot.gx + 1, lot.gy + 7 / 6, h), iso(lot.gx + 1, lot.gy + 3 / 2, h), iso(lot.gx + 1 / 3, lot.gy + 3 / 2, h)], "#7d75ff");
+  const [cx, cy] = iso(lot.gx + 4 / 3, lot.gy + 2 / 3, h);
+  s.fill(cx - 2, cy - 4, 1, 4, P.right);
+  s.fill(cx + 2, cy - 4, 1, 4, P.right);
+  const inhale = t % 4800 < 2400;
+  sprite(s, HEART, cx - 3, cy - 10, inhale ? { h: "#ff6f9f", H: "#ffd6e6" } : { h: "#b8466f", H: "#ff8fb8" });
+}
+
+function drawSalon(s: Surface, lot: Lot, h: number, full: boolean, t: number) {
+  const P = PAL.champagne;
+  const b = box(lot.gx, lot.gy, 2, 2, 0, h);
+  paintBox(s, b, P);
+  // Framed shop window under a striped awning on the front, salon rooms upstairs
+  windowGrid(s, b, "left", Math.min(h, 10), { colW: 18, gap: 2, rowH: 9, rowGap: 0, bottom: 0, top: 0, margin: 3 }, () => "#3b2a18");
+  windowGrid(s, b, "left", Math.min(h, 10), { colW: 16, gap: 2, rowH: 7, rowGap: 0, bottom: 1, top: 0, margin: 4 }, () => P.lit);
+  windowGrid(s, b, "left", h, { colW: 3, gap: 4, rowH: 4, rowGap: 0, bottom: 15, top: 3, margin: 4 }, (col) =>
+    lit(71, col, 0, t, 0.8) ? P.lit2 : P.glass,
+  );
+  const front = faceColumns(b, "left");
+  if (h >= 13) {
+    for (let k = 1; k < front.n - 1; k++) {
+      s.fill(front.x0 + k, front.base(k) - 13, 1, 3, k % 4 < 2 ? "#e0a93c" : "#fff4dc");
+      s.fill(front.x0 + k, front.base(k) - 10, 1, 1, "#5a4024");
+    }
+  }
+  windowGrid(s, b, "right", h, { colW: 3, gap: 4, rowH: 4, rowGap: 0, bottom: 15, top: 3, margin: 4 }, (col) =>
+    lit(72, col, 0, t, 0.7) ? P.lit : P.glass,
+  );
+  const side = faceColumns(b, "right");
+  for (let k = 9; k < 13; k++) s.fill(side.x0 + k, side.base(k) - Math.min(h, 9), 1, Math.min(h, 9), k === 9 || k === 12 ? "#d9a441" : "#3b2a18");
+  rim(s, b, P.edge);
+  if (!full) return;
+  // Rooftop spring flower that sparkles now and then
+  const [cx, cy] = iso(lot.gx + 1, lot.gy + 1, h);
+  s.fill(cx, cy - 4, 1, 4, "#5f7a3a");
+  sprite(s, FLOWER, cx - 3, cy - 9, { p: "#ffa6d3", P: "#ffd6e6", y: GOLD });
+  if (t % 3600 < 240) {
+    const [gx0, gy0] = [cx + 4, cy - 11];
+    for (const [dx, dy] of [[0, 0], [-1, 0], [1, 0], [0, -1], [0, 1]]) s.fill(gx0 + dx, gy0 + dy, 1, 1, "#ffffff");
   }
 }
 
@@ -710,6 +793,8 @@ const BUILDERS: Record<BuildingStyle, typeof drawStudio> = {
   studio: drawStudio,
   house: drawHouse,
   depot: drawDepot,
+  yoga: drawYoga,
+  salon: drawSalon,
 };
 
 const STATIC_OBJECTS: CityObject[] = [

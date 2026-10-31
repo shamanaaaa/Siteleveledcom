@@ -18,7 +18,6 @@ const projects = [
       "Vytvoriť prémiový vizuálny zážitok, ktorý odzrkadľuje kvalitu fotografa a aktívne premieňa návštevníkov na rezervácie.",
     solution:
       "Dark-mode dizajn s elegantnou typografiou, optimalizovaná galéria s rýchlym načítaním, prominentné CTA pre rezervácie, lokálne SEO pre Nitru.",
-    results: "",
     image: "/mdfoto-preview.webp",
     url: "https://www.mdfoto.sk",
   },
@@ -32,7 +31,6 @@ const projects = [
       "Minimalistická, rýchla a osobná prezentácia — aby sa klientka sústredila na svoju prácu, nie na správu webu.",
     solution:
       "Čistý jednostránkový dizajn, optimalizovaná galéria, kontaktný formulár, napojenie na sociálne siete.",
-    results: "",
     image: "/zuzu-photo-preview.webp",
     url: "https://www.zuzu-photo.sk",
   },
@@ -46,7 +44,6 @@ const projects = [
       "Profesionálna B2B prezentácia firmy, ktorá buduje dôveru u priemyselných klientov a uľahčuje prvý kontakt.",
     solution:
       "Štruktúrovaný obsah s dôrazom na služby a kontakt, technické SEO, schema markup pre lokálne vyhľadávanie.",
-    results: "",
     image: "/nosekrst-preview.webp",
     url: "https://www.nosekrst.sk",
   },
@@ -60,7 +57,6 @@ const projects = [
       "Fotografi strácali čas dohadovaním, koľko fotiek si klient nakoniec vyberie a doobjedná. Chýbal systém, ktorý celý proces výberu a platieb zautomatizuje.",
     solution:
       "Webová aplikácia s online galériami, výberom fotiek, transparentnými cenami, automatickými e-mailovými notifikáciami a exportom do CSV — fotograf všetko spravuje z jedného dashboardu.",
-    results: "",
     image: "/fotkynavyber-preview.webp",
     url: "https://www.fotkynavyber.sk",
   },
@@ -74,7 +70,6 @@ const projects = [
       "Spojiť predaj kúpeľňového vybavenia a objednávanie servisu autorizovaného servisného centra do jedného webu.",
     solution:
       "E-shop s produktmi, variantmi a akciami jednotlivých značiek, online nahlásenie servisu s výberom produktu a poruchy a administrácia servisných zákaziek.",
-    results: "",
     image: "/sanifix-preview.webp",
     url: "https://sanifix.sk",
   },
@@ -88,7 +83,6 @@ const projects = [
       "Získavať dopyty na žeriavnícke práce a prenájom autožeriavov v Nitre a okolí – od stavebných firiem aj súkromných osôb.",
     solution:
       "Prehľad služieb a autožeriavov Demag AC 40 a AC 55 City, technický nákres žeriavu, spolupráca v piatich krokoch, časté otázky a formulár na nezáväzný dopyt. Telefón je vždy po ruke.",
-    results: "",
     image: "/zeriavynitra-preview.webp",
     url: "https://www.zeriavynitra.sk",
   },
@@ -102,7 +96,10 @@ const projects = [
       "Predstaviť jogové štúdio a jeho ponuku – skupinové a súkromné lekcie, eventy a pobyty – tak, aby sa nový návštevník rýchlo zorientoval a vybral si, ako začať.",
     solution:
       "Ponuka rozdelená do troch jasných krokov, popis priebehu lekcie, predstavenie lektorky, galéria z lekcií a pobytov, referencie a časté otázky.",
-    results: "",
+    review: {
+      text: "Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky.",
+      author: "Zuzana Khala",
+    },
     image: "/jogaslaskou-preview.webp",
     url: "https://www.jogaslaskou.sk",
   },
@@ -116,7 +113,10 @@ const projects = [
       "Predstaviť estetické štúdio, jeho ošetrenia a prémiovú dermokozmetiku tak, aby si klientka rýchlo rezervovala termín.",
     solution:
       "Elegantný dizajn v teplých tónoch, predstavenie zakladateľky, prehľad služieb a značiek, samostatná stránka o Fusion Plasma, galéria, recenzie klientiek a napojenie na online rezerváciu termínov.",
-    results: "",
+    review: {
+      text: "Určite odporúčam každému, kto hľadá niekoho šikovného a spoľahlivého 👌",
+      author: "Jaja Bieliková",
+    },
     image: "/springnitra-preview.webp",
     url: "https://www.springnitra.sk",
   },
@@ -236,13 +236,18 @@ export function PortfolioPage() {
                               {project.solution}
                             </p>
                           </div>
-                          {project.results && (
-                            <div>
+                          {project.review && (
+                            <figure>
                               <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#1AFF8C]">
-                                Výsledky
+                                Referencia
                               </p>
-                              <p className="text-[0.85rem] text-[#F5F5F0]/60">{project.results}</p>
-                            </div>
+                              <blockquote className="text-[0.85rem] italic leading-relaxed text-[#F5F5F0]/60">
+                                &ldquo;{project.review.text}&rdquo;
+                              </blockquote>
+                              <figcaption className="mt-1 text-[0.75rem] text-[#F5F5F0]/40">
+                                — {project.review.author}, odporúčanie na Facebooku
+                              </figcaption>
+                            </figure>
                           )}
                         </div>
 
@@ -278,7 +283,7 @@ export function PortfolioPage() {
               lepšie, ako som čakala.&rdquo;
             </blockquote>
             <p className="text-[0.875rem] text-[#F5F5F0]/40">
-              — Jaja Bieliková, odporúčanie na Facebooku
+              — Jaja Bieliková, springnitra.sk · odporúčanie na Facebooku
             </p>
           </AnimateIn>
         </div>

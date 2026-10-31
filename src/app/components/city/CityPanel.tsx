@@ -157,6 +157,15 @@ function ClientWindow({ client, onClose }: { client: CityClient; onClose: () => 
         ))}
       </ul>
 
+      {client.testimonial && (
+        <blockquote className="mt-5 border-l-2 border-[#6C63FF] pl-3 text-[0.85rem] italic leading-relaxed text-[#F5F5F0]/60">
+          &ldquo;{client.testimonial.text}&rdquo;
+          <footer className="mt-1 not-italic text-[#F5F5F0]/40">
+            — {client.testimonial.author}, odporúčanie na Facebooku
+          </footer>
+        </blockquote>
+      )}
+
       <ShareButtons client={client} />
       <Cta prompt="Chcete v meste aj svoju budovu?" onClose={onClose} />
     </Window>

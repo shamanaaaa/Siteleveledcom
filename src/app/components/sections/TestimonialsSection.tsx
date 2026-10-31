@@ -8,10 +8,12 @@ const testimonials = [
   {
     text: "Oceňujem ľudský a „polopatistický“ prístup, keďže nie som moc technický typ. Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky. Som veľmi spokojná a môžem odporúčať ďalej 🙂",
     author: "Zuzana Khala",
+    site: "jogaslaskou.sk",
   },
   {
     text: "Určite odporúčam každému, kto hľadá niekoho šikovného a spoľahlivého 👌 Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala ☺️",
     author: "Jaja Bieliková",
+    site: "springnitra.sk",
   },
 ];
 
@@ -49,7 +51,17 @@ export function TestimonialsSection() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#6C63FF] to-[#9F97FF] font-heading text-[0.7rem] text-white">
                     {t.author.split(" ").map((n) => n[0]).join("")}
                   </div>
-                  <p className="text-[0.85rem] text-[#F5F5F0]">{t.author}</p>
+                  <div>
+                    <p className="text-[0.85rem] text-[#F5F5F0]">{t.author}</p>
+                    <a
+                      href={`https://www.${t.site}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[0.75rem] text-[#9F97FF] hover:underline"
+                    >
+                      {t.site}
+                    </a>
+                  </div>
                 </div>
               </GlowCard>
             </AnimateIn>
