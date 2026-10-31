@@ -120,6 +120,15 @@
       transform: translateX(-50%);
     }
   }
+
+  /* cqw: the drift scales with the card the floating element sits in */
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    50% {
+      transform: translateY(-0.8cqw);
+    }
+  }
 }
 
 @layer base {
