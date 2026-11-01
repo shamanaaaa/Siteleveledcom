@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState, type MouseEvent } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 import { CLIENTS, findClient } from "../../city/cityData";
 import { canvasSurface } from "../../city/pixel";
 import {
@@ -309,7 +309,12 @@ export function PixelCity({ className = "" }: { className?: string }) {
         </button>
       </nav>
 
-      <Suspense fallback={null}>{open && <CityPanel target={open} onClose={closePanel} />}</Suspense>
+      {/* Only while open: an idle boundary would make React re-render the city while attaching to a pre-rendered page */}
+      {open && (
+        <Suspense fallback={null}>
+          <CityPanel target={open} onClose={closePanel} />
+        </Suspense>
+      )}
     </div>
   );
 }

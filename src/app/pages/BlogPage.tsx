@@ -184,7 +184,7 @@ export function BlogPage() {
                           <Clock size={11} /> {post.readTime}
                         </span>
                       </div>
-                      <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0] transition-colors group-hover/glow:text-[#9F97FF]">
+                      <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0] transition-colors group-hover/glow:text-[#9F97FF]" suppressHydrationWarning>
                         {post.title}
                       </h3>
                       <p className="mb-4 flex-1 text-[0.8rem] leading-relaxed text-[#F5F5F0]/40">

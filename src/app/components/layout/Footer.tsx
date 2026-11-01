@@ -164,7 +164,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-          <p className="text-[0.8rem] text-[#F5F5F0]/50">
+          <p className="text-[0.8rem] text-[#F5F5F0]/50" suppressHydrationWarning>
             &copy; {new Date().getFullYear()} siteleveled.com – DOMAN s.r.o.
           </p>
           <Link

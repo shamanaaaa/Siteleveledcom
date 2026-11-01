@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 import { Aurora } from "../fx/Aurora";
 import { KineticHeading } from "../fx/KineticHeading";
 import { MagneticButton } from "../fx/MagneticButton";
 import { PixelCity } from "../city/PixelCity";
-import { scrollToForm } from "../../lib/scroll";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -63,7 +63,7 @@ export function HeroSection() {
             </p>
 
             <div className="mb-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-              <MagneticButton size="lg" onClick={scrollToForm}>
+              <MagneticButton size="lg" href="#formular">
                 Chcem návrh zadarmo
               </MagneticButton>
               <MagneticButton variant="ghost" href="#portfolio" arrow={false}>

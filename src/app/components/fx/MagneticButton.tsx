@@ -1,11 +1,6 @@
 import { ReactNode, useEffect, useState, PointerEvent } from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  useReducedMotion,
-} from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
 

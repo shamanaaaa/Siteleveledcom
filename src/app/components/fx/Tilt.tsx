@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
+import { motion, useMotionValue, useSpring } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 
 interface TiltProps {
   children: ReactNode;

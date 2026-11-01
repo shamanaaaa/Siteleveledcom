@@ -198,8 +198,8 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Mobile floating CTA */}
-      <AnimatePresence>
+      {/* Mobile floating CTA. Part of the first paint: a real link that works before the JavaScript arrives */}
+      <AnimatePresence initial={false}>
         {!ctaCovered && !mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { animate, useInView, useReducedMotion } from "motion/react";
+import { animate, useInView } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 
 interface AnimatedCounterProps {
   end: number;

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 
 interface MarqueeProps {
   children: ReactNode;

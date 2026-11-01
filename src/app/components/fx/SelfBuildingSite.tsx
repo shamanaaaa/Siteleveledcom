@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useInView } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 import { Check, MousePointer2 } from "lucide-react";
 
 type Phase = "skeleton" | "painting" | "finished";

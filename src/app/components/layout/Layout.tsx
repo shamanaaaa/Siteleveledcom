@@ -1,6 +1,5 @@
 import { Outlet, useLocation } from "react-router";
 import { useEffect, useRef } from "react";
-import { motion, useReducedMotion } from "motion/react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { Grain } from "../fx/Grain";
@@ -9,14 +8,12 @@ import { pageFor } from "../../seo/pages";
 
 export function Layout() {
   const location = useLocation();
-  const reducedMotion = useReducedMotion();
   const firstLoad = useRef(true);
   // /mesto/<client>/ is the home page with a building opened: no remount, no scroll reset
   const pageKey = location.pathname.startsWith("/mesto/") ? "/" : location.pathname;
-
-  useEffect(() => {
-    firstLoad.current = false;
-  }, []);
+  // The page the visitor landed on, until they leave it
+  const firstKey = useRef<string | null>(pageKey);
+  if (firstKey.current !== pageKey) firstKey.current = null;
 
   // Unknown paths get theirs from NotFoundPage, /mesto/<client>/ from CityPanel
   useEffect(() => {
@@ -32,21 +29,21 @@ export function Layout() {
         return;
       }
     }
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    // Not on first load: the visitor may have scrolled a pre-rendered page before the JavaScript arrived
+    if (!firstLoad.current) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pageKey, location.hash]);
+
+  useEffect(() => {
+    firstLoad.current = false;
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
       <Navbar />
-      <motion.main
-        key={pageKey}
-        // Only in-app navigation fades: on first load it would delay the largest paint (LCP)
-        initial={reducedMotion || firstLoad.current ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-      >
+      {/* Only in-app navigation fades: on first load it would delay the largest paint (LCP) */}
+      <main key={pageKey} className={firstKey.current === pageKey ? undefined : "page-enter"}>
         <Outlet />
-      </motion.main>
+      </main>
       <Footer />
       <Grain />
     </div>

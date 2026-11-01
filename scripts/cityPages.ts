@@ -132,7 +132,8 @@ export function cityPages(): Plugin {
         res.end(renderOgPng(match[1]));
       });
     },
-    closeBundle() {
+    // Not closeBundle, which also runs after a failed build: dist/ still holds the live site then
+    writeBundle() {
       if (!isBuild) return;
       const indexHtml = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
       fs.mkdirSync(path.join(outDir, "og"), { recursive: true });

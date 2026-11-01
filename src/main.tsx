@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { createBrowserRouter, matchRoutes, RouterProvider } from "react-router";
 import { routes } from "./app/routes";
 import "./styles/index.css";
@@ -19,7 +19,7 @@ async function start() {
   // nginx serves the home page for /index.html as well
   if (location.pathname === "/index.html") history.replaceState(null, "", "/");
 
-  // The first page's code before the first render, so the router has something to show
+  // React can only attach to a pre-rendered page once that page's code is here
   const pending = matchRoutes(routes, location)?.filter(({ route }) => route.lazy) ?? [];
   await Promise.all(
     pending.map(async ({ route }) => {
@@ -28,7 +28,11 @@ async function start() {
   );
 
   router = createBrowserRouter(routes);
-  createRoot(document.getElementById("root")!).render(<RouterProvider router={router} />);
+  const app = <RouterProvider router={router} />;
+  const root = document.getElementById("root")!;
+  // /seo-audit/admin/ and /mesto/<client>/ aren't pre-rendered
+  if (root.hasChildNodes()) hydrateRoot(root, app);
+  else createRoot(root).render(app);
 }
 
 start();

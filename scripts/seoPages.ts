@@ -1,14 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Plugin } from "vite";
-import { IMAGE_SIZES, imageSrcSet } from "../src/app/lib/images";
+import { createServer, type Plugin } from "vite";
 import { NOT_FOUND, PAGES, SITE, type PageMeta } from "../src/app/seo/pages";
 
 /*
  * Build-time heads for every route in src/app/seo/pages.ts. nginx serves dist/ as static files
  * and falls back to index.html, so without a file per route every URL would carry the home
  * page's title. Writes:
- *   dist/index.html, dist/<path>/index.html   own title, description, canonical, og:url, JSON-LD
+ *   dist/index.html, dist/<path>/index.html   own title, description, canonical, og:url, JSON-LD,
+ *                                              and the page itself as HTML (src/entry-prerender.tsx)
  *   dist/404.html                              noindex, for nginx's error_page once it has one
  *   dist/sitemap.xml, dist/robots.txt
  * Must run after cityPages, which copies dist/index.html for the /mesto/<id>/ pages.
@@ -161,7 +161,7 @@ const escapeHtml = (value: string) =>
 // "</script>" inside a string would end the tag early
 const scriptJson = (data: object) => JSON.stringify(data).replace(/</g, "\\u003c");
 
-function pageHtml(template: string, page: PageMeta, pageCode: string[]) {
+function pageHtml(template: string, page: PageMeta, body: string | undefined, pageCode: string[]) {
   const indexable = !page.robots?.includes("noindex");
   const url = SITE + page.path;
   const tags = indexable
@@ -171,24 +171,21 @@ function pageHtml(template: string, page: PageMeta, pageCode: string[]) {
         `<script type="application/ld+json">${scriptJson(jsonLd(page))}</script>`,
       ]
     : [`<meta name="robots" content="${page.robots}" />`];
-  if (page.heroImage) {
-    const { src, width } = page.heroImage;
-    const files = width ? `imagesrcset="${imageSrcSet(src, width)}" imagesizes="${IMAGE_SIZES}"` : `href="${src}"`;
-    tags.push(`<link rel="preload" as="image" ${files} fetchpriority="high" />`);
-  }
   for (const file of pageCode) tags.push(`<link rel="modulepreload" href="/${file}" />`);
   return template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(page.title)}</title>`)
     .replace(/<meta\s+name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(page.description)}" />`)
     .replace(/<meta\s+property="og:title"[\s\S]*?\/>/, `<meta property="og:title" content="${escapeHtml(page.title)}" />`)
     .replace(/<meta\s+property="og:description"[\s\S]*?\/>/, `<meta property="og:description" content="${escapeHtml(page.description)}" />`)
-    .replace("</head>", `  ${tags.join("\n    ")}\n  </head>`);
+    .replace("</head>", `  ${tags.join("\n    ")}\n  </head>`)
+    .replace('<div id="root"></div>', () => `<div id="root">${body ?? ""}</div>`);
 }
 
 export function seoPages(): Plugin {
   let root = "";
   let outDir = "";
   let isBuild = false;
+  const bodies = new Map<string, string>();
   const pageCode = new Map<string, string[]>();
   return {
     name: "siteleveled-seo-pages",
@@ -197,7 +194,7 @@ export function seoPages(): Plugin {
       outDir = path.resolve(config.root, config.build.outDir);
       isBuild = config.command === "build";
     },
-    buildStart() {
+    async buildStart() {
       if (!isBuild) return;
       // Dynamic routes (mesto/:slug, *) have no page of their own
       const routes = fs.readFileSync(path.join(root, "src/app/routes.ts"), "utf8");
@@ -214,6 +211,24 @@ export function seoPages(): Plugin {
       );
       if (noPhoneVersion.length) {
         this.error(`No 720 px wide -720.webp version of ${noPhoneVersion.join(", ")} in public/: it would break on phones`);
+      }
+
+      // Here, before dist/ is emptied: a page that can't render stops the build and the live site stays as it is
+      const server = await createServer({
+        root,
+        mode: "production",
+        appType: "custom",
+        logLevel: "error",
+        optimizeDeps: { noDiscovery: true },
+        server: { middlewareMode: true, hmr: false, ws: false },
+      });
+      try {
+        const { render } = await server.ssrLoadModule("/src/entry-prerender.tsx");
+        for (const page of [...PAGES, NOT_FOUND]) {
+          if (!page.clientOnly) bodies.set(page.path, await render(page.path));
+        }
+      } finally {
+        await server.close();
       }
     },
     // Which code files each page needs, so its HTML can name them and they don't start late
@@ -232,15 +247,16 @@ export function seoPages(): Plugin {
         pageCode.set(pagePath, [chunk.fileName, ...chunk.imports.filter((file) => !entries.has(file))]);
       }
     },
-    closeBundle() {
+    // Not closeBundle, which also runs after a failed build: dist/ still holds the live site then
+    writeBundle() {
       if (!isBuild) return;
       const template = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
       for (const page of PAGES) {
         const dir = path.join(outDir, page.path);
         fs.mkdirSync(dir, { recursive: true });
-        fs.writeFileSync(path.join(dir, "index.html"), pageHtml(template, page, pageCode.get(page.path) ?? []));
+        fs.writeFileSync(path.join(dir, "index.html"), pageHtml(template, page, bodies.get(page.path), pageCode.get(page.path) ?? []));
       }
-      fs.writeFileSync(path.join(outDir, "404.html"), pageHtml(template, NOT_FOUND, pageCode.get(NOT_FOUND.path) ?? []));
+      fs.writeFileSync(path.join(outDir, "404.html"), pageHtml(template, NOT_FOUND, bodies.get(NOT_FOUND.path), pageCode.get(NOT_FOUND.path) ?? []));
 
       const urls = PAGES.filter((p) => !p.robots).map((p) => `  <url><loc>${SITE}${p.path}</loc></url>`);
       fs.writeFileSync(

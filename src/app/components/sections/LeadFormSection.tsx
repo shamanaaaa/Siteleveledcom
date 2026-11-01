@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
+import { useTypedBeforeLoad } from "../../lib/useTypedBeforeLoad";
 import { CheckCircle2, Send } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 
@@ -45,6 +46,7 @@ export function LeadFormSection() {
       });
     }
   };
+  useTypedBeforeLoad("lead-form", handleChange);
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -103,6 +105,7 @@ export function LeadFormSection() {
             {!submitted ? (
               <motion.form
                 key="form"
+                id="lead-form"
                 onSubmit={handleSubmit}
                 className="relative space-y-5 overflow-hidden rounded-card border border-white/8 bg-surface-1 p-8"
                 initial={{ opacity: 1 }}
@@ -119,6 +122,7 @@ export function LeadFormSection() {
                     </label>
                     <input
                       id="lead-name"
+                      name="name"
                       type="text"
                       autoComplete="name"
                       value={formData.name}
@@ -136,6 +140,7 @@ export function LeadFormSection() {
                     </label>
                     <input
                       id="lead-email"
+                      name="email"
                       type="email"
                       autoComplete="email"
                       value={formData.email}
@@ -153,6 +158,7 @@ export function LeadFormSection() {
                     </label>
                     <input
                       id="lead-company"
+                      name="company"
                       type="text"
                       autoComplete="organization"
                       value={formData.company}
@@ -170,6 +176,7 @@ export function LeadFormSection() {
                     </label>
                     <input
                       id="lead-web"
+                      name="webUrl"
                       type="text"
                       inputMode="url"
                       autoComplete="url"

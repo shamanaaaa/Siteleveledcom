@@ -1,5 +1,6 @@
 import { useRef, type CSSProperties, type ReactNode } from "react";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionStyle, type MotionValue } from "motion/react";
+import { motion, useScroll, useTransform, type MotionStyle, type MotionValue } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 import { Link } from "react-router";
 import { ExternalLink } from "lucide-react";
 import { MagneticButton } from "../fx/MagneticButton";

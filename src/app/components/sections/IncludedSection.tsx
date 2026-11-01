@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useInView, useReducedMotion } from "motion/react";
+import { useInView } from "motion/react";
+import { useReducedMotion } from "../../lib/useReducedMotion";
 import { AnimateIn } from "../AnimateIn";
 import { ProposalLayers } from "../fx/ProposalLayers";
 import { SectionHeading } from "../fx/SectionHeading";

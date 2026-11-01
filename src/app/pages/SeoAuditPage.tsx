@@ -9,6 +9,7 @@ import { GlowCard } from "../components/fx/GlowCard";
 import { MagneticButton } from "../components/fx/MagneticButton";
 import { PageHero } from "../components/fx/PageHero";
 import { SectionHeading } from "../components/fx/SectionHeading";
+import { useTypedBeforeLoad } from "../lib/useTypedBeforeLoad";
 import { inputBase, inputDefaultBorder, inputErrorBorder, labelBase } from "../components/forms/fieldStyles";
 
 export type Category = "performance" | "accessibility" | "best-practices" | "seo";
@@ -291,6 +292,7 @@ export function SeoAuditPage() {
   const [job, setJob] = useState<AuditJob | null>(null);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  useTypedBeforeLoad("audit-form", (name, value) => (name === "url" ? setUrl(value) : setAccessCode(value)));
 
   useEffect(() => {
     fetch("/api/seo-audit/config")
@@ -403,7 +405,7 @@ export function SeoAuditPage() {
                   transition={{ duration: 0.25 }}
                 >
                   {view === "form" && (
-                    <form onSubmit={handleSubmit} noValidate>
+                    <form id="audit-form" onSubmit={handleSubmit} noValidate>
                       <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
                         <div className="flex-1">
                           <label htmlFor="audit-url" className={labelBase}>
@@ -411,6 +413,7 @@ export function SeoAuditPage() {
                           </label>
                           <input
                             id="audit-url"
+                            name="url"
                             type="text"
                             inputMode="url"
                             autoComplete="url"
@@ -427,6 +430,7 @@ export function SeoAuditPage() {
                             </label>
                             <input
                               id="audit-code"
+                              name="accessCode"
                               type="text"
                               autoComplete="off"
                               value={accessCode}

@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "motion/react";
+import { useReveal } from "../../lib/useReveal";
 
 export interface KineticSegment {
   text: string;
@@ -17,62 +17,30 @@ interface KineticHeadingProps {
   inView?: boolean;
 }
 
-const motionTags = { h1: motion.h1, h2: motion.h2, h3: motion.h3, p: motion.p } as const;
-
-const containerVariants = (stagger: number, delay: number) => ({
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: stagger, delayChildren: delay },
-  },
-});
-
-const wordVariants = {
-  hidden: { y: "115%" },
-  visible: {
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 export function KineticHeading({
-  as = "h2",
+  as: Tag = "h2",
   segments,
   className = "",
   delay = 0,
   stagger = 0.055,
   inView = true,
 }: KineticHeadingProps) {
-  const reducedMotion = useReducedMotion();
+  const ref = useReveal<HTMLElement>(inView);
   const label = segments.map((s) => s.text).join(" ");
-
-  if (reducedMotion) {
-    const StaticTag = as;
-    return (
-      <StaticTag className={className}>
-        {segments.map((s, i) => (
-          <span key={i} className={s.className}>
-            {s.text}
-            {s.br ? <br /> : i < segments.length - 1 ? " " : null}
-          </span>
-        ))}
-      </StaticTag>
-    );
-  }
-
-  const MotionTag = motionTags[as];
-  const viewProps = inView
-    ? { whileInView: "visible" as const, viewport: { once: true, margin: "-60px" } }
-    : { animate: "visible" as const };
   // A paragraph can't be named with aria-label, so there the words are read as they are
-  const labelled = as !== "p";
+  const labelled = Tag !== "p";
+  let wordIndex = 0;
 
   return (
-    <MotionTag
+    // The reveal is CSS (theme.css). On the first screen data-shown is there from the start,
+    // so a pre-rendered heading animates in without waiting for the JavaScript
+    <Tag
+      // Every tag this can be is an HTMLElement
+      ref={ref as never}
+      data-kinetic=""
+      data-shown={inView ? undefined : ""}
       className={className}
       aria-label={labelled ? label : undefined}
-      initial="hidden"
-      variants={containerVariants(stagger, delay)}
-      {...viewProps}
     >
       {segments.map((segment, si) => (
         <span key={si} aria-hidden={labelled || undefined}>
@@ -84,19 +52,20 @@ export function KineticHeading({
               className="inline-block overflow-hidden align-bottom pt-[0.1em] -mt-[0.1em] pb-[0.12em] -mb-[0.12em]"
             >
               {/* segment className (e.g. text-gradient-primary) must sit on the word:
-                  background-clip:text cannot paint through transformed child layers */}
-              <motion.span
-                variants={wordVariants}
-                className={`inline-block will-change-transform ${segment.className ?? ""}`}
+                  background-clip:text cannot paint through transformed child layers.
+                  whitespace-pre: the browser would otherwise drop the space at the end of the word */}
+              <span
+                className={`kinetic-word inline-block whitespace-pre ${segment.className ?? ""}`}
+                style={{ animationDelay: `${delay + stagger * wordIndex++}s` }}
               >
                 {word}
-                {wi < words.length - 1 ? " " : ""}
-              </motion.span>
+                {wi < words.length - 1 ? " " : ""}
+              </span>
             </span>
           ))}
           {segment.br ? <br /> : si < segments.length - 1 ? " " : null}
         </span>
       ))}
-    </MotionTag>
+    </Tag>
   );
 }

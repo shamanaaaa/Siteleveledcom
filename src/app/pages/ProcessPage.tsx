@@ -6,7 +6,8 @@ import {
   CheckCircle2,
   TrendingUp,
 } from "lucide-react";
-import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
+import { useReducedMotion } from "../lib/useReducedMotion";
 import { AnimateIn } from "../components/AnimateIn";
 import { Aurora } from "../components/fx/Aurora";
 import { GlowCard } from "../components/fx/GlowCard";

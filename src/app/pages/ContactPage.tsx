@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { AnimateIn } from "../components/AnimateIn";
 import { motion, AnimatePresence } from "motion/react";
+import { useTypedBeforeLoad } from "../lib/useTypedBeforeLoad";
 import { GlowCard } from "../components/fx/GlowCard";
 import { PageHero } from "../components/fx/PageHero";
 import {
@@ -109,6 +110,7 @@ export function ContactPage() {
       });
     }
   };
+  useTypedBeforeLoad("contact-form", handleChange);
 
   return (
     <>
@@ -137,6 +139,7 @@ export function ContactPage() {
                     {!submitted ? (
                       <motion.form
                         key="form"
+                        id="contact-form"
                         onSubmit={handleSubmit}
                         className="space-y-5"
                         initial={{ opacity: 1 }}
