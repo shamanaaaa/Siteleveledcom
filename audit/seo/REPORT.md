@@ -8,9 +8,9 @@ All evidence is under `audit/seo/raw/` and every script used is in `audit/seo/sc
 >
 > | | Findings |
 > |---|---|
-> | **Done in code** (`293d710` and later) | F-01, F-02, F-03, F-06, F-10, F-11, F-12, F-13 (hero cap), F-14, F-15, F-16 (noindex), F-17 (privacy policy at `/ochrana-osobnych-udajov/`, dead links removed), F-18 (fonts self-hosted), F-22, F-25, F-27 (alt text), F-29; F-08 on inner pages; F-26 in the footer; the "68 %" claim from F-30 removed |
+> | **Done in code** (`293d710` and later) | F-05 (every page pre-rendered at build, except `/seo-audit/admin/` and `/mesto/*`), F-19 (each page loads its own code; `motion` stays in the main bundle), F-01, F-02, F-03, F-06, F-10, F-11, F-12, F-13 (hero cap), F-14, F-15, F-16 (noindex), F-17 (privacy policy at `/ochrana-osobnych-udajov/`, dead links removed), F-18 (fonts self-hosted), F-22, F-25, F-27 (alt text), F-29; F-08 on inner pages; F-26 in the footer; the "68 %" claim from F-30 removed |
 > | **Done in nginx** (§5.3, hand-edited vhost on the VPS) | F-04, F-09, real 404s for F-03, F-28; old `/mesto/fotkynavyber/` links 301 to `/` |
-> | **Still open** | F-05 (pre-render), F-07 (analytics), F-19 (code splitting), F-20 and F-21 (content), the home h1 (F-08), image `width`/`height` (F-27), F-23, F-24, F-30 services, F-31 and §9 (owner decisions) |
+> | **Still open** | F-07 (analytics), F-20 and F-21 (content), the home h1 (F-08), image `width`/`height` (F-27), F-23, F-24, F-30 services, F-31 and §9 (owner decisions) |
 >
 > nginx no longer falls back to `index.html`, so every route needs an entry in `src/app/seo/pages.ts`. The build fails without one.
 >
@@ -21,6 +21,10 @@ All evidence is under `audit/seo/raw/` and every script used is in `audit/seo/sc
 > **Live check of those fixes** (`da9b3f3`, `raw/after-fades-2026-11-01/`). Default mode, 9 pages: mobile performance median 93 → 96, LCP 2.96 → 2.46 s. Real throttling: `/`, `/cennik/` and `/sluzby/` have LCP 2.8–3.5 s and CLS 0.031, 0.000 and 0.001; `/portfolio/` is still 6.3 s.
 >
 > **Pages led by an image, and the home heading** (real throttling, local copy, two runs each). The HTML now names the first image so it downloads from the start, phones get 720 px versions, and images below the fold load lazily. LCP: `/portfolio/` 6.2 → 3.0–3.2 s, `/blog/` 4.75 → 2.8–2.9 s, `/o-nas/` 3.83 → 2.9–3.1 s. First paint on these pages is up to 0.3 s later, because the image shares the connection with the JavaScript. Keeping "úplne zadarmo." on one line took home CLS from 0.031 to 0.002 (0.081 → 0.004 at the emulated phone size without throttling). LCP under real throttling is still above 2.5 s; what remains is mainly the JavaScript bundle (F-05, F-19).
+>
+> **Live check of the image fix** (`1e12458`, `raw/after-images-2026-11-01/`). Default mode, 9 pages: mobile performance median 96 → 97, LCP 2.46 → 2.19 s, largest CLS 0.081 → 0.004. Real throttling, three runs each: LCP on `/portfolio/` 3.0–3.1 s, `/blog/` 2.8–3.0 s, `/o-nas/` 3.1–3.3 s, `/` 3.0–3.3 s, `/cennik/` 2.8–2.9 s with one slow run at 4.1 s.
+>
+> **Pre-rendering and code splitting** (real throttling, local copy, two runs each, against the build then live). LCP: `/` 3.02 → 1.91–1.94 s, `/sluzby/` 2.67–2.74 → 1.63–1.65 s, `/cennik/` 2.67 → 1.63–1.66 s, `/portfolio/` 2.84–2.85 → 1.76–1.86 s, `/o-nas/` 2.91–3.17 → 1.76–1.81 s, `/blog/` 2.78–2.99 → 1.67–1.72 s, `/kontakt/` 2.65–2.77 → 1.61–1.64 s, `/seo-audit/` 2.68–2.74 → 1.66–1.68 s. JavaScript 176 → 133–140 kB on inner pages, 163 kB on home. Blocking time rose on every page, because the same work now happens after first paint, where it counts: home 65–187 → 210–358 ms, the other pages 0–46 ms → 81–190 ms, except `/blog/` at 289 ms and `/portfolio/` at 720 ms in one run each. On home, removing the city animation and attaching React section by section both made no clear difference.
 
 ---
 
