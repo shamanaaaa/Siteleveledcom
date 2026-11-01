@@ -8,9 +8,9 @@ All evidence is under `audit/seo/raw/` and every script used is in `audit/seo/sc
 >
 > | | Findings |
 > |---|---|
-> | **Done in code** (`293d710`) | F-01, F-02, F-03, F-06, F-10, F-11, F-12, F-13 (hero cap), F-14, F-15, F-16 (noindex), F-18, F-22, F-25, F-27 (alt text), F-29; F-08 on inner pages; F-17 dead links removed; F-26 in the footer; the "68 %" claim from F-30 removed |
-> | **Done in nginx** (§5.3, hand-edited vhost on the VPS) | F-04, F-09, real 404s for F-03, F-28 except `server_tokens off` |
-> | **Still open** | F-05 (pre-render), F-07 (analytics), F-19 (code splitting), F-20 and F-21 (content), the home h1 (F-08), the privacy policy (F-17), image `width`/`height` (F-27), F-23, F-24, F-30 services, F-31 and §9 (owner decisions) |
+> | **Done in code** (`293d710` and later) | F-01, F-02, F-03, F-06, F-10, F-11, F-12, F-13 (hero cap), F-14, F-15, F-16 (noindex), F-17 (privacy policy at `/ochrana-osobnych-udajov/`, dead links removed), F-18 (fonts self-hosted), F-22, F-25, F-27 (alt text), F-29; F-08 on inner pages; F-26 in the footer; the "68 %" claim from F-30 removed |
+> | **Done in nginx** (§5.3, hand-edited vhost on the VPS) | F-04, F-09, real 404s for F-03, F-28; old `/mesto/fotkynavyber/` links 301 to `/` |
+> | **Still open** | F-05 (pre-render), F-07 (analytics), F-19 (code splitting), F-20 and F-21 (content), the home h1 (F-08), image `width`/`height` (F-27), F-23, F-24, F-30 services, F-31 and §9 (owner decisions) |
 >
 > nginx no longer falls back to `index.html`, so every route needs an entry in `src/app/seo/pages.ts`. The build fails without one.
 
