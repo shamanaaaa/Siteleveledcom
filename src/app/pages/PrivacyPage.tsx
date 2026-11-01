@@ -59,7 +59,7 @@ const retention = [
   ["Dopyt, z ktorého nebola spolupráca", "12 mesiacov od poslednej komunikácie, potom ho vymažeme"],
   ["Klienti", "počas spolupráce; účtovné doklady 10 rokov podľa zákona č. 431/2002 Z. z. o účtovníctve"],
   ["SEO audit", "výsledky 30 dní, potom sa automaticky vymažú; IP adresa pre denný limit zostáva len v pamäti servera, najviac 24 hodín"],
-  ["Zálohy servera", "raz týždenne, uchovávame ich najviac 3 týždne; výsledky SEO auditov v nich preto môžu zostať ešte najviac 3 týždne po vymazaní zo servera"],
+  ["Zálohy servera", "denné zálohy celého servera uchováva Contabo 10 dní, naše týždenné zálohy najviac 3 týždne; údaje vymazané zo servera (napríklad výsledky SEO auditov alebo technické záznamy) v nich preto môžu zostať ešte najviac 3 týždne"],
   ["Technické záznamy servera", "prístupové záznamy 15 dní, chybové a systémové záznamy najviac 5 týždňov"],
 ];
 
@@ -171,7 +171,7 @@ export function PrivacyPage() {
           <ul className="list-disc space-y-2 pl-5">
             <li>
               <strong className="font-semibold text-[#F5F5F0]">Contabo GmbH</strong> (Nemecko) prevádzkuje server v
-              Európskej únii, na ktorom beží tento web aj SEO audit.
+              Európskej únii, na ktorom beží tento web aj SEO audit, a robí jeho denné zálohy.
             </li>
             <li>
               <strong className="font-semibold text-[#F5F5F0]">Google Ireland Limited</strong> (Írsko) poskytuje
