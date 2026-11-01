@@ -5,3 +5,4 @@ raw/render/*.png
 raw/lighthouse/*.html
 raw/lighthouse/*.json
 raw/unlighthouse/
+raw/after-*/lighthouse/

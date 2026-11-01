@@ -38,18 +38,13 @@ export function HeroSection() {
         <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12">
           {/* Copy column */}
           <div className="text-center lg:text-left">
-            <motion.div
-              initial={reducedMotion ? false : { opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#1AFF8C]/20 bg-[#1AFF8C]/5 px-4 py-1.5">
-                <div className="h-2 w-2 rounded-full bg-[#1AFF8C]" />
-                <span className="text-[0.8rem] text-[#1AFF8C]">
-                  Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy
-                </span>
-              </div>
-            </motion.div>
+            {/* The copy doesn't fade in: from opacity 0 it delays the largest paint (LCP) by about a second */}
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#1AFF8C]/20 bg-[#1AFF8C]/5 px-4 py-1.5">
+              <div className="h-2 w-2 rounded-full bg-[#1AFF8C]" />
+              <span className="text-[0.8rem] text-[#1AFF8C]">
+                Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy
+              </span>
+            </div>
 
             <KineticHeading
               as="h1"
@@ -62,35 +57,20 @@ export function HeroSection() {
               className="mb-6 font-heading text-display-2 font-bold"
             />
 
-            <motion.p
-              initial={reducedMotion ? false : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.45 }}
-              className="mx-auto mb-9 max-w-xl text-[1rem] leading-relaxed text-[#F5F5F0]/60 sm:text-[1.15rem] lg:mx-0"
-            >
+            <p className="mx-auto mb-9 max-w-xl text-[1rem] leading-relaxed text-[#F5F5F0]/60 sm:text-[1.15rem] lg:mx-0">
               Vyplňte krátky formulár. My sa postaráme o zvyšok.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={reducedMotion ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mb-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
-            >
+            <div className="mb-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
               <MagneticButton size="lg" onClick={scrollToForm}>
                 Chcem návrh zadarmo
               </MagneticButton>
               <MagneticButton variant="ghost" href="#portfolio" arrow={false}>
                 Pozrieť portfólio
               </MagneticButton>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={reducedMotion ? false : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex items-center justify-center gap-3 lg:justify-start"
-            >
+            <div className="flex items-center justify-center gap-3 lg:justify-start">
               <div className="flex -space-x-2">
                 {["ZK", "ZK", "JB"].map((initials, i) => (
                   <div
@@ -104,7 +84,7 @@ export function HeroSection() {
               <a href="#referencie" className="text-[0.8rem] text-[#F5F5F0]/40 transition-colors hover:text-[#F5F5F0]/70">
                 Klienti nás <span className="text-[#F5F5F0]/70">odporúčajú na Facebooku</span>
               </a>
-            </motion.div>
+            </div>
           </div>
 
           {/* Client city: every building is a client's website */}

@@ -51,7 +51,7 @@ export function AboutPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Photo side */}
-            <AnimateIn direction="left">
+            <div>
               <div className="relative">
                 <div className="rounded-card bg-gradient-to-br from-[#6C63FF] via-[#9F97FF]/60 to-[#00D9FF]/50 p-[2px]">
                   <div className="overflow-hidden rounded-[calc(1.25rem-2px)]">
@@ -77,10 +77,10 @@ export function AboutPage() {
                   </div>
                 </div>
               </div>
-            </AnimateIn>
+            </div>
 
             {/* Text side */}
-            <AnimateIn direction="right">
+            <div>
               <div>
                 <h2 className="mb-6 font-heading text-[1.25rem] text-[#F5F5F0]/60">
                   Mário Doman — vývojár. Mária Domanová — konateľka DOMAN s.r.o.
@@ -134,7 +134,7 @@ export function AboutPage() {
                   Porozprávajme sa
                 </MagneticButton>
               </div>
-            </AnimateIn>
+            </div>
           </div>
         </div>
       </section>

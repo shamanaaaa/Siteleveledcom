@@ -7,8 +7,9 @@ OUT="${2:-audit/seo/raw/lighthouse}"
 mkdir -p "$OUT"
 export CHROME_PATH="$HOME/.cache/puppeteer/chrome/linux-155.0.8059.79/chrome-linux64/chrome"
 LH=server/node_modules/.bin/lighthouse
-for route in / /sluzby /portfolio /proces /o-nas /cennik /blog /kontakt /seo-audit; do
-  slug=$([ "$route" = "/" ] && echo home || echo "${route#/}" | tr '/' '_')
+# Canonical URLs: without the trailing slash nginx adds a 301 that visitors following links never hit
+for route in / /sluzby/ /portfolio/ /proces/ /o-nas/ /cennik/ /blog/ /kontakt/ /seo-audit/; do
+  slug=$([ "$route" = "/" ] && echo home || echo "$route" | tr -d '/')
   for preset in mobile desktop; do
     extra=()
     [ "$preset" = desktop ] && extra=(--preset=desktop)

@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
@@ -10,8 +10,13 @@ import { pageFor } from "../../seo/pages";
 export function Layout() {
   const location = useLocation();
   const reducedMotion = useReducedMotion();
+  const firstLoad = useRef(true);
   // /mesto/<client>/ is the home page with a building opened: no remount, no scroll reset
   const pageKey = location.pathname.startsWith("/mesto/") ? "/" : location.pathname;
+
+  useEffect(() => {
+    firstLoad.current = false;
+  }, []);
 
   // Unknown paths get theirs from NotFoundPage, /mesto/<client>/ from CityPanel
   useEffect(() => {
@@ -35,7 +40,8 @@ export function Layout() {
       <Navbar />
       <motion.main
         key={pageKey}
-        initial={reducedMotion ? false : { opacity: 0, y: 12 }}
+        // Only in-app navigation fades: on first load it would delay the largest paint (LCP)
+        initial={reducedMotion || firstLoad.current ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
       >

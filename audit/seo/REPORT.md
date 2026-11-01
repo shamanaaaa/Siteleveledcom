@@ -13,6 +13,10 @@ All evidence is under `audit/seo/raw/` and every script used is in `audit/seo/sc
 > | **Still open** | F-05 (pre-render), F-07 (analytics), F-19 (code splitting), F-20 and F-21 (content), the home h1 (F-08), image `width`/`height` (F-27), F-23, F-24, F-30 services, F-31 and §9 (owner decisions) |
 >
 > nginx no longer falls back to `index.html`, so every route needs an entry in `src/app/seo/pages.ts`. The build fails without one.
+>
+> **Re-measured 2026-11-01 after the fixes** (Lighthouse on production, same 9 pages and machine, canonical URLs; `raw/after-2026-11-01/`). Medians: mobile performance 61 → 93, FCP 6.43 → 1.96 s, LCP 6.48 → 2.96 s, page weight 846 → 380 kB; desktop performance 91 → 100; SEO 91 → 100, except `/blog` at 66 because of its intended noindex. Forcing reduced motion on `/`, `/cennik/`, `/sluzby/` and `/kontakt/` brings mobile LCP to about 2.03 s, so the entrance animations cost about 0.9 s. These are lab numbers from one machine, and single runs vary (one `/blog/` re-run had 1,341 ms of blocking time; the others had 52 and 57 ms).
+>
+> **Under real throttling** (`--throttling-method=devtools`, on a local HTTP/2 copy of the site), the old build also showed CLS 0.11–0.26 on `/`, `/cennik/` and `/sluzby/` as the web fonts swapped in. Lighthouse's default simulated mode doesn't see this. First-screen fades were then removed and width-matched fallback fonts added (`src/styles/fonts.css`): on pages whose largest element is text, LCP now equals FCP (about 2.6–3.3 s, from 3.6–4.0 s) and CLS is at most 0.031. `/portfolio/`, `/blog/` and `/o-nas/` have an image as their largest element and did not improve (6.75, 4.73 and 3.85 s in single runs).
 
 ---
 

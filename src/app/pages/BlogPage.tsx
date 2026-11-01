@@ -118,7 +118,7 @@ export function BlogPage() {
       {featured && (
         <section className="pb-12">
           <div className="mx-auto max-w-7xl px-6">
-            <AnimateIn>
+            <div>
               <GlowCard>
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="aspect-[16/10] overflow-hidden lg:aspect-auto">
@@ -149,7 +149,7 @@ export function BlogPage() {
                   </div>
                 </div>
               </GlowCard>
-            </AnimateIn>
+            </div>
           </div>
         </section>
       )}
