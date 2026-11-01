@@ -134,10 +134,10 @@ export function Footer() {
             </p>
             <div className="flex flex-col gap-3 text-[0.875rem] text-[#F5F5F0]/60">
               <a
-                href="mailto:domansro@gmail.com"
+                href="mailto:info@siteleveled.com"
                 className="transition-colors hover:text-[#9F97FF]"
               >
-                domansro@gmail.com
+                info@siteleveled.com
               </a>
               <a href="tel:+421910803993" className="transition-colors hover:text-[#9F97FF]">
                 0910 803 993
@@ -167,6 +167,12 @@ export function Footer() {
           <p className="text-[0.8rem] text-[#F5F5F0]/50">
             &copy; {new Date().getFullYear()} siteleveled.com – DOMAN s.r.o.
           </p>
+          <Link
+            to="/ochrana-osobnych-udajov/"
+            className="text-[0.8rem] text-[#F5F5F0]/50 transition-colors hover:text-[#9F97FF]"
+          >
+            Ochrana osobných údajov
+          </Link>
         </div>
       </div>
 

@@ -11,6 +11,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { SeoAuditPage } from "./pages/SeoAuditPage";
 import { SeoAuditAdminPage } from "./pages/SeoAuditAdminPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
 
 // Every route here needs an entry in src/app/seo/pages.ts: production nginx 404s paths without
 // a static file, and the build fails without one
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
       { path: "kontakt", Component: ContactPage },
       { path: "seo-audit", Component: SeoAuditPage },
       { path: "seo-audit/admin", Component: SeoAuditAdminPage },
+      { path: "ochrana-osobnych-udajov", Component: PrivacyPage },
       // Share link of a client's building in the hero city: the home page with it opened
       { path: "mesto/:slug", Component: HomePage },
       // nginx serves dist/index.html for /index.html as well

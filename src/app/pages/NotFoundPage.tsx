@@ -12,11 +12,11 @@ const destinations = [
   { to: "/sluzby/", label: "Služby", text: "Tvorba webu, e-shopu, SEO a správa" },
   { to: "/cennik/", label: "Cenník", text: "Web od 300 €, e-shop od 1 000 €" },
   { to: "/portfolio/", label: "Portfólio", text: "Weby, ktoré sme vytvorili" },
-  { to: "/kontakt/", label: "Kontakt", text: "domansro@gmail.com · 0910 803 993" },
+  { to: "/kontakt/", label: "Kontakt", text: "info@siteleveled.com · 0910 803 993" },
 ];
 
 export function NotFoundPage() {
-  // nginx answers unknown paths with index.html and status 200, so the noindex comes from here
+  // nginx serves 404.html (static noindex) for unknown paths; this covers in-app navigation to one
   useEffect(() => applyHead(NOT_FOUND), []);
 
   return (

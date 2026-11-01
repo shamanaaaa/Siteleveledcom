@@ -177,12 +177,15 @@ function buildConfirmationEmail(name, form) {
     <div style="padding:0 32px 28px;text-align:center;">
       <p style="margin:0;font-size:12px;color:#555;">
         Otázky? Napíšte nám na
-        <a href="mailto:domansro@gmail.com" style="color:#6C63FF;">domansro@gmail.com</a>
+        <a href="mailto:info@siteleveled.com" style="color:#6C63FF;">info@siteleveled.com</a>
       </p>
     </div>
 
     <div style="padding:16px 32px;border-top:1px solid rgba(255,255,255,0.07);text-align:center;">
       <p style="margin:0;font-size:12px;color:#555;">siteleveled.com · DOMAN s.r.o.</p>
+      <p style="margin:6px 0 0;font-size:12px;color:#555;">
+        <a href="https://siteleveled.com/ochrana-osobnych-udajov/" style="color:#555;">Ako spracúvame vaše údaje</a>
+      </p>
     </div>
   </div>
 </body>
@@ -237,8 +240,9 @@ app.post("/api/navrh", async (req, res) => {
 
     res.json({ ok: true });
   } catch (err) {
-    console.error("Email send error:", err);
-    console.error("Form data was:", req.body);
+    // No form fields in the log: the visitor sees the error and can resend, and journald keeps
+    // logs longer than the privacy policy allows for enquiries
+    console.error(`Email send error (${source === "kontakt" ? "kontakt" : "navrh"} form):`, err);
     console.error("SMTP config:", {
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,

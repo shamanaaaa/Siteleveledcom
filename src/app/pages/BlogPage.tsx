@@ -18,8 +18,7 @@ const posts = [
       "Väčšina webov má rovnaké problémy: pomalá rýchlosť, slabé CTA, neprehľadná navigácia. Tu je konkrétny návod, ako ich odstrániť.",
     category: "Dizajn",
     readTime: "5 min",
-    image:
-      "https://images.unsplash.com/photo-1760548425425-e42e77fa38f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXNpZ24lMjBkYXJrJTIwc2NyZWVufGVufDF8fHx8MTc3MTY5Njk2Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "/blog-1.webp",
     featured: true,
   },
   {
@@ -29,8 +28,7 @@ const posts = [
       "Rozložíme si reálne náklady na tvorbu webu — od jednoduchej vizitky po e-commerce. Bez skrytých poplatkov.",
     category: "Marketing",
     readTime: "7 min",
-    image:
-      "https://images.unsplash.com/photo-1532617754634-819393ff5106?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbWFya2V0aW5nJTIwY3JlYXRpdmUlMjBzdHJhdGVneXxlbnwxfHx8fDE3NzE2OTY5NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "/blog-2.webp",
     featured: false,
   },
   {
@@ -40,8 +38,7 @@ const posts = [
       "Každá sekunda načítavania vás stojí zákazníkov. Pozrite si konkrétne dáta a zistite, ako je na tom váš web.",
     category: "SEO",
     readTime: "4 min",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTRU8lMjBhbmFseXRpY3MlMjBkYXNoYm9hcmQlMjBzY3JlZW58ZW58MXx8fHwxNzcxNjk2OTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "/blog-3.webp",
     featured: false,
   },
   {
@@ -51,8 +48,7 @@ const posts = [
       "Google Business profil, lokálne kľúčové slová, recenzie — kompletný návod na to, ako sa zobrazíte zákazníkom vo svojom okolí.",
     category: "SEO",
     readTime: "8 min",
-    image:
-      "https://images.unsplash.com/photo-1753998943228-73470750c597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RlJTIwcHJvZ3JhbW1pbmclMjBkYXJrJTIwdGhlbWV8ZW58MXx8fHwxNzcxNjk2OTYzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "/blog-4.webp",
     featured: false,
   },
   {
@@ -62,8 +58,7 @@ const posts = [
       "Porovnávame výhody a nevýhody oboch prístupov. Kedy sa oplatí šablóna a kedy investovať do custom riešenia.",
     category: "Dizajn",
     readTime: "6 min",
-    image:
-      "https://images.unsplash.com/photo-1634836023845-eddbfe9937da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRldmVsb3BlciUyMHdvcmtzcGFjZSUyMGxhcHRvcCUyMGRhcmt8ZW58MXx8fHwxNzcxNjk2OTYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "/blog-5.webp",
     featured: false,
   },
 ];

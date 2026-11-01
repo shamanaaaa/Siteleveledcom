@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle2, Send } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
+
+const SEND_FAILED = "Odoslanie zlyhalo. Skúste to o chvíľu znova alebo napíšte na info@siteleveled.com.";
 
 const inputClass = (error?: string) =>
   `w-full px-4 py-3 rounded-xl bg-surface-2 border text-[#F5F5F0] placeholder:text-[#F5F5F0]/15 focus:outline-none focus:border-[#6C63FF]/60 focus:ring-2 focus:ring-[#6C63FF]/15 transition-colors text-[0.9rem] ${
@@ -70,15 +73,13 @@ export function LeadFormSection() {
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
-        throw new Error(body.error || "Server error");
+        // While the backend restarts (a few seconds per deploy) nginx answers 502 with HTML, not JSON
+        throw new Error(body.error || SEND_FAILED);
       }
       setSubmitted(true);
     } catch (err) {
-      setSubmitError(
-        err instanceof Error
-          ? err.message
-          : "Odoslanie zlyhalo. Skúste znova alebo napíšte na domansro@gmail.com"
-      );
+      // fetch itself fails with an English TypeError ("Failed to fetch") when the connection drops
+      setSubmitError(err instanceof Error && !(err instanceof TypeError) ? err.message : SEND_FAILED);
     } finally {
       setIsLoading(false);
     }
@@ -208,6 +209,12 @@ export function LeadFormSection() {
                       Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky.
                     </p>
                   )}
+                  <p className="mt-2 text-[0.75rem] text-[#F5F5F0]/50">
+                    Údaje použijeme len na prípravu návrhu a odpoveď vám.{" "}
+                    <Link to="/ochrana-osobnych-udajov/" className="underline transition-colors hover:text-[#9F97FF]">
+                      Ochrana osobných údajov
+                    </Link>
+                  </p>
                 </div>
               </motion.form>
             ) : (

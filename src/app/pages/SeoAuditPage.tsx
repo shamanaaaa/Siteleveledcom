@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Check, ExternalLink, Link2, Loader2, RotateCcw, Search } from "lucide-react";
 import { AnimateIn } from "../components/AnimateIn";
@@ -447,7 +447,11 @@ export function SeoAuditPage() {
                       )}
                       <p className="mt-4 text-[0.8rem] text-[#F5F5F0]/35">
                         Skontrolujeme až {config.maxPages} podstránok. Audit trvá zvyčajne 1–5 minút. Z jednej
-                        IP adresy je možný {auditsPerDay(config.dailyLimit)}.
+                        IP adresy je možný {auditsPerDay(config.dailyLimit)}. Výsledky uchovávame{" "}
+                        {config.retentionDays} dní.{" "}
+                        <Link to="/ochrana-osobnych-udajov/" className="underline transition-colors hover:text-[#9F97FF]">
+                          Ochrana osobných údajov
+                        </Link>
                       </p>
                     </form>
                   )}

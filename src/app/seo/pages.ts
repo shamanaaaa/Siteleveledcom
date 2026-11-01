@@ -65,7 +65,7 @@ export const PAGES: PageMeta[] = [
     name: "Kontakt",
     title: "Kontakt – návrh webu zadarmo do 24 hodín | SiteLeveled",
     description:
-      "Napíšte na domansro@gmail.com alebo zavolajte na 0910 803 993. Návrh vašej novej webstránky pripravíme zadarmo do 24 hodín.",
+      "Napíšte na info@siteleveled.com alebo zavolajte na 0910 803 993. Návrh vašej novej webstránky pripravíme zadarmo do 24 hodín.",
   },
   {
     path: "/seo-audit/",
@@ -73,6 +73,13 @@ export const PAGES: PageMeta[] = [
     title: "SEO audit webu zadarmo – online kontrola | SiteLeveled",
     description:
       "Zadajte adresu webu a o pár minút uvidíte skóre SEO, rýchlosti a prístupnosti pre až 15 podstránok. Bezplatná kontrola nástrojom Lighthouse.",
+  },
+  {
+    path: "/ochrana-osobnych-udajov/",
+    name: "Ochrana osobných údajov",
+    title: "Ochrana osobných údajov | SiteLeveled",
+    description:
+      "Ako DOMAN s.r.o. (SiteLeveled) spracúva údaje z formulárov a SEO auditu, kto k nim má prístup, ako dlho ich uchováva a aké máte práva. Bez cookies.",
   },
   {
     // Placeholder posts without articles: kept out of the index until real ones exist
