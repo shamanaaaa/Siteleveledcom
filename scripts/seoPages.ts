@@ -11,6 +11,8 @@ import { NOT_FOUND, PAGES, SITE, type PageMeta } from "../src/app/seo/pages";
  *   dist/404.html                              noindex, for nginx's error_page once it has one
  *   dist/sitemap.xml, dist/robots.txt
  * Must run after cityPages, which copies dist/index.html for the /mesto/<id>/ pages.
+ * nginx answers a path without a file with 404, so the build fails if a route in
+ * src/app/routes.ts has no entry in PAGES.
  */
 
 const ORG = `${SITE}/#organization`;
@@ -177,13 +179,27 @@ function pageHtml(template: string, page: PageMeta) {
 }
 
 export function seoPages(): Plugin {
+  let root = "";
   let outDir = "";
   let isBuild = false;
   return {
     name: "siteleveled-seo-pages",
     configResolved(config) {
+      root = config.root;
       outDir = path.resolve(config.root, config.build.outDir);
       isBuild = config.command === "build";
+    },
+    buildStart() {
+      if (!isBuild) return;
+      // Dynamic routes (mesto/:slug, *) and the /index.html redirect have no page of their own
+      const routes = fs.readFileSync(path.join(root, "src/app/routes.ts"), "utf8");
+      const missing = [...routes.matchAll(/path:\s*"([^"]+)"/g)]
+        .map((m) => m[1])
+        .filter((p) => p !== "/" && p !== "index.html" && !/[:*]/.test(p))
+        .filter((p) => !PAGES.some((page) => page.path === `/${p}/`));
+      if (missing.length) {
+        this.error(`No entry in src/app/seo/pages.ts for route(s) ${missing.join(", ")}: they would 404 on a direct visit`);
+      }
     },
     closeBundle() {
       if (!isBuild) return;

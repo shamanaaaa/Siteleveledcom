@@ -12,7 +12,8 @@ import { SeoAuditPage } from "./pages/SeoAuditPage";
 import { SeoAuditAdminPage } from "./pages/SeoAuditAdminPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
-// Every route here needs its search metadata in src/app/seo/pages.ts
+// Every route here needs an entry in src/app/seo/pages.ts: production nginx 404s paths without
+// a static file, and the build fails without one
 
 export const router = createBrowserRouter([
   {
