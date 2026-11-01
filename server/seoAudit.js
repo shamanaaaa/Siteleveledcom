@@ -124,16 +124,48 @@ async function normaliseSite(input) {
 }
 
 // ── Rate limit (per IP, rolling 24h) ────────────────────────
+// The privacy policy promises IP addresses stay in memory for 24 hours at most, so they are forgotten on a
+// timer and never go on a job: jobs are saved to disk
 const hits = new Map();
+const refunds = new Map();
+const charges = new Map(); // job id → who started it, and when
 
 const DAY_MS = 24 * 60 * 60 * 1000;
+// A failed audit gives the visitor their turn back, but only this often a day: otherwise a site that
+// fails on purpose would allow unlimited scans
+const MAX_REFUNDS = 2;
+
+function remember(map, ip, at) {
+  map.set(ip, [...(map.get(ip) || []), at]);
+  setTimeout(() => forget(map, ip, at), DAY_MS).unref();
+}
+
+function forget(map, ip, at) {
+  const left = (map.get(ip) || []).filter((t) => t !== at);
+  if (left.length) map.set(ip, left);
+  else map.delete(ip);
+}
 
 /** ms until this IP may start another audit (0 = allowed now) */
 function waitTime(ip) {
-  const now = Date.now();
-  const recent = (hits.get(ip) || []).filter((t) => t > now - DAY_MS);
-  hits.set(ip, recent);
-  return recent.length >= DAILY_LIMIT ? recent[recent.length - DAILY_LIMIT] + DAY_MS - now : 0;
+  const recent = hits.get(ip) || [];
+  return recent.length >= DAILY_LIMIT ? recent[recent.length - DAILY_LIMIT] + DAY_MS - Date.now() : 0;
+}
+
+function charge(ip, jobId) {
+  const at = Date.now();
+  remember(hits, ip, at);
+  charges.set(jobId, { ip, at });
+}
+
+function settle(jobId, ok) {
+  const paid = charges.get(jobId);
+  if (!paid) return; // started by the owner
+  charges.delete(jobId);
+  if (!ok && (refunds.get(paid.ip) || []).length < MAX_REFUNDS) {
+    forget(hits, paid.ip, paid.at);
+    remember(refunds, paid.ip, Date.now());
+  }
 }
 
 function formatWait(ms) {
@@ -211,6 +243,7 @@ function runNext() {
     clearTimeout(timer);
     job.finishedAt = Date.now();
     job.status = ok ? "done" : "failed";
+    settle(job.id, ok);
     if (!ok) {
       job.error = job.error || fallbackError;
       console.error(`SEO audit ${job.id} (${job.site}) failed:`, stderr);
@@ -357,7 +390,7 @@ router.post("/", async (req, res) => {
   }
 
   const job = enqueue(site);
-  hits.get(req.ip).push(Date.now());
+  charge(req.ip, job.id);
   res.status(202).json(publicJob(job));
 });
 
