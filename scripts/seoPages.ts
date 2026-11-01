@@ -161,7 +161,7 @@ const escapeHtml = (value: string) =>
 // "</script>" inside a string would end the tag early
 const scriptJson = (data: object) => JSON.stringify(data).replace(/</g, "\\u003c");
 
-function pageHtml(template: string, page: PageMeta) {
+function pageHtml(template: string, page: PageMeta, pageCode: string[]) {
   const indexable = !page.robots?.includes("noindex");
   const url = SITE + page.path;
   const tags = indexable
@@ -176,6 +176,7 @@ function pageHtml(template: string, page: PageMeta) {
     const files = width ? `imagesrcset="${imageSrcSet(src, width)}" imagesizes="${IMAGE_SIZES}"` : `href="${src}"`;
     tags.push(`<link rel="preload" as="image" ${files} fetchpriority="high" />`);
   }
+  for (const file of pageCode) tags.push(`<link rel="modulepreload" href="/${file}" />`);
   return template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(page.title)}</title>`)
     .replace(/<meta\s+name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(page.description)}" />`)
@@ -188,6 +189,7 @@ export function seoPages(): Plugin {
   let root = "";
   let outDir = "";
   let isBuild = false;
+  const pageCode = new Map<string, string[]>();
   return {
     name: "siteleveled-seo-pages",
     configResolved(config) {
@@ -197,11 +199,11 @@ export function seoPages(): Plugin {
     },
     buildStart() {
       if (!isBuild) return;
-      // Dynamic routes (mesto/:slug, *) and the /index.html redirect have no page of their own
+      // Dynamic routes (mesto/:slug, *) have no page of their own
       const routes = fs.readFileSync(path.join(root, "src/app/routes.ts"), "utf8");
       const missing = [...routes.matchAll(/path:\s*"([^"]+)"/g)]
         .map((m) => m[1])
-        .filter((p) => p !== "/" && p !== "index.html" && !/[:*]/.test(p))
+        .filter((p) => p !== "/" && !/[:*]/.test(p))
         .filter((p) => !PAGES.some((page) => page.path === `/${p}/`));
       if (missing.length) {
         this.error(`No entry in src/app/seo/pages.ts for route(s) ${missing.join(", ")}: they would 404 on a direct visit`);
@@ -214,15 +216,31 @@ export function seoPages(): Plugin {
         this.error(`No 720 px wide -720.webp version of ${noPhoneVersion.join(", ")} in public/: it would break on phones`);
       }
     },
+    // Which code files each page needs, so its HTML can name them and they don't start late
+    generateBundle(_options, bundle) {
+      const routes = fs.readFileSync(path.join(root, "src/app/routes.ts"), "utf8");
+      const chunks = Object.values(bundle).flatMap((file) => (file.type === "chunk" ? [file] : []));
+      const entries = new Set(chunks.filter((chunk) => chunk.isEntry).map((chunk) => chunk.fileName));
+      for (const [, route, module] of routes.matchAll(/(?:path: "([^"]+)"|index: true), lazy: \(\) => import\("\.\/pages\/(\w+)"\)/g)) {
+        const chunk = chunks.find((c) => c.moduleIds.some((id) => id.endsWith(`/pages/${module}.tsx`)));
+        // Only a warning: by this point dist/ is empty, and the page works without the hint
+        if (!chunk) {
+          this.warn(`No code file for ${module}`);
+          continue;
+        }
+        const pagePath = route === "*" ? NOT_FOUND.path : route ? `/${route}/` : "/";
+        pageCode.set(pagePath, [chunk.fileName, ...chunk.imports.filter((file) => !entries.has(file))]);
+      }
+    },
     closeBundle() {
       if (!isBuild) return;
       const template = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
       for (const page of PAGES) {
         const dir = path.join(outDir, page.path);
         fs.mkdirSync(dir, { recursive: true });
-        fs.writeFileSync(path.join(dir, "index.html"), pageHtml(template, page));
+        fs.writeFileSync(path.join(dir, "index.html"), pageHtml(template, page, pageCode.get(page.path) ?? []));
       }
-      fs.writeFileSync(path.join(outDir, "404.html"), pageHtml(template, NOT_FOUND));
+      fs.writeFileSync(path.join(outDir, "404.html"), pageHtml(template, NOT_FOUND, pageCode.get(NOT_FOUND.path) ?? []));
 
       const urls = PAGES.filter((p) => !p.robots).map((p) => `  <url><loc>${SITE}${p.path}</loc></url>`);
       fs.writeFileSync(
