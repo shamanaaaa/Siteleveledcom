@@ -63,17 +63,19 @@ export function KineticHeading({
   const viewProps = inView
     ? { whileInView: "visible" as const, viewport: { once: true, margin: "-60px" } }
     : { animate: "visible" as const };
+  // A paragraph can't be named with aria-label, so there the words are read as they are
+  const labelled = as !== "p";
 
   return (
     <MotionTag
       className={className}
-      aria-label={label}
+      aria-label={labelled ? label : undefined}
       initial="hidden"
       variants={containerVariants(stagger, delay)}
       {...viewProps}
     >
       {segments.map((segment, si) => (
-        <span key={si} aria-hidden>
+        <span key={si} aria-hidden={labelled || undefined}>
           {segment.text.split(" ").map((word, wi, words) => (
             <span
               key={wi}

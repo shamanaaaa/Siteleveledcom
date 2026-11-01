@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useId, useState } from "react";
 import { Plus } from "lucide-react";
 
 interface FaqAccordionProps {
@@ -8,6 +7,7 @@ interface FaqAccordionProps {
 
 export function FaqAccordion({ items }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const id = useId();
 
   return (
     <div className="divide-y divide-white/8 border-y border-white/8">
@@ -18,6 +18,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
             <button
               onClick={() => setOpenIndex(open ? null : i)}
               aria-expanded={open}
+              aria-controls={`${id}-${i}`}
               className="group flex w-full items-center justify-between gap-4 py-5 text-left"
             >
               <span
@@ -37,21 +38,20 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
                 <Plus size={14} />
               </span>
             </button>
-            <AnimatePresence initial={false}>
-              {open && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="overflow-hidden"
-                >
-                  <p className="pb-5 pr-11 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">
-                    {faq.a}
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/* Always in the DOM and only collapsed, so crawlers read the answers (prices, terms) */}
+            <div
+              id={`${id}-${i}`}
+              aria-hidden={!open}
+              className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <p className="pb-5 pr-11 text-[0.875rem] leading-relaxed text-[#F5F5F0]/60">
+                  {faq.a}
+                </p>
+              </div>
+            </div>
           </div>
         );
       })}

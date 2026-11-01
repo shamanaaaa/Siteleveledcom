@@ -1,9 +1,10 @@
+import { Link } from "react-router";
 import { BadgeCheck, MessageCircle, Shield, Users, Zap } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 import { GlowCard } from "../fx/GlowCard";
 import { SectionHeading } from "../fx/SectionHeading";
 
-const benefits = [
+const benefits: { icon: typeof Users; title: string; text: string; link?: { to: string; label: string } }[] = [
   {
     icon: Users,
     title: "Individuálny prístup",
@@ -18,6 +19,7 @@ const benefits = [
     icon: Shield,
     title: "Transparentné ceny",
     text: "Web od 300 €, e-shop od 1 000 €. Žiadna záloha – platíte až po spustení.",
+    link: { to: "/cennik/", label: "Cenník tvorby webu" },
   },
   {
     icon: MessageCircle,
@@ -28,6 +30,7 @@ const benefits = [
     icon: BadgeCheck,
     title: "Skúsenosti",
     text: "Weby, e-shopy aj webové aplikácie. Ukážky nájdete v portfóliu.",
+    link: { to: "/portfolio/", label: "Portfólio projektov" },
   },
 ];
 
@@ -68,6 +71,14 @@ export function WhySection() {
                   <p className="text-[0.85rem] leading-relaxed text-[#F5F5F0]/50">
                     {benefit.text}
                   </p>
+                  {benefit.link && (
+                    <Link
+                      to={benefit.link.to}
+                      className="mt-3 inline-block text-[0.85rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
+                    >
+                      {benefit.link.label} →
+                    </Link>
+                  )}
                 </GlowCard>
               </AnimateIn>
             );

@@ -13,7 +13,7 @@ const categories = ["Všetky", "SEO", "Dizajn", "Marketing", "Case Studies"];
 const posts = [
   {
     id: 1,
-    title: "5 dôvodov, prečo tvoj web stráca zákazníkov (a ako to opraviť)",
+    title: "5 dôvodov, prečo váš web stráca zákazníkov (a ako to opraviť)",
     excerpt:
       "Väčšina webov má rovnaké problémy: pomalá rýchlosť, slabé CTA, neprehľadná navigácia. Tu je konkrétny návod, ako ich odstrániť.",
     category: "Dizajn",
@@ -35,9 +35,9 @@ const posts = [
   },
   {
     id: 3,
-    title: "Prečo rýchlosť webu ovplyvňuje tvoje tržby (s číslami)",
+    title: "Prečo rýchlosť webu ovplyvňuje vaše tržby (s číslami)",
     excerpt:
-      "Každá sekunda načítavania ťa stojí zákazníkov. Pozri si konkrétne dáta a zisti, ako je na tom tvoj web.",
+      "Každá sekunda načítavania vás stojí zákazníkov. Pozrite si konkrétne dáta a zistite, ako je na tom váš web.",
     category: "SEO",
     readTime: "4 min",
     image:
@@ -48,7 +48,7 @@ const posts = [
     id: 4,
     title: "Lokálne SEO pre malé firmy: sprievodca krok za krokom",
     excerpt:
-      "Google Business profil, lokálne kľúčové slová, recenzie — kompletný návod na to, ako sa zobraziš zákazníkom vo svojom okolí.",
+      "Google Business profil, lokálne kľúčové slová, recenzie — kompletný návod na to, ako sa zobrazíte zákazníkom vo svojom okolí.",
     category: "SEO",
     readTime: "8 min",
     image:
@@ -57,7 +57,7 @@ const posts = [
   },
   {
     id: 5,
-    title: "WordPress vs. vlastný kód: Čo je lepšie pre tvoj biznis?",
+    title: "WordPress vs. vlastný kód: Čo je lepšie pre váš biznis?",
     excerpt:
       "Porovnávame výhody a nevýhody oboch prístupov. Kedy sa oplatí šablóna a kedy investovať do custom riešenia.",
     category: "Dizajn",
@@ -82,7 +82,7 @@ export function BlogPage() {
   return (
     <>
       <PageHero
-        eyebrow="Blog"
+        title="Blog o tvorbe webu a SEO"
         segments={[
           { text: "Poznatky z praxe." },
           { text: "Nie teória.", className: "text-gradient-primary" },
@@ -208,7 +208,7 @@ export function BlogPage() {
           <KineticHeading
             as="h2"
             segments={[
-              { text: "Dostávaj tipy" },
+              { text: "Dostávajte tipy" },
               { text: "priamo do mailu.", className: "text-gradient-primary" },
             ]}
             className="mb-4 font-heading text-title font-bold"
@@ -220,7 +220,7 @@ export function BlogPage() {
             <div className="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
               <input
                 type="email"
-                placeholder="tvoj@email.sk"
+                placeholder="vas@email.sk"
                 className="flex-1 rounded-full border border-white/10 bg-surface-1 px-5 py-3 text-[0.9rem] text-[#F5F5F0] placeholder:text-[#F5F5F0]/20 focus:border-[#6C63FF]/40 focus:outline-none"
               />
               <button className="whitespace-nowrap rounded-full bg-[#6C63FF] px-6 py-3 text-[0.9rem] font-semibold text-white transition-all hover:bg-[#7B73FF] hover:shadow-[0_4px_24px_rgba(108,99,255,0.4)]">

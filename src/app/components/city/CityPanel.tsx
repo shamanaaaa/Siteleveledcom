@@ -195,7 +195,7 @@ export function CityPanel({ target, onClose }: { target: PanelTarget; onClose: (
             </li>
           ))}
         </ol>
-        <Link to="/o-nas" className="mt-4 inline-block text-[0.85rem] text-[#9F97FF] hover:text-[#1AFF8C]">
+        <Link to="/o-nas/" className="mt-4 inline-block text-[0.85rem] text-[#9F97FF] hover:text-[#1AFF8C]">
           Kto za tým stojí →
         </Link>
         <Cta prompt="Začnite prvým krokom – formulár zaberie menej ako minútu." onClose={onClose} />

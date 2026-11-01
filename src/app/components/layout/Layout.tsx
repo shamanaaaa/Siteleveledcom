@@ -4,12 +4,20 @@ import { motion, useReducedMotion } from "motion/react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { Grain } from "../fx/Grain";
+import { applyHead } from "../../seo/head";
+import { pageFor } from "../../seo/pages";
 
 export function Layout() {
   const location = useLocation();
   const reducedMotion = useReducedMotion();
   // /mesto/<client>/ is the home page with a building opened: no remount, no scroll reset
   const pageKey = location.pathname.startsWith("/mesto/") ? "/" : location.pathname;
+
+  // Unknown paths get theirs from NotFoundPage, /mesto/<client>/ from CityPanel
+  useEffect(() => {
+    const page = pageFor(location.pathname);
+    if (page) applyHead(page);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (location.hash) {

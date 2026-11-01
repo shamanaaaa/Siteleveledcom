@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, redirect } from "react-router";
 import { Layout } from "./components/layout/Layout";
 import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/ServicesPage";
@@ -10,6 +10,9 @@ import { BlogPage } from "./pages/BlogPage";
 import { ContactPage } from "./pages/ContactPage";
 import { SeoAuditPage } from "./pages/SeoAuditPage";
 import { SeoAuditAdminPage } from "./pages/SeoAuditAdminPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
+
+// Every route here needs its search metadata in src/app/seo/pages.ts
 
 export const router = createBrowserRouter([
   {
@@ -28,10 +31,9 @@ export const router = createBrowserRouter([
       { path: "seo-audit/admin", Component: SeoAuditAdminPage },
       // Share link of a client's building in the hero city: the home page with it opened
       { path: "mesto/:slug", Component: HomePage },
-      {
-        path: "*",
-        Component: HomePage,
-      },
+      // nginx serves dist/index.html for /index.html as well
+      { path: "index.html", loader: () => redirect("/") },
+      { path: "*", Component: NotFoundPage },
     ],
   },
 ]);

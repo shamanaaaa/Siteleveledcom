@@ -3,6 +3,7 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { cityPages } from './scripts/cityPages'
+import { seoPages } from './scripts/seoPages'
 
 export default defineConfig({
   plugins: [
@@ -12,6 +13,8 @@ export default defineConfig({
     tailwindcss(),
     // Share images and /mesto/<client>/ pages for the client city in the hero
     cityPages(),
+    // Per-route <head>, sitemap.xml, robots.txt and 404.html; after cityPages, which copies index.html
+    seoPages(),
   ],
   resolve: {
     alias: {

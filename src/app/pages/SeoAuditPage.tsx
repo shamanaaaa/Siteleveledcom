@@ -56,19 +56,19 @@ const auditsPerDay = (n: number) =>
 const faqs = ({ maxPages, retentionDays }: AuditConfig) => [
   {
     q: "Čo presne audit kontroluje?",
-    a: `Prejdeme až ${maxPages} podstránok tvojho webu nástrojom Google Lighthouse (cez Unlighthouse) a pre každú zmeriame SEO, rýchlosť načítania, prístupnosť a technické osvedčené postupy. Meriame ako na mobile.`,
+    a: `Prejdeme až ${maxPages} podstránok vášho webu nástrojom Google Lighthouse (cez Unlighthouse) a pre každú zmeriame SEO, rýchlosť načítania, prístupnosť a technické osvedčené postupy. Meriame ako na mobile.`,
   },
   {
     q: "Ako dlho to trvá?",
-    a: "Zvyčajne 1–5 minút podľa veľkosti a rýchlosti webu. Stránku môžeš nechať otvorenú, alebo si skopírovať odkaz a vrátiť sa neskôr.",
+    a: "Zvyčajne 1–5 minút podľa veľkosti a rýchlosti webu. Stránku môžete nechať otvorenú alebo si skopírovať odkaz a vrátiť sa neskôr.",
   },
   {
     q: "Prečo mám iné skóre ako v PageSpeed Insights?",
-    a: "Lighthouse meria v simulovaných podmienkach a výsledok sa medzi meraniami mierne líši. Ber skóre ako orientačné – dôležitý je trend a konkrétne odporúčania v detailnom reporte.",
+    a: "Lighthouse meria v simulovaných podmienkach a výsledok sa medzi meraniami mierne líši. Berte skóre ako orientačné – dôležitý je trend a konkrétne odporúčania v detailnom reporte.",
   },
   {
     q: "Ako dlho je report dostupný?",
-    a: `Odkaz na výsledky platí ${retentionDays} dní. Kto má odkaz, report uvidí – zdieľaj ho len s kým chceš.`,
+    a: `Odkaz na výsledky platí ${retentionDays} dní. Kto má odkaz, report uvidí – zdieľajte ho len s tým, s kým chcete.`,
   },
 ];
 
@@ -138,12 +138,12 @@ function Progress({ job }: { job: AuditJob }) {
     <div className="flex flex-col items-center py-10 text-center">
       <Loader2 size={40} className="mb-6 animate-spin text-[#9F97FF]" />
       <p className="mb-2 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">
-        {job.status === "queued" ? "Čakáš v rade" : "Kontrolujeme tvoj web"}
+        {job.status === "queued" ? "Čakáte v rade" : "Kontrolujeme váš web"}
       </p>
       <p className="mb-1 text-[0.9rem] text-[#F5F5F0]/50">{job.site}</p>
       <p className="text-[0.85rem] text-[#F5F5F0]/40">
         {job.status === "queued"
-          ? `Počet auditov pred tebou: ${job.position ?? 1}. Začneme hneď, ako sa uvoľní miesto.`
+          ? `Počet auditov pred vami: ${job.position ?? 1}. Začneme hneď, ako sa uvoľní miesto.`
           : `Prechádzame podstránky a meriame každú z nich. Zvyčajne 1–5 minút${elapsed ? ` · ${elapsed}` : ""}.`}
       </p>
     </div>
@@ -348,7 +348,7 @@ export function SeoAuditPage() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!url.trim()) {
-      setError("Zadaj adresu webu.");
+      setError("Zadajte adresu webu.");
       return;
     }
     setError("");
@@ -382,12 +382,12 @@ export function SeoAuditPage() {
   return (
     <>
       <PageHero
-        eyebrow="SEO audit zadarmo"
+        title="Bezplatný SEO audit webu"
         segments={[
           { text: "Ako na tom je" },
-          { text: "tvoj web?", className: "text-gradient-primary" },
+          { text: "váš web?", className: "text-gradient-primary" },
         ]}
-        sub="Zadaj adresu svojej stránky a do pár minút uvidíš skóre SEO, rýchlosti a prístupnosti pre každú podstránku – rovnakými nástrojmi, aké používa Google."
+        sub="Zadajte adresu svojej stránky a do pár minút uvidíte skóre SEO, rýchlosti a prístupnosti pre každú podstránku – rovnakými nástrojmi, aké používa Google."
       />
 
       <section className="pb-24 pt-4">
@@ -477,9 +477,9 @@ export function SeoAuditPage() {
         <Aurora variant="cta" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
-            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">Skóre nie je také, aké by si chcel?</p>
+            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">Skóre nie je také, aké by ste chceli?</p>
             <p className="mb-8 text-[0.95rem] text-[#F5F5F0]/40">
-              Pripravíme ti návrh rýchlejšieho a lepšie dohľadateľného webu – do 24 hodín, zadarmo.
+              Pripravíme vám návrh rýchlejšieho a lepšie dohľadateľného webu – do 24 hodín, zadarmo.
             </p>
             <MagneticButton to="/#formular" size="lg">
               Chcem návrh zadarmo

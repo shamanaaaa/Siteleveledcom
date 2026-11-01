@@ -10,7 +10,7 @@ const values = [
   {
     icon: Eye,
     title: "Transparentnosť",
-    text: "Vždy vieš, čo platíš a prečo. Žiadne skryté poplatky.",
+    text: "Vždy viete, čo platíte a prečo. Žiadne skryté poplatky.",
   },
   {
     icon: Gem,
@@ -20,7 +20,7 @@ const values = [
   {
     icon: HeartHandshake,
     title: "Dlhodobé partnerstvo",
-    text: "Náš úspech závisí od tvojho úspechu. To nie je klišé — je to obchodný model.",
+    text: "Náš úspech závisí od vášho úspechu. To nie je klišé — je to obchodný model.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="O nás"
+        title="O nás: kto stojí za SiteLeveled"
         segments={[
           { text: "Za siteleveled.com stoja ľudia.", br: true },
           { text: "Nie anonymná agentúra.", className: "text-gradient-primary" },
@@ -95,7 +95,7 @@ export function AboutPage() {
                   <p>
                     Weby, e-shopy a webové aplikácie navrhuje a programuje{" "}
                     <span className="text-[#F5F5F0]/80">Mário Doman</span>. Každý projekt vedie
-                    osobne — od prvého hovoru po finálne spustenie. Zavolať mu môžeš priamo na{" "}
+                    osobne — od prvého hovoru po finálne spustenie. Zavolať mu môžete priamo na{" "}
                     <a href="tel:+421910803993" className="text-[#9F97FF] hover:underline">
                       0910 803 993
                     </a>
@@ -130,7 +130,7 @@ export function AboutPage() {
                   </div>
                 </GlowCard>
 
-                <MagneticButton to="/kontakt" size="lg">
+                <MagneticButton to="/kontakt/" size="lg">
                   Porozprávajme sa
                 </MagneticButton>
               </div>

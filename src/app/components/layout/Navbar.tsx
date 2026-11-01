@@ -4,13 +4,14 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Aurora } from "../fx/Aurora";
 
-// `hash` = section on the home page, `to` = its own route
+// `hash` = section on the home page, `to` = its own route (trailing slash: the canonical URL)
 const navLinks: { label: string; hash?: string; to?: string }[] = [
-  { label: "Ako to funguje", hash: "ako-to-funguje" },
+  { label: "Služby", to: "/sluzby/" },
+  { label: "Cenník", to: "/cennik/" },
   { label: "Portfólio", hash: "portfolio" },
   { label: "Referencie", hash: "referencie" },
   { label: "FAQ", hash: "faq" },
-  { label: "SEO audit", to: "/seo-audit" },
+  { label: "SEO audit", to: "/seo-audit/" },
 ];
 
 export function Navbar() {

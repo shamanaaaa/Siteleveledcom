@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import {
   Mail,
   Phone,
   Clock,
   MapPin,
   Linkedin,
-  Instagram,
-  Github,
+  Facebook,
   Send,
   CheckCircle2,
 } from "lucide-react";
@@ -36,6 +36,8 @@ export function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = () => {
@@ -50,7 +52,7 @@ export function ContactPage() {
     return newErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
@@ -58,7 +60,43 @@ export function ContactPage() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setSubmitError("");
+    setIsLoading(true);
+    // /api/navrh has no phone or service field, so both go into the notes of the admin email
+    const notes = [
+      formData.phone.trim() && `Telefón: ${formData.phone.trim()}`,
+      formData.service && `Záujem: ${formData.service}`,
+      formData.message.trim(),
+    ]
+      .filter(Boolean)
+      .join("\n");
+    try {
+      const res = await fetch("/api/navrh", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          notes,
+          // Tells the server to send the contact wording, not the free-proposal one
+          source: "kontakt",
+        }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Server error");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Odoslanie zlyhalo. Skúste znova alebo napíšte na domansro@gmail.com"
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -75,12 +113,12 @@ export function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Kontakt"
+        title="Kontaktujte nás"
         segments={[
           { text: "Porozprávajme" },
           { text: "sa.", className: "text-gradient-primary" },
         ]}
-        sub="Bezplatná 30-minútová konzultácia. Bez záväzku. Len úprimný rozhovor o tvojom projekte."
+        sub="Bezplatná 30-minútová konzultácia. Bez záväzku. Len úprimný rozhovor o vašom projekte."
       />
 
       {/* Form + Contact info */}
@@ -106,9 +144,14 @@ export function ContactPage() {
                       >
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                           <div>
-                            <label className={labelBase}>Meno a priezvisko *</label>
+                            <label htmlFor="contact-name" className={labelBase}>
+                              Meno a priezvisko *
+                            </label>
                             <input
+                              id="contact-name"
+                              name="name"
                               type="text"
+                              autoComplete="name"
                               value={formData.name}
                               onChange={(e) => handleChange("name", e.target.value)}
                               className={`${inputBase} ${
@@ -121,9 +164,14 @@ export function ContactPage() {
                             )}
                           </div>
                           <div>
-                            <label className={labelBase}>Firma / projekt *</label>
+                            <label htmlFor="contact-company" className={labelBase}>
+                              Firma / projekt *
+                            </label>
                             <input
+                              id="contact-company"
+                              name="company"
                               type="text"
+                              autoComplete="organization"
                               value={formData.company}
                               onChange={(e) => handleChange("company", e.target.value)}
                               className={`${inputBase} ${
@@ -139,9 +187,14 @@ export function ContactPage() {
 
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                           <div>
-                            <label className={labelBase}>Email *</label>
+                            <label htmlFor="contact-email" className={labelBase}>
+                              Email *
+                            </label>
                             <input
+                              id="contact-email"
+                              name="email"
                               type="email"
+                              autoComplete="email"
                               value={formData.email}
                               onChange={(e) => handleChange("email", e.target.value)}
                               className={`${inputBase} ${
@@ -154,9 +207,14 @@ export function ContactPage() {
                             )}
                           </div>
                           <div>
-                            <label className={labelBase}>Telefón</label>
+                            <label htmlFor="contact-phone" className={labelBase}>
+                              Telefón
+                            </label>
                             <input
+                              id="contact-phone"
+                              name="phone"
                               type="tel"
+                              autoComplete="tel"
                               value={formData.phone}
                               onChange={(e) => handleChange("phone", e.target.value)}
                               className={`${inputBase} ${inputDefaultBorder}`}
@@ -166,12 +224,15 @@ export function ContactPage() {
                         </div>
 
                         <div>
-                          <label className={labelBase}>Čo potrebuješ?</label>
-                          <div className="flex flex-wrap gap-2">
+                          <p id="contact-service" className={labelBase}>
+                            Čo potrebujete?
+                          </p>
+                          <div role="group" aria-labelledby="contact-service" className="flex flex-wrap gap-2">
                             {serviceOptions.map((opt) => (
                               <button
                                 key={opt}
                                 type="button"
+                                aria-pressed={formData.service === opt}
                                 onClick={() =>
                                   handleChange("service", formData.service === opt ? "" : opt)
                                 }
@@ -186,21 +247,32 @@ export function ContactPage() {
                         </div>
 
                         <div>
-                          <label className={labelBase}>Povedz nám viac...</label>
+                          <label htmlFor="contact-message" className={labelBase}>
+                            Povedzte nám viac...
+                          </label>
                           <textarea
+                            id="contact-message"
+                            name="message"
                             value={formData.message}
                             onChange={(e) => handleChange("message", e.target.value)}
                             rows={5}
                             className={`${inputBase} ${inputDefaultBorder} resize-none`}
-                            placeholder="Opíš nám svoj projekt, ciele, alebo akékoľvek otázky..."
+                            placeholder="Opíšte nám svoj projekt, ciele alebo akékoľvek otázky..."
                           />
                         </div>
 
+                        {submitError && (
+                          <p role="alert" className="text-[0.85rem] text-red-400">
+                            {submitError}
+                          </p>
+                        )}
+
                         <button
                           type="submit"
-                          className="inline-flex items-center gap-2 rounded-full bg-[#6C63FF] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)] transition-all duration-200 hover:bg-[#7B73FF] hover:shadow-[0_8px_44px_rgba(108,99,255,0.5)]"
+                          disabled={isLoading}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#6C63FF] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)] transition-all duration-200 hover:bg-[#7B73FF] hover:shadow-[0_8px_44px_rgba(108,99,255,0.5)] disabled:cursor-wait disabled:opacity-60"
                         >
-                          Odoslať <Send size={16} />
+                          {isLoading ? "Odosielam…" : "Odoslať"} <Send size={16} />
                         </button>
                       </motion.form>
                     ) : (
@@ -213,18 +285,18 @@ export function ContactPage() {
                         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#1AFF8C]/10">
                           <CheckCircle2 size={32} className="text-[#1AFF8C]" />
                         </div>
-                        <h3 className="mb-3 font-heading text-[1.5rem] font-bold text-[#F5F5F0]">
+                        <h2 className="mb-3 font-heading text-[1.5rem] font-bold text-[#F5F5F0]">
                           Ďakujeme!
-                        </h3>
-                        <p className="max-w-sm text-[0.9rem] text-[#F5F5F0]/50">
-                          Ozveme sa do 24 hodín v pracovný deň. Medzitým si môžeš pozrieť naše{" "}
-                          <a href="/portfolio" className="text-[#9F97FF] hover:underline">
+                        </h2>
+                        <p className="max-w-sm text-[0.9rem] text-[#F5F5F0]/60">
+                          Ozveme sa do 24 hodín v pracovný deň. Medzitým si môžete pozrieť naše{" "}
+                          <Link to="/portfolio/" className="text-[#9F97FF] hover:underline">
                             projekty
-                          </a>{" "}
+                          </Link>{" "}
                           alebo{" "}
-                          <a href="/blog" className="text-[#9F97FF] hover:underline">
-                            blog
-                          </a>
+                          <Link to="/cennik/" className="text-[#9F97FF] hover:underline">
+                            cenník
+                          </Link>
                           .
                         </p>
                       </motion.div>
@@ -239,9 +311,9 @@ export function ContactPage() {
               <AnimateIn delay={0.2} direction="right">
                 <div className="space-y-6">
                   <GlowCard className="p-6">
-                    <h3 className="mb-5 font-heading text-[1rem] font-bold text-[#F5F5F0]">
+                    <h2 className="mb-5 font-heading text-[1rem] font-bold text-[#F5F5F0]">
                       Kontaktné údaje
-                    </h3>
+                    </h2>
                     <div className="space-y-4">
                       <a
                         href="mailto:domansro@gmail.com"
@@ -269,9 +341,9 @@ export function ContactPage() {
                   </GlowCard>
 
                   <GlowCard className="p-6">
-                    <h3 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">
+                    <h2 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">
                       Fakturačné údaje
-                    </h3>
+                    </h2>
                     <div className="space-y-1 text-[0.85rem] text-[#F5F5F0]/50">
                       <p className="text-[#F5F5F0]/80">DOMAN s.r.o.</p>
                       <p>IČO: 47 912 383</p>
@@ -282,18 +354,23 @@ export function ContactPage() {
                   </GlowCard>
 
                   <GlowCard className="p-6">
-                    <h3 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">
+                    <h2 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">
                       Sociálne siete
-                    </h3>
+                    </h2>
                     <div className="flex gap-4">
                       {[
-                        { icon: Linkedin, label: "LinkedIn" },
-                        { icon: Instagram, label: "Instagram" },
-                        { icon: Github, label: "GitHub" },
-                      ].map(({ icon: Icon, label }) => (
+                        {
+                          icon: Linkedin,
+                          label: "LinkedIn",
+                          href: "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+                        },
+                        { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/mario.doman" },
+                      ].map(({ icon: Icon, label, href }) => (
                         <a
                           key={label}
-                          href="#"
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           aria-label={label}
                           className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-[#F5F5F0]/40 transition-all hover:bg-[#6C63FF]/10 hover:text-[#9F97FF]"
                         >

@@ -44,7 +44,7 @@ function loadJobs() {
       const job = JSON.parse(fs.readFileSync(path.join(jobDir(id), "job.json"), "utf8"));
       if (job.status === "queued" || job.status === "running") {
         job.status = "failed";
-        job.error = "Audit bol prerušený reštartom servera. Spusti ho prosím znova.";
+        job.error = "Audit bol prerušený reštartom servera. Spustite ho prosím znova.";
         saveJob(job);
       }
       jobs.set(id, job);
@@ -90,7 +90,7 @@ function isBlockedIp(ip) {
 
 async function normaliseSite(input) {
   let raw = String(input || "").trim();
-  if (!raw) throw new Error("Zadaj adresu webu.");
+  if (!raw) throw new Error("Zadajte adresu webu.");
   if (/^[a-z][a-z0-9+.-]*:\/\//i.test(raw)) {
     if (!/^https?:\/\//i.test(raw)) throw new Error("Podporujeme len http a https.");
   } else {
@@ -107,7 +107,7 @@ async function normaliseSite(input) {
   if (url.username || url.password) throw new Error("Adresa nesmie obsahovať prihlasovacie údaje.");
   if (url.port && !["80", "443"].includes(url.port)) throw new Error("Podporujeme len štandardné porty.");
   if (net.isIP(url.hostname.replace(/^\[|\]$/g, "")) || !url.hostname.includes(".")) {
-    throw new Error("Zadaj doménu webu, napr. mojafirma.sk.");
+    throw new Error("Zadajte doménu webu, napr. mojafirma.sk.");
   }
 
   let addresses;
@@ -201,7 +201,7 @@ function runNext() {
   });
 
   const timer = setTimeout(() => {
-    job.error = "Audit trval príliš dlho a bol zastavený. Skús to prosím neskôr.";
+    job.error = "Audit trval príliš dlho a bol zastavený. Skúste to prosím neskôr.";
     try {
       process.kill(-child.pid, "SIGKILL");
     } catch {}
@@ -231,7 +231,7 @@ function runNext() {
     }
     // Sites that block automated visitors still "succeed", just with zero pages
     const pages = readResult(job).pages.length;
-    finish(pages > 0, "Web neumožnil automatickú kontrolu (pravdepodobne blokuje roboty). Skús inú adresu alebo nám napíš.");
+    finish(pages > 0, "Web neumožnil automatickú kontrolu (pravdepodobne blokuje roboty). Skúste inú adresu alebo nám napíšte.");
   });
 }
 
@@ -349,11 +349,11 @@ router.post("/", async (req, res) => {
   const wait = waitTime(req.ip);
   if (wait > 0) {
     return res.status(429).json({
-      error: `Denný limit auditov pre tvoju IP adresu je vyčerpaný. Ďalší audit môžeš spustiť o ${formatWait(wait)}.`,
+      error: `Denný limit auditov pre vašu IP adresu je vyčerpaný. Ďalší audit môžete spustiť o ${formatWait(wait)}.`,
     });
   }
   if (queue.length >= MAX_QUEUE) {
-    return res.status(503).json({ error: "Práve prebieha veľa auditov. Skús to o pár minút." });
+    return res.status(503).json({ error: "Práve prebieha veľa auditov. Skúste to o pár minút." });
   }
 
   const job = enqueue(site);

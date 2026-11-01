@@ -17,7 +17,9 @@ export function HeroSection() {
   const auroraY = useTransform(scrollYProgress, [0, 1], [0, 90]);
 
   return (
-    <section ref={sectionRef} className="relative flex min-h-screen items-center overflow-hidden">
+    // Capped: renderers that stretch the viewport to the page height (5 000 px+) would otherwise
+    // stretch the hero too and leave every section below it unrevealed
+    <section ref={sectionRef} className="relative flex min-h-[min(100vh,1200px)] items-center overflow-hidden">
       <motion.div className="absolute inset-0" style={reducedMotion ? undefined : { y: auroraY }}>
         <Aurora variant="hero" />
       </motion.div>

@@ -26,7 +26,7 @@ const plans = [
       "Responzívny dizajn pre mobil aj počítač",
       "Základné SEO nastavenie",
       "Kontaktný formulár",
-      "Platíš až po spustení, bez zálohy",
+      "Platíte až po spustení, bez zálohy",
     ],
     cta: "Mám záujem",
   },
@@ -44,7 +44,7 @@ const plans = [
       "Katalóg produktov a košík",
       "Správa produktov a objednávok",
       "Responzívny dizajn pre mobil aj počítač",
-      "Platíš až po spustení, bez zálohy",
+      "Platíte až po spustení, bez zálohy",
     ],
     cta: "Mám záujem",
   },
@@ -60,7 +60,7 @@ const plans = [
       "Analýza webu z pohľadu SEO",
       "Konkrétne odporúčania na zlepšenie",
     ],
-    link: { to: "/seo-audit", label: "Najprv si spusti automatickú kontrolu zadarmo" },
+    link: { to: "/seo-audit/", label: "Najprv si spustite automatickú kontrolu zadarmo" },
     cta: "Mám záujem",
   },
 ];
@@ -68,23 +68,23 @@ const plans = [
 const faqs = [
   {
     q: "Ako dlho trvá vytvorenie webu?",
-    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu. Samotný návrh dostaneš do 24 hodín.",
+    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu. Samotný návrh dostanete do 24 hodín.",
   },
   {
     q: "Aké sú platobné podmienky?",
-    a: "Žiadnu zálohu neplatíš. Za web platíš až po jeho spustení.",
+    a: "Žiadnu zálohu neplatíte. Za web platíte až po jeho spustení.",
   },
   {
     q: "Môžem si obsah spravovať sám?",
-    a: "Áno. Ak chceš texty, obrázky alebo produkty upravovať sám, pripravíme web so správou obsahu bez kódovania. Dohodneme sa na tom pri návrhu.",
+    a: "Áno. Ak chcete texty, obrázky alebo produkty upravovať sami, pripravíme web so správou obsahu bez kódovania. Dohodneme sa na tom pri návrhu.",
   },
   {
     q: "Čo ak nie som spokojný s dizajnom?",
-    a: "Dizajn vždy schvaľuješ ešte pred programovaním, takže prekvapenia nehrozia. A keďže platíš až po spustení, neriskuješ nič.",
+    a: "Dizajn vždy schvaľujete ešte pred programovaním, takže prekvapenia nehrozia. A keďže platíte až po spustení, neriskujete nič.",
   },
   {
     q: "Potrebujem aj hosting a doménu?",
-    a: "Doménu si registruješ na svoje meno. S hostingom radi pomôžeme — odporúčame rýchle a spoľahlivé riešenia.",
+    a: "Doménu si registrujete na svoje meno. S hostingom radi pomôžeme — odporúčame rýchle a spoľahlivé riešenia.",
   },
 ];
 
@@ -93,9 +93,9 @@ function PlanContent({ plan }: { plan: (typeof plans)[number] }) {
     <div className="flex h-full flex-col">
       <div className="mb-6">
         <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#9F97FF]">{plan.name}</p>
-        <h3 className="mb-2 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">
+        <h2 className="mb-2 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">
           {plan.subtitle}
-        </h3>
+        </h2>
         <p className="text-[0.8rem] text-[#F5F5F0]/40">{plan.audience}</p>
       </div>
 
@@ -126,7 +126,7 @@ function PlanContent({ plan }: { plan: (typeof plans)[number] }) {
       )}
 
       <Link
-        to="/kontakt"
+        to="/kontakt/"
         className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-[0.9rem] font-semibold transition-all duration-200 ${
           plan.badge
             ? "bg-[#6C63FF] text-white hover:bg-[#7B73FF] hover:shadow-[0_0_30px_rgba(108,99,255,0.4)]"
@@ -143,12 +143,12 @@ export function PricingPage() {
   return (
     <>
       <PageHero
-        eyebrow="Cenník"
+        title="Cenník tvorby webstránok a e-shopov"
         segments={[
           { text: "Investícia," },
           { text: "nie náklad.", className: "text-gradient-primary" },
         ]}
-        sub="Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíš až po spustení. Každý web je na mieru, presnú cenu dostaneš spolu s návrhom."
+        sub="Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíte až po spustení. Každý web je na mieru, presnú cenu dostanete spolu s návrhom."
       />
 
       {/* Pricing cards */}
@@ -179,9 +179,9 @@ export function PricingPage() {
           <AnimateIn delay={0.3} className="mt-8">
             <GlowCard className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
               <div>
-                <h4 className="mb-1 font-heading text-[1rem] font-bold text-[#F5F5F0]">
+                <h2 className="mb-1 font-heading text-[1rem] font-bold text-[#F5F5F0]">
                   Mesačná správa webu
-                </h4>
+                </h2>
                 <p className="text-[0.85rem] text-[#F5F5F0]/40">
                   Aktualizácie, zálohy, monitoring, podpora
                 </p>
@@ -203,11 +203,11 @@ export function PricingPage() {
         <Aurora variant="cta" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
-            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">Nie si si istý, čo potrebuješ?</p>
+            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">Nie ste si istí, čo potrebujete?</p>
             <p className="mb-8 text-[0.95rem] text-[#F5F5F0]/40">
-              Dohodnutá bezplatná 30-minútová konzultácia ti objasní všetko.
+              Dohodnutá bezplatná 30-minútová konzultácia vám objasní všetko.
             </p>
-            <MagneticButton to="/kontakt" size="lg">
+            <MagneticButton to="/kontakt/" size="lg">
               Rezervovať konzultáciu
             </MagneticButton>
           </AnimateIn>

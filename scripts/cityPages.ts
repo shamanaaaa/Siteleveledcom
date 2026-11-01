@@ -108,6 +108,10 @@ function sharePage(indexHtml: string, client: CityClient) {
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta\s+name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(description)}" />`)
     .replace(/\s*<meta\s+(?:property="og:[^"]*"|name="twitter:[^"]*")[^>]*>/g, "")
+    // The home page's canonical and JSON-LD (scripts/seoPages.ts) don't belong on a noindex copy
+    .replace(/\s*<link\s+rel="canonical"[^>]*>/g, "")
+    .replace(/\s*<meta\s+name="robots"[^>]*>/g, "")
+    .replace(/\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "")
     .replace("</head>", `  ${meta.join("\n    ")}\n  </head>`);
 }
 

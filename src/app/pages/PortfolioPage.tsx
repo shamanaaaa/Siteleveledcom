@@ -139,12 +139,12 @@ export function PortfolioPage() {
   return (
     <>
       <PageHero
-        eyebrow="Portfólio"
+        title="Portfólio: weby, ktoré sme vytvorili"
         segments={[
           { text: "Výsledky hovoria" },
           { text: "za nás.", className: "text-gradient-primary" },
         ]}
-        sub="Každý projekt je iný. Každý má jeden spoločný cieľ: rast tvojho biznisu."
+        sub="Každý projekt je iný. Každý má jeden spoločný cieľ: rast vášho biznisu."
       />
 
       {/* Filters */}
@@ -201,7 +201,7 @@ export function PortfolioPage() {
                       >
                         <img
                           src={project.image}
-                          alt={`Screenshot ${project.title}`}
+                          alt={`Ukážka webu ${project.title}`}
                           loading="lazy"
                           decoding="async"
                           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/glow:scale-[1.04]"
@@ -219,9 +219,9 @@ export function PortfolioPage() {
                         <span className="mb-2 text-[0.75rem] uppercase tracking-wider text-[#9F97FF]">
                           {project.category}
                         </span>
-                        <h3 className="mb-4 font-heading text-[1.5rem] font-bold text-[#F5F5F0] sm:text-[1.75rem]">
+                        <h2 className="mb-4 font-heading text-[1.5rem] font-bold text-[#F5F5F0] sm:text-[1.75rem]">
                           {project.title}
-                        </h3>
+                        </h2>
 
                         <div className="mb-6 space-y-4">
                           <div>
@@ -261,7 +261,7 @@ export function PortfolioPage() {
                           rel="noopener noreferrer"
                           className="group/link inline-flex items-center gap-2 text-[0.9rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
                         >
-                          Pozri projekt
+                          Pozrieť projekt
                           <ExternalLink
                             size={15}
                             className="transition-transform duration-300 group-hover/link:translate-x-0.5"
@@ -299,13 +299,13 @@ export function PortfolioPage() {
           <KineticHeading
             as="h2"
             segments={[
-              { text: "Chceš podobné" },
+              { text: "Chcete podobné" },
               { text: "výsledky?", className: "text-gradient-primary" },
             ]}
             className="mb-8 font-heading text-title font-bold"
           />
           <AnimateIn delay={0.2}>
-            <MagneticButton to="/kontakt" size="lg">
+            <MagneticButton to="/kontakt/" size="lg">
               Dohodnúť konzultáciu
             </MagneticButton>
           </AnimateIn>

@@ -18,7 +18,7 @@ const steps = [
     num: "01",
     icon: MessageCircle,
     title: "Konzultácia (zdarma)",
-    text: "Rozprávame sa o tvojom biznise, cieľoch a predstavách. Bez záväzku. Bez salespitchu.",
+    text: "Rozprávame sa o vašom biznise, cieľoch a predstavách. Bez záväzku. Bez salespitchu.",
     output: "Vzájomné pochopenie + hrubý odhad rozsahu",
     color: "#6C63FF",
   },
@@ -26,7 +26,7 @@ const steps = [
     num: "02",
     icon: Lightbulb,
     title: "Stratégia & Návrh",
-    text: "Vypracujeme štruktúru webu, wireframy a vizuálny dizajn. Nič nekódujeme, kým si s dizajnom spokojný.",
+    text: "Vypracujeme štruktúru webu, wireframy a vizuálny dizajn. Nič nekódujeme, kým nie ste s dizajnom spokojní.",
     output: "Schválený Figma prototyp",
     color: "#6C63FF",
   },
@@ -68,12 +68,12 @@ export function ProcessPage() {
   return (
     <>
       <PageHero
-        eyebrow="Proces"
+        title="Ako prebieha tvorba webu"
         segments={[
           { text: "Od nápadu po spustenie." },
           { text: "Bez prekvapení.", className: "text-gradient-primary" },
         ]}
-        sub="Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy vieš, kde sme a čo bude ďalej."
+        sub="Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy viete, kde sme a čo bude ďalej."
       />
 
       {/* Timeline */}
@@ -147,9 +147,9 @@ export function ProcessPage() {
                             {step.num}
                           </span>
                         </div>
-                        <h3 className="mb-3 font-heading text-[1.15rem] font-bold text-[#F5F5F0]">
+                        <h2 className="mb-3 font-heading text-[1.15rem] font-bold text-[#F5F5F0]">
                           {step.title}
-                        </h3>
+                        </h2>
                         <p className="mb-4 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">
                           {step.text}
                         </p>
@@ -183,9 +183,9 @@ export function ProcessPage() {
           <AnimateIn>
             <p className="mb-8 text-[1rem] text-[#F5F5F0]/50">
               Jednoduchý web je hotový do <span className="text-[#9F97FF]">7 dní</span>, e-shop do{" "}
-              <span className="text-[#9F97FF]">14 dní</span>. Chceš začať?
+              <span className="text-[#9F97FF]">14 dní</span>. Chcete začať?
             </p>
-            <MagneticButton to="/kontakt" size="lg">
+            <MagneticButton to="/kontakt/" size="lg">
               Dohodnúť konzultáciu
             </MagneticButton>
           </AnimateIn>

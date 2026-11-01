@@ -3,12 +3,14 @@ import { Aurora } from "./Aurora";
 import { KineticHeading, KineticSegment } from "./KineticHeading";
 
 interface PageHeroProps {
-  eyebrow: string;
+  /** The page's h1, worded the way people search ("Cenník tvorby webstránok"); shown as the small eyebrow */
+  title: string;
+  /** The big slogan under it */
   segments: KineticSegment[];
   sub?: string;
 }
 
-export function PageHero({ eyebrow, segments, sub }: PageHeroProps) {
+export function PageHero({ title, segments, sub }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden pb-16 pt-36 md:pb-20 md:pt-44">
       <Aurora variant="hero" />
@@ -16,13 +18,13 @@ export function PageHero({ eyebrow, segments, sub }: PageHeroProps) {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="max-w-4xl">
           <AnimateIn direction="none">
-            <span className="mb-5 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary-soft">
-              <span className="h-px w-6 bg-primary/60" />
-              {eyebrow}
-            </span>
+            <h1 className="mb-5 inline-flex items-center gap-3 font-body text-xs font-semibold uppercase tracking-[0.22em] text-primary-soft">
+              <span aria-hidden className="h-px w-6 shrink-0 bg-primary/60" />
+              {title}
+            </h1>
           </AnimateIn>
           <KineticHeading
-            as="h1"
+            as="p"
             inView={false}
             delay={0.1}
             segments={segments}

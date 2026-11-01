@@ -161,7 +161,7 @@ export function SeoAuditAdminPage() {
   return (
     <>
       <PageHero
-        eyebrow="Pre majiteľa"
+        title="Pre majiteľa"
         segments={[{ text: "Prehľad" }, { text: "SEO auditov.", className: "text-gradient-primary" }]}
         sub="Všetky audity za posledné obdobie. Vlastné audity tu spustíš bez limitov."
       />
@@ -328,7 +328,7 @@ export function SeoAuditAdminPage() {
                             {a.status === "done" ? (
                               <span className="inline-flex gap-3 whitespace-nowrap">
                                 <Link
-                                  to={`/seo-audit?audit=${a.id}`}
+                                  to={`/seo-audit/?audit=${a.id}`}
                                   className="text-[#9F97FF] transition-colors hover:text-white"
                                 >
                                   Výsledky

@@ -19,7 +19,7 @@ const services = [
     icon: Code2,
     title: "Webdizajn & Vývoj",
     headline: "Weby na mieru. Bez kompromisov.",
-    text: "Navrhujeme a programujeme weby a e-shopy, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Tvoja vízia.",
+    text: "Navrhujeme a programujeme weby a e-shopy, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Vaša vízia.",
     includes: [
       "UI/UX dizajn (Figma prototyp)",
       "Responzívny vývoj (mobile-first)",
@@ -32,8 +32,8 @@ const services = [
   {
     icon: Search,
     title: "SEO Optimalizácia",
-    headline: "Buď tam, kde ťa hľadajú.",
-    text: "68 % zákazníkov začína hľadanie online. Ak ťa Google nenájde, zákazník tiež nie. Optimalizujeme, aby si bol viditeľný tam, kde na tom záleží.",
+    headline: "Buďte tam, kde vás hľadajú.",
+    text: "Ak vás Google nenájde, zákazník tiež nie. Optimalizujeme, aby ste boli viditeľní tam, kde na tom záleží.",
     includes: [
       "Technické SEO (rýchlosť, štruktúra, Core Web Vitals)",
       "On-page optimalizácia (texty, meta, schema)",
@@ -46,7 +46,7 @@ const services = [
     icon: PenTool,
     title: "Copywriting & Obsah",
     headline: "Slová, ktoré predávajú.",
-    text: "Skvelý dizajn bez správnych slov nefunguje. Píšeme texty, ktoré hovoria jazykom tvojho zákazníka — presvedčivé, jasné, bez marketingového balastu.",
+    text: "Skvelý dizajn bez správnych slov nefunguje. Píšeme texty, ktoré hovoria jazykom vášho zákazníka — presvedčivé, jasné, bez marketingového balastu.",
     includes: [
       "Copywriting pre celý web",
       "Texty pre landing pages a kampane",
@@ -58,8 +58,8 @@ const services = [
   {
     icon: Shield,
     title: "Správa & Údržba Webu",
-    headline: "Tvoj web v dobrých rukách.",
-    text: "Web nie je jednorazový projekt. Je to živý nástroj, ktorý potrebuje starostlivosť. Aktualizácie, zálohy, bezpečnosť, výkon — riešime to za teba.",
+    headline: "Váš web v dobrých rukách.",
+    text: "Web nie je jednorazový projekt. Je to živý nástroj, ktorý potrebuje starostlivosť. Aktualizácie, zálohy, bezpečnosť, výkon — riešime to za vás.",
     includes: [
       "Mesačná správa a aktualizácie",
       "Bezpečnostné zálohy",
@@ -84,10 +84,10 @@ const services = [
   {
     icon: ClipboardCheck,
     title: "Konzultácia & Audit",
-    headline: "Zisti, čo ti brzdí rast.",
-    text: "Máš web, ale nefunguje? Audit odhalí, prečo. Dostaneš konkrétny akčný plán — nie generický report. Len fakty a riešenia.",
+    headline: "Zistite, čo brzdí váš rast.",
+    text: "Máte web, ale nefunguje? Audit odhalí, prečo. Dostanete konkrétny akčný plán — nie generický report. Len fakty a riešenia.",
     includes: [
-      "UX audit (kde strácaš zákazníkov)",
+      "UX audit (kde strácate zákazníkov)",
       "Technický audit (rýchlosť, bezpečnosť, SEO)",
       "Konkurenčná analýza",
       "Písomný akčný plán",
@@ -119,7 +119,7 @@ export function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Služby"
+        title="Tvorba webstránok, e-shopov a SEO"
         segments={[
           { text: "Čo robíme." },
           { text: "A robíme to poriadne.", className: "text-gradient-primary" },
@@ -186,9 +186,9 @@ export function ServicesPage() {
                             {service.title}
                           </span>
                         </div>
-                        <h3 className="mb-4 font-heading text-[1.35rem] font-bold text-[#F5F5F0] sm:text-[1.6rem]">
+                        <h2 className="mb-4 font-heading text-[1.35rem] font-bold text-[#F5F5F0] sm:text-[1.6rem]">
                           {service.headline}
-                        </h3>
+                        </h2>
                         <p className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/50">
                           {service.text}
                         </p>
@@ -216,7 +216,7 @@ export function ServicesPage() {
                           ))}
                         </ul>
                         <Link
-                          to="/kontakt"
+                          to="/kontakt/"
                           className="group/link inline-flex items-center gap-2 text-[0.9rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
                         >
                           {service.cta}

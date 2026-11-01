@@ -1,17 +1,20 @@
 import { Link, useLocation } from "react-router";
-import { Linkedin, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Facebook } from "lucide-react";
 import { Aurora } from "../fx/Aurora";
 import { HorizonWordmark } from "../fx/HorizonWordmark";
 import { KineticHeading } from "../fx/KineticHeading";
 import { MagneticButton } from "../fx/MagneticButton";
 
+// Every content page is linked here: crawlers find pages through links (trailing slash = canonical URL)
 const navLinks = [
   { label: "Ako to funguje", hash: "ako-to-funguje" },
-  { label: "Portfólio", hash: "portfolio" },
-  { label: "Referencie", hash: "referencie" },
-  { label: "FAQ", hash: "faq" },
-  { label: "SEO audit zadarmo", href: "/seo-audit" },
-  { label: "Kontakt", href: "/kontakt" },
+  { label: "Služby", href: "/sluzby/" },
+  { label: "Cenník", href: "/cennik/" },
+  { label: "Portfólio", href: "/portfolio/" },
+  { label: "Proces spolupráce", href: "/proces/" },
+  { label: "O nás", href: "/o-nas/" },
+  { label: "SEO audit zadarmo", href: "/seo-audit/" },
+  { label: "Kontakt", href: "/kontakt/" },
 ];
 
 export function Footer() {
@@ -30,14 +33,14 @@ export function Footer() {
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 py-20 md:flex-row">
           <div className="text-center md:text-left">
             <KineticHeading
-              as="h3"
+              as="p"
               segments={[
-                { text: "Vyleveluj" },
+                { text: "Vylevelujte" },
                 { text: "svoju stránku.", className: "text-gradient-primary" },
               ]}
               className="mb-2 font-heading text-title font-bold"
             />
-            <p className="text-[0.95rem] text-[#F5F5F0]/40">
+            <p className="text-[0.95rem] text-[#F5F5F0]/60">
               Návrh webstránky – do 24 hodín, zadarmo.
             </p>
           </div>
@@ -67,8 +70,8 @@ export function Footer() {
             <p className="mb-4 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">
               Váš web na ďalšiu úroveň – do 24 hodín.
             </p>
-            <div className="space-y-0.5 text-[0.8rem] text-[#F5F5F0]/30">
-              <p className="text-[#F5F5F0]/50">DOMAN s.r.o.</p>
+            <div className="space-y-0.5 text-[0.8rem] text-[#F5F5F0]/50">
+              <p className="text-[#F5F5F0]/70">DOMAN s.r.o.</p>
               <p>IČO: 47 912 383</p>
               <p>Ulica Funduše 1165/26</p>
               <p>Cabaj-Čápor 951 17</p>
@@ -78,9 +81,9 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/40">
+            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">
               Navigácia
-            </h4>
+            </p>
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <span key={link.label}>
@@ -112,9 +115,9 @@ export function Footer() {
 
           {/* Čo dostanete */}
           <div>
-            <h4 className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/40">
+            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">
               Čo dostanete zadarmo
-            </h4>
+            </p>
             <div className="flex flex-col gap-3 text-[0.875rem] text-[#F5F5F0]/60">
               <span>Vizuálny návrh hlavnej stránky</span>
               <span>Štruktúra celého webu</span>
@@ -126,9 +129,9 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/40">
+            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">
               Kontakt
-            </h4>
+            </p>
             <div className="flex flex-col gap-3 text-[0.875rem] text-[#F5F5F0]/60">
               <a
                 href="mailto:domansro@gmail.com"
@@ -141,22 +144,15 @@ export function Footer() {
               </a>
               <div className="mt-2 flex items-center gap-4">
                 <a
-                  href="#"
-                  className="text-[#F5F5F0]/40 transition-colors hover:text-[#9F97FF]"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={18} />
-                </a>
-                <a
                   href="https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/"
-                  className="text-[#F5F5F0]/40 transition-colors hover:text-[#9F97FF]"
+                  className="text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={18} />
                 </a>
                 <a
                   href="https://www.facebook.com/mario.doman"
-                  className="text-[#F5F5F0]/40 transition-colors hover:text-[#9F97FF]"
+                  className="text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
                   aria-label="Facebook"
                 >
                   <Facebook size={18} />
@@ -168,17 +164,9 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-          <p className="text-[0.8rem] text-[#F5F5F0]/30">
+          <p className="text-[0.8rem] text-[#F5F5F0]/50">
             &copy; {new Date().getFullYear()} siteleveled.com – DOMAN s.r.o.
           </p>
-          <div className="flex items-center gap-6 text-[0.8rem] text-[#F5F5F0]/30">
-            <a href="#" className="transition-colors hover:text-[#F5F5F0]/60">
-              Ochrana osobných údajov
-            </a>
-            <a href="#" className="transition-colors hover:text-[#F5F5F0]/60">
-              Podmienky používania
-            </a>
-          </div>
         </div>
       </div>
 

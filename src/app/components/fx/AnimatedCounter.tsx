@@ -1,12 +1,5 @@
-import { useEffect, useRef } from "react";
-import {
-  animate,
-  motion,
-  useInView,
-  useMotionValue,
-  useReducedMotion,
-  useTransform,
-} from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { animate, useInView, useReducedMotion } from "motion/react";
 
 interface AnimatedCounterProps {
   end: number;
@@ -17,6 +10,11 @@ interface AnimatedCounterProps {
   format?: (n: number) => string;
 }
 
+/**
+ * Counts up to `end` once it scrolls into view. The DOM text is always the real number (these
+ * are prices: a crawler or link preview must never record "0 €" or a value halfway up); the
+ * count-up is drawn by ::before from data-count, which neither crawlers nor screen readers read.
+ */
 export function AnimatedCounter({
   end,
   prefix = "",
@@ -25,23 +23,31 @@ export function AnimatedCounter({
   format,
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const inView = useInView(ref, { once: true });
   const reducedMotion = useReducedMotion();
-  const value = useMotionValue(0);
-  const text = useTransform(value, (v) => {
-    const n = Math.round(v);
-    return `${prefix}${format ? format(n) : n}${suffix}`;
-  });
+  const [counting, setCounting] = useState(false);
+  const show = (n: number) => `${prefix}${format ? format(n) : n}${suffix}`;
 
   useEffect(() => {
-    if (!inView) return;
-    if (reducedMotion) {
-      value.set(end);
-      return;
-    }
-    const controls = animate(value, end, { duration, ease: "easeOut" });
+    const el = ref.current;
+    if (!inView || reducedMotion || !el) return;
+    el.dataset.count = show(0);
+    setCounting(true);
+    const controls = animate(0, end, {
+      duration,
+      ease: "easeOut",
+      onUpdate: (v) => (el.dataset.count = show(Math.round(v))),
+      onComplete: () => setCounting(false),
+    });
     return () => controls.stop();
-  }, [inView, end, duration, reducedMotion, value]);
+  }, [inView, end, duration, reducedMotion, prefix, suffix, format]);
 
-  return <motion.span ref={ref}>{text}</motion.span>;
+  return (
+    <span
+      ref={ref}
+      className={counting ? "relative before:absolute before:left-0 before:content-[attr(data-count)]" : undefined}
+    >
+      <span className={counting ? "invisible" : undefined}>{show(end)}</span>
+    </span>
+  );
 }

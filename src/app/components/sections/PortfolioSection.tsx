@@ -1,5 +1,6 @@
 import { useRef, type CSSProperties, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionStyle, type MotionValue } from "motion/react";
+import { Link } from "react-router";
 import { ExternalLink } from "lucide-react";
 import { MagneticButton } from "../fx/MagneticButton";
 import { SectionHeading } from "../fx/SectionHeading";
@@ -185,7 +186,7 @@ export function PortfolioSection() {
                 >
                   <img
                     src={project.image}
-                    alt=""
+                    alt={`Ukážka webu ${project.name}`}
                     loading="lazy"
                     decoding="async"
                     className="h-64 w-full object-cover object-left-top sm:h-80 md:h-full md:max-h-[492px] md:rounded-tl-2xl"
@@ -244,6 +245,15 @@ export function PortfolioSection() {
             </div>
           </StackCard>
         </div>
+
+        <p className="mt-12 text-center">
+          <Link
+            to="/portfolio/"
+            className="text-[0.95rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
+          >
+            Všetky projekty aj s popisom riešenia →
+          </Link>
+        </p>
       </div>
     </section>
   );

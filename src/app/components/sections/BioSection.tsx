@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Phone } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 import { KineticHeading } from "../fx/KineticHeading";
@@ -55,6 +56,12 @@ export function BioSection() {
                   <Phone size={18} className="text-[#6C63FF]" />
                   0910 803 993
                 </a>
+                <Link
+                  to="/o-nas/"
+                  className="text-[0.9rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
+                >
+                  Viac o nás →
+                </Link>
               </div>
             </AnimateIn>
           </div>
