@@ -1,0 +1,9 @@
+HTTP/2 200 
+server: nginx/1.24.0 (Ubuntu)
+date: Sun, 01 Nov 2026 07:12:41 GMT
+content-type: image/png
+content-length: 20865
+last-modified: Sat, 31 Oct 2026 17:33:31 GMT
+etag: "6ae6266b-5181"
+accept-ranges: bytes
+

@@ -1,0 +1,755 @@
+{
+  "route": "/cennik",
+  "status": 200,
+  "blockedApi": [],
+  "requestCount": 9,
+  "consoleErrors": [],
+  "first": {
+    "url": "http://localhost:4173/cennik",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Investícia, nie náklad."
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Investícia, nie náklad.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Jednoduchý web",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Internetový obchod",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Kontrola webu",
+        "where": "main"
+      },
+      {
+        "level": 4,
+        "text": "Mesačná správa webu",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Časté otázky.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 151,
+    "mainWordsVisible": 189,
+    "mainTextVisible": "CENNÍK Investícia, nie náklad. Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíš až po spustení. Každý web je na mieru, presnú cenu dostaneš spolu s návrhom. Najrýchlejší štart WEB Jednoduchý web Pre: Živnostníkov, freelancerov, malé firmy od 300 € Hotový do 7 dní Prezentačný web na mieru Responzívny dizajn pre mobil aj počítač Základné SEO nastavenie Kontaktný formulár Platíš až po spustení, bez zálohy Mám záujem E-SHOP Internetový obchod Pre: Firmy, ktoré chcú predávať online od 0 € Hotový do 14 dní E-shop na mieru Katalóg produktov a košík Správa produktov a objednávok Responzívny dizajn pre mobil aj počítač Platíš až po spustení, bez zálohy Mám záujem SEO AUDIT Kontrola webu Pre: Weby, ktoré Google nevidí tak, ako by mal 0 € Jednorazová cena Analýza webu z pohľadu SEO Konkrétne odporúčania na zlepšenie Najprv si spusti automatickú kontrolu zadarmo → Mám záujem Mesačná správa webu Aktualizácie, zálohy, monitoring, podpora od 0 €/mesiac Nie si si istý, čo potrebuješ? Dohodnutá bezplatná 30-minútová konzultácia ti objasní všetko. Rezervovať konzultáciu FAQ Časté otázky. Ako dlho trvá vytvorenie webu? Aké sú platobné podmienky? Môžem si obsah spravovať sám? Čo ak nie som spokojný s dizajnom? Potrebujem aj hosting a doménu?",
+    "textNodesInsideOpacity0": 36,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo →",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "other",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Mám záujem",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Mám záujem",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "Najprv si spusti automatickú kontrolu zadarmo →",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Mám záujem",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Rezervovať konzultáciu",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/cennik#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/cennik#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/cennik#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu",
+      "Ako dlho trvá vytvorenie webu?",
+      "Aké sú platobné podmienky?",
+      "Môžem si obsah spravovať sám?",
+      "Čo ak nie som spokojný s dizajnom?",
+      "Potrebujem aj hosting a doménu?"
+    ],
+    "images": [],
+    "canvases": 0,
+    "landmarks": {
+      "header": 0,
+      "nav": 1,
+      "main": 1,
+      "footer": 1
+    },
+    "forms": []
+  },
+  "tall": {
+    "url": "http://localhost:4173/cennik",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Investícia, nie náklad."
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Investícia, nie náklad.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Jednoduchý web",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Internetový obchod",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Kontrola webu",
+        "where": "main"
+      },
+      {
+        "level": 4,
+        "text": "Mesačná správa webu",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Časté otázky.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 151,
+    "mainWordsVisible": 189,
+    "mainTextVisible": "CENNÍK Investícia, nie náklad. Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíš až po spustení. Každý web je na mieru, presnú cenu dostaneš spolu s návrhom. Najrýchlejší štart WEB Jednoduchý web Pre: Živnostníkov, freelancerov, malé firmy od 300 € Hotový do 7 dní Prezentačný web na mieru Responzívny dizajn pre mobil aj počítač Základné SEO nastavenie Kontaktný formulár Platíš až po spustení, bez zálohy Mám záujem E-SHOP Internetový obchod Pre: Firmy, ktoré chcú predávať online od 1 000 € Hotový do 14 dní E-shop na mieru Katalóg produktov a košík Správa produktov a objednávok Responzívny dizajn pre mobil aj počítač Platíš až po spustení, bez zálohy Mám záujem SEO AUDIT Kontrola webu Pre: Weby, ktoré Google nevidí tak, ako by mal 199 € Jednorazová cena Analýza webu z pohľadu SEO Konkrétne odporúčania na zlepšenie Najprv si spusti automatickú kontrolu zadarmo → Mám záujem Mesačná správa webu Aktualizácie, zálohy, monitoring, podpora od 30 €/mesiac Nie si si istý, čo potrebuješ? Dohodnutá bezplatná 30-minútová konzultácia ti objasní všetko. Rezervovať konzultáciu FAQ Časté otázky. Ako dlho trvá vytvorenie webu? Aké sú platobné podmienky? Môžem si obsah spravovať sám? Čo ak nie som spokojný s dizajnom? Potrebujem aj hosting a doménu?",
+    "textNodesInsideOpacity0": 0,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Mám záujem",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Mám záujem",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "Najprv si spusti automatickú kontrolu zadarmo →",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Mám záujem",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Rezervovať konzultáciu",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/cennik#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/cennik#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/cennik#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu",
+      "Ako dlho trvá vytvorenie webu?",
+      "Aké sú platobné podmienky?",
+      "Môžem si obsah spravovať sám?",
+      "Čo ak nie som spokojný s dizajnom?",
+      "Potrebujem aj hosting a doménu?"
+    ],
+    "images": [],
+    "canvases": 0,
+    "landmarks": {
+      "header": 0,
+      "nav": 1,
+      "main": 1,
+      "footer": 1
+    },
+    "forms": []
+  }
+}

@@ -1,0 +1,653 @@
+{
+  "route": "/seo-audit",
+  "status": 200,
+  "blockedApi": [
+    "http://localhost:4173/api/seo-audit/config"
+  ],
+  "requestCount": 9,
+  "consoleErrors": [
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "first": {
+    "url": "http://localhost:4173/seo-audit",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Ako na tom je tvoj web?"
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Ako na tom je tvoj web?",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Časté otázky.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 82,
+    "mainWordsVisible": 96,
+    "mainTextVisible": "SEO AUDIT ZADARMO Ako na tom je tvoj web? Zadaj adresu svojej stránky a do pár minút uvidíš skóre SEO, rýchlosti a prístupnosti pre každú podstránku – rovnakými nástrojmi, aké používa Google. Adresa webu Spustiť audit Skontrolujeme až 15 podstránok. Audit trvá zvyčajne 1–5 minút. Z jednej IP adresy je možný 1 audit denne. Skóre nie je také, aké by si chcel? Pripravíme ti návrh rýchlejšieho a lepšie dohľadateľného webu – do 24 hodín, zadarmo. Chcem návrh zadarmo FAQ Časté otázky. Čo presne audit kontroluje? Ako dlho to trvá? Prečo mám iné skóre ako v PageSpeed Insights? Ako dlho je report dostupný?",
+    "textNodesInsideOpacity0": 8,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo →",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "other",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/seo-audit#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/seo-audit#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/seo-audit#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu",
+      "Spustiť audit",
+      "Čo presne audit kontroluje?",
+      "Ako dlho to trvá?",
+      "Prečo mám iné skóre ako v PageSpeed Insights?",
+      "Ako dlho je report dostupný?"
+    ],
+    "images": [],
+    "canvases": 0,
+    "landmarks": {
+      "header": 0,
+      "nav": 1,
+      "main": 1,
+      "footer": 1
+    },
+    "forms": [
+      {
+        "action": null,
+        "fields": [
+          "audit-url"
+        ]
+      }
+    ]
+  },
+  "tall": {
+    "url": "http://localhost:4173/seo-audit",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Ako na tom je tvoj web?"
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Ako na tom je tvoj web?",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Časté otázky.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 82,
+    "mainWordsVisible": 96,
+    "mainTextVisible": "SEO AUDIT ZADARMO Ako na tom je tvoj web? Zadaj adresu svojej stránky a do pár minút uvidíš skóre SEO, rýchlosti a prístupnosti pre každú podstránku – rovnakými nástrojmi, aké používa Google. Adresa webu Spustiť audit Skontrolujeme až 15 podstránok. Audit trvá zvyčajne 1–5 minút. Z jednej IP adresy je možný 1 audit denne. Skóre nie je také, aké by si chcel? Pripravíme ti návrh rýchlejšieho a lepšie dohľadateľného webu – do 24 hodín, zadarmo. Chcem návrh zadarmo FAQ Časté otázky. Čo presne audit kontroluje? Ako dlho to trvá? Prečo mám iné skóre ako v PageSpeed Insights? Ako dlho je report dostupný?",
+    "textNodesInsideOpacity0": 0,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/seo-audit#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/seo-audit#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/seo-audit#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu",
+      "Spustiť audit",
+      "Čo presne audit kontroluje?",
+      "Ako dlho to trvá?",
+      "Prečo mám iné skóre ako v PageSpeed Insights?",
+      "Ako dlho je report dostupný?"
+    ],
+    "images": [],
+    "canvases": 0,
+    "landmarks": {
+      "header": 0,
+      "nav": 1,
+      "main": 1,
+      "footer": 1
+    },
+    "forms": [
+      {
+        "action": null,
+        "fields": [
+          "audit-url"
+        ]
+      }
+    ]
+  }
+}

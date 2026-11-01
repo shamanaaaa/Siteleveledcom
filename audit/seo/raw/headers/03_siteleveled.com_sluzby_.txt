@@ -1,0 +1,8 @@
+HTTP/2 200 
+server: nginx/1.24.0 (Ubuntu)
+date: Sun, 01 Nov 2026 07:12:17 GMT
+content-type: text/html
+last-modified: Sat, 31 Oct 2026 17:33:31 GMT
+etag: W/"6ae6266b-7e8"
+content-encoding: gzip
+

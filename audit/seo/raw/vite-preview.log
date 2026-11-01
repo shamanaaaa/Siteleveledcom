@@ -1,0 +1,8 @@
+  ➜  Local:   http://localhost:4173/
+  ➜  Network: use --host to expose
+8:26:02 AM [vite] http proxy error: /api/seo-audit/config
+Error: connect ECONNREFUSED 127.0.0.1:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+8:28:45 AM [vite] http proxy error: /api/seo-audit/config
+Error: connect ECONNREFUSED 127.0.0.1:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)

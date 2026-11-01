@@ -1,0 +1,1729 @@
+{
+  "route": "/toto-neexistuje-xyz-404",
+  "status": 200,
+  "blockedApi": [],
+  "requestCount": 11,
+  "consoleErrors": [],
+  "first": {
+    "url": "http://localhost:4173/toto-neexistuje-xyz-404",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Získajte návrh vašej novej webstránky do 24 hodín – úplne zadarmo."
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Získajte návrh vašej novej webstránky do 24 hodín – úplne zadarmo.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Ako to funguje?",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyplníte formulár",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Do 24h dostanete návrh",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Rozhodnete sa",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Čo dostanete úplne zadarmo.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Chcete návrh zadarmo?",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Jeden web za druhým. Scrollujte a stoh rastie.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "springnitra.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "jogaslaskou.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "zuzu-photo.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "sanifix.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "zeriavynitra.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "mdfoto.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "nosekrst.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "fotkynavyber.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Na vrch stohu patrí váš web.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Prečo práve SiteLeveled?",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Individuálny prístup",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Rýchlosť",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Transparentné ceny",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Komunikácia",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Skúsenosti",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Čo hovoria naši klienti.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Za každým projektom je reálny človek.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Časté otázky.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Získajte návrh vašej webstránky do 24 hodín – bez rizika.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 615,
+    "mainWordsVisible": 785,
+    "mainTextVisible": "Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy Získajte návrh vašej novej webstránky do 24 hodín – úplne zadarmo. Vyplňte krátky formulár. My sa postaráme o zvyšok. Chcem návrh zadarmo Pozrieť portfólio ZK ZK JB Klienti nás odporúčajú na Facebooku SITELEVELED CITY KLIKNITE NA BUDOVU mdfoto.sk zuzu-photo.sk nosekrst.sk jogaslaskou.sk springnitra.sk + Voľný pozemok NÁVRH DO 24 HODÍN WEB DO 7 DNÍ E-SHOP DO 14 DNÍ PLATBA AŽ PO SPUSTENÍ BEZ ZÁVÄZKOV ŽIADNE SKRYTÉ POPLATKY MDFOTO.SK ZUZU-PHOTO.SK NOSEKRST.SK FOTKYNAVYBER.SK SANIFIX.SK ZERIAVYNITRA.SK JOGASLASKOU.SK SPRINGNITRA.SK NÁVRH DO 24 HODÍN WEB DO 7 DNÍ E-SHOP DO 14 DNÍ PLATBA AŽ PO SPUSTENÍ BEZ ZÁVÄZKOV ŽIADNE SKRYTÉ POPLATKY MDFOTO.SK ZUZU-PHOTO.SK NOSEKRST.SK FOTKYNAVYBER.SK SANIFIX.SK ZERIAVYNITRA.SK JOGASLASKOU.SK SPRINGNITRA.SK PROCES Ako to funguje? Tri jednoduché kroky. Žiadna komplikácia. 1 MENEJ AKO MINÚTA Vyplníte formulár Krátky formulár o vás a vašom projekte. Žiadne technické znalosti nie sú potrebné. 2 PROFESIONÁLNY, NA MIERU Do 24h dostanete návrh Náš tím pripraví reálny vizuálny návrh vašej webstránky – šitý na mieru vášmu biznisu. 3 BEZ ZÁVÄZKOV Rozhodnete sa Návrh sa vám páči? Spolupracujeme. Nepáči? Žiadny problém. Rozhodnutie je len na vás. Žiadne záväzky Žiadne skryté poplatky Bez rizika NÁVRH ZADARMO Čo dostanete úplne zadarmo. Cenová ponuka Spolu Aa H1 H2 Nové 01 Vizuálny návrh 02 Štruktúra webu 03 Koncept textov 04 Odporúčania 05 Cenová ponuka 01 Vizuálny návrh hlavnej stránky 02 Kompletná štruktúra celého webu 03 Základný koncept textov 04 Odporúčania pre dizajn a funkcie 05 Cenová ponuka realizácie \"Nie je to skica. Je to reálny návrh, z ktorého môžete stavať.\" Chcete návrh zadarmo? Stačí meno, email a pár slov o vašej firme. Zvyšok doladíme spolu. Meno * Email * Firma a čomu sa venujete * Súčasný web (ak máte) Odoslať a získať návrh zadarmo Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky. PORTFÓLIO Jeden web za druhým. Scrollujte a stoh rastie. Každá karta je skutočný klient a skutočný web, ktorý si môžete hneď otvoriť. Estetické štúdio, Nitra springnitra.sk Prerábka webu salónu: služby, značky, stránka o Fusion Plasma a online rezervácia termínov. „Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala.“ Jaja Bieliková, odporúčanie na Facebooku Pozrieť web naživo Jogové štúdio, Pezinok jogaslaskou.sk Staršia webka dostala nový život: lekcie, eventy a pobyty, galéria a časté otázky. „Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky.“ Zuzana Khala, odporúčanie na Facebooku Pozrieť web naživo Fotografka zuzu-photo.sk Jednostránkové portfólio s galériou, kontaktom a napojením na sociálne siete. „Mário je kreatívny, trpezlivý a hlavne veľmi šikovný.“ Zuzana Kondeková, odporúčanie na Facebooku Pozrieť web naživo E-shop a servis kúpeľňového vybavenia sanifix.sk E-shop s akciami značiek, online nahlásenie servisu a administrácia servisných zákaziek. Pozrieť web naživo Žeriavnícke práce, Nitra zeriavynitra.sk Technický nákres žeriavu, prehľad techniky, spolupráca v piatich krokoch a formulár na nezáväzný dopyt. Pozrieť web naživo Fotografické štúdio, Nitra mdfoto.sk Tmavý elegantný web s rýchlou galériou a výraznými tlačidlami na rezerváciu fotenia. Pozrieť web naživo Preprava ťažkej techniky nosekrst.sk Firemná prezentácia, ktorá buduje dôveru u priemyselných klientov a uľahčuje prvý kontakt. Pozrieť web naživo Webová aplikácia pre fotografov fotkynavyber.sk Online galérie, výber fotiek, automatické e-maily a export do CSV v jednom dashboarde. Pozrieť web naživo Karta číslo 9 Na vrch stohu patrí váš web. Návrh dostanete do 24 hodín zadarmo. Platíte až po spustení, bez zálohy. Chcem návrh zadarmo VÝHODY Prečo práve SiteLeveled? Individuálny prístup Každý návrh robíme na mieru – žiadne šablóny. Rýchlosť Návrh do 24 hodín, web do 7 dní, e-shop do 14 dní. Transparentné ceny Web od 300 €, e-shop od 1 000 €. Žiadna záloha – platíte až po spustení. Komunikácia Vždy viete, kde sa projekt nachádza. Skúsenosti Weby, e-shopy aj webové aplikácie. Ukážky nájdete v portfóliu. REFERENCIE Čo hovoria naši klienti. “ Odporúča SiteLeveled na Facebooku “Mária vrelo odporúčam každému, kto túži po svojej vysnívanej webovej stránke 😊 Tá moja je podľa mňa úplne dokonalá 😊 veď posúďte sami: zuzu-photo.sk. Mário je kreatívny, trpezlivý a hlavne veľmi šikovný. Ďakujem! 🙏🙏🙏👏” ZK Zuzana Kondeková zuzu-photo.sk “ Odporúča SiteLeveled na Facebooku “Oceňujem ľudský a „polopatistický“ prístup, keďže nie som moc technický typ. Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky. Som veľmi spokojná a môžem odporúčať ďalej 🙂” ZK Zuzana Khala jogaslaskou.sk “ Odporúča SiteLeveled na Facebooku “Určite odporúčam každému, kto hľadá niekoho šikovného a spoľahlivého 👌 Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala ☺️” JB Jaja Bieliková springnitra.sk Mário Doman · vývojár Za každým projektom je reálny človek. Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich Mário Doman, spoločnosť DOMAN s.r.o. vedie konateľka Mária Domanová. Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať. Chceme, aby ste videli, čo pre vás vieme spraviť. 0910 803 993 FAQ Časté otázky. Je návrh naozaj zadarmo? Som niečím viazaný? Čo ak sa mi návrh nebude páčiť? Ako prebieha realizácia? Koľko stojí kompletná webstránka? Ako dlho trvá výroba webu? Získajte návrh vašej webstránky do 24 hodín – bez rizika. Chcem návrh zadarmo",
+    "textNodesInsideOpacity0": 94,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo →",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "other",
+        "ariaHidden": null
+      },
+      {
+        "href": "#portfolio",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#portfolio",
+        "text": "Pozrieť portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "#referencie",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#referencie",
+        "text": "Klienti nás odporúčajú na Facebooku",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/jogaslaskou/",
+        "abs": "http://localhost:4173/mesto/jogaslaskou/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/nosekrst/",
+        "abs": "http://localhost:4173/mesto/nosekrst/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/zuzu-photo/",
+        "abs": "http://localhost:4173/mesto/zuzu-photo/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/mdfoto/",
+        "abs": "http://localhost:4173/mesto/mdfoto/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/springnitra/",
+        "abs": "http://localhost:4173/mesto/springnitra/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/mdfoto/",
+        "abs": "http://localhost:4173/mesto/mdfoto/",
+        "text": "mdfoto.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/zuzu-photo/",
+        "abs": "http://localhost:4173/mesto/zuzu-photo/",
+        "text": "zuzu-photo.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/nosekrst/",
+        "abs": "http://localhost:4173/mesto/nosekrst/",
+        "text": "nosekrst.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/jogaslaskou/",
+        "abs": "http://localhost:4173/mesto/jogaslaskou/",
+        "text": "jogaslaskou.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/springnitra/",
+        "abs": "http://localhost:4173/mesto/springnitra/",
+        "text": "springnitra.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.springnitra.sk",
+        "abs": "https://www.springnitra.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.springnitra.sk",
+        "abs": "https://www.springnitra.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.jogaslaskou.sk",
+        "abs": "https://www.jogaslaskou.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.jogaslaskou.sk",
+        "abs": "https://www.jogaslaskou.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.zuzu-photo.sk",
+        "abs": "https://www.zuzu-photo.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.zuzu-photo.sk",
+        "abs": "https://www.zuzu-photo.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://sanifix.sk",
+        "abs": "https://sanifix.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://sanifix.sk",
+        "abs": "https://sanifix.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.zeriavynitra.sk",
+        "abs": "https://www.zeriavynitra.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.zeriavynitra.sk",
+        "abs": "https://www.zeriavynitra.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.mdfoto.sk",
+        "abs": "https://www.mdfoto.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.mdfoto.sk",
+        "abs": "https://www.mdfoto.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.nosekrst.sk",
+        "abs": "https://www.nosekrst.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.nosekrst.sk",
+        "abs": "https://www.nosekrst.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.fotkynavyber.sk",
+        "abs": "https://www.fotkynavyber.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.fotkynavyber.sk",
+        "abs": "https://www.fotkynavyber.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.zuzu-photo.sk",
+        "abs": "https://www.zuzu-photo.sk/",
+        "text": "zuzu-photo.sk",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.jogaslaskou.sk",
+        "abs": "https://www.jogaslaskou.sk/",
+        "text": "jogaslaskou.sk",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.springnitra.sk",
+        "abs": "https://www.springnitra.sk/",
+        "text": "springnitra.sk",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu",
+      "Chcem návrh zadarmo",
+      "",
+      "",
+      "",
+      "",
+      "+ Voľný pozemok",
+      "01 Vizuálny návrh hlavnej stránky",
+      "02 Kompletná štruktúra celého webu",
+      "03 Základný koncept textov",
+      "04 Odporúčania pre dizajn a funkcie",
+      "05 Cenová ponuka realizácie",
+      "Odoslať a získať návrh zadarmo",
+      "Chcem návrh zadarmo",
+      "Je návrh naozaj zadarmo?",
+      "Som niečím viazaný?",
+      "Čo ak sa mi návrh nebude páčiť?",
+      "Ako prebieha realizácia?",
+      "Koľko stojí kompletná webstránka?",
+      "Ako dlho trvá výroba webu?",
+      "Chcem návrh zadarmo"
+    ],
+    "images": [
+      {
+        "src": "/springnitra-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/jogaslaskou-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/zuzu-photo-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/sanifix-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/zeriavynitra-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/mdfoto-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/nosekrst-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/fotkynavyber-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/profile.jpg",
+        "alt": "Mário Doman",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "192x192"
+      }
+    ],
+    "canvases": 1,
+    "landmarks": {
+      "header": 0,
+      "nav": 2,
+      "main": 1,
+      "footer": 4
+    },
+    "forms": [
+      {
+        "action": null,
+        "fields": [
+          "lead-name",
+          "lead-email",
+          "lead-company",
+          "lead-web"
+        ]
+      }
+    ]
+  },
+  "tall": {
+    "url": "http://localhost:4173/toto-neexistuje-xyz-404",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Získajte návrh vašej novej webstránky do 24 hodín – úplne zadarmo."
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Získajte návrh vašej novej webstránky do 24 hodín – úplne zadarmo.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Ako to funguje?",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyplníte formulár",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Do 24h dostanete návrh",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Rozhodnete sa",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Čo dostanete úplne zadarmo.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Chcete návrh zadarmo?",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Jeden web za druhým. Scrollujte a stoh rastie.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "springnitra.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "jogaslaskou.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "zuzu-photo.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "sanifix.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "zeriavynitra.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "mdfoto.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "nosekrst.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "fotkynavyber.sk",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Na vrch stohu patrí váš web.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Prečo práve SiteLeveled?",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Individuálny prístup",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Rýchlosť",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Transparentné ceny",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Komunikácia",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Skúsenosti",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Čo hovoria naši klienti.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Za každým projektom je reálny človek.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Časté otázky.",
+        "where": "main"
+      },
+      {
+        "level": 2,
+        "text": "Získajte návrh vašej webstránky do 24 hodín – bez rizika.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 615,
+    "mainWordsVisible": 785,
+    "mainTextVisible": "Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy Získajte návrh vašej novej webstránky do 24 hodín – úplne zadarmo. Vyplňte krátky formulár. My sa postaráme o zvyšok. Chcem návrh zadarmo Pozrieť portfólio ZK ZK JB Klienti nás odporúčajú na Facebooku SITELEVELED CITY KLIKNITE NA BUDOVU mdfoto.sk zuzu-photo.sk nosekrst.sk jogaslaskou.sk springnitra.sk + Voľný pozemok NÁVRH DO 24 HODÍN WEB DO 7 DNÍ E-SHOP DO 14 DNÍ PLATBA AŽ PO SPUSTENÍ BEZ ZÁVÄZKOV ŽIADNE SKRYTÉ POPLATKY MDFOTO.SK ZUZU-PHOTO.SK NOSEKRST.SK FOTKYNAVYBER.SK SANIFIX.SK ZERIAVYNITRA.SK JOGASLASKOU.SK SPRINGNITRA.SK NÁVRH DO 24 HODÍN WEB DO 7 DNÍ E-SHOP DO 14 DNÍ PLATBA AŽ PO SPUSTENÍ BEZ ZÁVÄZKOV ŽIADNE SKRYTÉ POPLATKY MDFOTO.SK ZUZU-PHOTO.SK NOSEKRST.SK FOTKYNAVYBER.SK SANIFIX.SK ZERIAVYNITRA.SK JOGASLASKOU.SK SPRINGNITRA.SK PROCES Ako to funguje? Tri jednoduché kroky. Žiadna komplikácia. 1 MENEJ AKO MINÚTA Vyplníte formulár Krátky formulár o vás a vašom projekte. Žiadne technické znalosti nie sú potrebné. 2 PROFESIONÁLNY, NA MIERU Do 24h dostanete návrh Náš tím pripraví reálny vizuálny návrh vašej webstránky – šitý na mieru vášmu biznisu. 3 BEZ ZÁVÄZKOV Rozhodnete sa Návrh sa vám páči? Spolupracujeme. Nepáči? Žiadny problém. Rozhodnutie je len na vás. Žiadne záväzky Žiadne skryté poplatky Bez rizika NÁVRH ZADARMO Čo dostanete úplne zadarmo. Cenová ponuka Spolu Aa H1 H2 Nové 01 Vizuálny návrh 02 Štruktúra webu 03 Koncept textov 04 Odporúčania 05 Cenová ponuka 01 Vizuálny návrh hlavnej stránky 02 Kompletná štruktúra celého webu 03 Základný koncept textov 04 Odporúčania pre dizajn a funkcie 05 Cenová ponuka realizácie \"Nie je to skica. Je to reálny návrh, z ktorého môžete stavať.\" Chcete návrh zadarmo? Stačí meno, email a pár slov o vašej firme. Zvyšok doladíme spolu. Meno * Email * Firma a čomu sa venujete * Súčasný web (ak máte) Odoslať a získať návrh zadarmo Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky. PORTFÓLIO Jeden web za druhým. Scrollujte a stoh rastie. Každá karta je skutočný klient a skutočný web, ktorý si môžete hneď otvoriť. Estetické štúdio, Nitra springnitra.sk Prerábka webu salónu: služby, značky, stránka o Fusion Plasma a online rezervácia termínov. „Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala.“ Jaja Bieliková, odporúčanie na Facebooku Pozrieť web naživo Jogové štúdio, Pezinok jogaslaskou.sk Staršia webka dostala nový život: lekcie, eventy a pobyty, galéria a časté otázky. „Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky.“ Zuzana Khala, odporúčanie na Facebooku Pozrieť web naživo Fotografka zuzu-photo.sk Jednostránkové portfólio s galériou, kontaktom a napojením na sociálne siete. „Mário je kreatívny, trpezlivý a hlavne veľmi šikovný.“ Zuzana Kondeková, odporúčanie na Facebooku Pozrieť web naživo E-shop a servis kúpeľňového vybavenia sanifix.sk E-shop s akciami značiek, online nahlásenie servisu a administrácia servisných zákaziek. Pozrieť web naživo Žeriavnícke práce, Nitra zeriavynitra.sk Technický nákres žeriavu, prehľad techniky, spolupráca v piatich krokoch a formulár na nezáväzný dopyt. Pozrieť web naživo Fotografické štúdio, Nitra mdfoto.sk Tmavý elegantný web s rýchlou galériou a výraznými tlačidlami na rezerváciu fotenia. Pozrieť web naživo Preprava ťažkej techniky nosekrst.sk Firemná prezentácia, ktorá buduje dôveru u priemyselných klientov a uľahčuje prvý kontakt. Pozrieť web naživo Webová aplikácia pre fotografov fotkynavyber.sk Online galérie, výber fotiek, automatické e-maily a export do CSV v jednom dashboarde. Pozrieť web naživo Karta číslo 9 Na vrch stohu patrí váš web. Návrh dostanete do 24 hodín zadarmo. Platíte až po spustení, bez zálohy. Chcem návrh zadarmo VÝHODY Prečo práve SiteLeveled? Individuálny prístup Každý návrh robíme na mieru – žiadne šablóny. Rýchlosť Návrh do 24 hodín, web do 7 dní, e-shop do 14 dní. Transparentné ceny Web od 300 €, e-shop od 1 000 €. Žiadna záloha – platíte až po spustení. Komunikácia Vždy viete, kde sa projekt nachádza. Skúsenosti Weby, e-shopy aj webové aplikácie. Ukážky nájdete v portfóliu. REFERENCIE Čo hovoria naši klienti. “ Odporúča SiteLeveled na Facebooku “Mária vrelo odporúčam každému, kto túži po svojej vysnívanej webovej stránke 😊 Tá moja je podľa mňa úplne dokonalá 😊 veď posúďte sami: zuzu-photo.sk. Mário je kreatívny, trpezlivý a hlavne veľmi šikovný. Ďakujem! 🙏🙏🙏👏” ZK Zuzana Kondeková zuzu-photo.sk “ Odporúča SiteLeveled na Facebooku “Oceňujem ľudský a „polopatistický“ prístup, keďže nie som moc technický typ. Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky. Som veľmi spokojná a môžem odporúčať ďalej 🙂” ZK Zuzana Khala jogaslaskou.sk “ Odporúča SiteLeveled na Facebooku “Určite odporúčam každému, kto hľadá niekoho šikovného a spoľahlivého 👌 Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala ☺️” JB Jaja Bieliková springnitra.sk Mário Doman · vývojár Za každým projektom je reálny človek. Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich Mário Doman, spoločnosť DOMAN s.r.o. vedie konateľka Mária Domanová. Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať. Chceme, aby ste videli, čo pre vás vieme spraviť. 0910 803 993 FAQ Časté otázky. Je návrh naozaj zadarmo? Som niečím viazaný? Čo ak sa mi návrh nebude páčiť? Ako prebieha realizácia? Koľko stojí kompletná webstránka? Ako dlho trvá výroba webu? Získajte návrh vašej webstránky do 24 hodín – bez rizika. Chcem návrh zadarmo",
+    "textNodesInsideOpacity0": 94,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo →",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "other",
+        "ariaHidden": null
+      },
+      {
+        "href": "#portfolio",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#portfolio",
+        "text": "Pozrieť portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "#referencie",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#referencie",
+        "text": "Klienti nás odporúčajú na Facebooku",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/jogaslaskou/",
+        "abs": "http://localhost:4173/mesto/jogaslaskou/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/nosekrst/",
+        "abs": "http://localhost:4173/mesto/nosekrst/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/zuzu-photo/",
+        "abs": "http://localhost:4173/mesto/zuzu-photo/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/mdfoto/",
+        "abs": "http://localhost:4173/mesto/mdfoto/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/springnitra/",
+        "abs": "http://localhost:4173/mesto/springnitra/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "/mesto/mdfoto/",
+        "abs": "http://localhost:4173/mesto/mdfoto/",
+        "text": "mdfoto.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/zuzu-photo/",
+        "abs": "http://localhost:4173/mesto/zuzu-photo/",
+        "text": "zuzu-photo.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/nosekrst/",
+        "abs": "http://localhost:4173/mesto/nosekrst/",
+        "text": "nosekrst.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/jogaslaskou/",
+        "abs": "http://localhost:4173/mesto/jogaslaskou/",
+        "text": "jogaslaskou.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/mesto/springnitra/",
+        "abs": "http://localhost:4173/mesto/springnitra/",
+        "text": "springnitra.sk",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.springnitra.sk",
+        "abs": "https://www.springnitra.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.springnitra.sk",
+        "abs": "https://www.springnitra.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.jogaslaskou.sk",
+        "abs": "https://www.jogaslaskou.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.jogaslaskou.sk",
+        "abs": "https://www.jogaslaskou.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.zuzu-photo.sk",
+        "abs": "https://www.zuzu-photo.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.zuzu-photo.sk",
+        "abs": "https://www.zuzu-photo.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://sanifix.sk",
+        "abs": "https://sanifix.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://sanifix.sk",
+        "abs": "https://sanifix.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.zeriavynitra.sk",
+        "abs": "https://www.zeriavynitra.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.zeriavynitra.sk",
+        "abs": "https://www.zeriavynitra.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.mdfoto.sk",
+        "abs": "https://www.mdfoto.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.mdfoto.sk",
+        "abs": "https://www.mdfoto.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.nosekrst.sk",
+        "abs": "https://www.nosekrst.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.nosekrst.sk",
+        "abs": "https://www.nosekrst.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.fotkynavyber.sk",
+        "abs": "https://www.fotkynavyber.sk/",
+        "text": "",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": "true"
+      },
+      {
+        "href": "https://www.fotkynavyber.sk",
+        "abs": "https://www.fotkynavyber.sk/",
+        "text": "Pozrieť web naživo",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.zuzu-photo.sk",
+        "abs": "https://www.zuzu-photo.sk/",
+        "text": "zuzu-photo.sk",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.jogaslaskou.sk",
+        "abs": "https://www.jogaslaskou.sk/",
+        "text": "jogaslaskou.sk",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.springnitra.sk",
+        "abs": "https://www.springnitra.sk/",
+        "text": "springnitra.sk",
+        "ariaLabel": null,
+        "rel": "noopener noreferrer",
+        "target": "_blank",
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/toto-neexistuje-xyz-404#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu",
+      "Chcem návrh zadarmo",
+      "",
+      "",
+      "",
+      "",
+      "+ Voľný pozemok",
+      "01 Vizuálny návrh hlavnej stránky",
+      "02 Kompletná štruktúra celého webu",
+      "03 Základný koncept textov",
+      "04 Odporúčania pre dizajn a funkcie",
+      "05 Cenová ponuka realizácie",
+      "Odoslať a získať návrh zadarmo",
+      "Chcem návrh zadarmo",
+      "Je návrh naozaj zadarmo?",
+      "Som niečím viazaný?",
+      "Čo ak sa mi návrh nebude páčiť?",
+      "Ako prebieha realizácia?",
+      "Koľko stojí kompletná webstránka?",
+      "Ako dlho trvá výroba webu?",
+      "Chcem návrh zadarmo"
+    ],
+    "images": [
+      {
+        "src": "/springnitra-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/jogaslaskou-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/zuzu-photo-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/sanifix-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/zeriavynitra-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/mdfoto-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/nosekrst-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/fotkynavyber-preview.webp",
+        "alt": "",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "362x256"
+      },
+      {
+        "src": "/profile.jpg",
+        "alt": "Mário Doman",
+        "loading": "lazy",
+        "widthAttr": null,
+        "heightAttr": null,
+        "natural": "0x0",
+        "rendered": "192x192"
+      }
+    ],
+    "canvases": 1,
+    "landmarks": {
+      "header": 0,
+      "nav": 2,
+      "main": 1,
+      "footer": 4
+    },
+    "forms": [
+      {
+        "action": null,
+        "fields": [
+          "lead-name",
+          "lead-email",
+          "lead-company",
+          "lead-web"
+        ]
+      }
+    ]
+  }
+}

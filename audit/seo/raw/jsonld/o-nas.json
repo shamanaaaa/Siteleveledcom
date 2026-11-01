@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://siteleveled.com/o-nas/#webpage",
+      "url": "https://siteleveled.com/o-nas/",
+      "name": "O nás – kto stojí za SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": { "@id": "https://siteleveled.com/#website" },
+      "about": { "@id": "https://siteleveled.com/#organization" },
+      "mainEntity": { "@id": "https://siteleveled.com/o-nas/#mario-doman" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Domov", "item": "https://siteleveled.com/" },
+        { "@type": "ListItem", "position": 2, "name": "O nás", "item": "https://siteleveled.com/o-nas/" }
+      ]
+    }
+  ]
+}

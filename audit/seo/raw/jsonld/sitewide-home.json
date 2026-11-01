@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://siteleveled.com/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "domansro@gmail.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+421910803993",
+        "email": "domansro@gmail.com",
+        "availableLanguage": "sk"
+      },
+      "founder": { "@id": "https://siteleveled.com/o-nas/#mario-doman" },
+      "employee": [
+        { "@id": "https://siteleveled.com/o-nas/#mario-doman" },
+        { "@id": "https://siteleveled.com/o-nas/#maria-domanova" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": { "@id": "https://siteleveled.com/#organization" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": { "@id": "https://siteleveled.com/#organization" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": { "@id": "https://siteleveled.com/#organization" }
+    }
+  ]
+}

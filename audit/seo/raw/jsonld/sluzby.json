@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#tvorba-webu",
+      "name": "Tvorba webstránky na mieru",
+      "serviceType": "Tvorba webstránok",
+      "provider": { "@id": "https://siteleveled.com/#organization" },
+      "areaServed": { "@type": "Country", "name": "Slovensko" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://siteleveled.com/cennik/",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "minPrice": 300, "priceCurrency": "EUR" },
+        "description": "Web od 300 €, hotový do 7 dní. Bez zálohy, platíte až po spustení."
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#tvorba-eshopu",
+      "name": "Tvorba e-shopu na mieru",
+      "serviceType": "Tvorba e-shopov",
+      "provider": { "@id": "https://siteleveled.com/#organization" },
+      "areaServed": { "@type": "Country", "name": "Slovensko" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://siteleveled.com/cennik/",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1000, "priceCurrency": "EUR" },
+        "description": "E-shop od 1 000 €, hotový do 14 dní. Bez zálohy, platíte až po spustení."
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#seo-audit",
+      "name": "SEO audit webu",
+      "serviceType": "SEO audit",
+      "provider": { "@id": "https://siteleveled.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://siteleveled.com/cennik/",
+        "price": 199,
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#sprava-webu",
+      "name": "Správa webu",
+      "serviceType": "Správa a údržba webu",
+      "provider": { "@id": "https://siteleveled.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://siteleveled.com/cennik/",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": 30,
+          "priceCurrency": "EUR",
+          "unitCode": "MON",
+          "unitText": "mesiac"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Domov", "item": "https://siteleveled.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Služby", "item": "https://siteleveled.com/sluzby/" }
+      ]
+    }
+  ]
+}

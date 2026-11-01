@@ -1,0 +1,665 @@
+{
+  "route": "/proces",
+  "status": 200,
+  "blockedApi": [],
+  "requestCount": 9,
+  "consoleErrors": [],
+  "first": {
+    "url": "http://localhost:4173/proces",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Od nápadu po spustenie. Bez prekvapení."
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Od nápadu po spustenie. Bez prekvapení.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Konzultácia (zdarma)",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Stratégia & Návrh",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vývoj & Obsah",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Testovanie & Spustenie",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Správa & Rast (voliteľné)",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 131,
+    "mainWordsVisible": 145,
+    "mainTextVisible": "PROCES Od nápadu po spustenie. Bez prekvapení. Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy vieš, kde sme a čo bude ďalej. 01 01 Konzultácia (zdarma) Rozprávame sa o tvojom biznise, cieľoch a predstavách. Bez záväzku. Bez salespitchu. → Výstup: Vzájomné pochopenie + hrubý odhad rozsahu 02 02 Stratégia & Návrh Vypracujeme štruktúru webu, wireframy a vizuálny dizajn. Nič nekódujeme, kým si s dizajnom spokojný. → Výstup: Schválený Figma prototyp 03 03 Vývoj & Obsah Programujeme web, integrujeme CMS, píšeme alebo finalizujeme texty. Pravidelné aktualizácie cez zdieľaný workspace. → Výstup: Funkčný web na testovacej doméne 04 04 Testovanie & Spustenie Testujeme na všetkých zariadeniach a prehliadačoch. SEO check. Rýchlostný audit. Spúšťame len keď je všetko na 100 %. → Výstup: Live web + odovzdávací checklist 05 05 Správa & Rast (voliteľné) Nezmizíme po odovzdaní. Staráme sa o web, sledujeme výkon, navrhujeme zlepšenia. → Výstup: Mesačné reporty + priebežná optimalizácia Jednoduchý web je hotový do 7 dní, e-shop do 14 dní. Chceš začať? Dohodnúť konzultáciu",
+    "textNodesInsideOpacity0": 22,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo →",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "other",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Dohodnúť konzultáciu",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/proces#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/proces#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/proces#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu"
+    ],
+    "images": [],
+    "canvases": 0,
+    "landmarks": {
+      "header": 0,
+      "nav": 1,
+      "main": 1,
+      "footer": 1
+    },
+    "forms": []
+  },
+  "tall": {
+    "url": "http://localhost:4173/proces",
+    "lang": "sk",
+    "title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+    "description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov. Webdizajn, SEO a správa webu pre slovenské firmy.",
+    "canonical": null,
+    "robots": null,
+    "og": {
+      "og:type": "website",
+      "og:site_name": "SiteLeveled",
+      "og:locale": "sk_SK",
+      "og:title": "SiteLeveled — Weby, ktoré predávajú | Návrh zadarmo do 24h",
+      "og:description": "Moderné weby, ktoré predávajú. Návrh vašej novej stránky zadarmo do 24 hodín – bez záväzkov.",
+      "og:image": "https://siteleveled.com/og/siteleveled.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Pixelové mesto klientov SiteLeveled",
+      "twitter:card": "summary_large_image"
+    },
+    "jsonLd": 0,
+    "h1": [
+      "Od nápadu po spustenie. Bez prekvapení."
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Od nápadu po spustenie. Bez prekvapení.",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Konzultácia (zdarma)",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Stratégia & Návrh",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vývoj & Obsah",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Testovanie & Spustenie",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Správa & Rast (voliteľné)",
+        "where": "main"
+      },
+      {
+        "level": 3,
+        "text": "Vyleveluj svoju stránku.",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Navigácia",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Čo dostanete zadarmo",
+        "where": "footer"
+      },
+      {
+        "level": 4,
+        "text": "Kontakt",
+        "where": "footer"
+      }
+    ],
+    "mainWordsDom": 131,
+    "mainWordsVisible": 145,
+    "mainTextVisible": "PROCES Od nápadu po spustenie. Bez prekvapení. Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy vieš, kde sme a čo bude ďalej. 01 01 Konzultácia (zdarma) Rozprávame sa o tvojom biznise, cieľoch a predstavách. Bez záväzku. Bez salespitchu. → Výstup: Vzájomné pochopenie + hrubý odhad rozsahu 02 02 Stratégia & Návrh Vypracujeme štruktúru webu, wireframy a vizuálny dizajn. Nič nekódujeme, kým si s dizajnom spokojný. → Výstup: Schválený Figma prototyp 03 03 Vývoj & Obsah Programujeme web, integrujeme CMS, píšeme alebo finalizujeme texty. Pravidelné aktualizácie cez zdieľaný workspace. → Výstup: Funkčný web na testovacej doméne 04 04 Testovanie & Spustenie Testujeme na všetkých zariadeniach a prehliadačoch. SEO check. Rýchlostný audit. Spúšťame len keď je všetko na 100 %. → Výstup: Live web + odovzdávací checklist 05 05 Správa & Rast (voliteľné) Nezmizíme po odovzdaní. Staráme sa o web, sledujeme výkon, navrhujeme zlepšenia. → Výstup: Mesačné reporty + priebežná optimalizácia Jednoduchý web je hotový do 7 dní, e-shop do 14 dní. Chceš začať? Dohodnúť konzultáciu",
+    "textNodesInsideOpacity0": 0,
+    "links": [
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo→",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "nav",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Dohodnúť konzultáciu",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "main",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#formular",
+        "abs": "http://localhost:4173/#formular",
+        "text": "Chcem návrh zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/",
+        "abs": "http://localhost:4173/",
+        "text": "SITELEVELED",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#ako-to-funguje",
+        "abs": "http://localhost:4173/#ako-to-funguje",
+        "text": "Ako to funguje",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#portfolio",
+        "abs": "http://localhost:4173/#portfolio",
+        "text": "Portfólio",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#referencie",
+        "abs": "http://localhost:4173/#referencie",
+        "text": "Referencie",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/#faq",
+        "abs": "http://localhost:4173/#faq",
+        "text": "FAQ",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/seo-audit",
+        "abs": "http://localhost:4173/seo-audit",
+        "text": "SEO audit zadarmo",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "/kontakt",
+        "abs": "http://localhost:4173/kontakt",
+        "text": "Kontakt",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "mailto:domansro@gmail.com",
+        "abs": "mailto:domansro@gmail.com",
+        "text": "domansro@gmail.com",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "tel:+421910803993",
+        "abs": "tel:+421910803993",
+        "text": "0910 803 993",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/proces#",
+        "text": "Instagram",
+        "ariaLabel": "Instagram",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "abs": "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+        "text": "LinkedIn",
+        "ariaLabel": "LinkedIn",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "https://www.facebook.com/mario.doman",
+        "abs": "https://www.facebook.com/mario.doman",
+        "text": "Facebook",
+        "ariaLabel": "Facebook",
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/proces#",
+        "text": "Ochrana osobných údajov",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      },
+      {
+        "href": "#",
+        "abs": "http://localhost:4173/proces#",
+        "text": "Podmienky používania",
+        "ariaLabel": null,
+        "rel": null,
+        "target": null,
+        "where": "footer",
+        "ariaHidden": null
+      }
+    ],
+    "buttons": [
+      "Otvoriť menu"
+    ],
+    "images": [],
+    "canvases": 0,
+    "landmarks": {
+      "header": 0,
+      "nav": 1,
+      "main": 1,
+      "footer": 1
+    },
+    "forms": []
+  }
+}

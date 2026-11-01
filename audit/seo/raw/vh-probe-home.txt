@@ -1,0 +1,3 @@
+{"viewportHeight":915,"heroHeight":1301,"pageHeight":16979,"sections":11,"sectionsWithHiddenText":8}
+{"viewportHeight":5000,"heroHeight":5000,"pageHeight":20677,"sections":11,"sectionsWithHiddenText":8}
+{"viewportHeight":12000,"heroHeight":12000,"pageHeight":27677,"sections":11,"sectionsWithHiddenText":8}

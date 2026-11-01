@@ -1,0 +1,56 @@
+[Unlighthouse] ℹ Using system Chrome located at: /mnt/c/Program Files/Google/Chrome/Application/chrome.exe.
+
+[Unlighthouse]  WARN  Failed to launch puppeteer instance using /mnt/c/Program Files/Google/Chrome/Application/chrome.exe. ErrorEvent {
+  Symbol(kTarget):
+   WebSocket {
+     _events: [Object: null prototype] { open: [Function], error: [Function] },
+     _eventsCount: 2,
+     _maxListeners: undefined,
+     _binaryType: 'nodebuffer',
+     _closeCode: 1006,
+     _closeFrameReceived: false,
+     _closeFrameSent: false,
+     _closeMessage: <Buffer >,
+     _closeTimer: null,
+     _errorEmitted: true,
+     _extensions: {},
+     _paused: false,
+     _protocol: '',
+     _readyState: 3,
+     _receiver: null,
+     _sender: null,
+     _socket: null,
+     _bufferedAmount: 0,
+     _isServer: false,
+     _redirects: 0,
+     _autoPong: true,
+     _closeTimeout: 30000,
+     _url: 'ws://127.0.0.1:63704/devtools/browser/189ea8f8-2da8-4ff1-bebb-9d9be47a0d56',
+     _originalIpc: false,
+     _originalSecure: false,
+     _originalHostOrSocketPath: '127.0.0.1:63704',
+     _req: null,
+     Symbol(shapeMode): false,
+     Symbol(kCapture): false },
+  Symbol(kType): 'error',
+  Symbol(kError):
+   { Error: connect ECONNREFUSED 127.0.0.1:63704
+       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+     errno: -111,
+     code: 'ECONNREFUSED',
+     syscall: 'connect',
+     address: '127.0.0.1',
+     port: 63704 },
+  Symbol(kMessage): 'connect ECONNREFUSED 127.0.0.1:63704' }
+
+[Unlighthouse] ℹ Using downloaded chrome v155.0.8059.79 located at: /home/shamanaaaa/.unlighthouse/chrome/linux-155.0.8059.79/chrome-linux64/chrome
+[Unlighthouse] ✔ Successfully connected to http://localhost:4173. (Status: 200).
+[Unlighthouse] ℹ Creating Unlighthouse using config from /home/shamanaaaa/Siteleveledcom/server/unlighthouse.config.mjs
+[Unlighthouse] ℹ Found /robots.txt, using entries. Sitemaps: 0, Groups: 1.
+[Unlighthouse] ℹ Sitemap appears to be missing, falling back to crawler mode.
+
+[Unlighthouse]  WARN  No internal links discovered on home page. Switching crawler to execute javascript and disabling cache.
+
+[Unlighthouse] ✔ Unlighthouse has finished scanning http://localhost:4173: 8 routes in 214s.
+[Unlighthouse] ✔ Generated jsonExpanded report ./../audit/seo/raw/unlighthouse/ci-result.json
+exit=0

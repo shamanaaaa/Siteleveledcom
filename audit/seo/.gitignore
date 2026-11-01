@@ -1,0 +1,7 @@
+# Heavy evidence that can be regenerated with scripts/ (REPORT.md §10) stays local.
+# What the findings cite is kept: headers, JSON-LD, link graph, render JSON/DOM, summaries.
+raw/build-sourcemap/
+raw/render/*.png
+raw/lighthouse/*.html
+raw/lighthouse/*.json
+raw/unlighthouse/

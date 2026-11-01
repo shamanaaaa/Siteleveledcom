@@ -1,0 +1,306 @@
+{
+  "table": [
+    {
+      "page": "/",
+      "linkingPages": 9,
+      "from": "/sluzby /portfolio /proces /o-nas /cennik /blog /kontakt /seo-audit /seo-audit/admin",
+      "anchors": "SITELEVELED | Ako to funguje | Portfólio | Referencie | FAQ | Chcem návrh zadarmo→ | Chcem návrh zadarmo"
+    },
+    {
+      "page": "/sluzby",
+      "linkingPages": 0,
+      "from": "",
+      "anchors": ""
+    },
+    {
+      "page": "/portfolio",
+      "linkingPages": 0,
+      "from": "",
+      "anchors": ""
+    },
+    {
+      "page": "/proces",
+      "linkingPages": 0,
+      "from": "",
+      "anchors": ""
+    },
+    {
+      "page": "/o-nas",
+      "linkingPages": 0,
+      "from": "",
+      "anchors": ""
+    },
+    {
+      "page": "/cennik",
+      "linkingPages": 0,
+      "from": "",
+      "anchors": ""
+    },
+    {
+      "page": "/blog",
+      "linkingPages": 0,
+      "from": "",
+      "anchors": ""
+    },
+    {
+      "page": "/kontakt",
+      "linkingPages": 9,
+      "from": "/ /sluzby /portfolio /proces /o-nas /cennik /blog /seo-audit /seo-audit/admin",
+      "anchors": "Kontakt | Chcem web na mieru | Chcem byť na Googli | Chcem texty, čo fungujú | Chcem spoľahlivú správu | Chcem viac zákazníkov | Chcem audit môjho webu | Dohodnúť konzultáciu | Porozprávajme sa | Mám záujem | Rezervovať konzultáciu"
+    },
+    {
+      "page": "/seo-audit",
+      "linkingPages": 9,
+      "from": "/ /sluzby /portfolio /proces /o-nas /cennik /blog /kontakt /seo-audit/admin",
+      "anchors": "SEO audit | SEO audit zadarmo | Najprv si spusti automatickú kontrolu zadarmo →"
+    },
+    {
+      "page": "/seo-audit/admin",
+      "linkingPages": 0,
+      "from": "",
+      "anchors": ""
+    }
+  ],
+  "dead": [
+    {
+      "src": "/",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/sluzby",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/sluzby",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/sluzby",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/portfolio",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/portfolio",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/portfolio",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/proces",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/proces",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/proces",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/o-nas",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/o-nas",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/o-nas",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/cennik",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/cennik",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/cennik",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/blog",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/blog",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/blog",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/kontakt",
+      "text": "LinkedIn",
+      "region": "main",
+      "href": "#"
+    },
+    {
+      "src": "/kontakt",
+      "text": "Instagram",
+      "region": "main",
+      "href": "#"
+    },
+    {
+      "src": "/kontakt",
+      "text": "GitHub",
+      "region": "main",
+      "href": "#"
+    },
+    {
+      "src": "/kontakt",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/kontakt",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/kontakt",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/seo-audit",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/seo-audit",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/seo-audit",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/seo-audit/admin",
+      "text": "Instagram",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/seo-audit/admin",
+      "text": "Ochrana osobných údajov",
+      "region": "footer",
+      "href": "#"
+    },
+    {
+      "src": "/seo-audit/admin",
+      "text": "Podmienky používania",
+      "region": "footer",
+      "href": "#"
+    }
+  ],
+  "external": [
+    [
+      "https://www.springnitra.sk/",
+      5
+    ],
+    [
+      "https://www.jogaslaskou.sk/",
+      5
+    ],
+    [
+      "https://www.zuzu-photo.sk/",
+      5
+    ],
+    [
+      "https://sanifix.sk/",
+      4
+    ],
+    [
+      "https://www.zeriavynitra.sk/",
+      4
+    ],
+    [
+      "https://www.mdfoto.sk/",
+      4
+    ],
+    [
+      "https://www.nosekrst.sk/",
+      4
+    ],
+    [
+      "https://www.fotkynavyber.sk/",
+      4
+    ],
+    [
+      "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
+      10
+    ],
+    [
+      "https://www.facebook.com/mario.doman",
+      10
+    ]
+  ]
+}

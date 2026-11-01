@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://siteleveled.com/kontakt/#webpage",
+      "url": "https://siteleveled.com/kontakt/",
+      "name": "Kontakt – SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": { "@id": "https://siteleveled.com/#website" },
+      "about": { "@id": "https://siteleveled.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Domov", "item": "https://siteleveled.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://siteleveled.com/kontakt/" }
+      ]
+    }
+  ]
+}
