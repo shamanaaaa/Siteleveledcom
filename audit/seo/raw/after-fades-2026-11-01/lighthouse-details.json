@@ -1,0 +1,626 @@
+{
+  "blog-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [
+      "is-crawlable"
+    ],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 5,
+    "mainThread": "0.4 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 0,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": null,
+      "structured-data": null
+    },
+    "colorContrast": 4,
+    "tapTargets": 1
+  },
+  "blog-mobile": {
+    "failingPerf": [
+      "first-contentful-paint",
+      "largest-contentful-paint"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [
+      "is-crawlable"
+    ],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 5,
+    "mainThread": "1.4 s",
+    "bootup": "0.4 s",
+    "seoAudits": {
+      "is-crawlable": 0,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": null,
+      "structured-data": null
+    },
+    "colorContrast": 4,
+    "tapTargets": 1
+  },
+  "cennik-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 94 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "0.6 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 7,
+    "tapTargets": 1
+  },
+  "cennik-mobile": {
+    "failingPerf": [
+      "first-contentful-paint"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 94 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "3.1 s",
+    "bootup": "0.7 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 4,
+    "tapTargets": 1
+  },
+  "home-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 78 kB of 174 kB"
+    ],
+    "cacheTtl": 1,
+    "mainThread": "0.7 s",
+    "bootup": "0.2 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 42,
+    "tapTargets": 1
+  },
+  "home-mobile": {
+    "failingPerf": [
+      "first-contentful-paint",
+      "largest-contentful-paint"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 78 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "2.7 s",
+    "bootup": "0.8 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 6,
+    "tapTargets": 1
+  },
+  "kontakt-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "0.3 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 14,
+    "tapTargets": 1
+  },
+  "kontakt-mobile": {
+    "failingPerf": [
+      "first-contentful-paint"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "1.8 s",
+    "bootup": "0.5 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 14,
+    "tapTargets": 1
+  },
+  "o-nas-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast",
+      "link-in-text-block"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 96 kB of 174 kB"
+    ],
+    "cacheTtl": 1,
+    "mainThread": "0.4 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 13,
+    "tapTargets": 1
+  },
+  "o-nas-mobile": {
+    "failingPerf": [
+      "first-contentful-paint"
+    ],
+    "failingA11y": [
+      "color-contrast",
+      "link-in-text-block"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 96 kB of 174 kB"
+    ],
+    "cacheTtl": 1,
+    "mainThread": "1.9 s",
+    "bootup": "0.5 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 7,
+    "tapTargets": 1
+  },
+  "portfolio-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 96 kB of 174 kB"
+    ],
+    "cacheTtl": 8,
+    "mainThread": "0.5 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 22,
+    "tapTargets": 1
+  },
+  "portfolio-mobile": {
+    "failingPerf": [
+      "first-contentful-paint",
+      "largest-contentful-paint",
+      "speed-index"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 96 kB of 174 kB"
+    ],
+    "cacheTtl": 5,
+    "mainThread": "1.5 s",
+    "bootup": "0.3 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": 1,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 22,
+    "tapTargets": 1
+  },
+  "proces-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "0.4 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 3,
+    "tapTargets": 1
+  },
+  "proces-mobile": {
+    "failingPerf": [
+      "first-contentful-paint"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "1.5 s",
+    "bootup": "0.4 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 3,
+    "tapTargets": 1
+  },
+  "seo-audit-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "0.4 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 8,
+    "tapTargets": 1
+  },
+  "seo-audit-mobile": {
+    "failingPerf": [
+      "first-contentful-paint",
+      "largest-contentful-paint",
+      "speed-index"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 95 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "1.2 s",
+    "bootup": "0.3 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 6,
+    "tapTargets": 1
+  },
+  "sluzby-desktop": {
+    "failingPerf": [],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (80 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 96 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "0.4 s",
+    "bootup": "0.1 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 15,
+    "tapTargets": 1
+  },
+  "sluzby-mobile": {
+    "failingPerf": [
+      "first-contentful-paint"
+    ],
+    "failingA11y": [
+      "color-contrast"
+    ],
+    "failingSeo": [],
+    "failingBp": [],
+    "renderBlocking": [
+      "https://siteleveled.com/assets/index-B2vNuCbM.css (300 ms)"
+    ],
+    "textCompression": [],
+    "unusedJs": [
+      "https://siteleveled.com/assets/index-D8YjfBWD.js unused 96 kB of 174 kB"
+    ],
+    "cacheTtl": 0,
+    "mainThread": "1.7 s",
+    "bootup": "0.5 s",
+    "seoAudits": {
+      "is-crawlable": 1,
+      "document-title": 1,
+      "meta-description": 1,
+      "http-status-code": 1,
+      "link-text": 1,
+      "crawlable-anchors": 1,
+      "robots-txt": 1,
+      "image-alt": null,
+      "hreflang": 1,
+      "canonical": 1,
+      "structured-data": null
+    },
+    "colorContrast": 15,
+    "tapTargets": 1
+  }
+}

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Plugin } from "vite";
+import { IMAGE_SIZES, imageSrcSet } from "../src/app/lib/images";
 import { NOT_FOUND, PAGES, SITE, type PageMeta } from "../src/app/seo/pages";
 
 /*
@@ -170,6 +171,11 @@ function pageHtml(template: string, page: PageMeta) {
         `<script type="application/ld+json">${scriptJson(jsonLd(page))}</script>`,
       ]
     : [`<meta name="robots" content="${page.robots}" />`];
+  if (page.heroImage) {
+    const { src, width } = page.heroImage;
+    const files = width ? `imagesrcset="${imageSrcSet(src, width)}" imagesizes="${IMAGE_SIZES}"` : `href="${src}"`;
+    tags.push(`<link rel="preload" as="image" ${files} fetchpriority="high" />`);
+  }
   return template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(page.title)}</title>`)
     .replace(/<meta\s+name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(page.description)}" />`)
@@ -199,6 +205,13 @@ export function seoPages(): Plugin {
         .filter((p) => !PAGES.some((page) => page.path === `/${p}/`));
       if (missing.length) {
         this.error(`No entry in src/app/seo/pages.ts for route(s) ${missing.join(", ")}: they would 404 on a direct visit`);
+      }
+      const images = fs.readdirSync(path.join(root, "public"));
+      const noPhoneVersion = images.filter(
+        (f) => /-preview\.webp$|^blog-\d+\.webp$/.test(f) && !images.includes(f.replace(".webp", "-720.webp")),
+      );
+      if (noPhoneVersion.length) {
+        this.error(`No 720 px wide -720.webp version of ${noPhoneVersion.join(", ")} in public/: it would break on phones`);
       }
     },
     closeBundle() {

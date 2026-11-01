@@ -6,6 +6,7 @@ import { GlowCard } from "../components/fx/GlowCard";
 import { KineticHeading } from "../components/fx/KineticHeading";
 import { MagneticButton } from "../components/fx/MagneticButton";
 import { PageHero } from "../components/fx/PageHero";
+import { IMAGE_SIZES, imageSrcSet } from "../lib/images";
 
 const projects = [
   {
@@ -181,7 +182,7 @@ export function PortfolioPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col gap-10">
             <AnimatePresence mode="popLayout" initial={false}>
-              {filtered.map((project) => (
+              {filtered.map((project, i) => (
                 <motion.div
                   key={project.id}
                   layout
@@ -201,8 +202,11 @@ export function PortfolioPage() {
                       >
                         <img
                           src={project.image}
+                          srcSet={imageSrcSet(project.image, 1200)}
+                          sizes={IMAGE_SIZES}
                           alt={`Ukážka webu ${project.title}`}
-                          loading="lazy"
+                          // The first one is the largest thing on the first screen
+                          loading={i === 0 ? "eager" : "lazy"}
                           decoding="async"
                           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/glow:scale-[1.04]"
                         />

@@ -52,7 +52,8 @@ export function HeroSection() {
               delay={0.15}
               segments={[
                 { text: "Získajte návrh vašej novej webstránky", br: true },
-                { text: "do 24 hodín – úplne zadarmo.", className: "text-gradient-primary" },
+                // Non-breaking space: otherwise "úplne" jumps a line when the web font replaces the fallback
+                { text: "do 24 hodín – úplne\u00A0zadarmo.", className: "text-gradient-primary" },
               ]}
               className="mb-6 font-heading text-display-2 font-bold"
             />

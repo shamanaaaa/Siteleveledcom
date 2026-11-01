@@ -7,6 +7,7 @@ import { Aurora } from "../components/fx/Aurora";
 import { GlowCard } from "../components/fx/GlowCard";
 import { KineticHeading } from "../components/fx/KineticHeading";
 import { PageHero } from "../components/fx/PageHero";
+import { IMAGE_SIZES, imageSrcSet } from "../lib/images";
 
 const categories = ["Všetky", "SEO", "Dizajn", "Marketing", "Case Studies"];
 
@@ -124,6 +125,8 @@ export function BlogPage() {
                   <div className="aspect-[16/10] overflow-hidden lg:aspect-auto">
                     <ImageWithFallback
                       src={featured.image}
+                      srcSet={imageSrcSet(featured.image, 1080)}
+                      sizes={IMAGE_SIZES}
                       alt={featured.title}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover/glow:scale-[1.04]"
                     />
@@ -165,7 +168,10 @@ export function BlogPage() {
                     <div className="aspect-[16/10] overflow-hidden">
                       <ImageWithFallback
                         src={post.image}
+                        srcSet={imageSrcSet(post.image, 1080)}
+                        sizes={IMAGE_SIZES}
                         alt={post.title}
+                        loading="lazy"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover/glow:scale-[1.04]"
                       />
                     </div>

@@ -13,7 +13,7 @@ export function BioSection() {
               <div className="rounded-2xl bg-gradient-to-br from-[#6C63FF] via-[#9F97FF] to-[#00D9FF] p-[2px]">
                 <div className="h-48 w-48 overflow-hidden rounded-[calc(1rem-1px)]">
                   <img
-                    src="/profile.jpg"
+                    src="/profile.webp"
                     alt="Mário Doman"
                     loading="lazy"
                     decoding="async"

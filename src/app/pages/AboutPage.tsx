@@ -56,7 +56,7 @@ export function AboutPage() {
                 <div className="rounded-card bg-gradient-to-br from-[#6C63FF] via-[#9F97FF]/60 to-[#00D9FF]/50 p-[2px]">
                   <div className="overflow-hidden rounded-[calc(1.25rem-2px)]">
                     <img
-                      src="/profile.jpg"
+                      src="/profile.webp"
                       alt="Mário Doman, vývojár SiteLeveled"
                       className="aspect-[4/5] w-full object-cover"
                     />

@@ -16,6 +16,11 @@ export interface PageMeta {
   name?: string;
   /** Only set for pages that must stay out of the index */
   robots?: string;
+  /**
+   * The largest image on the first screen. The HTML names it so it downloads from the start, not after the
+   * JavaScript has run; `width` means it has a phone version (imageSrcSet). Keep in step with the page.
+   */
+  heroImage?: { src: string; width?: number };
 }
 
 export const PAGES: PageMeta[] = [
@@ -41,6 +46,7 @@ export const PAGES: PageMeta[] = [
   },
   {
     path: "/portfolio/",
+    heroImage: { src: "/mdfoto-preview.webp", width: 1200 },
     name: "Portfólio",
     title: "Portfólio a referencie: naše weby | SiteLeveled",
     description:
@@ -55,6 +61,7 @@ export const PAGES: PageMeta[] = [
   },
   {
     path: "/o-nas/",
+    heroImage: { src: "/profile.webp" },
     name: "O nás",
     title: "O nás: Mário Doman a DOMAN s.r.o. | SiteLeveled",
     description:
@@ -84,6 +91,7 @@ export const PAGES: PageMeta[] = [
   {
     // Placeholder posts without articles: kept out of the index until real ones exist
     path: "/blog/",
+    heroImage: { src: "/blog-1.webp", width: 1080 },
     name: "Blog",
     title: "Blog o tvorbe webu a SEO pre malé firmy | SiteLeveled",
     description:
