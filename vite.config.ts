@@ -23,15 +23,6 @@ export default defineConfig({
     },
   },
 
-  build: {
-    rollupOptions: {
-      output: {
-        // Without this, every icon and small shared component becomes a request of its own
-        experimentalMinChunkSize: 5000,
-      },
-    },
-  },
-
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 
