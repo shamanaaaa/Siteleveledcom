@@ -4,7 +4,6 @@ import {
   Search,
   PenTool,
   Shield,
-  Megaphone,
   ClipboardCheck,
   ArrowRight,
   Check,
@@ -19,7 +18,7 @@ const services = [
     icon: Code2,
     title: "Webdizajn & Vývoj",
     headline: "Weby na mieru. Bez kompromisov.",
-    text: "Navrhujeme a programujeme weby a e-shopy, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Vaša vízia.",
+    text: "Navrhujeme a programujeme weby a e-shopy, ktoré vyzerajú skvele na každom zariadení, načítajú sa rýchlo a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Vaša vízia.",
     includes: [
       "UI/UX dizajn (vizuálny návrh)",
       "Responzívny vývoj (mobile-first)",
@@ -69,19 +68,6 @@ const services = [
     cta: "Chcem spoľahlivú správu",
   },
   {
-    icon: Megaphone,
-    title: "Výkonnostný Marketing",
-    headline: "Web je základ. Marketing je motor.",
-    text: "Spájame web s kampaňami, ktoré privádzajú reálnych zákazníkov. Meta Ads, Google Ads, e-mail automácie — merateľné výsledky, nie sľuby.",
-    includes: [
-      "Nastavenie a správa Meta / Google Ads",
-      "Landing page pre kampane",
-      "E-mail marketing a automatizácia",
-      "A/B testovanie",
-    ],
-    cta: "Chcem viac zákazníkov",
-  },
-  {
     icon: ClipboardCheck,
     title: "SEO Audit",
     headline: "Zistite, čo brzdí váš rast.",
@@ -105,10 +91,10 @@ const filters = [
 ];
 
 const filterMap: Record<string, number[]> = {
-  all: [0, 1, 2, 3, 4, 5],
+  all: [0, 1, 2, 3, 4],
   new: [0, 2],
-  improve: [1, 3, 5],
-  more: [1, 4],
+  improve: [1, 3, 4],
+  more: [1, 2],
 };
 
 export function ServicesPage() {
