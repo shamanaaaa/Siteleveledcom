@@ -35,6 +35,13 @@ export const PAGES: PageMeta[] = [
       "Navrhneme a naprogramujeme váš web alebo e-shop, nastavíme SEO a postaráme sa o správu webu. Web od 300 €, e-shop od 1 000 €, SEO audit 199 €.",
   },
   {
+    path: "/tvorba-eshopu/",
+    name: "Tvorba e-shopu",
+    title: "Tvorba e-shopu na mieru od 1 000 € | SiteLeveled",
+    description:
+      "Tvorba e-shopu na mieru od 1 000 €, hotový do 14 dní. Návrh dostanete zadarmo do 24 hodín, bez zálohy – platíte až po spustení.",
+  },
+  {
     path: "/cennik/",
     name: "Cenník",
     title: "Cenník: koľko stojí webstránka a e-shop | SiteLeveled",
@@ -46,7 +53,7 @@ export const PAGES: PageMeta[] = [
     name: "Portfólio",
     title: "Portfólio a referencie: naše weby | SiteLeveled",
     description:
-      "Weby a e-shopy, ktoré sme navrhli a naprogramovali pre slovenské firmy – od fotografiek po e-shop. Každý projekt si môžete otvoriť naživo.",
+      "Weby a webové aplikácie, ktoré sme navrhli a naprogramovali pre slovenské firmy – od fotografiek po servisný systém. Každý projekt si môžete otvoriť naživo.",
   },
   {
     path: "/proces/",

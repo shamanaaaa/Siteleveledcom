@@ -69,12 +69,12 @@ const projects = [
     id: "sanifix",
     title: "sanifix.sk",
     category: "Autorizovaný servis kúpeľňového vybavenia",
-    tags: ["E-shopy", "Aplikácie"],
-    type: "E-shop + servisný systém",
+    tags: ["Aplikácie"],
+    type: "Katalóg produktov + servisný systém",
     challenge:
-      "Spojiť predaj kúpeľňového vybavenia a objednávanie servisu autorizovaného servisného centra do jedného webu.",
+      "Spojiť ponuku kúpeľňového vybavenia a objednávanie servisu autorizovaného servisného centra do jedného webu.",
     solution:
-      "E-shop s produktmi, variantmi a akciami jednotlivých značiek, online nahlásenie servisu s výberom produktu a poruchy a administrácia servisných zákaziek.",
+      "Katalóg s cenami, variantmi a akciami jednotlivých značiek, nezáväzný dopyt na produkt, online nahlásenie servisu s výberom produktu a poruchy a administrácia servisných zákaziek.",
     image: "/sanifix-preview.webp",
     url: "https://sanifix.sk",
   },
@@ -127,7 +127,7 @@ const projects = [
   },
 ];
 
-const filterOptions = ["Všetky", "Fotografi", "Služby", "B2B", "E-shopy", "Aplikácie"];
+const filterOptions = ["Všetky", "Fotografi", "Služby", "B2B", "Aplikácie"];
 
 export function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("Všetky");
@@ -309,8 +309,8 @@ export function PortfolioPage() {
             className="mb-8 font-heading text-title font-bold"
           />
           <AnimateIn delay={0.2}>
-            <MagneticButton to="/kontakt/" size="lg">
-              Dohodnúť konzultáciu
+            <MagneticButton to="/#formular" size="lg">
+              Chcem návrh zadarmo
             </MagneticButton>
           </AnimateIn>
         </div>

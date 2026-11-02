@@ -27,7 +27,7 @@ import {
 
 const SEND_FAILED = "Odoslanie zlyhalo. Skúste to o chvíľu znova alebo napíšte na info@siteleveled.com.";
 
-const serviceOptions = ["Nový web", "Audit", "Správa", "Konzultácia", "Iné"];
+const serviceOptions = ["Nový web", "E-shop", "Audit", "Správa", "Iné"];
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -120,7 +120,7 @@ export function ContactPage() {
           { text: "Porozprávajme" },
           { text: "sa.", className: "text-gradient-primary" },
         ]}
-        sub="Bezplatná 30-minútová konzultácia. Bez záväzku. Len úprimný rozhovor o vašom projekte."
+        sub="Napíšte nám alebo zavolajte. Ozveme sa vám do 24 hodín v pracovný deň."
       />
 
       {/* Form + Contact info */}

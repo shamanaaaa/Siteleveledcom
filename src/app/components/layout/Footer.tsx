@@ -9,6 +9,7 @@ import { MagneticButton } from "../fx/MagneticButton";
 const navLinks = [
   { label: "Ako to funguje", hash: "ako-to-funguje" },
   { label: "Služby", href: "/sluzby/" },
+  { label: "Tvorba e-shopu", href: "/tvorba-eshopu/" },
   { label: "Cenník", href: "/cennik/" },
   { label: "Portfólio", href: "/portfolio/" },
   { label: "Proces spolupráce", href: "/proces/" },

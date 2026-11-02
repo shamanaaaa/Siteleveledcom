@@ -150,6 +150,7 @@ function jsonLd(page: PageMeta) {
     });
   }
   if (page.path === "/sluzby/" || page.path === "/cennik/") graph.push(...SERVICES);
+  if (page.path === "/tvorba-eshopu/") graph.push(...SERVICES.filter((s) => s["@id"].endsWith("#tvorba-eshopu")));
   if (page.path === "/o-nas/") graph.push(webPage("AboutPage", page, { mainEntity: { "@id": MARIO } }));
   if (page.path === "/kontakt/") graph.push(webPage("ContactPage", page));
   return { "@context": "https://schema.org", "@graph": graph };

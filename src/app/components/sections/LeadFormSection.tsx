@@ -12,7 +12,7 @@ const inputClass = (error?: string) =>
     error ? "border-red-500/50" : "border-white/8"
   }`;
 
-export function LeadFormSection() {
+export function LeadFormSection({ interest }: { interest?: string }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -71,6 +71,7 @@ export function LeadFormSection() {
           company: formData.company,
           hasWeb: webUrl ? "ano" : "",
           webUrl,
+          notes: interest && `Záujem: ${interest}`,
         }),
       });
       if (!res.ok) {

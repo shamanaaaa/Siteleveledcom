@@ -23,6 +23,7 @@ const plans = [
     link: null,
     features: [
       "Prezentačný web na mieru",
+      "Do 5 podstránok",
       "Responzívny dizajn pre mobil aj počítač",
       "Základné SEO nastavenie",
       "Kontaktný formulár",
@@ -38,7 +39,7 @@ const plans = [
     from: true,
     delivery: "Hotový do 14 dní",
     badge: null,
-    link: null,
+    link: { to: "/tvorba-eshopu/", label: "Viac o tvorbe e-shopu" },
     features: [
       "E-shop na mieru",
       "Katalóg produktov a košík",
@@ -57,8 +58,9 @@ const plans = [
     delivery: "Jednorazová cena",
     badge: null,
     features: [
-      "Analýza webu z pohľadu SEO",
-      "Konkrétne odporúčania na zlepšenie",
+      "Ručná kontrola indexovania, štruktúry a odkazov",
+      "Titulky, nadpisy a texty podľa toho, čo ľudia hľadajú",
+      "Písomná správa a zoznam opráv zoradený podľa dôležitosti",
     ],
     link: { to: "/seo-audit/", label: "Najprv si spustite automatickú kontrolu zadarmo" },
     cta: "Mám záujem",
@@ -68,11 +70,23 @@ const plans = [
 const faqs = [
   {
     q: "Ako dlho trvá vytvorenie webu?",
-    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu. Samotný návrh dostanete do 24 hodín.",
+    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu a dodania podkladov. Samotný návrh dostanete do 24 hodín.",
   },
   {
     q: "Aké sú platobné podmienky?",
     a: "Žiadnu zálohu neplatíte. Za web platíte až po jeho spustení.",
+  },
+  {
+    q: "Je cena s DPH?",
+    a: "DOMAN s.r.o. nie je platiteľom DPH, takže k cenám sa DPH nepripočítava.",
+  },
+  {
+    q: "Kto pripraví texty?",
+    a: "Texty pripravíme z vášho zadania a vy ich schválite. Fotky a logo dodáte vy.",
+  },
+  {
+    q: "Koľko úprav je v cene?",
+    a: "Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah.",
   },
   {
     q: "Môžem si obsah spravovať sám?",
@@ -86,6 +100,20 @@ const faqs = [
     q: "Potrebujem aj hosting a doménu?",
     a: "Doménu si registrujete na svoje meno. S hostingom radi pomôžeme — odporúčame rýchle a spoľahlivé riešenia.",
   },
+];
+
+const priceFactors = [
+  "Počet podstránok nad 5 a množstvo obsahu",
+  "Funkcie navyše, napríklad online rezervácie alebo napojenie na iné systémy",
+  "Pri e-shope aj počet produktov a variantov, spôsoby platby a dopravy",
+];
+
+const payments = [
+  { what: "Návrh", when: "0 €. Dostanete ho zadarmo a k ničomu vás nezaväzuje." },
+  { what: "Web alebo e-shop", when: "Platíte až po spustení. Žiadnu zálohu neplatíte." },
+  { what: "Texty a úpravy", when: "Texty pripravíme z vášho zadania a vy ich schválite. Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah." },
+  { what: "Správa webu", when: "Od 30 € mesačne, ak o ňu máte záujem. Zahŕňa aktualizácie, zálohy, monitoring a podporu." },
+  { what: "DPH", when: "DOMAN s.r.o. nie je platiteľom DPH, takže k cenám sa DPH nepripočítava." },
 ];
 
 function PlanContent({ plan }: { plan: (typeof plans)[number] }) {
@@ -198,6 +226,55 @@ export function PricingPage() {
         </div>
       </section>
 
+      {/* What the price depends on */}
+      <section className="pb-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHeading
+            eyebrow="Cena"
+            segments={[{ text: "Koľko stojí" }, { text: "webstránka?", className: "text-gradient-primary" }]}
+            className="mb-8"
+          />
+          <AnimateIn>
+            <p className="mx-auto mb-12 max-w-3xl text-center text-[1rem] leading-relaxed text-[#F5F5F0]/60">
+              Za 300 € dostanete web do 5 podstránok s kontaktným formulárom, zobrazením na mobile aj počítači a
+              základným SEO nastavením. E-shop začína na 1 000 €. „Od“ znamená najnižšiu cenu: väčší rozsah naceníme v
+              návrhu, ktorý dostanete zadarmo do 24 hodín. Web je hotový do 7 dní a e-shop do 14 dní od schválenia
+              návrhu a dodania podkladov.
+            </p>
+          </AnimateIn>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <AnimateIn className="h-full">
+              <GlowCard className="h-full p-6 md:p-8">
+                <h3 className="mb-5 font-heading text-[1.1rem] font-bold text-[#F5F5F0]">Čo ovplyvňuje cenu</h3>
+                <ul className="space-y-3">
+                  {priceFactors.map((factor) => (
+                    <li key={factor} className="flex items-start gap-3 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1AFF8C]/12">
+                        <Check size={12} className="text-[#1AFF8C]" />
+                      </span>
+                      {factor}
+                    </li>
+                  ))}
+                </ul>
+              </GlowCard>
+            </AnimateIn>
+            <AnimateIn delay={0.1} className="h-full">
+              <GlowCard className="h-full p-6 md:p-8">
+                <h3 className="mb-5 font-heading text-[1.1rem] font-bold text-[#F5F5F0]">Čo a kedy platíte</h3>
+                <dl className="space-y-4">
+                  {payments.map((payment) => (
+                    <div key={payment.what}>
+                      <dt className="mb-1 text-[0.9rem] font-semibold text-[#F5F5F0]/80">{payment.what}</dt>
+                      <dd className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">{payment.when}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </GlowCard>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
       {/* Not sure block */}
       <section className="relative overflow-hidden bg-bg-deep py-20">
         <Aurora variant="cta" />
@@ -205,10 +282,14 @@ export function PricingPage() {
           <AnimateIn>
             <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">Nie ste si istí, čo potrebujete?</p>
             <p className="mb-8 text-[0.95rem] text-[#F5F5F0]/40">
-              Dohodnutá bezplatná 30-minútová konzultácia vám objasní všetko.
+              Zavolajte na{" "}
+              <a href="tel:+421910803993" className="text-[#9F97FF] hover:underline">
+                0910 803 993
+              </a>{" "}
+              alebo si nechajte pripraviť návrh zadarmo.
             </p>
-            <MagneticButton to="/kontakt/" size="lg">
-              Rezervovať konzultáciu
+            <MagneticButton to="/#formular" size="lg">
+              Chcem návrh zadarmo
             </MagneticButton>
           </AnimateIn>
         </div>

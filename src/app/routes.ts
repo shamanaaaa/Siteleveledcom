@@ -13,6 +13,7 @@ export const routes: RouteObject[] = [
     children: [
       { index: true, lazy: () => import("./pages/HomePage").then((m) => ({ Component: m.HomePage })) },
       { path: "sluzby", lazy: () => import("./pages/ServicesPage").then((m) => ({ Component: m.ServicesPage })) },
+      { path: "tvorba-eshopu", lazy: () => import("./pages/EshopPage").then((m) => ({ Component: m.EshopPage })) },
       { path: "portfolio", lazy: () => import("./pages/PortfolioPage").then((m) => ({ Component: m.PortfolioPage })) },
       { path: "proces", lazy: () => import("./pages/ProcessPage").then((m) => ({ Component: m.ProcessPage })) },
       { path: "o-nas", lazy: () => import("./pages/AboutPage").then((m) => ({ Component: m.AboutPage })) },

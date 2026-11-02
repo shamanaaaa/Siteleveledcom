@@ -21,12 +21,13 @@ const services = [
     headline: "Weby na mieru. Bez kompromisov.",
     text: "Navrhujeme a programujeme weby a e-shopy, ktoré vyzerajú skvele na každom zariadení, načítajú sa za sekundu a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Vaša vízia.",
     includes: [
-      "UI/UX dizajn (Figma prototyp)",
+      "UI/UX dizajn (vizuálny návrh)",
       "Responzívny vývoj (mobile-first)",
       "CMS integrácia (správa obsahu bez kódovania)",
       "Testovanie naprieč prehliadačmi",
     ],
     price: "Web od 300 € do 7 dní · E-shop od 1 000 € do 14 dní",
+    link: { to: "/tvorba-eshopu/", label: "Viac o tvorbe e-shopu" },
     cta: "Chcem web na mieru",
   },
   {
@@ -38,7 +39,6 @@ const services = [
       "Technické SEO (rýchlosť, štruktúra, Core Web Vitals)",
       "On-page optimalizácia (texty, meta, schema)",
       "Lokálne SEO (Google Business, mapy)",
-      "Mesačné reporty a sledovanie pozícií",
     ],
     cta: "Chcem byť na Googli",
   },
@@ -83,14 +83,14 @@ const services = [
   },
   {
     icon: ClipboardCheck,
-    title: "Konzultácia & Audit",
+    title: "SEO Audit",
     headline: "Zistite, čo brzdí váš rast.",
     text: "Máte web, ale nefunguje? Audit odhalí, prečo. Dostanete konkrétny akčný plán — nie generický report. Len fakty a riešenia.",
     includes: [
-      "UX audit (kde strácate zákazníkov)",
-      "Technický audit (rýchlosť, bezpečnosť, SEO)",
-      "Konkurenčná analýza",
-      "Písomný akčný plán",
+      "Ručná kontrola indexovania, štruktúry a odkazov",
+      "Titulky, nadpisy a texty podľa toho, čo ľudia hľadajú",
+      "Písomná správa",
+      "Zoznam opráv zoradený podľa dôležitosti",
     ],
     price: "SEO audit 199 €",
     cta: "Chcem audit môjho webu",
@@ -196,6 +196,14 @@ export function ServicesPage() {
                           <p className="mt-5 inline-flex rounded-full bg-[#1AFF8C]/10 px-3 py-1 text-[0.8rem] text-[#1AFF8C]">
                             {service.price}
                           </p>
+                        )}
+                        {service.link && (
+                          <Link
+                            to={service.link.to}
+                            className="mt-4 block text-[0.85rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
+                          >
+                            {service.link.label} →
+                          </Link>
                         )}
                       </div>
                       <div>

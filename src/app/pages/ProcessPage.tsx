@@ -1,10 +1,12 @@
 import { useRef } from "react";
 import {
+  Check,
+  ClipboardList,
   MessageCircle,
   Lightbulb,
   Code2,
   CheckCircle2,
-  TrendingUp,
+  Shield,
 } from "lucide-react";
 import { motion, useScroll, useSpring } from "motion/react";
 import { useReducedMotion } from "../lib/useReducedMotion";
@@ -13,48 +15,76 @@ import { Aurora } from "../components/fx/Aurora";
 import { GlowCard } from "../components/fx/GlowCard";
 import { MagneticButton } from "../components/fx/MagneticButton";
 import { PageHero } from "../components/fx/PageHero";
+import { SectionHeading } from "../components/fx/SectionHeading";
 
 const steps = [
   {
     num: "01",
-    icon: MessageCircle,
-    title: "Konzultácia (zdarma)",
-    text: "Rozprávame sa o vašom biznise, cieľoch a predstavách. Bez záväzku. Bez salespitchu.",
-    output: "Vzájomné pochopenie + hrubý odhad rozsahu",
+    icon: ClipboardList,
+    title: "Krátky formulár",
+    when: "Menej ako minúta",
+    text: "Napíšete nám meno, e-mail, názov firmy a čomu sa venujete. Ak už máte web, pridáte aj jeho adresu. Technické znalosti nepotrebujete.",
+    output: "Zadanie pre návrh",
     color: "#6C63FF",
   },
   {
     num: "02",
     icon: Lightbulb,
-    title: "Stratégia & Návrh",
-    text: "Vypracujeme štruktúru webu, wireframy a vizuálny dizajn. Nič nekódujeme, kým nie ste s dizajnom spokojní.",
-    output: "Schválený Figma prototyp",
+    title: "Návrh zadarmo",
+    when: "Do 24 hodín",
+    text: "Pripravíme vizuálny návrh hlavnej stránky, štruktúru celého webu a základný koncept textov. Pridáme odporúčania pre dizajn a funkcie a cenovú ponuku realizácie.",
+    output: "Návrh a cenová ponuka",
     color: "#6C63FF",
   },
   {
     num: "03",
-    icon: Code2,
-    title: "Vývoj & Obsah",
-    text: "Programujeme web, integrujeme CMS, píšeme alebo finalizujeme texty. Pravidelné aktualizácie cez zdieľaný workspace.",
-    output: "Funkčný web na testovacej doméne",
+    icon: MessageCircle,
+    title: "Vaše rozhodnutie",
+    when: "Bez záväzkov",
+    text: "Návrh si pozriete a rozhodnete sa. Ak sa vám páči, dohodneme termín, cenu a podmienky. Ak nie, povieme si prečo a radi ho upravíme alebo vysvetlíme. Ničím nie ste viazaní.",
+    output: "Schválený návrh",
     color: "#6C63FF",
   },
   {
     num: "04",
-    icon: CheckCircle2,
-    title: "Testovanie & Spustenie",
-    text: "Testujeme na všetkých zariadeniach a prehliadačoch. SEO check. Rýchlostný audit. Spúšťame len keď je všetko na 100 %.",
-    output: "Live web + odovzdávací checklist",
+    icon: Code2,
+    title: "Tvorba webu",
+    when: "Web do 7 dní, e-shop do 14 dní",
+    text: "Po schválení návrhu a dodaní podkladov web naprogramujeme a z vášho zadania pripravíme texty, ktoré schválite. Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah. Projekt vedie osobne Mário Doman, takže vždy viete, kde sa nachádza, a môžete mu priamo zavolať.",
+    output: "Web na testovacej adrese",
     color: "#6C63FF",
   },
   {
     num: "05",
-    icon: TrendingUp,
-    title: "Správa & Rast (voliteľné)",
-    text: "Nezmizíme po odovzdaní. Staráme sa o web, sledujeme výkon, navrhujeme zlepšenia.",
-    output: "Mesačné reporty + priebežná optimalizácia",
+    icon: CheckCircle2,
+    title: "Testovanie, spustenie a platba",
+    when: "Až po spustení",
+    text: "Hotový web si najprv pozriete na testovacej adrese. Pred spustením ho otestujeme na mobile aj počítači a skontrolujeme SEO a rýchlosť. Platíte až po spustení, žiadnu zálohu vopred neplatíte.",
+    output: "Web naživo",
+    color: "#6C63FF",
+  },
+  {
+    num: "06",
+    icon: Shield,
+    title: "Správa webu (voliteľná)",
+    when: "Od 30 € mesačne",
+    text: "Ak chcete, postaráme sa o web aj po spustení: aktualizácie, zálohy, monitoring a podpora.",
+    output: "Starostlivosť o web",
     color: "#1AFF8C",
   },
+];
+
+const timings = [
+  { value: "24 hodín", label: "Návrh zadarmo" },
+  { value: "7 dní", label: "Jednoduchý web" },
+  { value: "14 dní", label: "E-shop" },
+];
+
+const needs = [
+  "Logo a fotky",
+  "Informácie o firme a službách, z ktorých pripravíme texty",
+  "Predstavu o tom, čo má web zákazníkom ponúknuť",
+  "Pri e-shope aj zoznam produktov s cenami, fotkami a popismi",
 ];
 
 export function ProcessPage() {
@@ -148,9 +178,10 @@ export function ProcessPage() {
                             {step.num}
                           </span>
                         </div>
-                        <h2 className="mb-3 font-heading text-[1.15rem] font-bold text-[#F5F5F0]">
+                        <h2 className="mb-1 font-heading text-[1.15rem] font-bold text-[#F5F5F0]">
                           {step.title}
                         </h2>
+                        <p className="mb-3 text-[0.8rem] font-semibold text-[#1AFF8C]">{step.when}</p>
                         <p className="mb-4 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">
                           {step.text}
                         </p>
@@ -177,17 +208,65 @@ export function ProcessPage() {
         </div>
       </section>
 
-      {/* Duration note + CTA */}
+      {/* How long it takes */}
+      <section className="pb-24">
+        <div className="mx-auto max-w-4xl px-6">
+          <SectionHeading
+            eyebrow="Termíny"
+            segments={[{ text: "Ako dlho trvá" }, { text: "tvorba webu?", className: "text-gradient-primary" }]}
+            sub="Návrh dostanete do 24 hodín. Termíny webu a e-shopu sa počítajú od schválenia návrhu a dodania podkladov."
+            className="mb-12"
+          />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            {timings.map((timing, i) => (
+              <AnimateIn key={timing.label} delay={i * 0.08} className="h-full">
+                <GlowCard className="h-full p-6 text-center">
+                  <p className="mb-1 font-heading text-[1.5rem] font-bold text-[#F5F5F0]">do {timing.value}</p>
+                  <p className="text-[0.875rem] text-[#F5F5F0]/50">{timing.label}</p>
+                </GlowCard>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What we need */}
+      <section className="pb-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <SectionHeading
+            eyebrow="Príprava"
+            segments={[{ text: "Čo budeme" }, { text: "od vás potrebovať.", className: "text-gradient-primary" }]}
+            sub="Na návrh stačí krátky formulár. Na samotný web sa zídu veci, ktoré o svojej firme viete najlepšie:"
+            className="mb-10"
+          />
+          <AnimateIn>
+            <ul className="space-y-3">
+              {needs.map((need) => (
+                <li key={need} className="flex items-start gap-3 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1AFF8C]/12">
+                    <Check size={12} className="text-[#1AFF8C]" />
+                  </span>
+                  {need}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">
+              Ak niečo chýba, povedzte nám to a dohodneme sa, ako to vyriešiť.
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="relative overflow-hidden bg-bg-deep py-24">
         <Aurora variant="cta" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
             <p className="mb-8 text-[1rem] text-[#F5F5F0]/50">
-              Jednoduchý web je hotový do <span className="text-[#9F97FF]">7 dní</span>, e-shop do{" "}
-              <span className="text-[#9F97FF]">14 dní</span>. Chcete začať?
+              Prvý krok je zadarmo a k ničomu vás nezaväzuje. Chcete začať?
             </p>
-            <MagneticButton to="/kontakt/" size="lg">
-              Dohodnúť konzultáciu
+            <MagneticButton to="/#formular" size="lg">
+              Chcem návrh zadarmo
             </MagneticButton>
           </AnimateIn>
         </div>

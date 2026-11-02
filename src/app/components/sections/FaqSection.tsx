@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Ako dlho trvá výroba webu?",
-    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu.",
+    a: "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu a dodania podkladov.",
   },
 ];
 

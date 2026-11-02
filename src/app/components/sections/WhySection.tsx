@@ -29,7 +29,7 @@ const benefits: { icon: typeof Users; title: string; text: string; link?: { to: 
   {
     icon: BadgeCheck,
     title: "Skúsenosti",
-    text: "Weby, e-shopy aj webové aplikácie. Ukážky nájdete v portfóliu.",
+    text: "Weby, katalógy produktov aj webové aplikácie. Ukážky nájdete v portfóliu.",
     link: { to: "/portfolio/", label: "Portfólio projektov" },
   },
 ];

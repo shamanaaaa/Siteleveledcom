@@ -54,6 +54,32 @@ interface AuditConfig {
 const auditsPerDay = (n: number) =>
   n === 1 ? "1 audit denne" : n < 5 ? `${n} audity denne` : `${n} auditov denne`;
 
+// Worded from the audits Lighthouse 12 runs in each category: keep in step when it's upgraded
+const checks = [
+  {
+    title: "SEO",
+    text: "Či môže Google stránku indexovať, či má titulok a popis, správnu kanonickú adresu, funkčné odkazy s výstižným textom a popisy obrázkov. Bez toho vás Google ťažšie nájde a horšie pochopí, o čom stránka je.",
+  },
+  {
+    title: "Rýchlosť",
+    text: "Ako rýchlo sa na mobile zobrazí obsah, kedy stránka začne reagovať a či počas načítania neposkakuje. Pomalá stránka odrádza návštevníkov.",
+  },
+  {
+    title: "Prístupnosť",
+    text: "Kontrast textu, popisy obrázkov, názvy tlačidiel a formulárových polí a veľkosť prvkov, na ktoré sa kliká. Dobre čitateľný a ovládateľný web pomáha každému návštevníkovi.",
+  },
+  {
+    title: "Osvedčené postupy",
+    text: "HTTPS, chyby v prehliadači, zastarané technológie a správne zobrazenie na mobile vrátane veľkosti písma a obrázkov.",
+  },
+];
+
+const scoreBands = [
+  { range: "90–100", label: "V poriadku", color: "#1AFF8C" },
+  { range: "50–89", label: "Je čo zlepšiť", color: "#f59e0b" },
+  { range: "0–49", label: "Treba riešiť", color: "#ef4444" },
+];
+
 const faqs = ({ maxPages, retentionDays }: AuditConfig) => [
   {
     q: "Čo presne audit kontroluje?",
@@ -476,6 +502,66 @@ export function SeoAuditPage() {
                 </motion.div>
               </AnimatePresence>
             </GlowCard>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Method */}
+      <section className="pb-24">
+        <div className="mx-auto max-w-4xl px-6">
+          <SectionHeading
+            eyebrow="Metodika"
+            segments={[{ text: "Čo audit kontroluje" }, { text: "a prečo.", className: "text-gradient-primary" }]}
+            className="mb-12"
+          />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {checks.map((check, i) => (
+              <AnimateIn key={check.title} delay={i * 0.08} className="h-full">
+                <GlowCard className="h-full p-6">
+                  <h3 className="mb-2 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">{check.title}</h3>
+                  <p className="text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">{check.text}</p>
+                </GlowCard>
+              </AnimateIn>
+            ))}
+          </div>
+
+          <AnimateIn className="mt-12 space-y-8 text-[0.95rem] leading-relaxed text-[#F5F5F0]/60">
+            <div>
+              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">Ako čítať skóre</h3>
+              <ul className="flex flex-wrap gap-x-8 gap-y-2">
+                {scoreBands.map((band) => (
+                  <li key={band.range}>
+                    <span className="font-semibold" style={{ color: band.color }}>
+                      {band.range}
+                    </span>{" "}
+                    {band.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">
+                Čo automatická kontrola nezistí
+              </h3>
+              <p>
+                Nástroj hodnotí technickú stránku webu. Neposúdi kvalitu textov, kľúčové slová, konkurenciu ani spätné
+                odkazy a nepovie vám, na akej pozícii v Google ste. Skóre 100 preto neznamená prvé miesto vo
+                vyhľadávaní – znamená, že nástroj nenašiel chyby, ktoré vie odhaliť.
+              </p>
+            </div>
+            <div>
+              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">
+                Bezplatná kontrola a SEO audit za 199 €
+              </h3>
+              <p>
+                Bezplatná kontrola je automatické skóre. SEO audit za 199 € robíme ručne: prejdeme indexovanie,
+                štruktúru a odkazy, titulky a nadpisy aj to, či texty zodpovedajú tomu, čo ľudia hľadajú. Dostanete
+                písomnú správu a zoznam opráv zoradený podľa dôležitosti.{" "}
+                <Link to="/cennik/" className="text-[#9F97FF] transition-colors hover:text-[#F5F5F0]">
+                  Pozrieť cenník →
+                </Link>
+              </p>
+            </div>
           </AnimateIn>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Aurora } from "./Aurora";
 import { KineticHeading, KineticSegment } from "./KineticHeading";
 
@@ -7,11 +8,13 @@ interface PageHeroProps {
   /** The big slogan under it */
   segments: KineticSegment[];
   sub?: string;
+  /** Under the intro, for a call to action */
+  children?: ReactNode;
 }
 
 // No fade on the h1 and intro: the intro is usually the page's largest text, and fading it from
 // opacity 0 delays LCP by about a second on phones. The slogan's reveal only moves the words
-export function PageHero({ title, segments, sub }: PageHeroProps) {
+export function PageHero({ title, segments, sub, children }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden pb-16 pt-36 md:pb-20 md:pt-44">
       <Aurora variant="hero" />
@@ -30,6 +33,7 @@ export function PageHero({ title, segments, sub }: PageHeroProps) {
             className="mb-6 font-heading text-display-2 font-bold"
           />
           {sub && <p className="max-w-2xl text-[1.05rem] leading-relaxed text-[#F5F5F0]/50">{sub}</p>}
+          {children && <div className="mt-8">{children}</div>}
         </div>
       </div>
     </section>
