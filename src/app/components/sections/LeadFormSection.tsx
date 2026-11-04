@@ -1,3 +1,5 @@
+import { errorMessage } from "../../i18n/errors";
+import { useI18n } from "../../i18n/LocaleContext";
 import { useState } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
@@ -8,11 +10,12 @@ import { AnimateIn } from "../AnimateIn";
 const SEND_FAILED = "Odoslanie zlyhalo. Skúste to o chvíľu znova alebo napíšte na info@siteleveled.com.";
 
 const inputClass = (error?: string) =>
-  `w-full px-4 py-3 rounded-xl bg-surface-2 border text-[#F5F5F0] placeholder:text-[#F5F5F0]/15 focus:outline-none focus:border-[#6C63FF]/60 focus:ring-2 focus:ring-[#6C63FF]/15 transition-colors text-[0.9rem] ${
+  `w-full px-4 py-3 rounded-xl bg-surface-2 border text-[#F5F5F0] placeholder:text-[#F5F5F0]/50 focus:outline-none focus:border-[#6C63FF]/60 focus:ring-2 focus:ring-[#6C63FF]/15 transition-colors text-[0.9rem] ${
     error ? "border-red-500/50" : "border-white/8"
   }`;
 
 export function LeadFormSection({ interest }: { interest?: string }) {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -66,6 +69,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          locale: language,
           name: formData.name,
           email: formData.email,
           company: formData.company,
@@ -77,7 +81,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
         // While the backend restarts (a few seconds per deploy) nginx answers 502 with HTML, not JSON
-        throw new Error(body.error || SEND_FAILED);
+        throw new Error(errorMessage(body, language, tr(SEND_FAILED)));
       }
       setSubmitted(true);
     } catch (err) {
@@ -92,13 +96,10 @@ export function LeadFormSection({ interest }: { interest?: string }) {
     <section id="formular" className="py-24 md:py-32 bg-[#0d0d14]">
       <div className="max-w-3xl mx-auto px-6">
         <AnimateIn className="text-center mb-12">
-          <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] leading-tight mb-4">
-            Chcete návrh{" "}
-            <span className="text-[#6C63FF]">zadarmo?</span>
+          <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] leading-tight mb-4">{tr("Chcete návrh")}{" "}
+            <span className="text-[#6C63FF]">{tr("zadarmo?")}</span>
           </h2>
-          <p className="text-[1rem] text-[#F5F5F0]/50">
-            Stačí meno, email a pár slov o vašej firme. Zvyšok doladíme spolu.
-          </p>
+          <p className="text-[1rem] text-[#F5F5F0]/50">{tr("Stačí meno, email a pár slov o vašej firme. Zvyšok doladíme spolu.")}</p>
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
@@ -118,9 +119,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                 />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="lead-name" className="block text-[0.8rem] text-[#F5F5F0]/40 mb-2">
-                      Meno *
-                    </label>
+                    <label htmlFor="lead-name" className="block text-[0.8rem] text-[#F5F5F0]/50 mb-2">{tr("Meno *")}</label>
                     <input
                       id="lead-name"
                       name="name"
@@ -128,17 +127,15 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                       autoComplete="name"
                       value={formData.name}
                       onChange={(e) => handleChange("name", e.target.value)}
-                      placeholder="Ján Novák"
+                      placeholder={tr("Ján Novák")}
                       className={inputClass(errors.name)}
                     />
                     {errors.name && (
-                      <p className="text-[0.75rem] text-red-400 mt-1">{errors.name}</p>
+                      <p className="text-[0.75rem] text-red-400 mt-1">{tr(errors.name)}</p>
                     )}
                   </div>
                   <div>
-                    <label htmlFor="lead-email" className="block text-[0.8rem] text-[#F5F5F0]/40 mb-2">
-                      Email *
-                    </label>
+                    <label htmlFor="lead-email" className="block text-[0.8rem] text-[#F5F5F0]/50 mb-2">{tr("Email *")}</label>
                     <input
                       id="lead-email"
                       name="email"
@@ -146,17 +143,15 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                       autoComplete="email"
                       value={formData.email}
                       onChange={(e) => handleChange("email", e.target.value)}
-                      placeholder="jan@firma.sk"
+                      placeholder={tr("jan@firma.sk")}
                       className={inputClass(errors.email)}
                     />
                     {errors.email && (
-                      <p className="text-[0.75rem] text-red-400 mt-1">{errors.email}</p>
+                      <p className="text-[0.75rem] text-red-400 mt-1">{tr(errors.email)}</p>
                     )}
                   </div>
                   <div>
-                    <label htmlFor="lead-company" className="block text-[0.8rem] text-[#F5F5F0]/40 mb-2">
-                      Firma a čomu sa venujete *
-                    </label>
+                    <label htmlFor="lead-company" className="block text-[0.8rem] text-[#F5F5F0]/50 mb-2">{tr("Firma a čomu sa venujete *")}</label>
                     <input
                       id="lead-company"
                       name="company"
@@ -164,16 +159,15 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                       autoComplete="organization"
                       value={formData.company}
                       onChange={(e) => handleChange("company", e.target.value)}
-                      placeholder="Napr. Kaderníctvo Anna, Nitra"
+                      placeholder={tr("Napr. Kaderníctvo Anna, Nitra")}
                       className={inputClass(errors.company)}
                     />
                     {errors.company && (
-                      <p className="text-[0.75rem] text-red-400 mt-1">{errors.company}</p>
+                      <p className="text-[0.75rem] text-red-400 mt-1">{tr(errors.company)}</p>
                     )}
                   </div>
                   <div>
-                    <label htmlFor="lead-web" className="block text-[0.8rem] text-[#F5F5F0]/40 mb-2">
-                      Súčasný web <span className="text-[#F5F5F0]/25">(ak máte)</span>
+                    <label htmlFor="lead-web" className="block text-[0.8rem] text-[#F5F5F0]/50 mb-2">{tr("Súčasný web ")}<span className="text-[#F5F5F0]/50">{tr("(ak máte)")}</span>
                     </label>
                     <input
                       id="lead-web"
@@ -183,7 +177,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                       autoComplete="url"
                       value={formData.webUrl}
                       onChange={(e) => handleChange("webUrl", e.target.value)}
-                      placeholder="www.vasweb.sk"
+                      placeholder={tr("www.vasweb.sk")}
                       className={inputClass()}
                     />
                   </div>
@@ -193,35 +187,28 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#6C63FF] hover:bg-[#5b53e8] disabled:opacity-60 disabled:cursor-not-allowed text-white rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(108,99,255,0.3)] text-[0.95rem]"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#665DFA] hover:bg-[#5b53e8] disabled:opacity-60 disabled:cursor-not-allowed text-white rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(108,99,255,0.3)] text-[0.95rem]"
                   >
                     {isLoading ? (
                       <>
                         <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z" />
-                        </svg>
-                        Odosielam...
-                      </>
+                        </svg>{tr("Odosielam...")}</>
                     ) : (
-                      <>Odoslať a získať návrh zadarmo <Send size={16} /></>
+                      <>{tr("Odoslať a získať návrh zadarmo ")}<Send size={16} /></>
                     )}
                   </button>
                   {submitError && (
-                    <p className="mt-3 text-[0.8rem] text-red-400">
-                      {submitError}
+                    <p role="alert" className="mt-3 text-[0.8rem] text-red-400">
+                      {tr(submitError)}
                     </p>
                   )}
                   {!submitError && (
-                    <p className="mt-3 text-[0.75rem] text-[#F5F5F0]/30">
-                      Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky.
-                    </p>
+                    <p className="mt-3 text-[0.75rem] text-[#F5F5F0]/50">{tr("Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky.")}</p>
                   )}
-                  <p className="mt-2 text-[0.75rem] text-[#F5F5F0]/50">
-                    Údaje použijeme len na prípravu návrhu a odpoveď vám.{" "}
-                    <Link to="/ochrana-osobnych-udajov/" className="underline transition-colors hover:text-[#9F97FF]">
-                      Ochrana osobných údajov
-                    </Link>
+                  <p className="mt-2 text-[0.75rem] text-[#F5F5F0]/50">{tr("Údaje použijeme len na prípravu návrhu a odpoveď vám.")}{" "}
+                    <Link to={localLink("/ochrana-osobnych-udajov/")} className="underline transition-colors hover:text-[#9F97FF]">{tr("Ochrana osobných údajov")}</Link>
                   </p>
                 </div>
               </motion.form>
@@ -235,12 +222,8 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                 <div className="w-16 h-16 rounded-full bg-[#1AFF8C]/10 flex items-center justify-center mb-6">
                   <CheckCircle2 size={32} className="text-[#1AFF8C]" />
                 </div>
-                <h3 className="font-heading text-[1.5rem] text-[#F5F5F0] mb-3">
-                  Ďakujeme!
-                </h3>
-                <p className="text-[0.9rem] text-[#F5F5F0]/50 max-w-sm leading-relaxed">
-                  Váš formulár bol odoslaný. Do 24 hodín sa vám ozveme s profesionálnym návrhom vašej webstránky.
-                </p>
+                <h3 className="font-heading text-[1.5rem] text-[#F5F5F0] mb-3">{tr("Ďakujeme!")}</h3>
+                <p className="text-[0.9rem] text-[#F5F5F0]/50 max-w-sm leading-relaxed">{tr("Váš formulár bol odoslaný. Do 24 hodín sa vám ozveme s profesionálnym návrhom vašej webstránky.")}</p>
               </motion.div>
             )}
           </AnimatePresence>

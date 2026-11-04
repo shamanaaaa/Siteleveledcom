@@ -4,6 +4,7 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 const path = require("path");
 const seoAudit = require("./seoAudit");
+const { localizedErrors } = require("./publicErrors");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,6 +15,7 @@ app.set("trust proxy", "loopback");
 // ── Middleware ──────────────────────────────────────────────
 app.use(cors());
 app.use(express.json());
+app.use("/api", localizedErrors);
 // Nothing under /api belongs in search results, least of all customers' SEO reports about other sites
 app.use("/api", (_req, res, next) => {
   res.setHeader("X-Robots-Tag", "noindex, nofollow");
@@ -96,7 +98,7 @@ function buildAdminEmail(data, form) {
       <p style="margin:0 0 4px;font-size:12px;color:#6C63FF;letter-spacing:2px;text-transform:uppercase;">siteleveled.com</p>
       <h1 style="margin:0;font-size:22px;color:#f5f5f0;font-weight:700;">${form.adminHeading}</h1>
       <p style="margin:6px 0 0;font-size:13px;color:#888;">
-        ${new Date().toLocaleString("sk-SK", { dateStyle: "full", timeStyle: "short" })}
+        ${new Date().toLocaleString("sk-SK", { dateStyle: "full", timeStyle: "short", timeZone: "Europe/Bratislava" })}
       </p>
     </div>
 
@@ -104,6 +106,7 @@ function buildAdminEmail(data, form) {
     <div style="padding:24px 32px 16px;">
       <p style="margin:0 0 12px;font-size:11px;color:#6C63FF;letter-spacing:2px;text-transform:uppercase;">Kontakt</p>
       <table style="width:100%;border-collapse:collapse;background:#0d0d14;border-radius:10px;overflow:hidden;">
+        ${row("Jazyk dopytu", data.locale === "en" ? "English (en)" : "Slovenčina (sk)")}
         ${row("Meno", text(data.name))}
         ${row("Email", `<a href="mailto:${escapeHtml(data.email)}" style="color:#6C63FF;">${escapeHtml(data.email)}</a>`)}
         ${row("Firma / projekt", text(data.company))}
@@ -149,16 +152,18 @@ function buildAdminEmail(data, form) {
 </html>`;
 }
 
-function buildConfirmationEmail(name, form) {
+function buildConfirmationEmail(name, form, locale = "sk") {
+  const en = locale === "en";
+  if (en) form = { ...form, received: form === FORMS.kontakt ? "We have received your message." : "We have received your design brief.", promise: "We will contact you by email to discuss the next steps." };
   return `<!DOCTYPE html>
-<html lang="sk">
+<html lang="${locale}">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;padding:0;background:#0a0a0f;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="max-width:520px;margin:32px auto;background:#111118;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
 
     <div style="background:linear-gradient(135deg,#6C63FF20,#9F97FF10);padding:32px;border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;">
       <p style="margin:0 0 8px;font-size:12px;color:#6C63FF;letter-spacing:2px;text-transform:uppercase;">siteleveled.com</p>
-      <h1 style="margin:0;font-size:22px;color:#f5f5f0;">Ďakujeme, ${escapeHtml(name)}!</h1>
+      <h1 style="margin:0;font-size:22px;color:#f5f5f0;">${en ? "Thank you" : "Ďakujeme"}, ${escapeHtml(name)}!</h1>
     </div>
 
     <div style="padding:32px;text-align:center;">
@@ -170,21 +175,21 @@ function buildConfirmationEmail(name, form) {
       </p>
       <p style="margin:0;font-size:14px;color:#888;line-height:1.7;">
         ${form.promise}
-        Žiadny spam, žiadne záväzky.
+        ${en ? "No spam, no obligation." : "Žiadny spam, žiadne záväzky."}
       </p>
     </div>
 
     <div style="padding:0 32px 28px;text-align:center;">
       <p style="margin:0;font-size:12px;color:#555;">
-        Otázky? Napíšte nám na
+        ${en ? "Questions? Email us at" : "Otázky? Napíšte nám na"}
         <a href="mailto:info@siteleveled.com" style="color:#6C63FF;">info@siteleveled.com</a>
       </p>
     </div>
 
     <div style="padding:16px 32px;border-top:1px solid rgba(255,255,255,0.07);text-align:center;">
-      <p style="margin:0;font-size:12px;color:#555;">siteleveled.com · DOMAN s.r.o.</p>
+      <p style="margin:0;font-size:12px;color:#555;"><a href="https://siteleveled.com/${en ? "en/" : ""}" style="color:#888;">siteleveled.com</a> · DOMAN s.r.o.</p>
       <p style="margin:6px 0 0;font-size:12px;color:#555;">
-        <a href="https://siteleveled.com/ochrana-osobnych-udajov/" style="color:#555;">Ako spracúvame vaše údaje</a>
+        <a href="https://siteleveled.com/${en ? "en/privacy/" : "ochrana-osobnych-udajov/"}" style="color:#555;">${en ? "Privacy policy" : "Ako spracúvame vaše údaje"}</a>
       </p>
     </div>
   </div>
@@ -200,11 +205,13 @@ app.post("/api/navrh", async (req, res) => {
     goal, goalOther, style, colors,
     inspiration, socialMedia, notes,
     source,
-  } = req.body;
+    locale = "sk",
+  } = req.body || {};
+  if (locale !== "sk" && locale !== "en") return res.status(400).json({ error: "INVALID_LOCALE" });
   const form = source === "kontakt" ? FORMS.kontakt : FORMS.navrh;
 
   // Basic validation
-  if (!name || !email || !company) {
+  if (![name, email, company].every(value => typeof value === "string" && value.trim())) {
     return res.status(400).json({ error: "Chýbajú povinné polia." });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -212,14 +219,14 @@ app.post("/api/navrh", async (req, res) => {
   }
 
   // Check env config
-  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  if (!app.locals.mailTransport && (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS)) {
     console.error("SMTP not configured – check server/.env");
     return res.status(500).json({ error: "Server nie je nakonfigurovaný." });
   }
 
   try {
-    const transporter = createTransporter();
-    const data = { name, email, company, about, hasWeb, webUrl, goal, goalOther, style, colors, inspiration, socialMedia, notes };
+    const transporter = app.locals.mailTransport || createTransporter();
+    const data = { locale, name, email, company, about, hasWeb, webUrl, goal, goalOther, style, colors, inspiration, socialMedia, notes };
 
     // 1. Email to site owner
     await transporter.sendMail({
@@ -234,8 +241,8 @@ app.post("/api/navrh", async (req, res) => {
     await transporter.sendMail({
       from: `"SiteLeveled" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: email,
-      subject: form.clientSubject,
-      html: buildConfirmationEmail(name, form),
+      subject: locale === "en" ? (source === "kontakt" ? "We received your message – SiteLeveled" : "We received your design brief – SiteLeveled") : form.clientSubject,
+      html: buildConfirmationEmail(name, form, locale),
     });
 
     res.json({ ok: true });
@@ -261,13 +268,18 @@ app.use("/api/seo-audit", seoAudit);
 if (process.env.NODE_ENV === "production") {
   const distPath = path.join(__dirname, "../dist");
   app.use(express.static(distPath));
-  app.get("*", (_req, res) => res.sendFile(path.join(distPath, "index.html")));
+  app.get("*", (req, res) => {
+    const english = /^\/en(?:\/|$)/.test(req.path);
+    res.status(404).sendFile(path.join(distPath, english ? "en/404.html" : "404.html"));
+  });
 }
 
 // ── Start ────────────────────────────────────────────────────
-app.listen(PORT, () => {
+if (require.main === module) app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   if (process.env.NODE_ENV === "production") {
     console.log("Serving built frontend from ../dist");
   }
 });
+
+module.exports = { app, FORMS, buildAdminEmail, buildConfirmationEmail };

@@ -1,3 +1,4 @@
+import { useI18n } from "../i18n/LocaleContext";
 import { Link } from "react-router";
 import { ArrowRight, Check, Zap } from "lucide-react";
 import { AnimateIn } from "../components/AnimateIn";
@@ -117,23 +118,24 @@ const payments = [
 ];
 
 function PlanContent({ plan }: { plan: (typeof plans)[number] }) {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   return (
     <div className="flex h-full flex-col">
       <div className="mb-6">
-        <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#9F97FF]">{plan.name}</p>
+        <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#9F97FF]">{tr(plan.name)}</p>
         <h2 className="mb-2 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">
-          {plan.subtitle}
+          {tr(plan.subtitle)}
         </h2>
-        <p className="text-[0.8rem] text-[#F5F5F0]/40">{plan.audience}</p>
+        <p className="text-[0.8rem] text-[#F5F5F0]/50">{tr(plan.audience)}</p>
       </div>
 
       <div className="mb-6">
-        {plan.from && <span className="text-[0.85rem] text-[#F5F5F0]/40">od </span>}
+        {plan.from && <span className="text-[0.85rem] text-[#F5F5F0]/50">{tr("od ")}</span>}
         <span className="font-heading text-[2.6rem] font-bold text-[#F5F5F0]">
-          <AnimatedCounter end={plan.price} format={skFormat} duration={1.1} />
-        </span>{" "}
-        <span className="text-[0.85rem] text-[#F5F5F0]/40">&euro;</span>
-        <p className="mt-1 text-[0.8rem] font-semibold text-[#1AFF8C]">{plan.delivery}</p>
+          {language === "en" && "€"}<AnimatedCounter end={plan.price} format={language === "en" ? (n) => n.toLocaleString("en-US") : skFormat} duration={1.1} />
+        </span>
+        {language !== "en" && <>{" "}<span className="text-[0.85rem] text-[#F5F5F0]/50">{"€"}</span></>}
+        <p className="mt-1 text-[0.8rem] font-semibold text-[#1AFF8C]">{tr(plan.delivery)}</p>
       </div>
 
       <ul className="mb-8 flex-1 space-y-3">
@@ -142,41 +144,41 @@ function PlanContent({ plan }: { plan: (typeof plans)[number] }) {
             <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1AFF8C]/12">
               <Check size={12} className="text-[#1AFF8C]" />
             </span>
-            {f}
+            {tr(f)}
           </li>
         ))}
       </ul>
 
       {plan.link && (
-        <Link to={plan.link.to} className="-mt-4 mb-8 text-[0.85rem] text-[#9F97FF] hover:underline">
-          {plan.link.label} →
-        </Link>
+        <Link to={localLink(plan.link.to)} className="-mt-4 mb-8 text-[0.85rem] text-[#9F97FF] hover:underline">
+          {tr(plan.link.label)}{" →"}</Link>
       )}
 
       <Link
-        to="/kontakt/"
+        to={localLink("/kontakt/")}
         className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-[0.9rem] font-semibold transition-all duration-200 ${
           plan.badge
-            ? "bg-[#6C63FF] text-white hover:bg-[#7B73FF] hover:shadow-[0_0_30px_rgba(108,99,255,0.4)]"
+            ? "bg-[#665DFA] text-white hover:bg-[#5b53e8] hover:shadow-[0_0_30px_rgba(108,99,255,0.4)]"
             : "border border-white/10 text-[#F5F5F0]/80 hover:border-[#6C63FF]/40 hover:text-white"
         }`}
       >
-        {plan.cta} <ArrowRight size={15} />
+        {tr(plan.cta)} <ArrowRight size={15} />
       </Link>
     </div>
   );
 }
 
 export function PricingPage() {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   return (
     <>
       <PageHero
-        title="Cenník tvorby webstránok a e-shopov"
-        segments={[
+        title={tr("Cenník tvorby webstránok a e-shopov")}
+        segments={tr([
           { text: "Investícia," },
           { text: "nie náklad.", className: "text-gradient-primary" },
-        ]}
-        sub="Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíte až po spustení. Každý web je na mieru, presnú cenu dostanete spolu s návrhom."
+        ])}
+        sub={tr("Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíte až po spustení. Každý web je na mieru, presnú cenu dostanete spolu s návrhom.")}
       />
 
       {/* Pricing cards */}
@@ -188,8 +190,8 @@ export function PricingPage() {
                 {plan.badge ? (
                   <div className="conic-border relative h-full rounded-card p-8 lg:scale-[1.02]">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-[#6C63FF] px-4 py-1 text-[0.75rem] text-white shadow-[0_4px_16px_rgba(108,99,255,0.4)]">
-                        <Zap size={12} className="fill-white" /> {plan.badge}
+                      <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-[#665DFA] px-4 py-1 text-[0.75rem] text-white shadow-[0_4px_16px_rgba(108,99,255,0.4)]">
+                        <Zap size={12} className="fill-white" /> {tr(plan.badge)}
                       </span>
                     </div>
                     <PlanContent plan={plan} />
@@ -207,19 +209,15 @@ export function PricingPage() {
           <AnimateIn delay={0.3} className="mt-8">
             <GlowCard className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
               <div>
-                <h2 className="mb-1 font-heading text-[1rem] font-bold text-[#F5F5F0]">
-                  Mesačná správa webu
-                </h2>
-                <p className="text-[0.85rem] text-[#F5F5F0]/40">
-                  Aktualizácie, zálohy, monitoring, podpora
-                </p>
+                <h2 className="mb-1 font-heading text-[1rem] font-bold text-[#F5F5F0]">{tr("Mesačná správa webu")}</h2>
+                <p className="text-[0.85rem] text-[#F5F5F0]/50">{tr("Aktualizácie, zálohy, monitoring, podpora")}</p>
               </div>
               <div className="text-right">
-                <span className="text-[0.8rem] text-[#F5F5F0]/40">od</span>{" "}
+                <span className="text-[0.8rem] text-[#F5F5F0]/50">{tr("od")}</span>{" "}
                 <span className="font-heading text-[1.5rem] font-bold text-[#9F97FF]">
-                  <AnimatedCounter end={30} duration={0.9} />
+                  {language === "en" && "€"}<AnimatedCounter end={30} duration={0.9} />
                 </span>{" "}
-                <span className="text-[0.8rem] text-[#F5F5F0]/40">&euro;/mesiac</span>
+                <span className="text-[0.8rem] text-[#F5F5F0]/50">{tr("€/mesiac")}</span>
               </div>
             </GlowCard>
           </AnimateIn>
@@ -230,29 +228,24 @@ export function PricingPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
-            eyebrow="Cena"
-            segments={[{ text: "Koľko stojí" }, { text: "webstránka?", className: "text-gradient-primary" }]}
+            eyebrow={tr("Cena")}
+            segments={tr([{ text: "Koľko stojí" }, { text: "webstránka?", className: "text-gradient-primary" }])}
             className="mb-8"
           />
           <AnimateIn>
-            <p className="mx-auto mb-12 max-w-3xl text-center text-[1rem] leading-relaxed text-[#F5F5F0]/60">
-              Za 300 € dostanete web do 5 podstránok s kontaktným formulárom, zobrazením na mobile aj počítači a
-              základným SEO nastavením. E-shop začína na 1 000 €. „Od“ znamená najnižšiu cenu: väčší rozsah naceníme v
-              návrhu, ktorý dostanete zadarmo do 24 hodín. Web je hotový do 7 dní a e-shop do 14 dní od schválenia
-              návrhu a dodania podkladov.
-            </p>
+            <p className="mx-auto mb-12 max-w-3xl text-center text-[1rem] leading-relaxed text-[#F5F5F0]/60">{tr("Za 300 € dostanete web do 5 podstránok s kontaktným formulárom, zobrazením na mobile aj počítači a základným SEO nastavením. E-shop začína na 1 000 €. „Od“ znamená najnižšiu cenu: väčší rozsah naceníme v návrhu, ktorý dostanete zadarmo do 24 hodín. Web je hotový do 7 dní a e-shop do 14 dní od schválenia návrhu a dodania podkladov.")}</p>
           </AnimateIn>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <AnimateIn className="h-full">
               <GlowCard className="h-full p-6 md:p-8">
-                <h3 className="mb-5 font-heading text-[1.1rem] font-bold text-[#F5F5F0]">Čo ovplyvňuje cenu</h3>
+                <h3 className="mb-5 font-heading text-[1.1rem] font-bold text-[#F5F5F0]">{tr("Čo ovplyvňuje cenu")}</h3>
                 <ul className="space-y-3">
                   {priceFactors.map((factor) => (
                     <li key={factor} className="flex items-start gap-3 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">
                       <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1AFF8C]/12">
                         <Check size={12} className="text-[#1AFF8C]" />
                       </span>
-                      {factor}
+                      {tr(factor)}
                     </li>
                   ))}
                 </ul>
@@ -260,12 +253,12 @@ export function PricingPage() {
             </AnimateIn>
             <AnimateIn delay={0.1} className="h-full">
               <GlowCard className="h-full p-6 md:p-8">
-                <h3 className="mb-5 font-heading text-[1.1rem] font-bold text-[#F5F5F0]">Čo a kedy platíte</h3>
+                <h3 className="mb-5 font-heading text-[1.1rem] font-bold text-[#F5F5F0]">{tr("Čo a kedy platíte")}</h3>
                 <dl className="space-y-4">
                   {payments.map((payment) => (
                     <div key={payment.what}>
-                      <dt className="mb-1 text-[0.9rem] font-semibold text-[#F5F5F0]/80">{payment.what}</dt>
-                      <dd className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">{payment.when}</dd>
+                      <dt className="mb-1 text-[0.9rem] font-semibold text-[#F5F5F0]/80">{tr(payment.what)}</dt>
+                      <dd className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">{tr(payment.when)}</dd>
                     </div>
                   ))}
                 </dl>
@@ -280,17 +273,10 @@ export function PricingPage() {
         <Aurora variant="cta" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
-            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">Nie ste si istí, čo potrebujete?</p>
-            <p className="mb-8 text-[0.95rem] text-[#F5F5F0]/40">
-              Zavolajte na{" "}
-              <a href="tel:+421910803993" className="text-[#9F97FF] hover:underline">
-                0910 803 993
-              </a>{" "}
-              alebo si nechajte pripraviť návrh zadarmo.
-            </p>
-            <MagneticButton to="/#formular" size="lg">
-              Chcem návrh zadarmo
-            </MagneticButton>
+            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">{tr("Nie ste si istí, čo potrebujete?")}</p>
+            <p className="mb-8 text-[0.95rem] text-[#F5F5F0]/50">{tr("Zavolajte na")}{" "}
+              <a href={localLink("tel:+421910803993")} className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">{tr("+421 910 803 993")}</a>{" "}{tr("alebo si nechajte pripraviť návrh zadarmo.")}</p>
+            <MagneticButton to={localLink("/#formular")} size="lg">{tr("Chcem návrh zadarmo")}</MagneticButton>
           </AnimateIn>
         </div>
       </section>
@@ -299,12 +285,12 @@ export function PricingPage() {
       <section className="py-24">
         <div className="mx-auto max-w-3xl px-6">
           <SectionHeading
-            eyebrow="FAQ"
-            segments={[{ text: "Časté" }, { text: "otázky.", className: "text-gradient-primary" }]}
+            eyebrow={tr("FAQ")}
+            segments={tr([{ text: "Časté" }, { text: "otázky.", className: "text-gradient-primary" }])}
             className="mb-12"
           />
           <AnimateIn>
-            <FaqAccordion items={faqs} />
+            <FaqAccordion items={tr(faqs)} />
           </AnimateIn>
         </div>
       </section>

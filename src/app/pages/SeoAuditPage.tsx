@@ -1,3 +1,5 @@
+import { errorMessage } from "../i18n/errors";
+import { useI18n } from "../i18n/LocaleContext";
 import { FormEvent, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
@@ -22,6 +24,7 @@ interface AuditJob {
   startedAt: number | null;
   position?: number;
   error?: string;
+  code?: string;
   reportUrl?: string;
   result?: {
     categories: Scores;
@@ -80,10 +83,10 @@ const scoreBands = [
   { range: "0–49", label: "Treba riešiť", color: "#ef4444" },
 ];
 
-const faqs = ({ maxPages, retentionDays }: AuditConfig) => [
+const faqs = ({ maxPages, retentionDays }: AuditConfig, language: "sk" | "en") => [
   {
     q: "Čo presne audit kontroluje?",
-    a: `Prejdeme až ${maxPages} podstránok vášho webu nástrojom Google Lighthouse (cez Unlighthouse) a pre každú zmeriame SEO, rýchlosť načítania, prístupnosť a technické osvedčené postupy. Meriame ako na mobile.`,
+    a: language === "en" ? `We check up to ${maxPages} pages using Google Lighthouse through Unlighthouse. Each page is measured for SEO, performance, accessibility, and best practices, with mobile simulation.` : `Prejdeme až ${maxPages} podstránok vášho webu nástrojom Google Lighthouse (cez Unlighthouse) a pre každú zmeriame SEO, rýchlosť načítania, prístupnosť a technické osvedčené postupy. Meriame ako na mobile.`,
   },
   {
     q: "Ako dlho to trvá?",
@@ -95,7 +98,7 @@ const faqs = ({ maxPages, retentionDays }: AuditConfig) => [
   },
   {
     q: "Ako dlho je report dostupný?",
-    a: `Odkaz na výsledky platí ${retentionDays} dní. Kto má odkaz, report uvidí – zdieľajte ho len s tým, s kým chcete.`,
+    a: language === "en" ? `The results link is available for ${retentionDays} days. Anyone with the link can view it, so share it only with people you choose.` : `Odkaz na výsledky platí ${retentionDays} dní. Kto má odkaz, report uvidí – zdieľajte ho len s tým, s kým chcete.`,
   },
 ];
 
@@ -103,6 +106,7 @@ export const scoreColor = (score: number | null) =>
   score === null ? "#F5F5F0" : score >= 90 ? "#1AFF8C" : score >= 50 ? "#f59e0b" : "#ef4444";
 
 function ScoreRing({ score, label }: { score: number | null; label: string }) {
+  const { t: tr } = useI18n();
   const r = 34;
   const circumference = 2 * Math.PI * r;
   const offset = circumference * (1 - (score ?? 0) / 100);
@@ -131,18 +135,19 @@ function ScoreRing({ score, label }: { score: number | null; label: string }) {
           className="absolute inset-0 flex items-center justify-center font-heading text-[1.6rem] font-bold"
           style={{ color }}
         >
-          {score ?? "–"}
+          {tr(score ?? "–")}
         </span>
       </div>
-      <span className="text-[0.85rem] text-[#F5F5F0]/60">{label}</span>
+      <span className="text-[0.85rem] text-[#F5F5F0]/60">{tr(label)}</span>
     </div>
   );
 }
 
 function ScoreCell({ score }: { score: number | null }) {
+  const { t: tr } = useI18n();
   return (
     <td className="px-3 py-3 text-center font-heading font-semibold tabular-nums" style={{ color: scoreColor(score) }}>
-      {score ?? "–"}
+      {tr(score ?? "–")}
     </td>
   );
 }
@@ -160,24 +165,26 @@ function useElapsed(since: number | null) {
 }
 
 function Progress({ job }: { job: AuditJob }) {
+  const { t: tr, locale: language } = useI18n();
   const elapsed = useElapsed(job.status === "running" ? job.startedAt : null);
   return (
     <div className="flex flex-col items-center py-10 text-center">
       <Loader2 size={40} className="mb-6 animate-spin text-[#9F97FF]" />
       <p className="mb-2 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">
-        {job.status === "queued" ? "Čakáte v rade" : "Kontrolujeme váš web"}
+        {tr(job.status === "queued" ? "Čakáte v rade" : "Kontrolujeme váš web")}
       </p>
-      <p className="mb-1 text-[0.9rem] text-[#F5F5F0]/50">{job.site}</p>
-      <p className="text-[0.85rem] text-[#F5F5F0]/40">
-        {job.status === "queued"
-          ? `Počet auditov pred vami: ${job.position ?? 1}. Začneme hneď, ako sa uvoľní miesto.`
-          : `Prechádzame podstránky a meriame každú z nich. Zvyčajne 1–5 minút${elapsed ? ` · ${elapsed}` : ""}.`}
+      <p className="mb-1 text-[0.9rem] text-[#F5F5F0]/50">{tr(job.site)}</p>
+      <p className="text-[0.85rem] text-[#F5F5F0]/50">
+        {tr(job.status === "queued"
+          ? language === "en" ? `Queue position: ${job.position ?? 1}. We will start when a slot is free.` : `Počet auditov pred vami: ${job.position ?? 1}. Začneme hneď, ako sa uvoľní miesto.`
+          : language === "en" ? `Checking your pages. Usually 1–5 minutes${elapsed ? ` · ${elapsed}` : ""}.` : `Prechádzame podstránky a meriame každú z nich. Zvyčajne 1–5 minút${elapsed ? ` · ${elapsed}` : ""}.`)}
       </p>
     </div>
   );
 }
 
 function Results({ job, onReset }: { job: AuditJob; onReset: () => void }) {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const [copied, setCopied] = useState(false);
   const result = job.result!;
 
@@ -195,11 +202,9 @@ function Results({ job, onReset }: { job: AuditJob; onReset: () => void }) {
     <div>
       <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
         <div>
-          <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#9F97FF]">Výsledok auditu</p>
-          <h3 className="break-all font-heading text-[1.3rem] font-bold text-[#F5F5F0]">{job.site}</h3>
-          <p className="text-[0.8rem] text-[#F5F5F0]/40">
-            Skontrolovaných podstránok: {result.pages.length} · meranie na mobile
-          </p>
+          <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#9F97FF]">{tr("Výsledok auditu")}</p>
+          <h3 className="break-all font-heading text-[1.3rem] font-bold text-[#F5F5F0]">{tr(job.site)}</h3>
+          <p className="text-[0.8rem] text-[#F5F5F0]/50">{tr("Skontrolovaných podstránok: ")}{tr(result.pages.length)}{tr(" · meranie na mobile")}</p>
         </div>
         <div className="flex shrink-0 gap-2">
           <button
@@ -208,15 +213,14 @@ function Results({ job, onReset }: { job: AuditJob; onReset: () => void }) {
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-[0.8rem] text-[#F5F5F0]/70 transition-colors hover:border-[#6C63FF]/40 hover:text-white"
           >
             {copied ? <Check size={14} /> : <Link2 size={14} />}
-            {copied ? "Skopírované" : "Kopírovať odkaz"}
+            {tr(copied ? "Skopírované" : "Kopírovať odkaz")}
           </button>
           <button
             type="button"
             onClick={onReset}
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-[0.8rem] text-[#F5F5F0]/70 transition-colors hover:border-[#6C63FF]/40 hover:text-white"
           >
-            <RotateCcw size={14} /> Nový audit
-          </button>
+            <RotateCcw size={14} />{tr(" Nový audit")}</button>
         </div>
       </div>
 
@@ -229,10 +233,10 @@ function Results({ job, onReset }: { job: AuditJob; onReset: () => void }) {
       <div className="mb-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
         {metrics.map((m) => (
           <div key={m.key} className="rounded-xl border border-white/5 bg-surface-2 p-4">
-            <p className="mb-1 text-[0.75rem] text-[#F5F5F0]/40">
-              {m.label} <span className="text-[#F5F5F0]/25">({m.abbr})</span>
+            <p className="mb-1 text-[0.75rem] text-[#F5F5F0]/50">
+              {tr(m.label)} <span className="text-[#F5F5F0]/50">{"("}{tr(m.abbr)}{")"}</span>
             </p>
-            <p className="font-heading text-[1.25rem] font-bold text-[#F5F5F0]">{result.metrics[m.key] ?? "–"}</p>
+            <p className="font-heading text-[1.25rem] font-bold text-[#F5F5F0]">{tr(result.metrics[m.key] ?? "–")}</p>
           </div>
         ))}
       </div>
@@ -240,11 +244,11 @@ function Results({ job, onReset }: { job: AuditJob; onReset: () => void }) {
       <div className="mb-8 overflow-x-auto rounded-xl border border-white/5">
         <table className="w-full min-w-[520px] text-[0.85rem]">
           <thead>
-            <tr className="border-b border-white/5 bg-surface-2 text-[0.75rem] text-[#F5F5F0]/40">
-              <th className="px-4 py-3 text-left font-normal">Podstránka</th>
+            <tr className="border-b border-white/5 bg-surface-2 text-[0.75rem] text-[#F5F5F0]/50">
+              <th className="px-4 py-3 text-left font-normal">{tr("Podstránka")}</th>
               {categories.map((c) => (
                 <th key={c.key} className="px-3 py-3 text-center font-normal">
-                  {c.label}
+                  {tr(c.label)}
                 </th>
               ))}
             </tr>
@@ -252,8 +256,8 @@ function Results({ job, onReset }: { job: AuditJob; onReset: () => void }) {
           <tbody>
             {result.pages.map((p) => (
               <tr key={p.path} className="border-b border-white/5 last:border-0">
-                <td className="max-w-[240px] truncate px-4 py-3 text-[#F5F5F0]/70" title={p.path}>
-                  {p.path}
+                <td className="max-w-[240px] truncate px-4 py-3 text-[#F5F5F0]/70" title={tr(p.path)}>
+                  {tr(p.path)}
                 </td>
                 {categories.map((c) => (
                   <ScoreCell key={c.key} score={p.categories[c.key]} />
@@ -266,15 +270,14 @@ function Results({ job, onReset }: { job: AuditJob; onReset: () => void }) {
 
       {job.reportUrl && (
         <a
-          href={job.reportUrl}
+          href={localLink(job.reportUrl)}
           target="_blank"
           rel="noopener"
           className="inline-flex items-center gap-2 text-[0.9rem] font-semibold text-[#9F97FF] transition-colors hover:text-white"
-        >
-          Otvoriť detailný report s odporúčaniami <ExternalLink size={15} />
+        >{tr("Otvoriť detailný report s odporúčaniami ")}<ExternalLink size={15} />
         </a>
       )}
-      <p className="mt-1 text-[0.75rem] text-[#F5F5F0]/30">Detailný report je v angličtine (Unlighthouse).</p>
+      {language !== "en" && <p className="mt-1 text-[0.75rem] text-[#F5F5F0]/50">{tr("Detailný report je v angličtine (Unlighthouse).")}</p>}
     </div>
   );
 }
@@ -304,6 +307,7 @@ const lastAudit = {
 };
 
 export function SeoAuditPage() {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const [searchParams, setSearchParams] = useSearchParams();
   const auditId = searchParams.get("audit");
 
@@ -343,7 +347,7 @@ export function SeoAuditPage() {
       let res: Response;
       let body: any;
       try {
-        res = await fetch(`/api/seo-audit/${auditId}`);
+        res = await fetch(`/api/seo-audit/${auditId}`, { headers: { "X-Site-Locale": language } });
         body = await res.json();
       } catch {
         // Network hiccup or server restarting – keep the audit and try again
@@ -354,7 +358,7 @@ export function SeoAuditPage() {
       if (res.status === 404) {
         lastAudit.clear();
         setJob(null);
-        setError(body.error || "Audit sa nenašiel.");
+        setError(errorMessage(body, language, tr("Audit sa nenašiel.")));
         setSearchParams({}, { replace: true });
         return;
       }
@@ -362,7 +366,7 @@ export function SeoAuditPage() {
         timer = setTimeout(poll, 5000);
         return;
       }
-      setJob(body);
+      setJob({ ...body, error: body.error ? errorMessage(body, language, tr("Audit sa nepodarilo spustiť.")) : undefined });
       if (body.status === "queued" || body.status === "running") timer = setTimeout(poll, 3000);
     };
     poll();
@@ -371,7 +375,7 @@ export function SeoAuditPage() {
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [auditId, setSearchParams]);
+  }, [auditId, setSearchParams, language, tr]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -384,15 +388,15 @@ export function SeoAuditPage() {
     try {
       const res = await fetch("/api/seo-audit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-Site-Locale": language },
         body: JSON.stringify({ url, accessCode }),
       });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || "Audit sa nepodarilo spustiť.");
-      setJob(body);
+      if (!res.ok) throw new Error(errorMessage(body, language, tr("Audit sa nepodarilo spustiť.")));
+      setJob({ ...body, error: body.error ? errorMessage(body, language, tr("Audit sa nepodarilo spustiť.")) : undefined });
       setSearchParams({ audit: body.id });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Audit sa nepodarilo spustiť.");
+      setError(err instanceof Error && !(err instanceof TypeError) ? err.message : tr("Audit sa nepodarilo spustiť."));
     } finally {
       setSubmitting(false);
     }
@@ -410,12 +414,12 @@ export function SeoAuditPage() {
   return (
     <>
       <PageHero
-        title="Bezplatný SEO audit webu"
-        segments={[
+        title={tr("Bezplatný SEO audit webu")}
+        segments={tr([
           { text: "Ako na tom je" },
           { text: "váš web?", className: "text-gradient-primary" },
-        ]}
-        sub="Zadajte adresu svojej stránky a do pár minút uvidíte skóre SEO, rýchlosti a prístupnosti pre každú podstránku – rovnakými nástrojmi, aké používa Google."
+        ])}
+        sub={tr("Zadajte adresu svojej stránky a do pár minút uvidíte skóre SEO, rýchlosti a prístupnosti pre každú podstránku – rovnakými nástrojmi, aké používa Google.")}
       />
 
       <section className="pb-24 pt-4">
@@ -434,16 +438,14 @@ export function SeoAuditPage() {
                     <form id="audit-form" onSubmit={handleSubmit} noValidate>
                       <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
                         <div className="flex-1">
-                          <label htmlFor="audit-url" className={labelBase}>
-                            Adresa webu
-                          </label>
+                          <label htmlFor="audit-url" className={labelBase}>{tr("Adresa webu")}</label>
                           <input
                             id="audit-url"
                             name="url"
                             type="text"
                             inputMode="url"
                             autoComplete="url"
-                            placeholder="mojafirma.sk"
+                            placeholder={tr("mojafirma.sk")}
                             value={url}
                             onChange={(e) => setUrl(e.target.value)}
                             className={`${inputBase} ${error ? inputErrorBorder : inputDefaultBorder}`}
@@ -451,9 +453,7 @@ export function SeoAuditPage() {
                         </div>
                         {config.requiresCode && (
                           <div className="sm:w-48">
-                            <label htmlFor="audit-code" className={labelBase}>
-                              Prístupový kód
-                            </label>
+                            <label htmlFor="audit-code" className={labelBase}>{tr("Prístupový kód")}</label>
                             <input
                               id="audit-code"
                               name="accessCode"
@@ -466,22 +466,16 @@ export function SeoAuditPage() {
                           </div>
                         )}
                         <MagneticButton type="submit" disabled={submitting} arrow={false} className="shrink-0">
-                          {submitting ? <Loader2 size={18} className="animate-spin" /> : <Search size={18} />}
-                          Spustiť audit
-                        </MagneticButton>
+                          {submitting ? <Loader2 size={18} className="animate-spin" /> : <Search size={18} />}{tr("Spustiť audit")}</MagneticButton>
                       </div>
                       {error && (
                         <p role="alert" className="mt-3 text-[0.85rem] text-red-400">
-                          {error}
+                          {tr(error)}
                         </p>
                       )}
-                      <p className="mt-4 text-[0.8rem] text-[#F5F5F0]/35">
-                        Skontrolujeme až {config.maxPages} podstránok. Audit trvá zvyčajne 1–5 minút. Z jednej
-                        IP adresy je možný {auditsPerDay(config.dailyLimit)}. Výsledky uchovávame{" "}
-                        {config.retentionDays} dní.{" "}
-                        <Link to="/ochrana-osobnych-udajov/" className="underline transition-colors hover:text-[#9F97FF]">
-                          Ochrana osobných údajov
-                        </Link>
+                      <p className="mt-4 text-[0.8rem] text-[#F5F5F0]/50">{tr("Skontrolujeme až ")}{tr(config.maxPages)}{tr(" podstránok. Audit trvá zvyčajne 1–5 minút. Z jednej IP adresy je možný ")}{language === "en" ? `${config.dailyLimit} audit${config.dailyLimit === 1 ? "" : "s"} per day` : auditsPerDay(config.dailyLimit)}{tr(". Výsledky uchovávame")}{" "}
+                        {tr(config.retentionDays)}{tr(" dní.")}{" "}
+                        <Link to={localLink("/ochrana-osobnych-udajov/")} className="underline transition-colors hover:text-[#9F97FF]">{tr("Ochrana osobných údajov")}</Link>
                       </p>
                     </form>
                   )}
@@ -490,11 +484,10 @@ export function SeoAuditPage() {
 
                   {view === "failed" && job && (
                     <div className="flex flex-col items-center py-10 text-center">
-                      <p className="mb-2 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">Audit sa nepodaril</p>
-                      <p className="mb-6 max-w-md text-[0.9rem] text-[#F5F5F0]/50">{job.error}</p>
+                      <p className="mb-2 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">{tr("Audit sa nepodaril")}</p>
+                      <p className="mb-6 max-w-md text-[0.9rem] text-[#F5F5F0]/50">{tr(job.error)}</p>
                       <MagneticButton variant="ghost" onClick={reset} arrow={false}>
-                        <RotateCcw size={16} /> Skúsiť znova
-                      </MagneticButton>
+                        <RotateCcw size={16} />{tr(" Skúsiť znova")}</MagneticButton>
                     </div>
                   )}
 
@@ -510,16 +503,16 @@ export function SeoAuditPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
-            eyebrow="Metodika"
-            segments={[{ text: "Čo audit kontroluje" }, { text: "a prečo.", className: "text-gradient-primary" }]}
+            eyebrow={tr("Metodika")}
+            segments={tr([{ text: "Čo audit kontroluje" }, { text: "a prečo.", className: "text-gradient-primary" }])}
             className="mb-12"
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {checks.map((check, i) => (
               <AnimateIn key={check.title} delay={i * 0.08} className="h-full">
                 <GlowCard className="h-full p-6">
-                  <h3 className="mb-2 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">{check.title}</h3>
-                  <p className="text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">{check.text}</p>
+                  <h3 className="mb-2 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">{tr(check.title)}</h3>
+                  <p className="text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">{tr(check.text)}</p>
                 </GlowCard>
               </AnimateIn>
             ))}
@@ -527,39 +520,26 @@ export function SeoAuditPage() {
 
           <AnimateIn className="mt-12 space-y-8 text-[0.95rem] leading-relaxed text-[#F5F5F0]/60">
             <div>
-              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">Ako čítať skóre</h3>
+              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">{tr("Ako čítať skóre")}</h3>
               <ul className="flex flex-wrap gap-x-8 gap-y-2">
                 {scoreBands.map((band) => (
                   <li key={band.range}>
                     <span className="font-semibold" style={{ color: band.color }}>
-                      {band.range}
+                      {tr(band.range)}
                     </span>{" "}
-                    {band.label}
+                    {tr(band.label)}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">
-                Čo automatická kontrola nezistí
-              </h3>
-              <p>
-                Nástroj hodnotí technickú stránku webu. Neposúdi kvalitu textov, kľúčové slová, konkurenciu ani spätné
-                odkazy a nepovie vám, na akej pozícii v Google ste. Skóre 100 preto neznamená prvé miesto vo
-                vyhľadávaní – znamená, že nástroj nenašiel chyby, ktoré vie odhaliť.
-              </p>
+              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">{tr("Čo automatická kontrola nezistí")}</h3>
+              <p>{tr("Nástroj hodnotí technickú stránku webu. Neposúdi kvalitu textov, kľúčové slová, konkurenciu ani spätné odkazy a nepovie vám, na akej pozícii v Google ste. Skóre 100 preto neznamená prvé miesto vo vyhľadávaní – znamená, že nástroj nenašiel chyby, ktoré vie odhaliť.")}</p>
             </div>
             <div>
-              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">
-                Bezplatná kontrola a SEO audit za 199 €
-              </h3>
-              <p>
-                Bezplatná kontrola je automatické skóre. SEO audit za 199 € robíme ručne: prejdeme indexovanie,
-                štruktúru a odkazy, titulky a nadpisy aj to, či texty zodpovedajú tomu, čo ľudia hľadajú. Dostanete
-                písomnú správu a zoznam opráv zoradený podľa dôležitosti.{" "}
-                <Link to="/cennik/" className="text-[#9F97FF] transition-colors hover:text-[#F5F5F0]">
-                  Pozrieť cenník →
-                </Link>
+              <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">{tr("Bezplatná kontrola a SEO audit za 199 €")}</h3>
+              <p>{tr("Bezplatná kontrola je automatické skóre. SEO audit za 199 € robíme ručne: prejdeme indexovanie, štruktúru a odkazy, titulky a nadpisy aj to, či texty zodpovedajú tomu, čo ľudia hľadajú. Dostanete písomnú správu a zoznam opráv zoradený podľa dôležitosti.")}{" "}
+                <Link to={localLink("/cennik/")} className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">{tr("Pozrieť cenník →")}</Link>
               </p>
             </div>
           </AnimateIn>
@@ -571,13 +551,9 @@ export function SeoAuditPage() {
         <Aurora variant="cta" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
-            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">Skóre nie je také, aké by ste chceli?</p>
-            <p className="mb-8 text-[0.95rem] text-[#F5F5F0]/40">
-              Pripravíme vám návrh rýchlejšieho a lepšie dohľadateľného webu – do 24 hodín, zadarmo.
-            </p>
-            <MagneticButton to="/#formular" size="lg">
-              Chcem návrh zadarmo
-            </MagneticButton>
+            <p className="mb-2 text-[1.1rem] text-[#F5F5F0]/70">{tr("Skóre nie je také, aké by ste chceli?")}</p>
+            <p className="mb-8 text-[0.95rem] text-[#F5F5F0]/50">{tr("Pripravíme vám návrh rýchlejšieho a lepšie dohľadateľného webu – do 24 hodín, zadarmo.")}</p>
+            <MagneticButton to={localLink("/#formular")} size="lg">{tr("Chcem návrh zadarmo")}</MagneticButton>
           </AnimateIn>
         </div>
       </section>
@@ -586,12 +562,12 @@ export function SeoAuditPage() {
       <section className="py-24">
         <div className="mx-auto max-w-3xl px-6">
           <SectionHeading
-            eyebrow="FAQ"
-            segments={[{ text: "Časté" }, { text: "otázky.", className: "text-gradient-primary" }]}
+            eyebrow={tr("FAQ")}
+            segments={tr([{ text: "Časté" }, { text: "otázky.", className: "text-gradient-primary" }])}
             className="mb-12"
           />
           <AnimateIn>
-            <FaqAccordion items={faqs(config)} />
+            <FaqAccordion items={tr(faqs(config, language))} />
           </AnimateIn>
         </div>
       </section>

@@ -1,3 +1,5 @@
+import { loadMessages } from "./app/i18n/messages";
+import { localeForPath } from "./app/i18n/routes";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { createBrowserRouter, matchRoutes, RouterProvider } from "react-router";
 import { routes } from "./app/routes";
@@ -16,6 +18,7 @@ window.addEventListener("vite:preloadError", (event) => {
 });
 
 async function start() {
+  await loadMessages(localeForPath(location.pathname));
   // nginx serves the home page for /index.html as well
   if (location.pathname === "/index.html") history.replaceState(null, "", "/");
 
@@ -30,7 +33,7 @@ async function start() {
   router = createBrowserRouter(routes);
   const app = <RouterProvider router={router} />;
   const root = document.getElementById("root")!;
-  // /seo-audit/admin/ and /mesto/<client>/ aren't pre-rendered
+  // Only browser-dependent pages such as the owner admin omit prerendered content.
   if (root.hasChildNodes()) hydrateRoot(root, app);
   else createRoot(root).render(app);
 }

@@ -1,0 +1,98 @@
+{
+  "REQUIRED_FIELDS": {
+    "sk": "Chýbajú povinné polia.",
+    "en": "Required fields are missing."
+  },
+  "INVALID_EMAIL": {
+    "sk": "Neplatný email.",
+    "en": "Enter a valid email address."
+  },
+  "INVALID_LOCALE": {
+    "sk": "Neplatný jazyk formulára.",
+    "en": "Unsupported form language."
+  },
+  "MAIL_UNAVAILABLE": {
+    "sk": "Server nie je nakonfigurovaný.",
+    "en": "Email is temporarily unavailable. Please email info@siteleveled.com."
+  },
+  "MAIL_FAILED": {
+    "sk": "Odoslanie emailu zlyhalo.",
+    "en": "Your message could not be sent. Please try again or email info@siteleveled.com."
+  },
+  "URL_REQUIRED": {
+    "sk": "Zadajte adresu webu.",
+    "en": "Enter a website address."
+  },
+  "URL_PROTOCOL": {
+    "sk": "Podporujeme len http a https.",
+    "en": "Only HTTP and HTTPS websites are supported."
+  },
+  "URL_INVALID": {
+    "sk": "Neplatná adresa webu.",
+    "en": "Enter a valid website address."
+  },
+  "URL_CREDENTIALS": {
+    "sk": "Adresa nesmie obsahovať prihlasovacie údaje.",
+    "en": "The address must not contain login credentials."
+  },
+  "URL_PORT": {
+    "sk": "Podporujeme len štandardné porty.",
+    "en": "Only standard web ports are supported."
+  },
+  "URL_DOMAIN": {
+    "sk": "Zadajte doménu webu, napr. mojafirma.sk.",
+    "en": "Enter a website domain, such as example.com."
+  },
+  "URL_DNS": {
+    "sk": "Doménu sa nepodarilo nájsť. Skontroluj, či je adresa správna.",
+    "en": "The domain could not be found. Check the address."
+  },
+  "URL_BLOCKED": {
+    "sk": "Túto adresu nie je možné skontrolovať.",
+    "en": "This address cannot be checked."
+  },
+  "AUDIT_ACCESS": {
+    "sk": "Nesprávny prístupový kód.",
+    "en": "Incorrect access code."
+  },
+  "AUDIT_BUSY": {
+    "sk": "Práve prebieha veľa auditov. Skúste to o pár minút.",
+    "en": "The audit queue is busy. Please try again in a few minutes."
+  },
+  "AUDIT_EXPIRED": {
+    "sk": "Audit sa nenašiel alebo už vypršal.",
+    "en": "This audit was not found or has expired."
+  },
+  "AUDIT_RESTARTED": {
+    "sk": "Audit bol prerušený reštartom servera. Spustite ho prosím znova.",
+    "en": "The audit was interrupted by a server restart. Please start it again."
+  },
+  "AUDIT_TIMEOUT": {
+    "sk": "Audit trval príliš dlho a bol zastavený. Skúste to prosím neskôr.",
+    "en": "The audit took too long and was stopped. Please try again later."
+  },
+  "AUDIT_START_FAILED": {
+    "sk": "Audit sa nepodarilo spustiť.",
+    "en": "The audit could not be started."
+  },
+  "AUDIT_UNREACHABLE": {
+    "sk": "Web sa nepodarilo skontrolovať. Je verejne dostupný?",
+    "en": "The website could not be checked. Is it publicly accessible?"
+  },
+  "AUDIT_ROBOTS": {
+    "sk": "Web neumožnil automatickú kontrolu (pravdepodobne blokuje roboty). Skúste inú adresu alebo nám napíšte.",
+    "en": "The website did not allow automated checks. It may block bots. Try another address or email us."
+  },
+  "AUDIT_RESULT": {
+    "sk": "Výsledok auditu sa nepodarilo načítať.",
+    "en": "The audit results could not be loaded."
+  },
+  "AUDIT_LIMIT": {
+    "sk": "Denný limit auditov pre vašu IP adresu je vyčerpaný. Ďalší audit môžete spustiť o {wait}.",
+    "en": "The daily audit limit for your IP address has been reached. You can start another audit in {wait}."
+  },
+  "PUBLIC_ERROR": {
+    "sk": "Požiadavku sa nepodarilo dokončiť. Skúste to znova.",
+    "en": "The request could not be completed. Please try again."
+  }
+}

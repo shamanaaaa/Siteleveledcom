@@ -1,0 +1,4469 @@
+[
+  {
+    "sk": "Transparentnosť",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Vždy viete, čo platíte a prečo. Žiadne skryté poplatky.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Remeselná kvalita",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Každý projekt dostáva plnú pozornosť. Nie assembly line.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Dlhodobé partnerstvo",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Náš úspech závisí od vášho úspechu. To nie je klišé — je to obchodný model.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "O nás: kto stojí za SiteLeveled",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Za siteleveled.com stoja ľudia.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nie anonymná agentúra.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mário Doman, vývojár SiteLeveled",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Tech Stack",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mário Doman — vývojár. Mária Domanová — konateľka DOMAN s.r.o.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Siteleveled.com vzniklo z presvedčenia, že malé a stredné firmy si zaslúžia weby rovnakej kvality ako veľké korporácie — bez nafúknutých cien a anonymných account managerov.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Weby, e-shopy a webové aplikácie navrhuje a programuje",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mário Doman",
+    "files": [
+      "src/app/pages/AboutPage.tsx",
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": ". Každý projekt vedie osobne — od prvého hovoru po finálne spustenie. Zavolať mu môžete priamo na",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Za siteleveled.com stojí spoločnosť",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "DOMAN s.r.o.",
+    "files": [
+      "src/app/pages/AboutPage.tsx",
+      "src/app/pages/ContactPage.tsx",
+      "src/app/pages/PrivacyPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": ", ktorú vedie konateľka",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mária Domanová",
+    "files": [
+      "src/app/pages/AboutPage.tsx",
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": ". Naša misia: pomáhať podnikateľom rásť cez silnú digitálnu prítomnosť.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Firemné údaje",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "IČO: 47 912 383",
+    "files": [
+      "src/app/pages/AboutPage.tsx",
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Ulica Funduše 1165/26, Cabaj-Čápor 951 17",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "— konateľka (od 27. 09. 2014)",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "— vývojár,",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Porozprávajme sa",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Hodnoty",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Hodnoty, na ktorých",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "staviame.",
+    "files": [
+      "src/app/pages/AboutPage.tsx"
+    ]
+  },
+  {
+    "sk": "Odoslanie zlyhalo. Skúste to o chvíľu znova alebo napíšte na info@siteleveled.com.",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Nový web",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Správa",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Iné",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Povinné pole",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Neplatný email",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Kontaktujte nás",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Porozprávajme",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "sa.",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Napíšte nám alebo zavolajte. Ozveme sa vám do 24 hodín v pracovný deň.",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Meno a priezvisko *",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ján Novák",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Firma / projekt *",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Názov firmy",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Email *",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "jan@firma.sk",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Telefón",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo potrebujete?",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Povedzte nám viac...",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Opíšte nám svoj projekt, ciele alebo akékoľvek otázky...",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Odoslať",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Údaje použijeme len na odpoveď na váš dopyt.",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ochrana osobných údajov",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/pages/PrivacyPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Ďakujeme!",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Ozveme sa do 24 hodín v pracovný deň. Medzitým si môžete pozrieť naše",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "projekty",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "alebo",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "cenník",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kontaktné údaje",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "info@siteleveled.com",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/pages/PrivacyPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Odpovieme do 24 hodín v pracovný deň",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Slovensko (pracujeme remote, celá SR)",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Fakturačné údaje",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Konateľka: Mária Domanová",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Ulica Funduše 1165/26",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Cabaj-Čápor 951 17",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Sociálne siete",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "LinkedIn",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Facebook",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop na mieru",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Dizajn a štruktúru navrhneme podľa toho, čo a ako predávate. Žiadne šablóny.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Katalóg produktov a košík",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zákazník si prezrie ponuku, vyberie si a vloží tovar do košíka.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Správa produktov a objednávok",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Produkty a objednávky spravujete sami, bez kódovania.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mobil aj počítač",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop sa prispôsobí obrazovke, takže sa na ňom dá nakupovať z mobilu aj z počítača.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Menej ako minúta",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Vyplníte krátky formulár",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Stačí meno, e-mail, názov firmy a čomu sa venujete. Technické znalosti nepotrebujete.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Do 24 hodín",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Dostanete návrh zadarmo",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Vizuálny návrh hlavnej stránky, štruktúru e-shopu, odporúčania pre dizajn a funkcie a cenovú ponuku. Bez záväzkov.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Do 14 dní",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Naprogramujeme e-shop",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Keď návrh schválite a dodáte podklady, e-shop je hotový do 14 dní. Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Po spustení",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Až potom platíte",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Hotový e-shop si najprv pozriete na testovacej adrese. Žiadnu zálohu neplatíte, platíte až po spustení.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Počet produktov a ich variantov, napríklad veľkostí, farieb alebo balení",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Spôsoby platby a dopravy, ktoré chcete zákazníkom ponúknuť",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prenos produktov do e-shopu: ručne alebo zo súboru od dodávateľa",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Napojenie na iné systémy, napríklad fakturáciu alebo sklad",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Funkcie navyše podľa vášho podnikania",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop sa vám oplatí, ak",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "chcete, aby si zákazník sám vybral tovar a objednal ho bez telefonátu",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "predávate viac produktov alebo variantov a ponuka sa často mení",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "chcete mať objednávky prehľadne na jednom mieste",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Stačí jednoduchý web, ak",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "ponúkate najmä služby a chcete, aby sa vám zákazník ozval",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "máte len zopár produktov a predávate ich na dopyt",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "chcete hlavne predstaviť firmu – web začína na 300 € a je hotový do 7 dní",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Koľko stojí tvorba e-shopu?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop začína na 1 000 €. Presná cena závisí od rozsahu a dostanete ju spolu s návrhom, vopred a bez prekvapení.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako dlho trvá tvorba e-shopu?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop je hotový do 14 dní od schválenia návrhu a dodania podkladov. Samotný návrh dostanete do 24 hodín.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Musím platiť zálohu?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nie. Žiadnu zálohu neplatíte, za e-shop platíte až po jeho spustení.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Je cena s DPH?",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "DOMAN s.r.o. nie je platiteľom DPH, takže k cenám sa DPH nepripočítava.",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Aké platby a dopravu e-shop podporuje?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Spôsoby platby a dopravy dohodneme pri návrhu a budú v cenovej ponuke.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Môžem si produkty spravovať sám?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Áno. Produkty a objednávky spravujete sami, bez kódovania.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo si mám pripraviť?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zoznam produktov s cenami, fotky, popisy produktov, logo a predstavu o spôsoboch platby a dopravy. Pri predaji spotrebiteľom budete potrebovať aj obchodné podmienky a informácie o reklamácii a odstúpení od zmluvy. Ak niečo chýba, povedzte nám to a dohodneme sa, ako to vyriešiť.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo ak sa mi návrh nebude páčiť?",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Ničím nie ste viazaní. Návrh je zadarmo a rozhodnutie je len na vás.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Postaráte sa o e-shop aj po spustení?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Áno, ak o to máte záujem. Mesačná správa začína na 30 € a zahŕňa aktualizácie, zálohy, monitoring a podporu.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Tvorba e-shopu na mieru",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Od 1 000 €.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Do 14 dní.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Navrhneme a naprogramujeme internetový obchod podľa toho, čo a ako predávate. Návrh dostanete zadarmo do 24 hodín a zálohu neplatíte – platíte až po spustení.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem návrh zadarmo",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/ProcessPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx",
+      "src/app/components/sections/ClosingCtaSection.tsx",
+      "src/app/components/sections/HeroSection.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/layout/Footer.tsx",
+      "src/app/components/layout/Navbar.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Čo dostanete",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/components/sections/IncludedSection.tsx"
+    ]
+  },
+  {
+    "sk": "Čo váš e-shop",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "obsahuje.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Postup",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako prebieha",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "tvorba e-shopu.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Cena",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Koľko stojí",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "e-shop?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "1 000 € je cena, od ktorej začíname. Koľko zaplatíte vy, závisí od rozsahu a presnú sumu uvidíte v cenovej ponuke spolu s návrhom – vopred a bez prekvapení. Cenu ovplyvňuje najmä:",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pozrieť celý cenník",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Rozhodovanie",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop,",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "alebo stačí web?",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Súčasťou návrhu zadarmo sú aj odporúčania pre funkcie, takže sa nemusíte rozhodnúť vopred.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ukážka webu sanifix.sk",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Referencia",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "sanifix.sk",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Pre SaniFIX s.r.o., autorizované servisné centrum kúpeľňového vybavenia, sme spojili katalóg produktov a objednávanie servisu do jedného webu: produkty s cenami, variantmi a akciami značiek, nezáväzný dopyt na produkt, online nahlásenie servisu a administrácia servisných zákaziek.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pozrieť sanifix.sk",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Všetky referencie →",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "FAQ",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx",
+      "src/app/components/sections/FaqSection.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Časté otázky",
+    "files": [
+      "src/app/pages/EshopPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "o e-shope.",
+    "files": [
+      "src/app/pages/EshopPage.tsx"
+    ]
+  },
+  {
+    "sk": "Úvod",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh vášho webu zadarmo do 24 hodín",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Služby",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx",
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/layout/Footer.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Tvorba webu, e-shopu, SEO a správa",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Cenník",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx",
+      "src/app/components/layout/Footer.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Web od 300 €, e-shop od 1 000 €",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Portfólio",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/layout/Footer.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Weby, ktoré sme vytvorili",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kontakt",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "info@siteleveled.com · 0910 803 993",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Stránka sa nenašla (404)",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Táto stránka",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "neexistuje.",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "Odkaz je neplatný alebo stránka zmizla. Pokračujte niektorou z týchto ciest:",
+    "files": [
+      "src/app/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "sk": "mdfoto.sk",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Fotografické štúdio",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Prezentačný + konverzný web",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Vytvoriť prémiový vizuálny zážitok, ktorý odzrkadľuje kvalitu fotografa a aktívne premieňa návštevníkov na rezervácie.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Dark-mode dizajn s elegantnou typografiou, optimalizovaná galéria s rýchlym načítaním, prominentné CTA pre rezervácie, lokálne SEO pre Nitru.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "zuzu-photo.sk",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Freelance fotografka",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Portfólio + kontakt",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Minimalistická, rýchla a osobná prezentácia — aby sa klientka sústredila na svoju prácu, nie na správu webu.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Čistý jednostránkový dizajn, optimalizovaná galéria, kontaktný formulár, napojenie na sociálne siete.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Mário je kreatívny, trpezlivý a hlavne veľmi šikovný.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Zuzana Kondeková",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "nosekrst.sk",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "B2B logistika a ťažká technika",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Firemná prezentácia",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Profesionálna B2B prezentácia firmy, ktorá buduje dôveru u priemyselných klientov a uľahčuje prvý kontakt.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Štruktúrovaný obsah s dôrazom na služby a kontakt, technické SEO, schema markup pre lokálne vyhľadávanie.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "fotkynavyber.sk",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "SaaS pre fotografov",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Aplikácie",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Webová aplikácia",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Fotografi strácali čas dohadovaním, koľko fotiek si klient nakoniec vyberie a doobjedná. Chýbal systém, ktorý celý proces výberu a platieb zautomatizuje.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Webová aplikácia s online galériami, výberom fotiek, transparentnými cenami, automatickými e-mailovými notifikáciami a exportom do CSV — fotograf všetko spravuje z jedného dashboardu.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Autorizovaný servis kúpeľňového vybavenia",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Katalóg produktov + servisný systém",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Spojiť ponuku kúpeľňového vybavenia a objednávanie servisu autorizovaného servisného centra do jedného webu.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Katalóg s cenami, variantmi a akciami jednotlivých značiek, nezáväzný dopyt na produkt, online nahlásenie servisu s výberom produktu a poruchy a administrácia servisných zákaziek.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "zeriavynitra.sk",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Žeriavnícke práce a prenájom autožeriavov",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Firemný web",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Získavať dopyty na žeriavnícke práce a prenájom autožeriavov v Nitre a okolí – od stavebných firiem aj súkromných osôb.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prehľad služieb a autožeriavov Demag AC 40 a AC 55 City, technický nákres žeriavu, spolupráca v piatich krokoch, časté otázky a formulár na nezáväzný dopyt. Telefón je vždy po ruke.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "jogaslaskou.sk",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Jogové štúdio v Pezinku",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Prezentačný web",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Predstaviť jogové štúdio a jeho ponuku – skupinové a súkromné lekcie, eventy a pobyty – tak, aby sa nový návštevník rýchlo zorientoval a vybral si, ako začať.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Ponuka rozdelená do troch jasných krokov, popis priebehu lekcie, predstavenie lektorky, galéria z lekcií a pobytov, referencie a časté otázky.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "springnitra.sk",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Estetické štúdio v Nitre",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Predstaviť estetické štúdio, jeho ošetrenia a prémiovú dermokozmetiku tak, aby si klientka rýchlo rezervovala termín.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Elegantný dizajn v teplých tónoch, predstavenie zakladateľky, prehľad služieb a značiek, samostatná stránka o Fusion Plasma, galéria, recenzie klientiek a napojenie na online rezerváciu termínov.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Určite odporúčam každému, kto hľadá niekoho šikovného a spoľahlivého 👌",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Jaja Bieliková",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Všetky",
+    "files": [
+      "src/app/pages/BlogPage.tsx",
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Portfólio: weby, ktoré sme vytvorili",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Výsledky hovoria",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "za nás.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Každý projekt je iný. Každý má jeden spoločný cieľ: rast vášho biznisu.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Výzva",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Riešenie",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": ", odporúčanie na Facebooku",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Pozrieť projekt",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "“Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala.”",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "— Jaja Bieliková, springnitra.sk · odporúčanie na Facebooku",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcete podobné",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "výsledky?",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "WEB",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/city/render.ts"
+    ]
+  },
+  {
+    "sk": "Jednoduchý web",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pre: Živnostníkov, freelancerov, malé firmy",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Hotový do 7 dní",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Najrýchlejší štart",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prezentačný web na mieru",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Do 5 podstránok",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Responzívny dizajn pre mobil aj počítač",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Základné SEO nastavenie",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kontaktný formulár",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/PrivacyPage.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Platíte až po spustení, bez zálohy",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mám záujem",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-SHOP",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Internetový obchod",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pre: Firmy, ktoré chcú predávať online",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Hotový do 14 dní",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Viac o tvorbe e-shopu",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "SEO AUDIT",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kontrola webu",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pre: Weby, ktoré Google nevidí tak, ako by mal",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Jednorazová cena",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ručná kontrola indexovania, štruktúry a odkazov",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Titulky, nadpisy a texty podľa toho, čo ľudia hľadajú",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Písomná správa a zoznam opráv zoradený podľa dôležitosti",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Najprv si spustite automatickú kontrolu zadarmo",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako dlho trvá vytvorenie webu?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu a dodania podkladov. Samotný návrh dostanete do 24 hodín.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Aké sú platobné podmienky?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Žiadnu zálohu neplatíte. Za web platíte až po jeho spustení.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kto pripraví texty?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Texty pripravíme z vášho zadania a vy ich schválite. Fotky a logo dodáte vy.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Koľko úprav je v cene?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Môžem si obsah spravovať sám?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Áno. Ak chcete texty, obrázky alebo produkty upravovať sami, pripravíme web so správou obsahu bez kódovania. Dohodneme sa na tom pri návrhu.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo ak nie som spokojný s dizajnom?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Dizajn vždy schvaľujete ešte pred programovaním, takže prekvapenia nehrozia. A keďže platíte až po spustení, neriskujete nič.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Potrebujem aj hosting a doménu?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Doménu si registrujete na svoje meno. S hostingom radi pomôžeme — odporúčame rýchle a spoľahlivé riešenia.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Počet podstránok nad 5 a množstvo obsahu",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Funkcie navyše, napríklad online rezervácie alebo napojenie na iné systémy",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pri e-shope aj počet produktov a variantov, spôsoby platby a dopravy",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "0 €. Dostanete ho zadarmo a k ničomu vás nezaväzuje.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Platíte až po spustení. Žiadnu zálohu neplatíte.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Texty a úpravy",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Texty pripravíme z vášho zadania a vy ich schválite. Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Správa webu",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Od 30 € mesačne, ak o ňu máte záujem. Zahŕňa aktualizácie, zálohy, monitoring a podporu.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "od",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Cenník tvorby webstránok a e-shopov",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Investícia,",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "nie náklad.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Web od 300 € za 7 dní, e-shop od 1 000 € za 14 dní. Žiadna záloha – platíte až po spustení. Každý web je na mieru, presnú cenu dostanete spolu s návrhom.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mesačná správa webu",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Aktualizácie, zálohy, monitoring, podpora",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "€/mesiac",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "webstránka?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Za 300 € dostanete web do 5 podstránok s kontaktným formulárom, zobrazením na mobile aj počítači a základným SEO nastavením. E-shop začína na 1 000 €. „Od“ znamená najnižšiu cenu: väčší rozsah naceníme v návrhu, ktorý dostanete zadarmo do 24 hodín. Web je hotový do 7 dní a e-shop do 14 dní od schválenia návrhu a dodania podkladov.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo ovplyvňuje cenu",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo a kedy platíte",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nie ste si istí, čo potrebujete?",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zavolajte na",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "alebo si nechajte pripraviť návrh zadarmo.",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Časté",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx",
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "otázky.",
+    "files": [
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx",
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Údaje z formulárov použijeme len na odpoveď na váš dopyt a prípravu ponuky.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nepoužívame cookies, analytiku ani reklamné nástroje.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Údaje nepredávame a nikomu ich nedávame na marketing.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Dopyt, z ktorého nebola spolupráca, vymažeme do 12 mesiacov.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Formulár „Návrh zadarmo“ na úvodnej stránke",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "meno, e-mail, názov firmy alebo projektu a adresa vášho súčasného webu (nepovinné)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "pripraviť návrh vášho webu s cenovou ponukou a ozvať sa vám",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "opatrenia pred uzavretím zmluvy na vašu žiadosť (čl. 6 ods. 1 písm. b) GDPR)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "meno, firma alebo projekt, e-mail, telefón (nepovinné), služba, o ktorú máte záujem, a text správy",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "odpovedať na váš dopyt",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-mail a telefón",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "vaša e-mailová adresa alebo telefónne číslo a to, čo nám sami napíšete alebo poviete",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "komunikovať s vami o vašom projekte alebo otázke",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "opatrenia pred uzavretím zmluvy (čl. 6 ods. 1 písm. b) GDPR), pri iných otázkach náš oprávnený záujem odpovedať vám (písm. f)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "SEO audit zadarmo",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "adresa webu, ktorý kontrolujete, výsledky kontroly a vaša IP adresa",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "vykonať audit, ktorý ste si vyžiadali; IP adresu používame len na obmedzenie počtu auditov za deň, aby nástroj nikto nezneužil",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "poskytnutie vyžiadanej služby (čl. 6 ods. 1 písm. b) GDPR), pri IP adrese oprávnený záujem chrániť nástroj (písm. f)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Klienti",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "kontaktné a fakturačné údaje a komunikácia k projektu",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "plnenie zmluvy a vedenie účtovníctva",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "plnenie zmluvy (čl. 6 ods. 1 písm. b) GDPR) a zákonná povinnosť (písm. c)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Technické záznamy servera",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "IP adresa, dátum a čas, požadovaná stránka a typ prehliadača",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "bezpečná prevádzka webu a riešenie chýb",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "oprávnený záujem na bezpečnej prevádzke (čl. 6 ods. 1 písm. f) GDPR)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Dopyt, z ktorého nebola spolupráca",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "12 mesiacov od poslednej komunikácie, potom ho vymažeme",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "počas spolupráce; účtovné doklady 10 rokov podľa zákona č. 431/2002 Z. z. o účtovníctve",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "výsledky 30 dní, potom sa automaticky vymažú; IP adresa pre denný limit zostáva len v pamäti servera, najviac 24 hodín",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zálohy servera",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "denné zálohy celého servera uchováva Contabo 10 dní, naše týždenné zálohy najviac 3 týždne; údaje vymazané zo servera (napríklad výsledky SEO auditov alebo technické záznamy) v nich preto môžu zostať ešte najviac 3 týždne",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "prístupové záznamy 15 dní, chybové a systémové záznamy najviac 5 týždňov",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "prístup k údajom, ktoré o vás máme (čl. 15 GDPR)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "oprava nesprávnych údajov (čl. 16)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "vymazanie údajov (čl. 17)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "obmedzenie spracúvania (čl. 18)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "prenosnosť údajov (čl. 20)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "námietka proti spracúvaniu na základe oprávneného záujmu (čl. 21)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Len to, čo potrebujeme.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nič navyše.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "V skratke",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kto spracúva vaše údaje",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prevádzkovateľom je",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": ", Ulica Funduše 1165/26, 951 17 Cabaj-Čápor, IČO 47 912 383, ktorú zastupuje konateľka Mária Domanová.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "S otázkami o osobných údajoch sa obráťte na",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "alebo na",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": ". Zodpovednú osobu sme nevymenovali, pretože nám to právne predpisy neukladajú.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Aké údaje spracúvame a prečo",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Údaje",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Účel",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Právny základ",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Povinné polia formulárov potrebujeme, aby sme vám mohli odpovedať. Bez nich dopyt nevybavíme. Ostatné polia vypĺňate dobrovoľne. Z formulárov si na webe nič neukladáme: správa nám príde e-mailom a vám potvrdenie o jej prijatí.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako dlho údaje uchovávame",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kto má k údajom prístup",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Údaje vidí len náš tím. Nepredávame ich a nikomu ich nedávame na marketing. Pri prevádzke nám pomáhajú títo sprostredkovatelia, ktorí s údajmi pracujú len podľa našich pokynov:",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Contabo GmbH",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "(Nemecko) prevádzkuje server v Európskej únii, na ktorom beží tento web aj SEO audit, a robí jeho denné zálohy.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Google Ireland Limited",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "(Írsko) poskytuje e-mailovú službu, cez ktorú odosielame správy z formulárov aj potvrdenia o ich prijatí a prijímame bežné e-maily, a úložisko (Google Drive) pre zálohy servera.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Orgánom verejnej moci poskytneme údaje len vtedy, keď nám to ukladá zákon.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prenos mimo Európskej únie",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Google môže e-maily a zálohy spracúvať aj v USA. Takýto prenos chráni rámec ochrany údajov medzi EÚ a USA (EU-US Data Privacy Framework), v ktorom je spoločnosť Google certifikovaná, a štandardné zmluvné doložky schválené Európskou komisiou. Iné prenosy mimo EÚ nerobíme.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Cookies a úložisko v prehliadači",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nepoužívame cookies ani analytické a reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Písma a obrázky načítavame z vlastného servera, takže pri návšteve webu sa o vás nič nedozvedia tretie strany.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "SEO audit si v úložisku vášho prehliadača (localStorage) pamätá označenie vášho posledného auditu, aby ste sa k výsledkom mohli vrátiť. Zostáva len vo vašom zariadení. Vymaže ho tlačidlo „Nový audit“ alebo vymazanie údajov stránky v prehliadači.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Odkazy na Facebook, LinkedIn a weby našich klientov sú obyčajné odkazy. Kým na ne nekliknete, tieto služby o vašej návšteve nič nevedia; po kliknutí platia ich pravidlá ochrany súkromia.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Vaše práva",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Máte právo na:",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Stačí napísať na",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": ". Odpovieme bez zbytočného odkladu, najneskôr do jedného mesiaca. Automatizované rozhodovanie ani profilovanie nepoužívame.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ak si myslíte, že s vašimi údajmi zaobchádzame v rozpore so zákonom, môžete podať sťažnosť Úradu na ochranu osobných údajov Slovenskej republiky, Hraničná 12, 820 07 Bratislava 27,",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "dataprotection.gov.sk",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zmeny",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Údaje spracúvame podľa nariadenia (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov. Keď začneme údaje spracúvať inak, napríklad pridáme analytiku, tento text upravíme a zmeníme dátum účinnosti na začiatku stránky.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Krátky formulár",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Napíšete nám meno, e-mail, názov firmy a čomu sa venujete. Ak už máte web, pridáte aj jeho adresu. Technické znalosti nepotrebujete.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zadanie pre návrh",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh zadarmo",
+    "files": [
+      "src/app/pages/ProcessPage.tsx",
+      "src/app/components/sections/IncludedSection.tsx"
+    ]
+  },
+  {
+    "sk": "Pripravíme vizuálny návrh hlavnej stránky, štruktúru celého webu a základný koncept textov. Pridáme odporúčania pre dizajn a funkcie a cenovú ponuku realizácie.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh a cenová ponuka",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Vaše rozhodnutie",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Bez záväzkov",
+    "files": [
+      "src/app/pages/ProcessPage.tsx",
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh si pozriete a rozhodnete sa. Ak sa vám páči, dohodneme termín, cenu a podmienky. Ak nie, povieme si prečo a radi ho upravíme alebo vysvetlíme. Ničím nie ste viazaní.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Schválený návrh",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Tvorba webu",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Web do 7 dní, e-shop do 14 dní",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Po schválení návrhu a dodaní podkladov web naprogramujeme a z vášho zadania pripravíme texty, ktoré schválite. Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah. Projekt vedie osobne Mário Doman, takže vždy viete, kde sa nachádza, a môžete mu priamo zavolať.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Testovanie, spustenie a platba",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Až po spustení",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Hotový web si najprv pozriete na testovacej adrese. Pred spustením ho otestujeme na mobile aj počítači a skontrolujeme SEO a rýchlosť. Platíte až po spustení, žiadnu zálohu vopred neplatíte.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Web naživo",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Správa webu (voliteľná)",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Od 30 € mesačne",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ak chcete, postaráme sa o web aj po spustení: aktualizácie, zálohy, monitoring a podpora.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Starostlivosť o web",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "24 hodín",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "7 dní",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "14 dní",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop",
+    "files": [
+      "src/app/pages/ContactPage.tsx",
+      "src/app/pages/EshopPage.tsx",
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Informácie o firme a službách, z ktorých pripravíme texty",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Predstavu o tom, čo má web zákazníkom ponúknuť",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako prebieha tvorba webu",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Od nápadu po spustenie.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Bez prekvapení.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy viete, kde sme a čo bude ďalej.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Výstup:",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Termíny",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako dlho trvá",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "tvorba webu?",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh dostanete do 24 hodín. Termíny webu a e-shopu sa počítajú od schválenia návrhu a dodania podkladov.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "do",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Príprava",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo budeme",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "od vás potrebovať.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Na návrh stačí krátky formulár. Na samotný web sa zídu veci, ktoré o svojej firme viete najlepšie:",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ak niečo chýba, povedzte nám to a dohodneme sa, ako to vyriešiť.",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prvý krok je zadarmo a k ničomu vás nezaväzuje. Chcete začať?",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "SEO",
+    "files": [
+      "src/app/pages/BlogPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Výkon",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prístupnosť",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Osvedčené postupy",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Načítanie hlavného obsahu",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prvé vykreslenie",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Blokovanie interakcie",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Posun rozloženia",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Či môže Google stránku indexovať, či má titulok a popis, správnu kanonickú adresu, funkčné odkazy s výstižným textom a popisy obrázkov. Bez toho vás Google ťažšie nájde a horšie pochopí, o čom stránka je.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Rýchlosť",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx",
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Ako rýchlo sa na mobile zobrazí obsah, kedy stránka začne reagovať a či počas načítania neposkakuje. Pomalá stránka odrádza návštevníkov.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kontrast textu, popisy obrázkov, názvy tlačidiel a formulárových polí a veľkosť prvkov, na ktoré sa kliká. Dobre čitateľný a ovládateľný web pomáha každému návštevníkovi.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "HTTPS, chyby v prehliadači, zastarané technológie a správne zobrazenie na mobile vrátane veľkosti písma a obrázkov.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "V poriadku",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Je čo zlepšiť",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Treba riešiť",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo presne audit kontroluje?",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako dlho to trvá?",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zvyčajne 1–5 minút podľa veľkosti a rýchlosti webu. Stránku môžete nechať otvorenú alebo si skopírovať odkaz a vrátiť sa neskôr.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prečo mám iné skóre ako v PageSpeed Insights?",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Lighthouse meria v simulovaných podmienkach a výsledok sa medzi meraniami mierne líši. Berte skóre ako orientačné – dôležitý je trend a konkrétne odporúčania v detailnom reporte.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako dlho je report dostupný?",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čakáte v rade",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kontrolujeme váš web",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Výsledok auditu",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Skontrolovaných podstránok:",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "· meranie na mobile",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Skopírované",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Kopírovať odkaz",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nový audit",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Podstránka",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Otvoriť detailný report s odporúčaniami",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Detailný report je v angličtine (Unlighthouse).",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Audit sa nenašiel.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Audit sa nepodarilo spustiť.",
+    "files": [
+      "src/app/pages/SeoAuditAdminPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Bezplatný SEO audit webu",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako na tom je",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "váš web?",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zadajte adresu svojej stránky a do pár minút uvidíte skóre SEO, rýchlosti a prístupnosti pre každú podstránku – rovnakými nástrojmi, aké používa Google.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Adresa webu",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "mojafirma.sk",
+    "files": [
+      "src/app/pages/SeoAuditAdminPage.tsx",
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prístupový kód",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Spustiť audit",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Skontrolujeme až",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "podstránok. Audit trvá zvyčajne 1–5 minút. Z jednej IP adresy je možný",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": ". Výsledky uchovávame",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "dní.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Audit sa nepodaril",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Skúsiť znova",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Metodika",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo audit kontroluje",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "a prečo.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako čítať skóre",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo automatická kontrola nezistí",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Nástroj hodnotí technickú stránku webu. Neposúdi kvalitu textov, kľúčové slová, konkurenciu ani spätné odkazy a nepovie vám, na akej pozícii v Google ste. Skóre 100 preto neznamená prvé miesto vo vyhľadávaní – znamená, že nástroj nenašiel chyby, ktoré vie odhaliť.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Bezplatná kontrola a SEO audit za 199 €",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Bezplatná kontrola je automatické skóre. SEO audit za 199 € robíme ručne: prejdeme indexovanie, štruktúru a odkazy, titulky a nadpisy aj to, či texty zodpovedajú tomu, čo ľudia hľadajú. Dostanete písomnú správu a zoznam opráv zoradený podľa dôležitosti.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pozrieť cenník →",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Skóre nie je také, aké by ste chceli?",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pripravíme vám návrh rýchlejšieho a lepšie dohľadateľného webu – do 24 hodín, zadarmo.",
+    "files": [
+      "src/app/pages/SeoAuditPage.tsx"
+    ]
+  },
+  {
+    "sk": "Webdizajn & Vývoj",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Navrhujeme a programujeme weby a e-shopy, ktoré vyzerajú skvele na každom zariadení, načítajú sa rýchlo a konvertujú návštevníkov na zákazníkov. Žiadne drag-and-drop šablóny. Čistý kód. Vaša vízia.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "UI/UX dizajn (vizuálny návrh)",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Responzívny vývoj (mobile-first)",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "CMS integrácia (správa obsahu bez kódovania)",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Testovanie naprieč prehliadačmi",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Web od 300 € do 7 dní · E-shop od 1 000 € do 14 dní",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "SEO Optimalizácia",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Buďte tam, kde vás hľadajú.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ak vás Google nenájde, zákazník tiež nie. Optimalizujeme, aby ste boli viditeľní tam, kde na tom záleží.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Technické SEO (rýchlosť, štruktúra, Core Web Vitals)",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "On-page optimalizácia (texty, meta, schema)",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Lokálne SEO (Google Business, mapy)",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem byť na Googli",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Copywriting & Obsah",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Slová, ktoré predávajú.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Skvelý dizajn bez správnych slov nefunguje. Píšeme texty, ktoré hovoria jazykom vášho zákazníka — presvedčivé, jasné, bez marketingového balastu.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Copywriting pre celý web",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Obsah pre blog a sociálne siete",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem texty, čo fungujú",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Správa & Údržba Webu",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Váš web v dobrých rukách.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Web nie je jednorazový projekt. Je to živý nástroj, ktorý potrebuje starostlivosť. Aktualizácie, zálohy, bezpečnosť, výkon — riešime to za vás.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mesačná správa a aktualizácie",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Bezpečnostné zálohy",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Prioritná podpora",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem spoľahlivú správu",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "SEO Audit",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zistite, čo brzdí váš rast.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Máte web, ale nefunguje? Audit odhalí, prečo. Dostanete konkrétny akčný plán — nie generický report. Len fakty a riešenia.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Písomná správa",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zoznam opráv zoradený podľa dôležitosti",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "SEO audit 199 €",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem audit môjho webu",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem nový web",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem zlepšiť web",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem viac zákazníkov",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Tvorba webstránok, e-shopov a SEO",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Čo robíme.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "A robíme to poriadne.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Od prvého nápadu po dlhodobú správu — všetko pod jednou strechou.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Zahŕňa",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Mário Doman · vývojár",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Za každým projektom",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": "je reálny človek.",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": ", spoločnosť DOMAN s.r.o. vedie konateľka",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať. Chceme, aby ste videli, čo pre vás vieme spraviť.",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Viac o nás →",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Získajte návrh vašej webstránky",
+    "files": [
+      "src/app/components/sections/ClosingCtaSection.tsx"
+    ]
+  },
+  {
+    "sk": "do 24 hodín – bez rizika.",
+    "files": [
+      "src/app/components/sections/ClosingCtaSection.tsx"
+    ]
+  },
+  {
+    "sk": "Je návrh naozaj zadarmo?",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Áno, bez podmienok a bez skrytých poplatkov. Dostanete reálny návrh vašej webstránky – zdarma a bez záväzkov.",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Som niečím viazaný?",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Nie. Návrh vám pošleme a rozhodnutie je len na vás. Žiadny tlak, žiadne záväzky.",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Povieme si to. Radi upravíme alebo vysvetlíme naše rozhodnutia. Záleží nám na tom, aby ste boli spokojní.",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Ako prebieha realizácia?",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Po odsúhlasení návrhu dohodíme termín, cenu a podmienky spolupráce. Celý proces je transparentný.",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Koľko stojí kompletná webstránka?",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Jednoduchý web od 300 €, e-shop od 1 000 €. Presná cena závisí od rozsahu – v návrhu dostanete aj cenovú ponuku, vopred a bez prekvapení. Zálohu neplatíte, platíte až po spustení webu.",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Ako dlho trvá výroba webu?",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Jednoduchý web je hotový do 7 dní, e-shop do 14 dní od schválenia návrhu a dodania podkladov.",
+    "files": [
+      "src/app/components/sections/FaqSection.tsx"
+    ]
+  },
+  {
+    "sk": "Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy",
+    "files": [
+      "src/app/components/sections/HeroSection.tsx"
+    ]
+  },
+  {
+    "sk": "Tvorba webstránok na mieru.",
+    "files": [
+      "src/app/components/sections/HeroSection.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh zadarmo do 24 hodín.",
+    "files": [
+      "src/app/components/sections/HeroSection.tsx"
+    ]
+  },
+  {
+    "sk": "Vyplňte krátky formulár. My sa postaráme o zvyšok.",
+    "files": [
+      "src/app/components/sections/HeroSection.tsx"
+    ]
+  },
+  {
+    "sk": "Pozrieť portfólio",
+    "files": [
+      "src/app/components/sections/HeroSection.tsx"
+    ]
+  },
+  {
+    "sk": "Klienti nás",
+    "files": [
+      "src/app/components/sections/HeroSection.tsx"
+    ]
+  },
+  {
+    "sk": "odporúčajú na Facebooku",
+    "files": [
+      "src/app/components/sections/HeroSection.tsx"
+    ]
+  },
+  {
+    "sk": "Vyplníte formulár",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "menej ako minúta",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Krátky formulár o vás a vašom projekte. Žiadne technické znalosti nie sú potrebné.",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Do 24h dostanete návrh",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "profesionálny, na mieru",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Náš tím pripraví reálny vizuálny návrh vašej webstránky – šitý na mieru vášmu biznisu.",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Rozhodnete sa",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "bez záväzkov",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx",
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh sa vám páči? Spolupracujeme. Nepáči? Žiadny problém. Rozhodnutie je len na vás.",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Žiadne záväzky",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Žiadne skryté poplatky",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx",
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Bez rizika",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Proces",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Ako to",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "funguje?",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Tri jednoduché kroky. Žiadna komplikácia.",
+    "files": [
+      "src/app/components/sections/HowItWorksSection.tsx"
+    ]
+  },
+  {
+    "sk": "Vizuálny návrh hlavnej stránky",
+    "files": [
+      "src/app/components/sections/IncludedSection.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Kompletná štruktúra celého webu",
+    "files": [
+      "src/app/components/sections/IncludedSection.tsx"
+    ]
+  },
+  {
+    "sk": "Základný koncept textov",
+    "files": [
+      "src/app/components/sections/IncludedSection.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Odporúčania pre dizajn a funkcie",
+    "files": [
+      "src/app/components/sections/IncludedSection.tsx"
+    ]
+  },
+  {
+    "sk": "Cenová ponuka realizácie",
+    "files": [
+      "src/app/components/sections/IncludedSection.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "úplne zadarmo.",
+    "files": [
+      "src/app/components/sections/IncludedSection.tsx"
+    ]
+  },
+  {
+    "sk": "\"Nie je to skica. Je to reálny návrh, z ktorého môžete stavať.\"",
+    "files": [
+      "src/app/components/sections/IncludedSection.tsx"
+    ]
+  },
+  {
+    "sk": "Chcete návrh",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "zadarmo?",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Stačí meno, email a pár slov o vašej firme. Zvyšok doladíme spolu.",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Meno *",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Firma a čomu sa venujete *",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Napr. Kaderníctvo Anna, Nitra",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Súčasný web",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "(ak máte)",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "www.vasweb.sk",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Odosielam...",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Odoslať a získať návrh zadarmo",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Do 24 hodín vás kontaktujeme. Žiadny spam, žiadne záväzky.",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Údaje použijeme len na prípravu návrhu a odpoveď vám.",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Váš formulár bol odoslaný. Do 24 hodín sa vám ozveme s profesionálnym návrhom vašej webstránky.",
+    "files": [
+      "src/app/components/sections/LeadFormSection.tsx"
+    ]
+  },
+  {
+    "sk": "Estetické štúdio, Nitra",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Prerábka webu salónu: služby, značky, stránka o Fusion Plasma a online rezervácia termínov.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Jogové štúdio, Pezinok",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Staršia webka dostala nový život: lekcie, eventy a pobyty, galéria a časté otázky.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Fotografka",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Jednostránkové portfólio s galériou, kontaktom a napojením na sociálne siete.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Katalóg a servis kúpeľňového vybavenia",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Katalóg s akciami značiek, nezáväzný dopyt na produkt, online nahlásenie servisu a administrácia servisných zákaziek.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Žeriavnícke práce, Nitra",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Technický nákres žeriavu, prehľad techniky, spolupráca v piatich krokoch a formulár na nezáväzný dopyt.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Fotografické štúdio, Nitra",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Tmavý elegantný web s rýchlou galériou a výraznými tlačidlami na rezerváciu fotenia.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Preprava ťažkej techniky",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Firemná prezentácia, ktorá buduje dôveru u priemyselných klientov a uľahčuje prvý kontakt.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Webová aplikácia pre fotografov",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Online galérie, výber fotiek, automatické e-maily a export do CSV v jednom dashboarde.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Jeden web za druhým.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Scrollujte a stoh rastie.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Každá karta je skutočný klient a skutočný web, ktorý si môžete hneď otvoriť.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Pozrieť web naživo",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Karta číslo 9",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Na vrch stohu patrí váš web.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh dostanete do 24 hodín zadarmo. Platíte až po spustení, bez zálohy.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Všetky projekty aj s popisom riešenia →",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Mária vrelo odporúčam každému, kto túži po svojej vysnívanej webovej stránke 😊 Tá moja je podľa mňa úplne dokonalá 😊 veď posúďte sami: zuzu-photo.sk. Mário je kreatívny, trpezlivý a hlavne veľmi šikovný. Ďakujem! 🙏🙏🙏👏",
+    "files": [
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Oceňujem ľudský a „polopatistický“ prístup, keďže nie som moc technický typ. Resuscitovali sme moju staršiu webku, všetko išlo hladko, skvelá komunikácia a rýchle reakcie na požiadavky. Som veľmi spokojná a môžem odporúčať ďalej 🙂",
+    "files": [
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Určite odporúčam každému, kto hľadá niekoho šikovného a spoľahlivého 👌 Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala ☺️",
+    "files": [
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Referencie",
+    "files": [
+      "src/app/components/sections/TestimonialsSection.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Čo hovoria",
+    "files": [
+      "src/app/components/sections/TestimonialsSection.tsx"
+    ]
+  },
+  {
+    "sk": "naši klienti.",
+    "files": [
+      "src/app/components/sections/TestimonialsSection.tsx"
+    ]
+  },
+  {
+    "sk": "Odporúča SiteLeveled na Facebooku",
+    "files": [
+      "src/app/components/sections/TestimonialsSection.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh do 24 hodín",
+    "files": [
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Web do 7 dní",
+    "files": [
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "E-shop do 14 dní",
+    "files": [
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Platba až po spustení",
+    "files": [
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Referencie v skratke",
+    "files": [
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Individuálny prístup",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Každý návrh robíme na mieru – žiadne šablóny.",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh do 24 hodín, web do 7 dní, e-shop do 14 dní.",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Transparentné ceny",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Web od 300 €, e-shop od 1 000 €. Žiadna záloha – platíte až po spustení.",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Cenník tvorby webu",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Komunikácia",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Vždy viete, kde sa projekt nachádza.",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Skúsenosti",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Weby, katalógy produktov aj webové aplikácie. Ukážky nájdete v portfóliu.",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Portfólio projektov",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Výhody",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Prečo práve",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "SiteLeveled?",
+    "files": [
+      "src/app/components/sections/WhySection.tsx"
+    ]
+  },
+  {
+    "sk": "Ako to funguje",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Tvorba e-shopu",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Proces spolupráce",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "O nás",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Vylevelujte",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "svoju stránku.",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh webstránky – do 24 hodín, zadarmo.",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "SITE",
+    "files": [
+      "src/app/components/layout/Footer.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "LEVELED",
+    "files": [
+      "src/app/components/layout/Footer.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Váš web na ďalšiu úroveň – do 24 hodín.",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Navigácia",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Čo dostanete zadarmo",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Štruktúra celého webu",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "Odporúčania dizajnu",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "siteleveled.com – DOMAN s.r.o.",
+    "files": [
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "SEO audit",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx",
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Zavrieť menu",
+    "files": [
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Otvoriť menu",
+    "files": [
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem návrh zadarmo →",
+    "files": [
+      "src/app/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "sk": "Navštíviť web",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Odkaz skopírovaný",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Zdieľať budovu",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Zdieľať na LinkedIn",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Zdieľať na Facebooku",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Budova v meste klientov",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Odomknuté vylepšenia",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Chcete v meste aj svoju budovu?",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Centrála",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "SiteLeveled HQ",
+    "files": [
+      "src/app/components/city/CityPanel.tsx",
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Tu vznikajú návrhy pre celé mesto. Váš môže byť ďalší – stačia tri kroky:",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Q",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Kto za tým stojí →",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Začnite prvým krokom – formulár zaberie menej ako minútu.",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Stavenisko",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Vo výstavbe",
+    "files": [
+      "src/app/components/city/CityPanel.tsx",
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Takto vzniká každý návrh: najprv skica rozloženia, potom dizajn – a do 24 hodín je hotovo. Bez záväzkov, bez skrytých poplatkov.",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Ďalšia budova môže byť vaša.",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Voľný pozemok",
+    "files": [
+      "src/app/components/city/CityPanel.tsx",
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Tu môže stáť váš web",
+    "files": [
+      "src/app/components/city/CityPanel.tsx",
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh dostanete do 24 hodín zadarmo. Ak sa vám zapáči, postavíme ho – a vaša firma pribudne do mesta ako ďalšia budova.",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Pozemok si zarezervujete vyplnením krátkeho formulára.",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Zavrieť",
+    "files": [
+      "src/app/components/city/CityPanel.tsx"
+    ]
+  },
+  {
+    "sk": "Hotovo – ďalší web stojí",
+    "files": [
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Tu vznikajú návrhy",
+    "files": [
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "SiteLeveled City",
+    "files": [
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Kliknite na budovu",
+    "files": [
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Budovy v meste klientov",
+    "files": [
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "+ Voľný pozemok",
+    "files": [
+      "src/app/components/city/PixelCity.tsx"
+    ]
+  },
+  {
+    "sk": "Vizuálny",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "návrh",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Štruktúra",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Odporúčania",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Cenová",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Návrh webu rozložený na päť vrstiev: vizuálny návrh, štruktúra, texty, odporúčania a cenová ponuka",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Cenová ponuka",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Spolu",
+    "files": [
+      "src/app/pages/SeoAuditAdminPage.tsx",
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Aa",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "H1",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "H2",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Nové",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "NOVÉ",
+    "files": [
+      "src/app/components/fx/SelfBuildingSite.tsx"
+    ]
+  },
+  {
+    "sk": "Galéria s rýchlym načítaním",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Lokálne SEO pre Nitru",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Výrazné CTA na rezervácie",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Jednostránkový dizajn",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Napojenie na sociálne siete",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Preprava a žeriavové práce",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Moderný firemný web",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Technické SEO",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Dôraz na služby a kontakt",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Galéria z lekcií",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Prezentačný web + rezervácie",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Online rezervácia termínov",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Stránka o Fusion Plasma",
+    "files": [
+      "src/app/city/cityData.ts"
+    ]
+  },
+  {
+    "sk": "Web alebo e-shop",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "DPH",
+    "files": [
+      "src/app/pages/PricingPage.tsx"
+    ]
+  },
+  {
+    "sk": "Skicujem layout…",
+    "files": [
+      "src/app/components/city/PixelCity.tsx",
+      "src/app/components/fx/SelfBuildingSite.tsx"
+    ]
+  },
+  {
+    "sk": "Navrhujem dizajn…",
+    "files": [
+      "src/app/components/city/PixelCity.tsx",
+      "src/app/components/fx/SelfBuildingSite.tsx"
+    ]
+  },
+  {
+    "sk": "Odosielam…",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Audit",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ako DOMAN s.r.o., prevádzkovateľ siteleveled.com, spracúva osobné údaje, keď nám napíšete alebo použijete SEO audit. Aktualizované 3. novembra 2026.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "+421 910 803 993",
+    "files": [
+      "src/app/pages/AboutPage.tsx",
+      "src/app/pages/PricingPage.tsx",
+      "src/app/pages/PrivacyPage.tsx",
+      "src/app/components/sections/BioSection.tsx",
+      "src/app/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "sk": "+421 910 803 993 (Mário Doman, vývojár)",
+    "files": [
+      "src/app/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "sk": "Fotografi",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Web na testovacej adrese",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Logo a fotky",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Pri e-shope aj zoznam produktov s cenami, fotkami a popismi",
+    "files": [
+      "src/app/pages/ProcessPage.tsx"
+    ]
+  },
+  {
+    "sk": "Weby na mieru. Bez kompromisov.",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Chcem web na mieru",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Texty pre landing pages a kampane",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Preklad SK/EN",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "Monitoring dostupnosti",
+    "files": [
+      "src/app/pages/ServicesPage.tsx"
+    ]
+  },
+  {
+    "sk": "webu",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Koncept",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "textov",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "ponuka",
+    "files": [
+      "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  }
+]

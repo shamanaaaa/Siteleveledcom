@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "motion/react";
 import { useReducedMotion } from "../../lib/useReducedMotion";
@@ -16,6 +17,7 @@ const whatsIncluded = [
 const AUTOPLAY_MS = 2800;
 
 export function IncludedSection() {
+  const { t: tr } = useI18n();
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const reducedMotion = useReducedMotion();
@@ -40,11 +42,11 @@ export function IncludedSection() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           align="left"
-          eyebrow="Návrh zadarmo"
-          segments={[
+          eyebrow={tr("Návrh zadarmo")}
+          segments={tr([
             { text: "Čo dostanete" },
             { text: "úplne zadarmo.", className: "text-gradient-primary" },
-          ]}
+          ])}
           className="mb-12"
         />
 
@@ -75,14 +77,14 @@ export function IncludedSection() {
                         on ? "bg-[#1AFF8C] text-[#06060B]" : "bg-[#1AFF8C]/12 text-[#1AFF8C]"
                       }`}
                     >
-                      {String(i + 1).padStart(2, "0")}
+                      {tr(String(i + 1).padStart(2, "0"))}
                     </span>
                     <span
                       className={`text-[0.95rem] transition-colors duration-300 ${
                         on ? "text-[#F5F5F0]" : "text-[#F5F5F0]/75"
                       }`}
                     >
-                      {item}
+                      {tr(item)}
                     </span>
                   </button>
                 </AnimateIn>
@@ -90,9 +92,7 @@ export function IncludedSection() {
             })}
             <AnimateIn delay={0.4} direction="right">
               <div className="rounded-card border border-[#6C63FF]/20 bg-[#6C63FF]/5 p-5">
-                <p className="text-[0.9rem] italic leading-relaxed text-[#F5F5F0]/70">
-                  "Nie je to skica. Je to reálny návrh, z ktorého môžete stavať."
-                </p>
+                <p className="text-[0.9rem] italic leading-relaxed text-[#F5F5F0]/70">{tr("\"Nie je to skica. Je to reálny návrh, z ktorého môžete stavať.\"")}</p>
               </div>
             </AnimateIn>
           </div>

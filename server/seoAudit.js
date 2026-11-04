@@ -1,4 +1,5 @@
 const express = require("express");
+const { errorCode, localizedErrors } = require("./publicErrors");
 const crypto = require("crypto");
 const dns = require("dns").promises;
 const fs = require("fs");
@@ -34,6 +35,7 @@ const jobDir = (id) => path.join(AUDIT_DIR, id);
 const reportDir = (id) => path.join(jobDir(id), "report");
 
 function saveJob(job) {
+  if (job.error) job.errorCode = errorCode(job.error);
   fs.writeFileSync(path.join(jobDir(job.id), "job.json"), JSON.stringify(job));
 }
 
@@ -166,12 +168,6 @@ function settle(jobId, ok) {
     forget(hits, paid.ip, paid.at);
     remember(refunds, paid.ip, Date.now());
   }
-}
-
-function formatWait(ms) {
-  const mins = Math.ceil(ms / 60000);
-  const h = Math.floor(mins / 60);
-  return h ? `${h} h ${mins % 60} min` : `${mins} min`;
 }
 
 function secretMatches(given, expected) {
@@ -313,7 +309,7 @@ function publicJob(job) {
     finishedAt: job.finishedAt ?? null,
   };
   if (job.status === "queued") body.position = queue.indexOf(job.id) + 1;
-  if (job.status === "failed") body.error = job.error;
+  if (job.status === "failed") { body.error = job.error; body.code = job.errorCode || errorCode(job.error); }
   if (job.status === "done") {
     try {
       body.result = readResult(job);
@@ -351,6 +347,7 @@ function enqueue(site, extra = {}) {
 
 // ── Routes ──────────────────────────────────────────────────
 const router = express.Router();
+router.use(localizedErrors);
 
 router.get("/config", (_req, res) => {
   res.json({
@@ -382,7 +379,7 @@ router.post("/", async (req, res) => {
   const wait = waitTime(req.ip);
   if (wait > 0) {
     return res.status(429).json({
-      error: `Denný limit auditov pre vašu IP adresu je vyčerpaný. Ďalší audit môžete spustiť o ${formatWait(wait)}.`,
+      error: "AUDIT_LIMIT", data: { waitMs: wait },
     });
   }
   if (queue.length >= MAX_QUEUE) {

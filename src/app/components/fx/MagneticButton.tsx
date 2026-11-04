@@ -24,7 +24,7 @@ interface MagneticButtonProps {
 
 const variantClasses = {
   primary:
-    "bg-primary text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)] hover:shadow-[0_8px_44px_rgba(108,99,255,0.5)] hover:bg-[#7B73FF]",
+    "bg-[#665DFA] text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)] hover:shadow-[0_8px_44px_rgba(108,99,255,0.5)] hover:bg-[#5b53e8]",
   ghost:
     "border border-white/10 bg-white/[0.03] text-foreground hover:bg-white/[0.07] hover:border-border-strong",
 };

@@ -1,3 +1,4 @@
+import { ROUTES, localeForPath, normalizePath, type Locale, type PageId } from "../i18n/routes";
 /*
  * Search metadata of every route. scripts/seoPages.ts writes a static dist/<path>/index.html
  * with this head for each entry (nginx serves dist/ as plain files, so crawlers only see what
@@ -8,6 +9,10 @@
 export const SITE = "https://siteleveled.com";
 
 export interface PageMeta {
+  id: PageId | "blog" | "admin" | "notFound";
+  locale: Locale;
+  image?: string;
+  imageAlt?: string;
   /** Canonical path, with trailing slash */
   path: string;
   title: string;
@@ -20,7 +25,7 @@ export interface PageMeta {
   clientOnly?: boolean;
 }
 
-export const PAGES: PageMeta[] = [
+const SK_PAGES = [
   {
     path: "/",
     title: "Tvorba webstránok a e-shopov na mieru | SiteLeveled",
@@ -108,7 +113,28 @@ export const PAGES: PageMeta[] = [
   },
 ];
 
+const EN_META: Record<string, [string, string, string?]> = {
+  home: ["Custom websites and online stores | SiteLeveled", "Custom websites and online stores, direct contact with the developer, and a clear process. Start with a free design proposal and quote."],
+  services: ["Website development, SEO, and maintenance | SiteLeveled", "Custom websites, online stores, copy, SEO, and ongoing maintenance. Explore the services and request a quote.", "Services"],
+  onlineStores: ["Custom online store development | SiteLeveled", "An online store built around your products, customers, and workflow. Review a free design proposal and quote before deciding.", "Online stores"],
+  pricing: ["Website and online store pricing | SiteLeveled", "Websites from €300, stores from €1,000, manual SEO audit €199, maintenance from €30/month. No deposit; pay after launch.", "Pricing"],
+  portfolio: ["Portfolio: real Slovak business websites | SiteLeveled", "Explore websites and applications built for Slovak businesses: photography, logistics, service management, yoga, and more.", "Portfolio"],
+  process: ["Our website development process | SiteLeveled", "From your brief to design approval, preview, testing, and launch. Understand the steps and how to work directly with the developer.", "Process"],
+  about: ["About Mário Doman and DOMAN s.r.o. | SiteLeveled", "Meet the people behind SiteLeveled: developer Mário Doman and DOMAN s.r.o., based in Slovakia.", "About us"],
+  contact: ["Contact us about your website | SiteLeveled", "Tell us about your business and website project. Email info@siteleveled.com to discuss a free design proposal.", "Contact"],
+  seoAudit: ["Free website SEO audit | SiteLeveled", "Check SEO, performance, accessibility, and best practices for up to 15 pages using Lighthouse. Get a free automated website audit.", "SEO audit"],
+  privacy: ["Privacy policy | SiteLeveled", "How DOMAN s.r.o. processes inquiries and SEO audits, uses browser storage, and handles your personal data and rights.", "Privacy policy"],
+};
+export const PAGES: PageMeta[] = [
+  ...SK_PAGES.map(page => ({ ...page, locale: "sk" as const, id: ROUTES.find(route => route.sk === page.path)?.id ?? (page.path === "/blog/" ? "blog" as const : "admin" as const) })),
+  ...ROUTES.filter(route => route.id !== "cityClient").map(route => ({
+    id: route.id, locale: "en" as const, path: route.en,
+    title: EN_META[route.id][0], description: EN_META[route.id][1], name: EN_META[route.id][2],
+  })),
+];
+
 export const NOT_FOUND: PageMeta = {
+  id: "notFound", locale: "sk",
   path: "/404/",
   title: "Stránka sa nenašla | SiteLeveled",
   description: "Táto stránka neexistuje. Pokračujte na úvod, cenník alebo služby SiteLeveled.",
@@ -117,6 +143,18 @@ export const NOT_FOUND: PageMeta = {
 
 /** The entry for a router pathname, with or without its trailing slash */
 export function pageFor(pathname: string): PageMeta | undefined {
-  const path = `${pathname.replace(/\/+$/, "")}/`;
+  const path = normalizePath(pathname);
   return PAGES.find((p) => p.path === path);
 }
+
+export const EN_NOT_FOUND: PageMeta = {
+  id: "notFound", locale: "en", path: "/en/404/", title: "Page not found | SiteLeveled",
+  description: "This page could not be found. Explore SiteLeveled services, pricing, or the homepage.", robots: "noindex, follow",
+};
+export const notFoundFor = (path: string) => localeForPath(path) === "en" ? EN_NOT_FOUND : NOT_FOUND;
+export function alternates(page: PageMeta) {
+  if (page.robots?.includes("noindex")) return [];
+  return PAGES.filter(candidate => candidate.id === page.id && !candidate.robots?.includes("noindex"));
+}
+/** Searchers in any other language get the international English page. */
+export const xDefault = (page: PageMeta) => alternates(page).find(other => other.locale === "en");

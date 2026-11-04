@@ -1,3 +1,4 @@
+import { useI18n } from "../i18n/LocaleContext";
 import { Eye, Gem, HeartHandshake } from "lucide-react";
 import { AnimateIn } from "../components/AnimateIn";
 import { GlowCard } from "../components/fx/GlowCard";
@@ -36,14 +37,15 @@ const techStack = [
 ];
 
 export function AboutPage() {
+  const { t: tr, link: localLink } = useI18n();
   return (
     <>
       <PageHero
-        title="O nás: kto stojí za SiteLeveled"
-        segments={[
+        title={tr("O nás: kto stojí za SiteLeveled")}
+        segments={tr([
           { text: "Za siteleveled.com stoja ľudia.", br: true },
           { text: "Nie anonymná agentúra.", className: "text-gradient-primary" },
-        ]}
+        ])}
       />
 
       {/* Main content */}
@@ -57,21 +59,21 @@ export function AboutPage() {
                   <div className="overflow-hidden rounded-[calc(1.25rem-2px)]">
                     <img
                       src="/profile.webp"
-                      alt="Mário Doman, vývojár SiteLeveled"
+                      alt={tr("Mário Doman, vývojár SiteLeveled")}
                       className="aspect-[4/5] w-full object-cover"
                     />
                   </div>
                 </div>
                 {/* Floating card */}
                 <div className="absolute -bottom-6 -right-2 rounded-xl border border-white/10 bg-surface-1/90 p-4 backdrop-blur-xl md:right-6">
-                  <p className="mb-1 text-[0.75rem] text-[#F5F5F0]/40">Tech Stack</p>
+                  <p className="mb-1 text-[0.75rem] text-[#F5F5F0]/50">{tr("Tech Stack")}</p>
                   <div className="flex max-w-[200px] flex-wrap gap-2">
                     {techStack.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
                         className="rounded bg-[#6C63FF]/10 px-2 py-0.5 text-[0.7rem] text-[#9F97FF]"
                       >
-                        {tech}
+                        {tr(tech)}
                       </span>
                     ))}
                   </div>
@@ -82,57 +84,35 @@ export function AboutPage() {
             {/* Text side */}
             <div>
               <div>
-                <h2 className="mb-6 font-heading text-[1.25rem] text-[#F5F5F0]/60">
-                  Mário Doman — vývojár. Mária Domanová — konateľka DOMAN s.r.o.
-                </h2>
+                <h2 className="mb-6 font-heading text-[1.25rem] text-[#F5F5F0]/60">{tr("Mário Doman — vývojár. Mária Domanová — konateľka DOMAN s.r.o.")}</h2>
 
                 <div className="mb-8 space-y-5 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">
-                  <p>
-                    Siteleveled.com vzniklo z presvedčenia, že malé a stredné firmy si zaslúžia
-                    weby rovnakej kvality ako veľké korporácie — bez nafúknutých cien a anonymných
-                    account managerov.
-                  </p>
-                  <p>
-                    Weby, e-shopy a webové aplikácie navrhuje a programuje{" "}
-                    <span className="text-[#F5F5F0]/80">Mário Doman</span>. Každý projekt vedie
-                    osobne — od prvého hovoru po finálne spustenie. Zavolať mu môžete priamo na{" "}
-                    <a href="tel:+421910803993" className="text-[#9F97FF] hover:underline">
-                      0910 803 993
-                    </a>
-                    .
-                  </p>
-                  <p>
-                    Za siteleveled.com stojí spoločnosť{" "}
-                    <span className="text-[#F5F5F0]/80">DOMAN s.r.o.</span>, ktorú vedie konateľka{" "}
-                    <span className="text-[#F5F5F0]/80">Mária Domanová</span>. Naša misia:
-                    pomáhať podnikateľom rásť cez silnú digitálnu prítomnosť.
-                  </p>
+                  <p>{tr("Siteleveled.com vzniklo z presvedčenia, že malé a stredné firmy si zaslúžia weby rovnakej kvality ako veľké korporácie — bez nafúknutých cien a anonymných account managerov.")}</p>
+                  <p>{tr("Weby, e-shopy a webové aplikácie navrhuje a programuje")}{" "}
+                    <span className="text-[#F5F5F0]/80">{tr("Mário Doman")}</span>{tr(". Každý projekt vedie osobne — od prvého hovoru po finálne spustenie. Zavolať mu môžete priamo na")}{" "}
+                    <a href={localLink("tel:+421910803993")} className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">{tr("+421 910 803 993")}</a>{"."}</p>
+                  <p>{tr("Za siteleveled.com stojí spoločnosť")}{" "}
+                    <span className="text-[#F5F5F0]/80">{tr("DOMAN s.r.o.")}</span>{tr(", ktorú vedie konateľka")}{" "}
+                    <span className="text-[#F5F5F0]/80">{tr("Mária Domanová")}</span>{tr(". Naša misia: pomáhať podnikateľom rásť cez silnú digitálnu prítomnosť.")}</p>
                 </div>
 
                 {/* Company info */}
                 <GlowCard className="mb-8 p-5">
-                  <p className="mb-3 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/30">
-                    Firemné údaje
-                  </p>
+                  <p className="mb-3 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/50">{tr("Firemné údaje")}</p>
                   <div className="space-y-1 text-[0.85rem] text-[#F5F5F0]/50">
-                    <p className="text-[#F5F5F0]/80">DOMAN s.r.o.</p>
-                    <p>IČO: 47 912 383</p>
-                    <p>Ulica Funduše 1165/26, Cabaj-Čápor 951 17</p>
+                    <p className="text-[#F5F5F0]/80">{tr("DOMAN s.r.o.")}</p>
+                    <p>{tr("IČO: 47 912 383")}</p>
+                    <p>{tr("Ulica Funduše 1165/26, Cabaj-Čápor 951 17")}</p>
                     <p>
-                      <span className="text-[#F5F5F0]/80">Mária Domanová</span> — konateľka (od 27. 09. 2014)
-                    </p>
+                      <span className="text-[#F5F5F0]/80">{tr("Mária Domanová")}</span>{tr(" — konateľka (od 27. 09. 2014)")}</p>
                     <p>
-                      <span className="text-[#F5F5F0]/80">Mário Doman</span> — vývojár,{" "}
-                      <a href="tel:+421910803993" className="text-[#9F97FF] hover:underline">
-                        0910 803 993
-                      </a>
+                      <span className="text-[#F5F5F0]/80">{tr("Mário Doman")}</span>{tr(" — vývojár,")}{" "}
+                      <a href={localLink("tel:+421910803993")} className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">{tr("+421 910 803 993")}</a>
                     </p>
                   </div>
                 </GlowCard>
 
-                <MagneticButton to="/kontakt/" size="lg">
-                  Porozprávajme sa
-                </MagneticButton>
+                <MagneticButton to={localLink("/kontakt/")} size="lg">{tr("Porozprávajme sa")}</MagneticButton>
               </div>
             </div>
           </div>
@@ -144,8 +124,8 @@ export function AboutPage() {
         <Marquee duration={26} rowClassName="gap-10 pr-10">
           {techStack.map((tech) => (
             <span key={tech} className="flex items-center gap-10 whitespace-nowrap">
-              <span className="font-heading text-[0.9rem] uppercase tracking-[0.15em] text-[#F5F5F0]/35">
-                {tech}
+              <span className="font-heading text-[0.9rem] uppercase tracking-[0.15em] text-[#F5F5F0]/50">
+                {tr(tech)}
               </span>
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#6C63FF]/60" />
             </span>
@@ -157,11 +137,11 @@ export function AboutPage() {
       <section className="bg-[#0d0d14] py-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
-            eyebrow="Hodnoty"
-            segments={[
+            eyebrow={tr("Hodnoty")}
+            segments={tr([
               { text: "Hodnoty, na ktorých" },
               { text: "staviame.", className: "text-gradient-primary" },
-            ]}
+            ])}
             className="mb-16"
           />
 
@@ -173,9 +153,9 @@ export function AboutPage() {
                     <value.icon size={22} className="text-[#6C63FF]" />
                   </div>
                   <h3 className="mb-3 font-heading text-[1.1rem] font-bold text-[#F5F5F0]">
-                    {value.title}
+                    {tr(value.title)}
                   </h3>
-                  <p className="text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">{value.text}</p>
+                  <p className="text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">{tr(value.text)}</p>
                 </GlowCard>
               </AnimateIn>
             ))}
