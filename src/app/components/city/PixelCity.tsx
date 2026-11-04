@@ -1,5 +1,7 @@
+import { pathFor, routeMatch } from "../../i18n/routes";
+import { useI18n } from "../../i18n/LocaleContext";
 import { lazy, Suspense, useEffect, useRef, useState, type MouseEvent } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useReducedMotion } from "../../lib/useReducedMotion";
 import { CLIENTS, findClient } from "../../city/cityData";
 import { canvasSurface } from "../../city/pixel";
@@ -68,10 +70,11 @@ function fitScale(available: number) {
 }
 
 export function PixelCity({ className = "" }: { className?: string }) {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const reducedMotion = useReducedMotion();
   const navigate = useNavigate();
   const location = useLocation();
-  const { slug } = useParams();
+  const slug = routeMatch(location.pathname)?.slug;
   const boxRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const hoveredRef = useRef<string | null>(null);
@@ -83,7 +86,7 @@ export function PixelCity({ className = "" }: { className?: string }) {
 
   // A shared link /mesto/<id>/ opens that client's building
   useEffect(() => {
-    if (slug && findClient(slug)) setOpen({ kind: "client", id: slug });
+    setOpen(slug && findClient(slug) ? { kind: "client", id: slug } : null);
   }, [slug]);
 
   useEffect(() => {
@@ -120,7 +123,7 @@ export function PixelCity({ className = "" }: { className?: string }) {
     const paint = (t: number, intro: number) => {
       ctx.clearRect(0, 0, CITY_W, CITY_H);
       ctx.drawImage(ground, 0, 0);
-      drawCity(surface, { t, intro, hovered: hoveredRef.current });
+      drawCity(surface, { locale: language, t, intro, hovered: hoveredRef.current });
     };
 
     if (reducedMotion) {
@@ -168,12 +171,12 @@ export function PixelCity({ className = "" }: { className?: string }) {
       observer.disconnect();
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [reducedMotion]);
+  }, [reducedMotion, language]);
 
   const openSpot = (spot: Hotspot) => {
     if (spot.kind === "client") {
       setOpen({ kind: "client", id: spot.id });
-      navigate(`/mesto/${spot.id}/`, { replace: true, preventScrollReset: true });
+      navigate(pathFor("cityClient", language, spot.id) + location.hash, { replace: true, preventScrollReset: true });
     } else {
       setOpen({ kind: spot.kind });
     }
@@ -189,7 +192,7 @@ export function PixelCity({ className = "" }: { className?: string }) {
   const closePanel = () => {
     setOpen(null);
     setHovered(null);
-    if (location.pathname.startsWith("/mesto/")) navigate("/", { replace: true, preventScrollReset: true });
+    if (routeMatch(location.pathname)?.route.id === "cityClient") navigate(pathFor("home", language) + location.hash, { replace: true, preventScrollReset: true });
   };
 
   const hoverProps = (id: string) => ({
@@ -210,10 +213,8 @@ export function PixelCity({ className = "" }: { className?: string }) {
     <div className={className}>
       <div className="mb-2 flex items-center justify-between gap-3 font-pixel text-[0.8rem] uppercase tracking-wider">
         <span className="flex items-center gap-2 text-[#9F97FF]">
-          <span className="h-2 w-2 animate-pulse bg-[#1AFF8C]" />
-          SiteLeveled City
-        </span>
-        <span className="text-[#F5F5F0]/40">Kliknite na budovu</span>
+          <span className="h-2 w-2 animate-pulse bg-[#1AFF8C]" />{tr("SiteLeveled City")}</span>
+        <span className="text-[#F5F5F0]/50">{tr("Kliknite na budovu")}</span>
       </div>
 
       <div ref={boxRef} className="relative w-full" style={{ aspectRatio: `${CITY_W} / ${CITY_H}` }}>
@@ -226,14 +227,14 @@ export function PixelCity({ className = "" }: { className?: string }) {
             width={CITY_W}
             height={CITY_H}
             role="img"
-            aria-label={`Pixelové mesto klientov SiteLeveled. Budovy: ${CLIENTS.map((c) => c.name).join(", ")} a voľné pozemky pre ďalšie weby.`}
+            aria-label={language === "en" ? `SiteLeveled client city. Buildings: ${CLIENTS.map(c => c.name).join(", ")} and plots for future websites.` : `Pixelové mesto klientov SiteLeveled. Budovy: ${CLIENTS.map(c => c.name).join(", ")} a voľné pozemky pre ďalšie weby.`}
             className="block h-full w-full [image-rendering:pixelated]"
           />
           {AREAS.map(({ spot, style }) =>
             spot.kind === "client" ? (
               <a
                 key={spot.id}
-                href={`/mesto/${spot.id}/`}
+                href={localLink(`/mesto/${spot.id}/`)}
                 aria-hidden
                 tabIndex={-1}
                 className="absolute cursor-pointer"
@@ -264,21 +265,21 @@ export function PixelCity({ className = "" }: { className?: string }) {
               }}
             >
               <div className="whitespace-nowrap border-2 border-[#1AFF8C] bg-[#0b0b14]/95 px-2.5 py-1.5 font-pixel leading-tight shadow-[3px_3px_0_0_rgba(26,255,140,0.25)]">
-                <p className="text-[0.9rem] text-[#F5F5F0]">{hoveredLabel.title}</p>
-                <p className="text-[0.75rem] text-[#1AFF8C]">{hoveredLabel.sub}</p>
+                <p className="text-[0.9rem] text-[#F5F5F0]">{tr(hoveredLabel.title)}</p>
+                <p className="text-[0.75rem] text-[#1AFF8C]">{tr(hoveredLabel.sub)}</p>
               </div>
             </div>
           )}
         </div>
       </div>
 
-      <nav aria-label="Budovy v meste klientov" className="mt-4 flex flex-wrap justify-center gap-2">
+      <nav aria-label={tr("Budovy v meste klientov")} className="mt-4 flex flex-wrap justify-center gap-2">
         {CLIENTS.map((client) => {
           const spot = HOTSPOTS.find((h) => h.id === client.id)!;
           return (
             <a
               key={client.id}
-              href={`/mesto/${client.id}/`}
+              href={localLink(`/mesto/${client.id}/`)}
               onClick={(event) => onLinkClick(event, spot)}
               onFocus={() => setHovered(client.id)}
               onBlur={() => setHovered(null)}
@@ -289,7 +290,7 @@ export function PixelCity({ className = "" }: { className?: string }) {
                   : "border-white/10 bg-white/[0.03] text-[#F5F5F0]/70"
               }`}
             >
-              {client.name}
+              {tr(client.name)}
             </a>
           );
         })}
@@ -304,9 +305,7 @@ export function PixelCity({ className = "" }: { className?: string }) {
               ? "border-[#1AFF8C] bg-[#1AFF8C]/10 text-[#1AFF8C]"
               : "border-[#1AFF8C]/40 text-[#1AFF8C]/80"
           }`}
-        >
-          + Voľný pozemok
-        </button>
+        >{tr("+ Voľný pozemok")}</button>
       </nav>
 
       {/* Only while open: an idle boundary would make React re-render the city while attaching to a pre-rendered page */}

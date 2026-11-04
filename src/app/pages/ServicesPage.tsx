@@ -1,3 +1,4 @@
+import { useI18n } from "../i18n/LocaleContext";
 import { Link } from "react-router";
 import {
   Code2,
@@ -98,6 +99,7 @@ const filterMap: Record<string, number[]> = {
 };
 
 export function ServicesPage() {
+  const { t: tr, link: localLink } = useI18n();
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filteredServices = filterMap[activeFilter].map((i) => services[i]);
@@ -105,12 +107,12 @@ export function ServicesPage() {
   return (
     <>
       <PageHero
-        title="Tvorba webstránok, e-shopov a SEO"
-        segments={[
+        title={tr("Tvorba webstránok, e-shopov a SEO")}
+        segments={tr([
           { text: "Čo robíme." },
           { text: "A robíme to poriadne.", className: "text-gradient-primary" },
-        ]}
-        sub="Od prvého nápadu po dlhodobú správu — všetko pod jednou strechou."
+        ])}
+        sub={tr("Od prvého nápadu po dlhodobú správu — všetko pod jednou strechou.")}
       />
 
       {/* Filters — segmented control with sliding active pill */}
@@ -130,11 +132,11 @@ export function ServicesPage() {
                   {active && (
                     <motion.span
                       layoutId="service-filter"
-                      className="absolute inset-0 rounded-xl bg-[#6C63FF] shadow-[0_4px_16px_rgba(108,99,255,0.35)]"
+                      className="absolute inset-0 rounded-xl bg-[#665DFA] shadow-[0_4px_16px_rgba(108,99,255,0.35)]"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
-                  <span className="relative z-10">{f.label}</span>
+                  <span className="relative z-10">{tr(f.label)}</span>
                 </button>
               );
             })}
@@ -168,34 +170,31 @@ export function ServicesPage() {
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#6C63FF]/10">
                             <service.icon size={20} className="text-[#6C63FF]" />
                           </div>
-                          <span className="text-[0.8rem] uppercase tracking-wider text-[#F5F5F0]/30">
-                            {service.title}
+                          <span className="text-[0.8rem] uppercase tracking-wider text-[#F5F5F0]/50">
+                            {tr(service.title)}
                           </span>
                         </div>
                         <h2 className="mb-4 font-heading text-[1.35rem] font-bold text-[#F5F5F0] sm:text-[1.6rem]">
-                          {service.headline}
+                          {tr(service.headline)}
                         </h2>
                         <p className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/50">
-                          {service.text}
+                          {tr(service.text)}
                         </p>
                         {service.price && (
                           <p className="mt-5 inline-flex rounded-full bg-[#1AFF8C]/10 px-3 py-1 text-[0.8rem] text-[#1AFF8C]">
-                            {service.price}
+                            {tr(service.price)}
                           </p>
                         )}
                         {service.link && (
                           <Link
-                            to={service.link.to}
+                            to={localLink(service.link.to)}
                             className="mt-4 block text-[0.85rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
                           >
-                            {service.link.label} →
-                          </Link>
+                            {tr(service.link.label)}{" →"}</Link>
                         )}
                       </div>
                       <div>
-                        <p className="mb-4 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/30">
-                          Zahŕňa
-                        </p>
+                        <p className="mb-4 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/50">{tr("Zahŕňa")}</p>
                         <ul className="mb-8 space-y-3">
                           {service.includes.map((item, j) => (
                             <li
@@ -205,15 +204,15 @@ export function ServicesPage() {
                               <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1AFF8C]/12">
                                 <Check size={12} className="text-[#1AFF8C]" />
                               </span>
-                              {item}
+                              {tr(item)}
                             </li>
                           ))}
                         </ul>
                         <Link
-                          to="/kontakt/"
+                          to={localLink("/kontakt/")}
                           className="group/link inline-flex items-center gap-2 text-[0.9rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
                         >
-                          {service.cta}
+                          {tr(service.cta)}
                           <ArrowRight
                             size={16}
                             className="transition-transform duration-300 group-hover/link:translate-x-1"

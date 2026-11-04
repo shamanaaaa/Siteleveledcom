@@ -1,3 +1,5 @@
+import { translate as translateCopy } from "../i18n/messages";
+import type { Locale } from "../i18n/routes";
 import { CLIENTS } from "./cityData";
 import { drawText, textWidth, FONT_ASCENT } from "./font";
 import { hash, translate, type Surface } from "./pixel";
@@ -30,7 +32,7 @@ function wrap(text: string, maxWidth: number) {
   return lines;
 }
 
-export function drawOgCard(s: Surface, clientId?: string) {
+export function drawOgCard(s: Surface, clientId?: string, locale: Locale = "sk") {
   // Night sky with a few stars and a purple haze towards the bottom right
   for (let i = 0; i < 140; i++) {
     const x = Math.floor(hash(i, 1) * OG_W);
@@ -51,7 +53,7 @@ export function drawOgCard(s: Surface, clientId?: string) {
   const dy = Math.round(Math.min(10, Math.max(OG_H - CITY_H, OG_H / 2 + 8 - focusY)));
   const city = translate(s, dx, dy);
   drawGround(city);
-  drawCity(city, { t: STILL_T, intro: Infinity, hovered: spot?.id ?? null });
+  drawCity(city, { locale, t: STILL_T, intro: Infinity, hovered: spot?.id ?? null });
 
   // Text panel with a dithered edge so the city fades out behind it
   s.fill(0, 0, PANEL_W - 8, OG_H, "#06060B");
@@ -72,23 +74,23 @@ export function drawOgCard(s: Surface, clientId?: string) {
     drawText(s, name, left + 1, 48 + 1, "#2a2560", scale);
     drawText(s, name, left, 48, "#F5F5F0", scale);
     let y = 48 + 7 * scale + 10 + FONT_ASCENT;
-    for (const row of wrap(client.category, PANEL_W - left - 8)) {
+    for (const row of wrap(translateCopy(client.category, locale), PANEL_W - left - 8)) {
       drawText(s, row, left, y, "#b8b4d6");
       y += 11;
     }
-    drawText(s, "> BUDOVA V MESTE", left, y + 10, "#1AFF8C");
-    drawText(s, "KLIENTOV SITELEVELED", left, y + 21, "#1AFF8C");
+    drawText(s, locale === "en" ? "> A BUILDING IN OUR" : "> BUDOVA V MESTE", left, y + 10, "#1AFF8C");
+    drawText(s, locale === "en" ? "CLIENT CITY" : "KLIENTOV SITELEVELED", left, y + 21, "#1AFF8C");
   } else {
-    drawText(s, "WEBY, KTORÉ", left + 1, 52 + 1, "#2a2560", 2);
-    drawText(s, "WEBY, KTORÉ", left, 52, "#F5F5F0", 2);
-    drawText(s, "PREDÁVAJÚ.", left + 1, 52 + 24 + 1, "#0d4a30", 2);
-    drawText(s, "PREDÁVAJÚ.", left, 52 + 24, "#1AFF8C", 2);
-    drawText(s, "KLIKNITE NA BUDOVU", left, 116, "#b8b4d6");
-    drawText(s, "A POZRITE SI NAŠE WEBY", left, 127, "#b8b4d6");
+    drawText(s, locale === "en" ? "CUSTOM" : "WEBY, KTORÉ", left + 1, 52 + 1, "#2a2560", 2);
+    drawText(s, locale === "en" ? "CUSTOM" : "WEBY, KTORÉ", left, 52, "#F5F5F0", 2);
+    drawText(s, locale === "en" ? "WEBSITES." : "PREDÁVAJÚ.", left + 1, 52 + 24 + 1, "#0d4a30", 2);
+    drawText(s, locale === "en" ? "WEBSITES." : "PREDÁVAJÚ.", left, 52 + 24, "#1AFF8C", 2);
+    drawText(s, locale === "en" ? "CLICK A BUILDING" : "KLIKNITE NA BUDOVU", left, 116, "#b8b4d6");
+    drawText(s, locale === "en" ? "TO EXPLORE OUR WORK" : "A POZRITE SI NAŠE WEBY", left, 127, "#b8b4d6");
   }
 
-  drawText(s, "NÁVRH WEBU ZADARMO", left, OG_H - 40, "#F5F5F0");
-  drawText(s, "DO 24 H · SITELEVELED.COM", left, OG_H - 28, "#9F97FF");
+  drawText(s, locale === "en" ? "FREE DESIGN PROPOSAL" : "NÁVRH WEBU ZADARMO", left, OG_H - 40, "#F5F5F0");
+  drawText(s, locale === "en" ? "SITELEVELED.COM/EN/" : "DO 24 H · SITELEVELED.COM", left, OG_H - 28, "#9F97FF");
 
   // Pixel frame
   s.fill(0, 0, OG_W, 2, "#6C63FF");

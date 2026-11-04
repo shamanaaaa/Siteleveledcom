@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useReducedMotion } from "../../lib/useReducedMotion";
@@ -7,6 +8,7 @@ import { MagneticButton } from "../fx/MagneticButton";
 import { PixelCity } from "../city/PixelCity";
 
 export function HeroSection() {
+  const { t: tr, link: localLink } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const reducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -41,34 +43,26 @@ export function HeroSection() {
             {/* The copy doesn't fade in: from opacity 0 it delays the largest paint (LCP) by about a second */}
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#1AFF8C]/20 bg-[#1AFF8C]/5 px-4 py-1.5">
               <div className="h-2 w-2 rounded-full bg-[#1AFF8C]" />
-              <span className="text-[0.8rem] text-[#1AFF8C]">
-                Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy
-              </span>
+              <span className="text-[0.8rem] text-[#1AFF8C]">{tr("Web od 300 € za 7 dní · E-shop od 1 000 € · Bez zálohy")}</span>
             </div>
 
             <KineticHeading
               as="h1"
               inView={false}
               delay={0.15}
-              segments={[
+              segments={tr([
                 { text: "Tvorba webstránok na\u00A0mieru.", br: true },
                 // Non-breaking spaces: otherwise a word jumps a line when the web font replaces the fallback
                 { text: "Návrh zadarmo do\u00A024\u00A0hodín.", className: "text-gradient-primary" },
-              ]}
+              ])}
               className="mb-6 font-heading text-display-2 font-bold"
             />
 
-            <p className="mx-auto mb-9 max-w-xl text-[1rem] leading-relaxed text-[#F5F5F0]/60 sm:text-[1.15rem] lg:mx-0">
-              Vyplňte krátky formulár. My sa postaráme o zvyšok.
-            </p>
+            <p className="mx-auto mb-9 max-w-xl text-[1rem] leading-relaxed text-[#F5F5F0]/60 sm:text-[1.15rem] lg:mx-0">{tr("Vyplňte krátky formulár. My sa postaráme o zvyšok.")}</p>
 
             <div className="mb-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-              <MagneticButton size="lg" href="#formular">
-                Chcem návrh zadarmo
-              </MagneticButton>
-              <MagneticButton variant="ghost" href="#portfolio" arrow={false}>
-                Pozrieť portfólio
-              </MagneticButton>
+              <MagneticButton size="lg" href={localLink("#formular")}>{tr("Chcem návrh zadarmo")}</MagneticButton>
+              <MagneticButton variant="ghost" href={localLink("#portfolio")} arrow={false}>{tr("Pozrieť portfólio")}</MagneticButton>
             </div>
 
             <div className="flex items-center justify-center gap-3 lg:justify-start">
@@ -76,14 +70,13 @@ export function HeroSection() {
                 {["ZK", "ZK", "JB"].map((initials, i) => (
                   <div
                     key={i}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#0A0A0F] bg-gradient-to-br from-[#6C63FF] to-[#9F97FF] font-heading text-[0.6rem] text-white"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#0A0A0F] bg-gradient-to-br from-[#665DFA] to-[#5b53e8] font-heading text-[0.6rem] text-white"
                   >
-                    {initials}
+                    {tr(initials)}
                   </div>
                 ))}
               </div>
-              <a href="#referencie" className="text-[0.8rem] text-[#F5F5F0]/40 transition-colors hover:text-[#F5F5F0]/70">
-                Klienti nás <span className="text-[#F5F5F0]/70">odporúčajú na Facebooku</span>
+              <a href={localLink("#referencie")} className="text-[0.8rem] text-[#F5F5F0]/50 transition-colors hover:text-[#F5F5F0]/70">{tr("Klienti nás ")}<span className="text-[#F5F5F0]/70">{tr("odporúčajú na Facebooku")}</span>
               </a>
             </div>
           </div>
@@ -111,7 +104,7 @@ export function HeroSection() {
           transition={{ repeat: Infinity, duration: 2 }}
           className="flex h-8 w-5 items-start justify-center rounded-full border border-white/20 pt-1.5"
         >
-          <div className="h-2 w-1 rounded-full bg-[#6C63FF]" />
+          <div className="h-2 w-1 rounded-full bg-[#665DFA]" />
         </motion.div>
       </motion.div>
     </section>

@@ -1,3 +1,4 @@
+import { useI18n } from "../i18n/LocaleContext";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
@@ -6,7 +7,7 @@ import { GlowCard } from "../components/fx/GlowCard";
 import { KineticHeading } from "../components/fx/KineticHeading";
 import { MagneticButton } from "../components/fx/MagneticButton";
 import { PageHero } from "../components/fx/PageHero";
-import { IMAGE_SIZES, imageSrcSet } from "../lib/images";
+import { IMAGE_SIZES, imageSrcSet, localizedImage } from "../lib/images";
 
 const projects = [
   {
@@ -130,6 +131,7 @@ const projects = [
 const filterOptions = ["Všetky", "Fotografi", "Služby", "B2B", "Aplikácie"];
 
 export function PortfolioPage() {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const [activeFilter, setActiveFilter] = useState("Všetky");
 
   const filtered =
@@ -140,12 +142,12 @@ export function PortfolioPage() {
   return (
     <>
       <PageHero
-        title="Portfólio: weby, ktoré sme vytvorili"
-        segments={[
+        title={tr("Portfólio: weby, ktoré sme vytvorili")}
+        segments={tr([
           { text: "Výsledky hovoria" },
           { text: "za nás.", className: "text-gradient-primary" },
-        ]}
-        sub="Každý projekt je iný. Každý má jeden spoločný cieľ: rast vášho biznisu."
+        ])}
+        sub={tr("Každý projekt je iný. Každý má jeden spoločný cieľ: rast vášho biznisu.")}
       />
 
       {/* Filters */}
@@ -165,11 +167,11 @@ export function PortfolioPage() {
                   {active && (
                     <motion.span
                       layoutId="portfolio-filter"
-                      className="absolute inset-0 rounded-xl bg-[#6C63FF] shadow-[0_4px_16px_rgba(108,99,255,0.35)]"
+                      className="absolute inset-0 rounded-xl bg-[#665DFA] shadow-[0_4px_16px_rgba(108,99,255,0.35)]"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
-                  <span className="relative z-10">{f}</span>
+                  <span className="relative z-10">{tr(f)}</span>
                 </button>
               );
             })}
@@ -195,16 +197,16 @@ export function PortfolioPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                       {/* Screenshot */}
                       <a
-                        href={project.url}
+                        href={localLink(project.url)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="relative block aspect-[16/10] overflow-hidden bg-bg-deep lg:aspect-auto lg:min-h-[20rem]"
                       >
                         <img
-                          src={project.image}
-                          srcSet={imageSrcSet(project.image, 1200)}
+                          src={localizedImage(project.image, language)}
+                          srcSet={imageSrcSet(localizedImage(project.image, language), 1200)}
                           sizes={IMAGE_SIZES}
-                          alt={`Ukážka webu ${project.title}`}
+                          alt={language === "en" ? `Preview of ${project.title}` : `Ukážka webu ${project.title}`}
                           // The first one is the largest thing on the first screen
                           loading={i === 0 ? "eager" : "lazy"}
                           decoding="async"
@@ -212,8 +214,8 @@ export function PortfolioPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F]/60 to-transparent" />
                         <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                          <span className="rounded-full bg-white/10 px-3 py-1 text-[0.75rem] text-white/80 backdrop-blur-sm">
-                            {project.type}
+                          <span className="rounded-full bg-[#0A0A0F]/75 px-3 py-1 text-[0.75rem] text-white backdrop-blur-sm">
+                            {tr(project.type)}
                           </span>
                         </div>
                       </a>
@@ -221,52 +223,40 @@ export function PortfolioPage() {
                       {/* Content */}
                       <div className="flex flex-col justify-center p-8 md:p-10">
                         <span className="mb-2 text-[0.75rem] uppercase tracking-wider text-[#9F97FF]">
-                          {project.category}
+                          {tr(project.category)}
                         </span>
                         <h2 className="mb-4 font-heading text-[1.5rem] font-bold text-[#F5F5F0] sm:text-[1.75rem]">
-                          {project.title}
+                          {tr(project.title)}
                         </h2>
 
                         <div className="mb-6 space-y-4">
                           <div>
-                            <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/30">
-                              Výzva
-                            </p>
+                            <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/50">{tr("Výzva")}</p>
                             <p className="text-[0.85rem] leading-relaxed text-[#F5F5F0]/60">
-                              {project.challenge}
+                              {tr(project.challenge)}
                             </p>
                           </div>
                           <div>
-                            <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/30">
-                              Riešenie
-                            </p>
+                            <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#F5F5F0]/50">{tr("Riešenie")}</p>
                             <p className="text-[0.85rem] leading-relaxed text-[#F5F5F0]/60">
-                              {project.solution}
+                              {tr(project.solution)}
                             </p>
                           </div>
                           {project.review && (
                             <figure>
-                              <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#1AFF8C]">
-                                Referencia
-                              </p>
-                              <blockquote className="text-[0.85rem] italic leading-relaxed text-[#F5F5F0]/60">
-                                &ldquo;{project.review.text}&rdquo;
-                              </blockquote>
-                              <figcaption className="mt-1 text-[0.75rem] text-[#F5F5F0]/40">
-                                — {project.review.author}, odporúčanie na Facebooku
-                              </figcaption>
+                              <p className="mb-1 text-[0.75rem] uppercase tracking-wider text-[#1AFF8C]">{tr("Referencia")}</p>
+                              <blockquote className="text-[0.85rem] italic leading-relaxed text-[#F5F5F0]/60">{"“"}{tr(project.review.text)}{"”"}</blockquote>
+                              <figcaption className="mt-1 text-[0.75rem] text-[#F5F5F0]/50">{"— "}{tr(project.review.author)}{tr(", odporúčanie na Facebooku")}</figcaption>
                             </figure>
                           )}
                         </div>
 
                         <a
-                          href={project.url}
+                          href={localLink(project.url)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/link inline-flex items-center gap-2 text-[0.9rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
-                        >
-                          Pozrieť projekt
-                          <ExternalLink
+                        >{tr("Pozrieť projekt")}<ExternalLink
                             size={15}
                             className="transition-transform duration-300 group-hover/link:translate-x-0.5"
                           />
@@ -285,14 +275,8 @@ export function PortfolioPage() {
       <section className="bg-[#0d0d14] py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <AnimateIn>
-            <blockquote className="mb-6 font-heading text-[1.25rem] italic leading-relaxed text-[#F5F5F0]/80 sm:text-[1.5rem]">
-              &ldquo;Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná
-              komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte
-              lepšie, ako som čakala.&rdquo;
-            </blockquote>
-            <p className="text-[0.875rem] text-[#F5F5F0]/40">
-              — Jaja Bieliková, springnitra.sk · odporúčanie na Facebooku
-            </p>
+            <blockquote className="mb-6 font-heading text-[1.25rem] italic leading-relaxed text-[#F5F5F0]/80 sm:text-[1.5rem]">{tr("“Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala.”")}</blockquote>
+            <p className="text-[0.875rem] text-[#F5F5F0]/50">{tr("— Jaja Bieliková, springnitra.sk · odporúčanie na Facebooku")}</p>
           </AnimateIn>
         </div>
       </section>
@@ -302,16 +286,14 @@ export function PortfolioPage() {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <KineticHeading
             as="h2"
-            segments={[
+            segments={tr([
               { text: "Chcete podobné" },
               { text: "výsledky?", className: "text-gradient-primary" },
-            ]}
+            ])}
             className="mb-8 font-heading text-title font-bold"
           />
           <AnimateIn delay={0.2}>
-            <MagneticButton to="/#formular" size="lg">
-              Chcem návrh zadarmo
-            </MagneticButton>
+            <MagneticButton to={localLink("/#formular")} size="lg">{tr("Chcem návrh zadarmo")}</MagneticButton>
           </AnimateIn>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { Link, useLocation } from "react-router";
 import { Linkedin, Facebook } from "lucide-react";
 import { Aurora } from "../fx/Aurora";
@@ -19,6 +20,7 @@ const navLinks = [
 ];
 
 export function Footer() {
+  const { t: tr, link: localLink, locale } = useI18n();
   const location = useLocation();
 
   const scrollTo = (id: string) => {
@@ -35,26 +37,22 @@ export function Footer() {
           <div className="text-center md:text-left">
             <KineticHeading
               as="p"
-              segments={[
+              segments={tr([
                 { text: "Vylevelujte" },
                 { text: "svoju stránku.", className: "text-gradient-primary" },
-              ]}
+              ])}
               className="mb-2 font-heading text-title font-bold"
             />
-            <p className="text-[0.95rem] text-[#F5F5F0]/60">
-              Návrh webstránky – do 24 hodín, zadarmo.
-            </p>
+            <p className="text-[0.95rem] text-[#F5F5F0]/60">{tr("Návrh webstránky – do 24 hodín, zadarmo.")}</p>
           </div>
           <MagneticButton
-            to="/#formular"
+            to={localLink("/#formular")}
             size="lg"
             onClick={() => {
               if (location.pathname === "/") scrollTo("formular");
             }}
             className="whitespace-nowrap"
-          >
-            Chcem návrh zadarmo
-          </MagneticButton>
+          >{tr("Chcem návrh zadarmo")}</MagneticButton>
         </div>
       </div>
 
@@ -63,34 +61,29 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="mb-4 inline-block">
-              <span className="font-heading text-[1.25rem] tracking-tight text-[#F5F5F0]">
-                SITE<span className="text-[#6C63FF]">LEVELED</span>
+            <Link to={localLink("/")} className="mb-4 inline-block">
+              <span className="font-heading text-[1.25rem] tracking-tight text-[#F5F5F0]">{tr("SITE")}<span className="text-[#6C63FF]">{tr("LEVELED")}</span>
               </span>
             </Link>
-            <p className="mb-4 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">
-              Váš web na ďalšiu úroveň – do 24 hodín.
-            </p>
+            <p className="mb-4 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">{tr("Váš web na ďalšiu úroveň – do 24 hodín.")}</p>
             <div className="space-y-0.5 text-[0.8rem] text-[#F5F5F0]/50">
-              <p className="text-[#F5F5F0]/70">DOMAN s.r.o.</p>
-              <p>IČO: 47 912 383</p>
-              <p>Ulica Funduše 1165/26</p>
-              <p>Cabaj-Čápor 951 17</p>
-              <p>Konateľka: Mária Domanová</p>
+              <p className="text-[#F5F5F0]/70">{tr("DOMAN s.r.o.")}</p>
+              <p>{tr("IČO: 47 912 383")}</p>
+              <p>{tr("Ulica Funduše 1165/26")}</p>
+              <p>{tr("Cabaj-Čápor 951 17")}</p>
+              <p>{tr("Konateľka: Mária Domanová")}</p>
             </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">
-              Navigácia
-            </p>
+            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">{tr("Navigácia")}</p>
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <span key={link.label}>
                   {link.hash ? (
                     <Link
-                      to={`/#${link.hash}`}
+                      to={localLink(`/#${link.hash}`)}
                       onClick={(e) => {
                         if (window.location.pathname === "/") {
                           e.preventDefault();
@@ -99,14 +92,14 @@ export function Footer() {
                       }}
                       className="cursor-pointer text-[0.875rem] text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
                     >
-                      {link.label}
+                      {tr(link.label)}
                     </Link>
                   ) : (
                     <Link
-                      to={link.href!}
+                      to={localLink(link.href!)}
                       className="text-[0.875rem] text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
                     >
-                      {link.label}
+                      {tr(link.label)}
                     </Link>
                   )}
                 </span>
@@ -116,45 +109,37 @@ export function Footer() {
 
           {/* Čo dostanete */}
           <div>
-            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">
-              Čo dostanete zadarmo
-            </p>
+            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">{tr("Čo dostanete zadarmo")}</p>
             <div className="flex flex-col gap-3 text-[0.875rem] text-[#F5F5F0]/60">
-              <span>Vizuálny návrh hlavnej stránky</span>
-              <span>Štruktúra celého webu</span>
-              <span>Základný koncept textov</span>
-              <span>Odporúčania dizajnu</span>
-              <span>Cenová ponuka realizácie</span>
+              <span>{tr("Vizuálny návrh hlavnej stránky")}</span>
+              <span>{tr("Štruktúra celého webu")}</span>
+              <span>{tr("Základný koncept textov")}</span>
+              <span>{tr("Odporúčania dizajnu")}</span>
+              <span>{tr("Cenová ponuka realizácie")}</span>
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">
-              Kontakt
-            </p>
+            <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">{tr("Kontakt")}</p>
             <div className="flex flex-col gap-3 text-[0.875rem] text-[#F5F5F0]/60">
               <a
-                href="mailto:info@siteleveled.com"
+                href={localLink("mailto:info@siteleveled.com")}
                 className="transition-colors hover:text-[#9F97FF]"
-              >
-                info@siteleveled.com
-              </a>
-              <a href="tel:+421910803993" className="transition-colors hover:text-[#9F97FF]">
-                0910 803 993
-              </a>
+              >{tr("info@siteleveled.com")}</a>
+              {locale !== "en" && <a href={localLink("tel:+421910803993")} className="transition-colors hover:text-[#9F97FF]">{tr("+421 910 803 993")}</a>}
               <div className="mt-2 flex items-center gap-4">
                 <a
-                  href="https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/"
+                  href={localLink("https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/")}
                   className="text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
-                  aria-label="LinkedIn"
+                  aria-label={tr("LinkedIn")}
                 >
                   <Linkedin size={18} />
                 </a>
                 <a
-                  href="https://www.facebook.com/mario.doman"
+                  href={localLink("https://www.facebook.com/mario.doman")}
                   className="text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
-                  aria-label="Facebook"
+                  aria-label={tr("Facebook")}
                 >
                   <Facebook size={18} />
                 </a>
@@ -165,15 +150,11 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-          <p className="text-[0.8rem] text-[#F5F5F0]/50" suppressHydrationWarning>
-            &copy; {new Date().getFullYear()} siteleveled.com – DOMAN s.r.o.
-          </p>
+          <p className="text-[0.8rem] text-[#F5F5F0]/50" suppressHydrationWarning>{"© "}{tr(new Date().getFullYear())}{tr(" siteleveled.com – DOMAN s.r.o.")}</p>
           <Link
-            to="/ochrana-osobnych-udajov/"
+            to={localLink("/ochrana-osobnych-udajov/")}
             className="text-[0.8rem] text-[#F5F5F0]/50 transition-colors hover:text-[#9F97FF]"
-          >
-            Ochrana osobných údajov
-          </Link>
+          >{tr("Ochrana osobných údajov")}</Link>
         </div>
       </div>
 

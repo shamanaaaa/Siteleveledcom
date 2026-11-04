@@ -1,3 +1,5 @@
+import { errorMessage } from "../i18n/errors";
+import { useI18n } from "../i18n/LocaleContext";
 import { useState } from "react";
 import { Link } from "react-router";
 import {
@@ -30,6 +32,7 @@ const SEND_FAILED = "Odoslanie zlyhalo. Skúste to o chvíľu znova alebo napí�
 const serviceOptions = ["Nový web", "E-shop", "Audit", "Správa", "Iné"];
 
 export function ContactPage() {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -78,6 +81,7 @@ export function ContactPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          locale: language,
           name: formData.name,
           email: formData.email,
           company: formData.company,
@@ -89,7 +93,7 @@ export function ContactPage() {
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
         // While the backend restarts (a few seconds per deploy) nginx answers 502 with HTML, not JSON
-        throw new Error(body.error || SEND_FAILED);
+        throw new Error(errorMessage(body, language, tr(SEND_FAILED)));
       }
       setSubmitted(true);
     } catch (err) {
@@ -115,12 +119,12 @@ export function ContactPage() {
   return (
     <>
       <PageHero
-        title="Kontaktujte nás"
-        segments={[
+        title={tr("Kontaktujte nás")}
+        segments={tr([
           { text: "Porozprávajme" },
           { text: "sa.", className: "text-gradient-primary" },
-        ]}
-        sub="Napíšte nám alebo zavolajte. Ozveme sa vám do 24 hodín v pracovný deň."
+        ])}
+        sub={tr("Napíšte nám alebo zavolajte. Ozveme sa vám do 24 hodín v pracovný deň.")}
       />
 
       {/* Form + Contact info */}
@@ -147,9 +151,7 @@ export function ContactPage() {
                       >
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                           <div>
-                            <label htmlFor="contact-name" className={labelBase}>
-                              Meno a priezvisko *
-                            </label>
+                            <label htmlFor="contact-name" className={labelBase}>{tr("Meno a priezvisko *")}</label>
                             <input
                               id="contact-name"
                               name="name"
@@ -160,16 +162,14 @@ export function ContactPage() {
                               className={`${inputBase} ${
                                 errors.name ? inputErrorBorder : inputDefaultBorder
                               }`}
-                              placeholder="Ján Novák"
+                              placeholder={tr("Ján Novák")}
                             />
                             {errors.name && (
-                              <p className="mt-1 text-[0.75rem] text-red-400">{errors.name}</p>
+                              <p className="mt-1 text-[0.75rem] text-red-400">{tr(errors.name)}</p>
                             )}
                           </div>
                           <div>
-                            <label htmlFor="contact-company" className={labelBase}>
-                              Firma / projekt *
-                            </label>
+                            <label htmlFor="contact-company" className={labelBase}>{tr("Firma / projekt *")}</label>
                             <input
                               id="contact-company"
                               name="company"
@@ -180,19 +180,17 @@ export function ContactPage() {
                               className={`${inputBase} ${
                                 errors.company ? inputErrorBorder : inputDefaultBorder
                               }`}
-                              placeholder="Názov firmy"
+                              placeholder={tr("Názov firmy")}
                             />
                             {errors.company && (
-                              <p className="mt-1 text-[0.75rem] text-red-400">{errors.company}</p>
+                              <p className="mt-1 text-[0.75rem] text-red-400">{tr(errors.company)}</p>
                             )}
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                           <div>
-                            <label htmlFor="contact-email" className={labelBase}>
-                              Email *
-                            </label>
+                            <label htmlFor="contact-email" className={labelBase}>{tr("Email *")}</label>
                             <input
                               id="contact-email"
                               name="email"
@@ -203,16 +201,15 @@ export function ContactPage() {
                               className={`${inputBase} ${
                                 errors.email ? inputErrorBorder : inputDefaultBorder
                               }`}
-                              placeholder="jan@firma.sk"
+                              placeholder={tr("jan@firma.sk")}
                             />
                             {errors.email && (
-                              <p className="mt-1 text-[0.75rem] text-red-400">{errors.email}</p>
+                              <p className="mt-1 text-[0.75rem] text-red-400">{tr(errors.email)}</p>
                             )}
                           </div>
+                          {language === "sk" && (
                           <div>
-                            <label htmlFor="contact-phone" className={labelBase}>
-                              Telefón
-                            </label>
+                            <label htmlFor="contact-phone" className={labelBase}>{tr("Telefón")}</label>
                             <input
                               id="contact-phone"
                               name="phone"
@@ -221,15 +218,14 @@ export function ContactPage() {
                               value={formData.phone}
                               onChange={(e) => handleChange("phone", e.target.value)}
                               className={`${inputBase} ${inputDefaultBorder}`}
-                              placeholder="+421 ..."
+                              placeholder={"+421 ..."}
                             />
                           </div>
+                          )}
                         </div>
 
                         <div>
-                          <p id="contact-service" className={labelBase}>
-                            Čo potrebujete?
-                          </p>
+                          <p id="contact-service" className={labelBase}>{tr("Čo potrebujete?")}</p>
                           <div role="group" aria-labelledby="contact-service" className="flex flex-wrap gap-2">
                             {serviceOptions.map((opt) => (
                               <button
@@ -243,16 +239,14 @@ export function ContactPage() {
                                   formData.service === opt ? chipActive : chipIdle
                                 }`}
                               >
-                                {opt}
+                                {tr(opt)}
                               </button>
                             ))}
                           </div>
                         </div>
 
                         <div>
-                          <label htmlFor="contact-message" className={labelBase}>
-                            Povedzte nám viac...
-                          </label>
+                          <label htmlFor="contact-message" className={labelBase}>{tr("Povedzte nám viac...")}</label>
                           <textarea
                             id="contact-message"
                             name="message"
@@ -260,29 +254,26 @@ export function ContactPage() {
                             onChange={(e) => handleChange("message", e.target.value)}
                             rows={5}
                             className={`${inputBase} ${inputDefaultBorder} resize-none`}
-                            placeholder="Opíšte nám svoj projekt, ciele alebo akékoľvek otázky..."
+                            placeholder={tr("Opíšte nám svoj projekt, ciele alebo akékoľvek otázky...")}
                           />
                         </div>
 
                         {submitError && (
                           <p role="alert" className="text-[0.85rem] text-red-400">
-                            {submitError}
+                            {tr(submitError)}
                           </p>
                         )}
 
                         <button
                           type="submit"
                           disabled={isLoading}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#6C63FF] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)] transition-all duration-200 hover:bg-[#7B73FF] hover:shadow-[0_8px_44px_rgba(108,99,255,0.5)] disabled:cursor-wait disabled:opacity-60"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#665DFA] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)] transition-all duration-200 hover:bg-[#5b53e8] hover:shadow-[0_8px_44px_rgba(108,99,255,0.5)] disabled:cursor-wait disabled:opacity-60"
                         >
-                          {isLoading ? "Odosielam…" : "Odoslať"} <Send size={16} />
+                          {tr(isLoading ? "Odosielam…" : "Odoslať")} <Send size={16} />
                         </button>
 
-                        <p className="text-[0.75rem] text-[#F5F5F0]/50">
-                          Údaje použijeme len na odpoveď na váš dopyt.{" "}
-                          <Link to="/ochrana-osobnych-udajov/" className="underline transition-colors hover:text-[#9F97FF]">
-                            Ochrana osobných údajov
-                          </Link>
+                        <p className="text-[0.75rem] text-[#F5F5F0]/50">{tr("Údaje použijeme len na odpoveď na váš dopyt.")}{" "}
+                          <Link to={localLink("/ochrana-osobnych-udajov/")} className="underline transition-colors hover:text-[#9F97FF]">{tr("Ochrana osobných údajov")}</Link>
                         </p>
                       </motion.form>
                     ) : (
@@ -295,20 +286,10 @@ export function ContactPage() {
                         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#1AFF8C]/10">
                           <CheckCircle2 size={32} className="text-[#1AFF8C]" />
                         </div>
-                        <h2 className="mb-3 font-heading text-[1.5rem] font-bold text-[#F5F5F0]">
-                          Ďakujeme!
-                        </h2>
-                        <p className="max-w-sm text-[0.9rem] text-[#F5F5F0]/60">
-                          Ozveme sa do 24 hodín v pracovný deň. Medzitým si môžete pozrieť naše{" "}
-                          <Link to="/portfolio/" className="text-[#9F97FF] hover:underline">
-                            projekty
-                          </Link>{" "}
-                          alebo{" "}
-                          <Link to="/cennik/" className="text-[#9F97FF] hover:underline">
-                            cenník
-                          </Link>
-                          .
-                        </p>
+                        <h2 className="mb-3 font-heading text-[1.5rem] font-bold text-[#F5F5F0]">{tr("Ďakujeme!")}</h2>
+                        <p className="max-w-sm text-[0.9rem] text-[#F5F5F0]/60">{tr("Ozveme sa do 24 hodín v pracovný deň. Medzitým si môžete pozrieť naše")}{" "}
+                          <Link to={localLink("/portfolio/")} className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">{tr("projekty")}</Link>{" "}{tr("alebo")}{" "}
+                          <Link to={localLink("/cennik/")} className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">{tr("cenník")}</Link>{"."}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -321,52 +302,40 @@ export function ContactPage() {
               <AnimateIn delay={0.2} direction="right">
                 <div className="space-y-6">
                   <GlowCard className="p-6">
-                    <h2 className="mb-5 font-heading text-[1rem] font-bold text-[#F5F5F0]">
-                      Kontaktné údaje
-                    </h2>
+                    <h2 className="mb-5 font-heading text-[1rem] font-bold text-[#F5F5F0]">{tr("Kontaktné údaje")}</h2>
                     <div className="space-y-4">
                       <a
-                        href="mailto:info@siteleveled.com"
+                        href={localLink("mailto:info@siteleveled.com")}
                         className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
                       >
-                        <Mail size={18} className="shrink-0 text-[#6C63FF]" />
-                        info@siteleveled.com
-                      </a>
-                      <a
-                        href="tel:+421910803993"
-                        className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
-                      >
-                        <Phone size={18} className="shrink-0 text-[#6C63FF]" />
-                        0910 803 993 (Mário Doman, vývojár)
-                      </a>
+                        <Mail size={18} className="shrink-0 text-[#6C63FF]" />{language === "en" ? "info@siteleveled.com (Mário Doman, developer)" : tr("info@siteleveled.com")}</a>
+                      {language !== "en" && (
+                        <a
+                          href={localLink("tel:+421910803993")}
+                          className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
+                        >
+                          <Phone size={18} className="shrink-0 text-[#6C63FF]" />{"+421 910 803 993 (Mário Doman, vývojár)"}</a>
+                      )}
                       <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
-                        <Clock size={18} className="shrink-0 text-[#6C63FF]" />
-                        Odpovieme do 24 hodín v pracovný deň
-                      </div>
+                        <Clock size={18} className="shrink-0 text-[#6C63FF]" />{tr("Odpovieme do 24 hodín v pracovný deň")}</div>
                       <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
-                        <MapPin size={18} className="shrink-0 text-[#6C63FF]" />
-                        Slovensko (pracujeme remote, celá SR)
-                      </div>
+                        <MapPin size={18} className="shrink-0 text-[#6C63FF]" />{tr("Slovensko (pracujeme remote, celá SR)")}</div>
                     </div>
                   </GlowCard>
 
                   <GlowCard className="p-6">
-                    <h2 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">
-                      Fakturačné údaje
-                    </h2>
+                    <h2 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">{tr("Fakturačné údaje")}</h2>
                     <div className="space-y-1 text-[0.85rem] text-[#F5F5F0]/50">
-                      <p className="text-[#F5F5F0]/80">DOMAN s.r.o.</p>
-                      <p>IČO: 47 912 383</p>
-                      <p>Konateľka: Mária Domanová</p>
-                      <p>Ulica Funduše 1165/26</p>
-                      <p>Cabaj-Čápor 951 17</p>
+                      <p className="text-[#F5F5F0]/80">{tr("DOMAN s.r.o.")}</p>
+                      <p>{tr("IČO: 47 912 383")}</p>
+                      <p>{tr("Konateľka: Mária Domanová")}</p>
+                      <p>{tr("Ulica Funduše 1165/26")}</p>
+                      <p>{tr("Cabaj-Čápor 951 17")}</p>
                     </div>
                   </GlowCard>
 
                   <GlowCard className="p-6">
-                    <h2 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">
-                      Sociálne siete
-                    </h2>
+                    <h2 className="mb-4 font-heading text-[1rem] font-bold text-[#F5F5F0]">{tr("Sociálne siete")}</h2>
                     <div className="flex gap-4">
                       {[
                         {
@@ -378,11 +347,11 @@ export function ContactPage() {
                       ].map(({ icon: Icon, label, href }) => (
                         <a
                           key={label}
-                          href={href}
+                          href={localLink(href)}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={label}
-                          className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-[#F5F5F0]/40 transition-all hover:bg-[#6C63FF]/10 hover:text-[#9F97FF]"
+                          aria-label={tr(label)}
+                          className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-[#F5F5F0]/50 transition-all hover:bg-[#6C63FF]/10 hover:text-[#9F97FF]"
                         >
                           <Icon size={18} />
                         </a>

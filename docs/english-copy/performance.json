@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-03",
+  "method": "Local gzip static servers; Lighthouse devtools throttling; existing Puppeteer Chrome; API requests blocked. Three baseline, two SK, three EN home runs; small lab sample, not field data.",
+  "baseline_source": "602debb5d68cf0ef6f6695d2b174d0eed2485b2d",
+  "runs": [
+    {
+      "label": "baseline",
+      "performance": 82,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 2120.42,
+      "cls": 0.0021153068107886428,
+      "tbt": 596.8279999990505,
+      "bytes": 301194,
+      "issues": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "sk",
+      "performance": 83,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 2007.283,
+      "cls": 0.005748761819824921,
+      "tbt": 560.2700000000004,
+      "bytes": 308972,
+      "issues": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "en",
+      "performance": 83,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 2077.209,
+      "cls": 0.002996975599809973,
+      "tbt": 554.0989999999993,
+      "bytes": 334309,
+      "issues": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "baseline",
+      "performance": 90,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 1970.993,
+      "cls": 0.003964948325294356,
+      "tbt": 341.68200000000024,
+      "bytes": 301194,
+      "issues": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "sk",
+      "performance": 87,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 1968.335,
+      "cls": 0.005748761819824921,
+      "tbt": 413.1189999990461,
+      "bytes": 308972,
+      "issues": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "en",
+      "performance": 74,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 2339.499,
+      "cls": 0.002996975599809973,
+      "tbt": 927.0390000000002,
+      "bytes": 334309,
+      "issues": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "en",
+      "performance": 89,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 2052.807,
+      "cls": 0.002996975599809973,
+      "tbt": 362.7509999999993,
+      "bytes": 334266,
+      "issues": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "baseline",
+      "performance": 90,
+      "accessibility": 96,
+      "seo": 100,
+      "lcp": 1954.526,
+      "cls": 0.003964948325294356,
+      "tbt": 326.64800000000014,
+      "bytes": 301194,
+      "issues": [
+        "color-contrast"
+      ]
+    }
+  ]
+}

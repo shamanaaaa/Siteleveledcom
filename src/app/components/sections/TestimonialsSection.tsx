@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { Facebook } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 import { GlowCard } from "../fx/GlowCard";
@@ -23,15 +24,16 @@ const testimonials = [
 ];
 
 export function TestimonialsSection() {
+  const { t: tr, link: localLink } = useI18n();
   return (
     <section id="referencie" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          eyebrow="Referencie"
-          segments={[
+          eyebrow={tr("Referencie")}
+          segments={tr([
             { text: "Čo hovoria" },
             { text: "naši klienti.", className: "text-gradient-primary" },
-          ]}
+          ])}
           className="mb-16"
         />
 
@@ -42,29 +44,23 @@ export function TestimonialsSection() {
                 <span
                   aria-hidden
                   className="pointer-events-none absolute -top-3 left-5 select-none font-heading text-[5.5rem] leading-none text-[#6C63FF]/10"
-                >
-                  &ldquo;
-                </span>
+                >{"“"}</span>
                 <p className="mb-6 flex items-center gap-2 text-[0.75rem] text-[#9F97FF]">
-                  <Facebook size={14} />
-                  Odporúča SiteLeveled na Facebooku
-                </p>
-                <blockquote className="mb-6 flex-1 text-[0.9rem] italic leading-relaxed text-[#F5F5F0]/70">
-                  &ldquo;{t.text}&rdquo;
-                </blockquote>
+                  <Facebook size={14} />{tr("Odporúča SiteLeveled na Facebooku")}</p>
+                <blockquote className="mb-6 flex-1 text-[0.9rem] italic leading-relaxed text-[#F5F5F0]/70">{"“"}{tr(t.text)}{"”"}</blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#6C63FF] to-[#9F97FF] font-heading text-[0.7rem] text-white">
-                    {t.author.split(" ").map((n) => n[0]).join("")}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#665DFA] to-[#5b53e8] font-heading text-[0.7rem] text-white">
+                    {tr(t.author.split(" ").map((n) => n[0]).join(""))}
                   </div>
                   <div>
-                    <p className="text-[0.85rem] text-[#F5F5F0]">{t.author}</p>
+                    <p className="text-[0.85rem] text-[#F5F5F0]">{tr(t.author)}</p>
                     <a
-                      href={`https://www.${t.site}`}
+                      href={localLink(`https://www.${t.site}`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[0.75rem] text-[#9F97FF] hover:underline"
                     >
-                      {t.site}
+                      {tr(t.site)}
                     </a>
                   </div>
                 </div>

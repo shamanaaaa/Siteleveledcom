@@ -1,21 +1,15 @@
+import { loadMessages } from "../src/app/i18n/messages";
+import { LOCALES, type Locale } from "../src/app/i18n/routes";
 import fs from "node:fs";
 import path from "node:path";
 import { deflateSync } from "node:zlib";
 import type { Plugin } from "vite";
-import { CLIENTS, type CityClient } from "../src/app/city/cityData";
+import { CLIENTS } from "../src/app/city/cityData";
 import { OG_H, OG_SCALE, OG_W, drawOgCard } from "../src/app/city/og";
 import { bufferSurface, type BufferSurface } from "../src/app/city/pixel";
 
-/*
- * Build-time pages for the client city. nginx serves dist/ as static files, so instead of
- * server-side rendering every share link gets a real file:
- *   dist/og/siteleveled.png        default share image (referenced from index.html)
- *   dist/og/mesto-<id>.png         share image of one client's building
- *   dist/mesto/<id>/index.html     index.html with that client's title and Open Graph tags
- * In dev the images are rendered on request.
- */
-
-const SITE = "https://siteleveled.com";
+/* Build-time SK/EN social PNGs. seoPages runs next and writes the corresponding localized
+ * HTML files. In development, images are generated on request. */
 
 /* ── PNG encoding (RGB, "Up" filter: the ×3 upscale makes most rows repeat) ── */
 
@@ -74,45 +68,10 @@ export function encodePng(surface: BufferSurface, scale: number) {
   ]);
 }
 
-export function renderOgPng(clientId?: string) {
+export function renderOgPng(clientId?: string, locale: Locale = "sk") {
   const surface = bufferSurface(OG_W, OG_H, "#06060B");
-  drawOgCard(surface, clientId);
+  drawOgCard(surface, clientId, locale);
   return encodePng(surface, OG_SCALE);
-}
-
-/* ── Share pages ─────────────────────────────────────────── */
-
-const escapeHtml = (value: string) =>
-  value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
-function sharePage(indexHtml: string, client: CityClient) {
-  const url = `${SITE}/mesto/${client.id}/`;
-  const title = `${client.name} — budova v meste klientov SiteLeveled`;
-  const description = `${client.name} (${client.category}) má svoju budovu v pixelovom meste klientov SiteLeveled. Pozrite si projekt a postavte tam aj svoj web — návrh zadarmo do 24 hodín.`;
-  const tags: [string, string, string][] = [
-    ["name", "robots", "noindex, follow"],
-    ["property", "og:type", "website"],
-    ["property", "og:site_name", "SiteLeveled"],
-    ["property", "og:locale", "sk_SK"],
-    ["property", "og:url", url],
-    ["property", "og:title", title],
-    ["property", "og:description", description],
-    ["property", "og:image", `${SITE}/og/mesto-${client.id}.png`],
-    ["property", "og:image:width", String(OG_W * OG_SCALE)],
-    ["property", "og:image:height", String(OG_H * OG_SCALE)],
-    ["property", "og:image:alt", `Budova ${client.name} v pixelovom meste klientov SiteLeveled`],
-    ["name", "twitter:card", "summary_large_image"],
-  ];
-  const meta = tags.map(([attr, key, value]) => `<meta ${attr}="${key}" content="${escapeHtml(value)}" />`);
-  return indexHtml
-    .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
-    .replace(/<meta\s+name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(description)}" />`)
-    .replace(/\s*<meta\s+(?:property="og:[^"]*"|name="twitter:[^"]*")[^>]*>/g, "")
-    // The home page's canonical and JSON-LD (scripts/seoPages.ts) don't belong on a noindex copy
-    .replace(/\s*<link\s+rel="canonical"[^>]*>/g, "")
-    .replace(/\s*<meta\s+name="robots"[^>]*>/g, "")
-    .replace(/\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "")
-    .replace("</head>", `  ${meta.join("\n    ")}\n  </head>`);
 }
 
 export function cityPages(): Plugin {
@@ -125,25 +84,24 @@ export function cityPages(): Plugin {
       isBuild = config.command === "build";
     },
     configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        const match = req.url?.match(/^\/og\/(?:siteleveled|mesto-([\w-]+))\.png$/);
-        if (!match || (match[1] && !CLIENTS.some((c) => c.id === match[1]))) return next();
+      server.middlewares.use(async (req, res, next) => {
+        const match = req.url?.match(/^\/og\/(en-)?(?:siteleveled|mesto-([\w-]+))\.png$/);
+        if (!match || (match[2] && !CLIENTS.some((c) => c.id === match[2]))) return next();
+        await loadMessages(match[1] ? "en" : "sk");
         res.setHeader("Content-Type", "image/png");
-        res.end(renderOgPng(match[1]));
+        res.end(renderOgPng(match[2], match[1] ? "en" : "sk"));
       });
     },
     // Not closeBundle, which also runs after a failed build: dist/ still holds the live site then
     writeBundle() {
       if (!isBuild) return;
-      const indexHtml = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
       fs.mkdirSync(path.join(outDir, "og"), { recursive: true });
-      fs.writeFileSync(path.join(outDir, "og", "siteleveled.png"), renderOgPng());
-      for (const client of CLIENTS) {
-        fs.writeFileSync(path.join(outDir, "og", `mesto-${client.id}.png`), renderOgPng(client.id));
-        const dir = path.join(outDir, "mesto", client.id);
-        fs.mkdirSync(dir, { recursive: true });
-        fs.writeFileSync(path.join(dir, "index.html"), sharePage(indexHtml, client));
+      for (const locale of LOCALES) {
+        const prefix = locale === "en" ? "en-" : "";
+        fs.writeFileSync(path.join(outDir, "og", `${prefix}siteleveled.png`), renderOgPng(undefined, locale));
+        for (const client of CLIENTS) fs.writeFileSync(path.join(outDir, "og", `${prefix}mesto-${client.id}.png`), renderOgPng(client.id, locale));
       }
+      // seoPages runs next and writes each share route with its localized prerender and metadata.
     },
   };
 }

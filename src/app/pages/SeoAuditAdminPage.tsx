@@ -55,7 +55,7 @@ const formatDate = (ts: number) =>
 function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div className="rounded-xl border border-white/5 bg-surface-2 p-4">
-      <p className="mb-1 text-[0.75rem] text-[#F5F5F0]/40">{label}</p>
+      <p className="mb-1 text-[0.75rem] text-[#F5F5F0]/50">{label}</p>
       <p className="font-heading text-[1.5rem] font-bold text-[#F5F5F0]">{value}</p>
     </div>
   );
@@ -228,7 +228,7 @@ export function SeoAuditAdminPage() {
                       {startError}
                     </p>
                   )}
-                  <p className="mt-3 text-[0.8rem] text-[#F5F5F0]/35">
+                  <p className="mt-3 text-[0.8rem] text-[#F5F5F0]/50">
                     Bez prístupového kódu a denného limitu. Web skontrolovaný nedávno sa zmeria znova.
                   </p>
                 </form>
@@ -270,7 +270,7 @@ export function SeoAuditAdminPage() {
                 <div className="overflow-x-auto rounded-card border border-white/5 bg-surface-1">
                   <table className="w-full min-w-[900px] text-[0.85rem]">
                     <thead>
-                      <tr className="border-b border-white/5 bg-surface-2 text-[0.75rem] text-[#F5F5F0]/40">
+                      <tr className="border-b border-white/5 bg-surface-2 text-[0.75rem] text-[#F5F5F0]/50">
                         <th className="px-4 py-3 text-left font-normal">Spustený</th>
                         <th className="px-4 py-3 text-left font-normal">Web</th>
                         <th className="px-3 py-3 text-left font-normal">Stav</th>
@@ -319,7 +319,7 @@ export function SeoAuditAdminPage() {
                                 className="px-3 py-3 text-center font-heading font-semibold tabular-nums"
                                 style={{ color: a.categories ? scoreColor(score) : undefined }}
                               >
-                                {a.categories ? (score ?? "–") : <span className="text-[#F5F5F0]/20">–</span>}
+                                {a.categories ? (score ?? "–") : <span className="text-[#F5F5F0]/50">–</span>}
                               </td>
                             );
                           })}
@@ -345,7 +345,7 @@ export function SeoAuditAdminPage() {
                                 )}
                               </span>
                             ) : a.status === "failed" ? (
-                              <span className="ml-auto block max-w-[240px] text-[0.75rem] text-[#F5F5F0]/40">{a.error}</span>
+                              <span className="ml-auto block max-w-[240px] text-[0.75rem] text-[#F5F5F0]/50">{a.error}</span>
                             ) : (
                               <Loader2 size={14} className="ml-auto animate-spin text-[#9F97FF]" />
                             )}

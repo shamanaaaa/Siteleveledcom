@@ -103,7 +103,7 @@ export function BlogPage() {
                   {active && (
                     <motion.span
                       layoutId="blog-filter"
-                      className="absolute inset-0 rounded-xl bg-[#6C63FF] shadow-[0_4px_16px_rgba(108,99,255,0.35)]"
+                      className="absolute inset-0 rounded-xl bg-[#665DFA] shadow-[0_4px_16px_rgba(108,99,255,0.35)]"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
@@ -136,7 +136,7 @@ export function BlogPage() {
                       <span className="rounded-full bg-[#6C63FF]/10 px-3 py-1 text-[0.75rem] text-[#9F97FF]">
                         {featured.category}
                       </span>
-                      <span className="flex items-center gap-1 text-[0.75rem] text-[#F5F5F0]/30">
+                      <span className="flex items-center gap-1 text-[0.75rem] text-[#F5F5F0]/50">
                         <Clock size={12} /> {featured.readTime}
                       </span>
                     </div>
@@ -180,14 +180,14 @@ export function BlogPage() {
                         <span className="rounded-full bg-[#6C63FF]/10 px-3 py-1 text-[0.7rem] text-[#9F97FF]">
                           {post.category}
                         </span>
-                        <span className="flex items-center gap-1 text-[0.7rem] text-[#F5F5F0]/30">
+                        <span className="flex items-center gap-1 text-[0.7rem] text-[#F5F5F0]/50">
                           <Clock size={11} /> {post.readTime}
                         </span>
                       </div>
                       <h3 className="mb-3 font-heading text-[1.05rem] font-bold text-[#F5F5F0] transition-colors group-hover/glow:text-[#9F97FF]" suppressHydrationWarning>
                         {post.title}
                       </h3>
-                      <p className="mb-4 flex-1 text-[0.8rem] leading-relaxed text-[#F5F5F0]/40">
+                      <p className="mb-4 flex-1 text-[0.8rem] leading-relaxed text-[#F5F5F0]/50">
                         {post.excerpt}
                       </p>
                       <span className="inline-flex items-center gap-1 text-[0.8rem] text-[#9F97FF]">
@@ -215,16 +215,16 @@ export function BlogPage() {
             className="mb-4 font-heading text-title font-bold"
           />
           <AnimateIn delay={0.15}>
-            <p className="mb-8 text-[0.9rem] text-[#F5F5F0]/40">
+            <p className="mb-8 text-[0.9rem] text-[#F5F5F0]/50">
               Praktické poznatky o weboch a digitálnom marketingu. Žiadny spam.
             </p>
             <div className="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
               <input
                 type="email"
                 placeholder="vas@email.sk"
-                className="flex-1 rounded-full border border-white/10 bg-surface-1 px-5 py-3 text-[0.9rem] text-[#F5F5F0] placeholder:text-[#F5F5F0]/20 focus:border-[#6C63FF]/40 focus:outline-none"
+                className="flex-1 rounded-full border border-white/10 bg-surface-1 px-5 py-3 text-[0.9rem] text-[#F5F5F0] placeholder:text-[#F5F5F0]/50 focus:border-[#6C63FF]/40 focus:outline-none"
               />
-              <button className="whitespace-nowrap rounded-full bg-[#6C63FF] px-6 py-3 text-[0.9rem] font-semibold text-white transition-all hover:bg-[#7B73FF] hover:shadow-[0_4px_24px_rgba(108,99,255,0.4)]">
+              <button className="whitespace-nowrap rounded-full bg-[#665DFA] px-6 py-3 text-[0.9rem] font-semibold text-white transition-all hover:bg-[#5b53e8] hover:shadow-[0_4px_24px_rgba(108,99,255,0.4)]">
                 Odoberať
               </button>
             </div>

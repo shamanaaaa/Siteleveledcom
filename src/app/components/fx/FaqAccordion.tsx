@@ -32,7 +32,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
                 className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                   open
                     ? "rotate-45 border-[#6C63FF]/50 bg-[#6C63FF]/15 text-[#9F97FF]"
-                    : "border-white/10 text-[#F5F5F0]/40 group-hover:border-white/25"
+                    : "border-white/10 text-[#F5F5F0]/50 group-hover:border-white/25"
                 }`}
               >
                 <Plus size={14} />

@@ -1,3 +1,5 @@
+import { loadMessages } from "./app/i18n/messages";
+import { localeForPath } from "./app/i18n/routes";
 import { renderToString } from "react-dom/server";
 import { createStaticHandler, createStaticRouter, StaticRouterProvider } from "react-router";
 import { routes } from "./app/routes";
@@ -7,6 +9,7 @@ const handler = createStaticHandler(routes);
 
 /** A page as HTML, at build time (scripts/seoPages.ts). main.tsx then attaches React to it in the browser */
 export async function render(path: string) {
+  await loadMessages(localeForPath(path));
   const context = await handler.query(new Request(SITE + path));
   if (context instanceof Response) throw new Error(`${path} redirects`);
   // The router would otherwise render its error page, and that HTML would be published as the page

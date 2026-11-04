@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { AnimateIn } from "../AnimateIn";
 import { FaqAccordion } from "../fx/FaqAccordion";
 import { SectionHeading } from "../fx/SectionHeading";
@@ -30,19 +31,20 @@ const faqs = [
 ];
 
 export function FaqSection() {
+  const { t: tr } = useI18n();
   return (
     <section id="faq" className="py-24 md:py-32">
       <div className="mx-auto max-w-3xl px-6">
         <SectionHeading
-          eyebrow="FAQ"
-          segments={[
+          eyebrow={tr("FAQ")}
+          segments={tr([
             { text: "Časté" },
             { text: "otázky.", className: "text-gradient-primary" },
-          ]}
+          ])}
           className="mb-12"
         />
         <AnimateIn>
-          <FaqAccordion items={faqs} />
+          <FaqAccordion items={tr(faqs)} />
         </AnimateIn>
       </div>
     </section>

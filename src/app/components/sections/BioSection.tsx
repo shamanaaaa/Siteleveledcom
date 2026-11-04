@@ -1,9 +1,11 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { Link } from "react-router";
-import { Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 import { KineticHeading } from "../fx/KineticHeading";
 
 export function BioSection() {
+  const { t: tr, link: localLink, locale } = useI18n();
   return (
     <section className="bg-[#0d0d14] py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
@@ -14,54 +16,42 @@ export function BioSection() {
                 <div className="h-48 w-48 overflow-hidden rounded-[calc(1rem-1px)]">
                   <img
                     src="/profile.webp"
-                    alt="Mário Doman"
+                    alt={tr("Mário Doman")}
                     loading="lazy"
                     decoding="async"
                     className="h-full w-full object-cover"
                   />
                 </div>
               </div>
-              <div className="absolute -bottom-3 -right-3 rounded-lg border border-white/8 bg-surface-1 px-3 py-1.5 text-[0.75rem] text-[#F5F5F0]/60">
-                Mário Doman · vývojár
-              </div>
+              <div className="absolute -bottom-3 -right-3 rounded-lg border border-white/8 bg-surface-1 px-3 py-1.5 text-[0.75rem] text-[#F5F5F0]/60">{tr("Mário Doman · vývojár")}</div>
             </div>
           </AnimateIn>
 
           <div className="md:col-span-3">
             <KineticHeading
               as="h2"
-              segments={[
+              segments={tr([
                 { text: "Za každým projektom" },
                 { text: "je reálny človek.", className: "text-gradient-primary" },
-              ]}
+              ])}
               className="mb-5 font-heading text-[1.5rem] font-bold leading-tight sm:text-[2rem]"
             />
             <AnimateIn delay={0.15}>
               <div className="space-y-4 text-[0.95rem] leading-relaxed text-[#F5F5F0]/60">
-                <p>
-                  Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich{" "}
-                  <span className="text-[#F5F5F0]/90">Mário Doman</span>, spoločnosť DOMAN s.r.o.
-                  vedie konateľka <span className="text-[#F5F5F0]/90">Mária Domanová</span>.
-                </p>
-                <p>
-                  Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať.
-                  Chceme, aby ste videli, čo pre vás vieme spraviť.
-                </p>
+                <p>{tr("Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich")}{" "}
+                  <span className="text-[#F5F5F0]/90">{tr("Mário Doman")}</span>{tr(", spoločnosť DOMAN s.r.o. vedie konateľka ")}<span className="text-[#F5F5F0]/90">{tr("Mária Domanová")}</span>{"."}</p>
+                <p>{tr("Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať. Chceme, aby ste videli, čo pre vás vieme spraviť.")}</p>
               </div>
               <div className="mt-7 flex items-center gap-5">
                 <a
-                  href="tel:+421910803993"
+                  href={localLink("tel:+421910803993")}
                   className="flex items-center gap-2 font-heading text-[1.1rem] font-bold text-[#F5F5F0] transition-colors hover:text-[#9F97FF]"
                 >
-                  <Phone size={18} className="text-[#6C63FF]" />
-                  0910 803 993
-                </a>
+                  {locale === "en" ? <Mail size={18} className="text-[#6C63FF]" /> : <Phone size={18} className="text-[#6C63FF]" />}{tr("+421 910 803 993")}</a>
                 <Link
-                  to="/o-nas/"
+                  to={localLink("/o-nas/")}
                   className="text-[0.9rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
-                >
-                  Viac o nás →
-                </Link>
+                >{tr("Viac o nás →")}</Link>
               </div>
             </AnimateIn>
           </div>

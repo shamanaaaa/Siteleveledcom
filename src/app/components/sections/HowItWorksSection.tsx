@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { ArrowRight, BadgeCheck, CheckCircle2, Shield } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 import { GlowCard } from "../fx/GlowCard";
@@ -9,7 +10,7 @@ const steps = [
     title: "Vyplníte formulár",
     sub: "menej ako minúta",
     text: "Krátky formulár o vás a vašom projekte. Žiadne technické znalosti nie sú potrebné.",
-    color: "#6C63FF",
+    color: "#8F87FF",
   },
   {
     num: "2",
@@ -34,13 +35,14 @@ const assurances = [
 ];
 
 export function HowItWorksSection() {
+  const { t: tr } = useI18n();
   return (
     <section id="ako-to-funguje" className="bg-[#0d0d14] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          eyebrow="Proces"
-          segments={[{ text: "Ako to" }, { text: "funguje?", className: "text-gradient-primary" }]}
-          sub="Tri jednoduché kroky. Žiadna komplikácia."
+          eyebrow={tr("Proces")}
+          segments={tr([{ text: "Ako to" }, { text: "funguje?", className: "text-gradient-primary" }])}
+          sub={tr("Tri jednoduché kroky. Žiadna komplikácia.")}
           className="mb-16"
         />
 
@@ -57,18 +59,18 @@ export function HowItWorksSection() {
                   aria-hidden
                   className="pointer-events-none absolute -top-8 right-0 select-none font-heading text-[6.5rem] font-bold leading-none text-stroke-ghost"
                 >
-                  {step.num}
+                  {tr(step.num)}
                 </span>
                 <span
                   className="mb-4 inline-block rounded-full px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-wider"
                   style={{ background: `${step.color}14`, color: step.color }}
                 >
-                  {step.sub}
+                  {tr(step.sub)}
                 </span>
                 <h3 className="mb-3 font-heading text-[1.2rem] font-bold text-[#F5F5F0]">
-                  {step.title}
+                  {tr(step.title)}
                 </h3>
-                <p className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/50">{step.text}</p>
+                <p className="text-[0.9rem] leading-relaxed text-[#F5F5F0]/50">{tr(step.text)}</p>
               </GlowCard>
             </AnimateIn>
           ))}
@@ -82,7 +84,7 @@ export function HowItWorksSection() {
                 className="inline-flex items-center gap-2 rounded-full border border-white/8 bg-surface-1 px-5 py-2.5 text-[0.875rem] text-[#F5F5F0]/60"
               >
                 <item.icon size={16} className="text-[#1AFF8C]" />
-                {item.label}
+                {tr(item.label)}
               </div>
             ))}
           </div>

@@ -1,3 +1,4 @@
+import { useI18n } from "../i18n/LocaleContext";
 import { useRef } from "react";
 import {
   Check,
@@ -25,7 +26,7 @@ const steps = [
     when: "Menej ako minúta",
     text: "Napíšete nám meno, e-mail, názov firmy a čomu sa venujete. Ak už máte web, pridáte aj jeho adresu. Technické znalosti nepotrebujete.",
     output: "Zadanie pre návrh",
-    color: "#6C63FF",
+    color: "#8F87FF",
   },
   {
     num: "02",
@@ -34,7 +35,7 @@ const steps = [
     when: "Do 24 hodín",
     text: "Pripravíme vizuálny návrh hlavnej stránky, štruktúru celého webu a základný koncept textov. Pridáme odporúčania pre dizajn a funkcie a cenovú ponuku realizácie.",
     output: "Návrh a cenová ponuka",
-    color: "#6C63FF",
+    color: "#8F87FF",
   },
   {
     num: "03",
@@ -43,7 +44,7 @@ const steps = [
     when: "Bez záväzkov",
     text: "Návrh si pozriete a rozhodnete sa. Ak sa vám páči, dohodneme termín, cenu a podmienky. Ak nie, povieme si prečo a radi ho upravíme alebo vysvetlíme. Ničím nie ste viazaní.",
     output: "Schválený návrh",
-    color: "#6C63FF",
+    color: "#8F87FF",
   },
   {
     num: "04",
@@ -52,7 +53,7 @@ const steps = [
     when: "Web do 7 dní, e-shop do 14 dní",
     text: "Po schválení návrhu a dodaní podkladov web naprogramujeme a z vášho zadania pripravíme texty, ktoré schválite. Úpravy do spustenia sú v cene, kým nemeníme dohodnutý rozsah. Projekt vedie osobne Mário Doman, takže vždy viete, kde sa nachádza, a môžete mu priamo zavolať.",
     output: "Web na testovacej adrese",
-    color: "#6C63FF",
+    color: "#8F87FF",
   },
   {
     num: "05",
@@ -61,7 +62,7 @@ const steps = [
     when: "Až po spustení",
     text: "Hotový web si najprv pozriete na testovacej adrese. Pred spustením ho otestujeme na mobile aj počítači a skontrolujeme SEO a rýchlosť. Platíte až po spustení, žiadnu zálohu vopred neplatíte.",
     output: "Web naživo",
-    color: "#6C63FF",
+    color: "#8F87FF",
   },
   {
     num: "06",
@@ -88,6 +89,7 @@ const needs = [
 ];
 
 export function ProcessPage() {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const timelineRef = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -99,12 +101,12 @@ export function ProcessPage() {
   return (
     <>
       <PageHero
-        title="Ako prebieha tvorba webu"
-        segments={[
+        title={tr("Ako prebieha tvorba webu")}
+        segments={tr([
           { text: "Od nápadu po spustenie." },
           { text: "Bez prekvapení.", className: "text-gradient-primary" },
-        ]}
-        sub="Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy viete, kde sme a čo bude ďalej."
+        ])}
+        sub={tr("Vieme, že prvý kontakt s agentúrou môže byť stresujúci. Preto máme jasný, transparentný proces — vždy viete, kde sme a čo bude ďalej.")}
       />
 
       {/* Timeline */}
@@ -137,7 +139,7 @@ export function ProcessPage() {
                       style={{ borderColor: step.color, boxShadow: `0 0 24px ${step.color}30` }}
                     >
                       <span className="font-heading text-[0.85rem]" style={{ color: step.color }}>
-                        {step.num}
+                        {tr(step.num)}
                       </span>
                     </div>
 
@@ -158,7 +160,7 @@ export function ProcessPage() {
                             i % 2 === 0 ? "left-2 md:left-2" : "right-2"
                           }`}
                         >
-                          {step.num}
+                          {tr(step.num)}
                         </span>
                         <div
                           className={`mb-4 flex items-center gap-3 ${
@@ -175,15 +177,15 @@ export function ProcessPage() {
                             className="font-heading text-[0.85rem] sm:hidden"
                             style={{ color: step.color }}
                           >
-                            {step.num}
+                            {tr(step.num)}
                           </span>
                         </div>
                         <h2 className="mb-1 font-heading text-[1.15rem] font-bold text-[#F5F5F0]">
-                          {step.title}
+                          {tr(step.title)}
                         </h2>
-                        <p className="mb-3 text-[0.8rem] font-semibold text-[#1AFF8C]">{step.when}</p>
+                        <p className="mb-3 text-[0.8rem] font-semibold text-[#1AFF8C]">{tr(step.when)}</p>
                         <p className="mb-4 text-[0.875rem] leading-relaxed text-[#F5F5F0]/50">
-                          {step.text}
+                          {tr(step.text)}
                         </p>
                         <div
                           className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 font-mono text-[0.75rem]"
@@ -193,7 +195,7 @@ export function ProcessPage() {
                             color: step.color,
                           }}
                         >
-                          <span className="opacity-60">→</span> Výstup: {step.output}
+                          <span>{"→"}</span>{tr(" Výstup: ")}{tr(step.output)}
                         </div>
                       </GlowCard>
                     </div>
@@ -212,17 +214,17 @@ export function ProcessPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
-            eyebrow="Termíny"
-            segments={[{ text: "Ako dlho trvá" }, { text: "tvorba webu?", className: "text-gradient-primary" }]}
-            sub="Návrh dostanete do 24 hodín. Termíny webu a e-shopu sa počítajú od schválenia návrhu a dodania podkladov."
+            eyebrow={tr("Termíny")}
+            segments={tr([{ text: "Ako dlho trvá" }, { text: "tvorba webu?", className: "text-gradient-primary" }])}
+            sub={tr("Návrh dostanete do 24 hodín. Termíny webu a e-shopu sa počítajú od schválenia návrhu a dodania podkladov.")}
             className="mb-12"
           />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {timings.map((timing, i) => (
               <AnimateIn key={timing.label} delay={i * 0.08} className="h-full">
                 <GlowCard className="h-full p-6 text-center">
-                  <p className="mb-1 font-heading text-[1.5rem] font-bold text-[#F5F5F0]">do {timing.value}</p>
-                  <p className="text-[0.875rem] text-[#F5F5F0]/50">{timing.label}</p>
+                  <p className="mb-1 font-heading text-[1.5rem] font-bold text-[#F5F5F0]">{language === "en" ? (i === 0 ? "" : "within ") : "do "}{tr(timing.value)}</p>
+                  <p className="text-[0.875rem] text-[#F5F5F0]/50">{tr(timing.label)}</p>
                 </GlowCard>
               </AnimateIn>
             ))}
@@ -234,9 +236,9 @@ export function ProcessPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-3xl px-6">
           <SectionHeading
-            eyebrow="Príprava"
-            segments={[{ text: "Čo budeme" }, { text: "od vás potrebovať.", className: "text-gradient-primary" }]}
-            sub="Na návrh stačí krátky formulár. Na samotný web sa zídu veci, ktoré o svojej firme viete najlepšie:"
+            eyebrow={tr("Príprava")}
+            segments={tr([{ text: "Čo budeme" }, { text: "od vás potrebovať.", className: "text-gradient-primary" }])}
+            sub={tr("Na návrh stačí krátky formulár. Na samotný web sa zídu veci, ktoré o svojej firme viete najlepšie:")}
             className="mb-10"
           />
           <AnimateIn>
@@ -246,13 +248,11 @@ export function ProcessPage() {
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1AFF8C]/12">
                     <Check size={12} className="text-[#1AFF8C]" />
                   </span>
-                  {need}
+                  {tr(need)}
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">
-              Ak niečo chýba, povedzte nám to a dohodneme sa, ako to vyriešiť.
-            </p>
+            <p className="mt-6 text-[0.9rem] leading-relaxed text-[#F5F5F0]/60">{tr("Ak niečo chýba, povedzte nám to a dohodneme sa, ako to vyriešiť.")}</p>
           </AnimateIn>
         </div>
       </section>
@@ -262,12 +262,8 @@ export function ProcessPage() {
         <Aurora variant="cta" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimateIn>
-            <p className="mb-8 text-[1rem] text-[#F5F5F0]/50">
-              Prvý krok je zadarmo a k ničomu vás nezaväzuje. Chcete začať?
-            </p>
-            <MagneticButton to="/#formular" size="lg">
-              Chcem návrh zadarmo
-            </MagneticButton>
+            <p className="mb-8 text-[1rem] text-[#F5F5F0]/50">{tr("Prvý krok je zadarmo a k ničomu vás nezaväzuje. Chcete začať?")}</p>
+            <MagneticButton to={localLink("/#formular")} size="lg">{tr("Chcem návrh zadarmo")}</MagneticButton>
           </AnimateIn>
         </div>
       </section>

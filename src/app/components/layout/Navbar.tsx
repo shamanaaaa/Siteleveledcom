@@ -1,3 +1,5 @@
+import { LanguageSwitch } from "./LanguageSwitch";
+import { useI18n } from "../../i18n/LocaleContext";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
@@ -15,6 +17,7 @@ const navLinks: { label: string; hash?: string; to?: string }[] = [
 ];
 
 export function Navbar() {
+  const { t: tr, link: localLink } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [ctaCovered, setCtaCovered] = useState(false);
@@ -74,59 +77,58 @@ export function Navbar() {
           }`}
         >
           <Link
-            to="/"
+            to={localLink("/")}
             onClick={(e) => {
-              if (location.pathname === "/") {
+              if (location.pathname === localLink("/")) {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
             className="group flex items-center gap-2"
           >
-            <span className="font-heading text-[1.35rem] tracking-tight text-[#F5F5F0]">
-              SITE<span className="text-[#6C63FF]">LEVELED</span>
+            <span className="font-heading text-[1.35rem] tracking-tight text-[#F5F5F0]">{tr("SITE")}<span className="text-[#6C63FF]">{tr("LEVELED")}</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-5 lg:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                to={link.to ?? `/#${link.hash}`}
+                to={localLink(link.to ?? `/#${link.hash}`)}
                 onClick={(e) => {
-                  if (link.hash && location.pathname === "/") {
+                  if (link.hash && location.pathname === localLink("/")) {
                     e.preventDefault();
                     scrollTo(link.hash);
                   }
                 }}
                 className="text-[0.875rem] tracking-wide text-[#F5F5F0]/70 transition-colors duration-200 hover:text-[#9F97FF]"
               >
-                {link.label}
+                {tr(link.label)}
               </Link>
             ))}
           </div>
 
           <div className="hidden lg:block">
             <Link
-              to="/#formular"
+              to={localLink("/#formular")}
               onClick={(e) => {
-                if (location.pathname === "/") {
+                if (location.pathname === localLink("/")) {
                   e.preventDefault();
                   scrollTo("formular");
                 }
               }}
-              className="inline-flex items-center gap-2 rounded-full bg-[#6C63FF] px-5 py-2.5 text-[0.875rem] font-semibold text-white shadow-[0_4px_20px_rgba(108,99,255,0.3)] transition-all duration-200 hover:bg-[#7B73FF] hover:shadow-[0_4px_28px_rgba(108,99,255,0.5)]"
-            >
-              Chcem návrh zadarmo
-              <span className="text-[1rem]">→</span>
+              className="inline-flex items-center gap-2 rounded-full bg-[#665DFA] px-5 py-2.5 text-[0.875rem] font-semibold text-white shadow-[0_4px_20px_rgba(108,99,255,0.3)] transition-all duration-200 hover:bg-[#5b53e8] hover:shadow-[0_4px_28px_rgba(108,99,255,0.5)]"
+            >{tr("Chcem návrh zadarmo")}<span className="text-[1rem]">{"→"}</span>
             </Link>
           </div>
+
+          <LanguageSwitch />
 
           {/* Mobile toggle */}
           <button
             className="p-2 text-[#F5F5F0] lg:hidden"
-            aria-label={mobileOpen ? "Zavrieť menu" : "Otvoriť menu"}
+            aria-label={tr(mobileOpen ? "Zavrieť menu" : "Otvoriť menu")}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
@@ -156,20 +158,19 @@ export function Navbar() {
                   className="border-b border-white/5"
                 >
                   <Link
-                    to={link.to ?? `/#${link.hash}`}
+                    to={localLink(link.to ?? `/#${link.hash}`)}
                     onClick={(e) => {
                       setMobileOpen(false);
-                      if (link.hash && location.pathname === "/") {
+                      if (link.hash && location.pathname === localLink("/")) {
                         e.preventDefault();
                         scrollTo(link.hash);
                       }
                     }}
                     className="flex items-baseline gap-4 py-5 font-heading text-[1.7rem] font-bold tracking-tight text-[#F5F5F0]/85 transition-colors hover:text-[#9F97FF]"
                   >
-                    <span className="font-body text-[0.7rem] text-[#6C63FF]/70">
-                      0{i + 1}
+                    <span className="font-body text-[0.7rem] text-[#9F97FF]">{"0"}{tr(i + 1)}
                     </span>
-                    {link.label}
+                    {tr(link.label)}
                   </Link>
                 </motion.div>
               ))}
@@ -180,18 +181,16 @@ export function Navbar() {
                 className="mt-8"
               >
                 <Link
-                  to="/#formular"
+                  to={localLink("/#formular")}
                   onClick={(e) => {
                     setMobileOpen(false);
-                    if (location.pathname === "/") {
+                    if (location.pathname === localLink("/")) {
                       e.preventDefault();
                       scrollTo("formular");
                     }
                   }}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#6C63FF] px-7 py-3.5 text-[1rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)]"
-                >
-                  Chcem návrh zadarmo →
-                </Link>
+                  className="inline-flex items-center gap-2 rounded-full bg-[#665DFA] px-7 py-3.5 text-[1rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)]"
+                >{tr("Chcem návrh zadarmo →")}</Link>
               </motion.div>
             </div>
           </motion.div>
@@ -209,17 +208,15 @@ export function Navbar() {
             className="fixed bottom-6 left-4 right-4 z-50 lg:hidden"
           >
             <Link
-              to="/#formular"
+              to={localLink("/#formular")}
               onClick={(e) => {
-                if (location.pathname === "/") {
+                if (location.pathname === localLink("/")) {
                   e.preventDefault();
                   scrollTo("formular");
                 }
               }}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#6C63FF] py-3.5 text-[0.9rem] font-semibold text-white shadow-[0_4px_30px_rgba(108,99,255,0.45)]"
-            >
-              Chcem návrh zadarmo →
-            </Link>
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#665DFA] py-3.5 text-[0.9rem] font-semibold text-white shadow-[0_4px_30px_rgba(108,99,255,0.45)]"
+            >{tr("Chcem návrh zadarmo →")}</Link>
           </motion.div>
         )}
       </AnimatePresence>

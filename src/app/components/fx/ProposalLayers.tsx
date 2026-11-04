@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import type { CSSProperties, ReactNode } from "react";
 
 const ACCENT = "#1AFF8C";
@@ -11,6 +12,7 @@ const labelTop = (i: number) => 22 + i * 13;
 
 /** A placeholder line of text; sizes are in cqw so the whole graphic scales with its card */
 function Bar({ w, h = 1.2, alpha = 0.22, style }: { w: string; h?: number; alpha?: number; style?: CSSProperties }) {
+
   return (
     <span
       className="block shrink-0 rounded-full"
@@ -32,6 +34,7 @@ function Layer({
   style?: CSSProperties;
   children: ReactNode;
 }) {
+  const { t: tr } = useI18n();
   const on = index === active;
   return (
     <div
@@ -57,7 +60,7 @@ function Layer({
           ...style,
         }}
       >
-        {children}
+        {tr(children)}
       </div>
     </div>
   );
@@ -68,10 +71,11 @@ function Layer({
  * copy, design notes and the price quote. `active` (0–4) lifts one layer out of the stack.
  */
 export function ProposalLayers({ active, className = "" }: { active: number; className?: string }) {
+  const { t: tr } = useI18n();
   return (
     <div
       role="img"
-      aria-label="Návrh webu rozložený na päť vrstiev: vizuálny návrh, štruktúra, texty, odporúčania a cenová ponuka"
+      aria-label={tr("Návrh webu rozložený na päť vrstiev: vizuálny návrh, štruktúra, texty, odporúčania a cenová ponuka")}
       className={`@container relative aspect-square overflow-hidden rounded-card border border-white/5 ${className}`}
       style={{
         background: "radial-gradient(55% 50% at 34% 52%, rgba(108,99,255,0.16), transparent 72%), var(--surface-1)",
@@ -87,9 +91,7 @@ export function ProposalLayers({ active, className = "" }: { active: number; cla
         <div className="absolute inset-0 motion-safe:animate-float">
           {/* 5 · price quote: grey bars stand in for the amounts */}
           <Layer index={4} active={active} className="flex flex-col gap-[2.2cqw] p-[3.4cqw]">
-            <span className="font-heading font-bold text-[#F5F5F0]" style={{ fontSize: "2.8cqw" }}>
-              Cenová ponuka
-            </span>
+            <span className="font-heading font-bold text-[#F5F5F0]" style={{ fontSize: "2.8cqw" }}>{tr("Cenová ponuka")}</span>
             {[
               [12, 7],
               [15, 6],
@@ -102,9 +104,7 @@ export function ProposalLayers({ active, className = "" }: { active: number; cla
             ))}
             <span className="h-px bg-white/10" />
             <div className="flex items-center justify-between">
-              <span className="font-semibold text-[#F5F5F0]" style={{ fontSize: "2.2cqw" }}>
-                Spolu
-              </span>
+              <span className="font-semibold text-[#F5F5F0]" style={{ fontSize: "2.2cqw" }}>{tr("Spolu")}</span>
               <Bar w="12cqw" h={2.4} style={{ background: "linear-gradient(90deg, #6C63FF, #9F97FF)" }} />
             </div>
           </Layer>
@@ -125,26 +125,20 @@ export function ProposalLayers({ active, className = "" }: { active: number; cla
                 <span key={c} className="rounded-full" style={{ width: "4.5cqw", height: "4.5cqw", background: c }} />
               ))}
             </div>
-            <span className="font-heading font-bold leading-none text-[#F5F5F0]" style={{ fontSize: "7cqw" }}>
-              Aa
-            </span>
+            <span className="font-heading font-bold leading-none text-[#F5F5F0]" style={{ fontSize: "7cqw" }}>{tr("Aa")}</span>
           </Layer>
 
           {/* 3 · copy: headings over body text */}
           <Layer index={2} active={active} className="flex flex-col gap-[1.6cqw] p-[3.4cqw]">
             <div className="flex items-center gap-[1.4cqw]">
-              <span className="font-bold text-[#9F97FF]" style={{ fontSize: "1.8cqw" }}>
-                H1
-              </span>
+              <span className="font-bold text-[#9F97FF]" style={{ fontSize: "1.8cqw" }}>{tr("H1")}</span>
               <Bar w="22cqw" h={2.6} alpha={0.75} style={{ borderRadius: "0.6cqw" }} />
             </div>
             <Bar w="92%" />
             <Bar w="84%" />
             <Bar w="70%" />
             <div className="mt-[1cqw] flex items-center gap-[1.4cqw]">
-              <span className="font-bold text-[#9F97FF]" style={{ fontSize: "1.8cqw" }}>
-                H2
-              </span>
+              <span className="font-bold text-[#9F97FF]" style={{ fontSize: "1.8cqw" }}>{tr("H2")}</span>
               <Bar w="15cqw" h={2} alpha={0.55} style={{ borderRadius: "0.6cqw" }} />
             </div>
             <Bar w="88%" />
@@ -217,9 +211,7 @@ export function ProposalLayers({ active, className = "" }: { active: number; cla
                 <span
                   className="absolute rounded-full bg-[#1AFF8C] font-bold text-[#06060B]"
                   style={{ right: "8%", bottom: "8%", padding: "0.4cqw 1cqw", fontSize: "1.3cqw" }}
-                >
-                  Nové
-                </span>
+                >{tr("Nové")}</span>
               </div>
             </div>
           </Layer>
@@ -257,17 +249,17 @@ export function ProposalLayers({ active, className = "" }: { active: number; cla
             >
               <span
                 className="hidden font-bold tracking-[0.14em] transition-colors duration-500 @min-[18rem]:block"
-                style={{ fontSize: "max(1.4cqw, 9px)", color: on ? ACCENT : "rgba(159,151,255,0.6)" }}
+                style={{ fontSize: "max(1.4cqw, 9px)", color: on ? ACCENT : "rgba(159,151,255,0.8)" }}
               >
-                {String(i + 1).padStart(2, "0")}
+                {tr(String(i + 1).padStart(2, "0"))}
               </span>
               <span
                 className="font-heading font-bold leading-[1.15] transition-colors duration-500"
-                style={{ fontSize: "max(2.1cqw, 11px)", color: on ? "#F5F5F0" : "rgba(245,245,240,0.45)" }}
+                style={{ fontSize: "max(2.1cqw, 11px)", color: on ? "#F5F5F0" : "rgba(245,245,240,0.55)" }}
               >
                 {lines.map((line, j) => (
                   <span key={j} className="block">
-                    {line}
+                    {tr(line)}
                   </span>
                 ))}
               </span>

@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { useRef, type CSSProperties, type ReactNode } from "react";
 import { motion, useScroll, useTransform, type MotionStyle, type MotionValue } from "motion/react";
 import { useReducedMotion } from "../../lib/useReducedMotion";
@@ -7,6 +8,7 @@ import { MagneticButton } from "../fx/MagneticButton";
 import { SectionHeading } from "../fx/SectionHeading";
 import { useIsMobile } from "../ui/use-mobile";
 import { scrollToForm } from "../../lib/scroll";
+import { IMAGE_SIZES, imageSrcSet, localizedImage, projectPreviewDimensions } from "../../lib/images";
 
 interface Project {
   name: string;
@@ -123,6 +125,7 @@ function StackCard({
   style: CSSProperties;
   children: ReactNode;
 }) {
+  const { t: tr } = useI18n();
   const ref = useRef<HTMLElement>(null);
   // Cards lower in the pile shrink a little while the rest slide over them
   const scale = useTransform(progress, [index / total, 1], [1, 1 - (total - 1 - index) * 0.025]);
@@ -138,12 +141,13 @@ function StackCard({
       style={{ ...style, "--stack-top": `${STACK_TOP + index * STACK_STEP}px`, scale: animate ? scale : 1 } as MotionStyle}
     >
       {/* constant values when not animating, so nothing set earlier stays behind */}
-      <motion.div style={{ scale: animate ? settleScale : 1, opacity: animate ? settleOpacity : 1 }}>{children}</motion.div>
+      <motion.div style={{ scale: animate ? settleScale : 1, opacity: animate ? settleOpacity : 1 }}>{tr(children)}</motion.div>
     </motion.article>
   );
 }
 
 export function PortfolioSection() {
+  const { t: tr, link: localLink, locale: language } = useI18n();
   const stackRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: stackRef, offset: ["start start", "end end"] });
   const reducedMotion = useReducedMotion();
@@ -156,12 +160,12 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          eyebrow="Portfólio"
-          segments={[
+          eyebrow={tr("Portfólio")}
+          segments={tr([
             { text: "Jeden web za druhým." },
             { text: "Scrollujte a stoh rastie.", className: "text-gradient-primary" },
-          ]}
-          sub="Každá karta je skutočný klient a skutočný web, ktorý si môžete hneď otvoriť."
+          ])}
+          sub={tr("Každá karta je skutočný klient a skutočný web, ktorý si môžete hneď otvoriť.")}
           className="mb-16"
         />
 
@@ -178,7 +182,7 @@ export function PortfolioSection() {
             >
               <div className="flex flex-col md:min-h-[520px] md:flex-row">
                 <a
-                  href={project.url}
+                  href={localLink(project.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   tabIndex={-1}
@@ -186,38 +190,36 @@ export function PortfolioSection() {
                   className="block md:w-[57%] md:shrink-0 md:pl-7 md:pt-7"
                 >
                   <img
-                    src={project.image}
-                    alt={`Ukážka webu ${project.name}`}
+                    src={localizedImage(project.image, language)}
+                    srcSet={imageSrcSet(localizedImage(project.image, language), 1200)}
+                    sizes={IMAGE_SIZES}
+                    {...projectPreviewDimensions(project.image, language)}
+                    alt={language === "en" ? `Preview of ${project.name}` : `Ukážka webu ${project.name}`}
                     loading="lazy"
                     decoding="async"
-                    className="h-64 w-full object-cover object-left-top sm:h-80 md:h-full md:max-h-[492px] md:rounded-tl-2xl"
+                    className="h-auto w-full object-contain object-left-top md:rounded-tl-2xl"
                   />
                 </a>
                 <div className="flex flex-1 flex-col justify-center gap-4 p-7 md:p-10">
                   <p className="text-[0.95rem]" style={{ color: project.accent }}>
-                    {project.category}
+                    {tr(project.category)}
                   </p>
                   <h3 className="font-heading text-[2rem] font-bold leading-none text-[#F5F5F0] md:text-[2.4rem]">
-                    {project.name}
+                    {tr(project.name)}
                   </h3>
-                  <p className="text-[1rem] leading-relaxed text-[#F5F5F0]/80">{project.built}</p>
+                  <p className="text-[1rem] leading-relaxed text-[#F5F5F0]/80">{tr(project.built)}</p>
                   {project.review && (
-                    <blockquote className="rounded-2xl bg-white/[0.06] px-5 py-4 text-[0.95rem] leading-relaxed text-[#F5F5F0]">
-                      &bdquo;{project.review.text}&ldquo;
-                      <footer className="mt-2 text-[0.85rem] text-[#F5F5F0]/60">
-                        {project.review.author}, odporúčanie na Facebooku
-                      </footer>
+                    <blockquote className="rounded-2xl bg-white/[0.06] px-5 py-4 text-[0.95rem] leading-relaxed text-[#F5F5F0]">{language === "en" ? "“" : "„"}{tr(project.review.text)}{language === "en" ? "”" : "“"}<footer className="mt-2 text-[0.85rem] text-[#F5F5F0]/60">
+                        {tr(project.review.author)}{tr(", odporúčanie na Facebooku")}</footer>
                     </blockquote>
                   )}
                   <a
-                    href={project.url}
+                    href={localLink(project.url)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-flex min-h-[46px] items-center gap-2 self-start rounded-full border border-white/25 px-5 text-[0.9rem] font-semibold text-[#F5F5F0] transition-colors hover:border-white/60"
                   >
-                    <ExternalLink size={15} />
-                    Pozrieť web naživo
-                  </a>
+                    <ExternalLink size={15} />{tr("Pozrieť web naživo")}</a>
                 </div>
               </div>
             </StackCard>
@@ -233,27 +235,19 @@ export function PortfolioSection() {
             style={{ backgroundColor: "#0E1A14" }}
           >
             <div className="flex min-h-[360px] flex-col items-start justify-center gap-5 p-8 md:p-14">
-              <p className="font-pixel text-[1.1rem] text-[#1AFF8C]">Karta číslo 9</p>
-              <h3 className="font-heading text-[2rem] font-bold leading-none text-[#F5F5F0] md:text-[2.6rem]">
-                Na vrch stohu patrí váš web.
-              </h3>
-              <p className="max-w-xl text-[1rem] leading-relaxed text-[#F5F5F0]/80">
-                Návrh dostanete do 24 hodín zadarmo. Platíte až po spustení, bez zálohy.
-              </p>
-              <MagneticButton size="lg" onClick={scrollToForm}>
-                Chcem návrh zadarmo
-              </MagneticButton>
+              <p className="font-pixel text-[1.1rem] text-[#1AFF8C]">{tr("Karta číslo 9")}</p>
+              <h3 className="font-heading text-[2rem] font-bold leading-none text-[#F5F5F0] md:text-[2.6rem]">{tr("Na vrch stohu patrí váš web.")}</h3>
+              <p className="max-w-xl text-[1rem] leading-relaxed text-[#F5F5F0]/80">{tr("Návrh dostanete do 24 hodín zadarmo. Platíte až po spustení, bez zálohy.")}</p>
+              <MagneticButton size="lg" onClick={scrollToForm}>{tr("Chcem návrh zadarmo")}</MagneticButton>
             </div>
           </StackCard>
         </div>
 
         <p className="mt-12 text-center">
           <Link
-            to="/portfolio/"
+            to={localLink("/portfolio/")}
             className="text-[0.95rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
-          >
-            Všetky projekty aj s popisom riešenia →
-          </Link>
+          >{tr("Všetky projekty aj s popisom riešenia →")}</Link>
         </p>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView } from "motion/react";
 import { useReducedMotion } from "../../lib/useReducedMotion";
@@ -53,6 +54,7 @@ const paintLayer = {
 const CARD_ACCENTS = ["#6C63FF", "#1AFF8C", "#00D9FF"];
 
 function MockLayout({ mode, compact }: { mode: "skeleton" | "paint"; compact: boolean }) {
+  const { t: tr } = useI18n();
   const v = mode === "skeleton" ? skelBlock : paintBlock;
   const skel = mode === "skeleton";
 
@@ -76,7 +78,7 @@ function MockLayout({ mode, compact }: { mode: "skeleton" | "paint"; compact: bo
         ))}
         <motion.div
           variants={v}
-          className={`ml-1 h-5 w-12 origin-left rounded-full ${skel ? "bg-white/10" : "bg-[#6C63FF]"}`}
+          className={`ml-1 h-5 w-12 origin-left rounded-full ${skel ? "bg-white/10" : "bg-[#665DFA]"}`}
         />
       </div>
 
@@ -106,7 +108,7 @@ function MockLayout({ mode, compact }: { mode: "skeleton" | "paint"; compact: bo
           <motion.div
             variants={v}
             className={`mt-2 flex h-7 w-24 origin-left items-center justify-center rounded-lg ${
-              skel ? "border border-dashed border-white/20 bg-white/[0.03]" : "bg-[#6C63FF] shadow-[0_4px_16px_rgba(108,99,255,0.45)]"
+              skel ? "border border-dashed border-white/20 bg-white/[0.03]" : "bg-[#665DFA] shadow-[0_4px_16px_rgba(108,99,255,0.45)]"
             }`}
           >
             {!skel && <div className="h-1.5 w-12 rounded-full bg-white/85" />}
@@ -139,9 +141,7 @@ function MockLayout({ mode, compact }: { mode: "skeleton" | "paint"; compact: bo
             >
               <div className="absolute left-3 top-3 h-5 w-5 rounded-full bg-white/30" />
               <div className="absolute -bottom-4 -left-2 h-12 w-[120%] rotate-[-8deg] bg-white/10" />
-              <div className="absolute bottom-2 right-2 rounded-full bg-[#1AFF8C] px-1.5 py-0.5 text-[0.45rem] font-bold leading-none text-black">
-                NOVÉ
-              </div>
+              <div className="absolute bottom-2 right-2 rounded-full bg-[#1AFF8C] px-1.5 py-0.5 text-[0.45rem] font-bold leading-none text-black">{tr("NOVÉ")}</div>
             </motion.div>
           )}
         </div>
@@ -175,6 +175,7 @@ function MockLayout({ mode, compact }: { mode: "skeleton" | "paint"; compact: bo
 }
 
 function TypewriterUrl({ animate, cycle }: { animate: boolean; cycle: number }) {
+  const { t: tr } = useI18n();
   const full = "siteleveled.com/vas-navrh";
   const [length, setLength] = useState(animate ? 0 : full.length);
 
@@ -198,8 +199,8 @@ function TypewriterUrl({ animate, cycle }: { animate: boolean; cycle: number }) 
 
   return (
     <span>
-      {full.slice(0, length)}
-      {animate && length < full.length && <span className="animate-pulse">|</span>}
+      {tr(full.slice(0, length))}
+      {animate && length < full.length && <span className="animate-pulse">{"|"}</span>}
     </span>
   );
 }
@@ -223,6 +224,7 @@ export function SelfBuildingSite({
   staticFinal = false,
   className = "",
 }: SelfBuildingSiteProps) {
+  const { t: tr } = useI18n();
   const reducedMotion = useReducedMotion();
   const isStatic = staticFinal || !!reducedMotion;
   const rootRef = useRef<HTMLDivElement>(null);
@@ -261,7 +263,7 @@ export function SelfBuildingSite({
           <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/40" />
           <div className="h-2.5 w-2.5 rounded-full bg-green-500/40" />
         </div>
-        <div className="mx-3 flex-1 rounded-md bg-white/5 px-3 py-1 text-[0.65rem] text-[#F5F5F0]/30">
+        <div className="mx-3 flex-1 rounded-md bg-white/5 px-3 py-1 text-[0.65rem] text-[#F5F5F0]/50">
           <TypewriterUrl animate={!isStatic} cycle={cycle} />
         </div>
       </div>
@@ -363,9 +365,9 @@ export function SelfBuildingSite({
               {displayPhase === "finished" ? (
                 <Check size={11} />
               ) : (
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#6C63FF]" />
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#665DFA]" />
               )}
-              {STATUS[displayPhase]}
+              {tr(STATUS[displayPhase])}
             </motion.div>
           </AnimatePresence>
         </div>

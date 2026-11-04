@@ -1,3 +1,4 @@
+import { useI18n } from "../../i18n/LocaleContext";
 import { Link } from "react-router";
 import { BadgeCheck, MessageCircle, Shield, Users, Zap } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
@@ -35,15 +36,16 @@ const benefits: { icon: typeof Users; title: string; text: string; link?: { to: 
 ];
 
 export function WhySection() {
+  const { t: tr, link: localLink } = useI18n();
   return (
     <section className="bg-[#0d0d14] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          eyebrow="Výhody"
-          segments={[
+          eyebrow={tr("Výhody")}
+          segments={tr([
             { text: "Prečo práve" },
             { text: "SiteLeveled?", className: "text-gradient-primary" },
-          ]}
+          ])}
           className="mb-16"
         />
 
@@ -66,18 +68,17 @@ export function WhySection() {
                     <benefit.icon size={wide ? 26 : 20} className="text-[#6C63FF]" />
                   </div>
                   <h3 className={`mb-2 font-heading font-bold text-[#F5F5F0] ${wide ? "text-[1.15rem]" : "text-[0.98rem]"}`}>
-                    {benefit.title}
+                    {tr(benefit.title)}
                   </h3>
                   <p className="text-[0.85rem] leading-relaxed text-[#F5F5F0]/50">
-                    {benefit.text}
+                    {tr(benefit.text)}
                   </p>
                   {benefit.link && (
                     <Link
-                      to={benefit.link.to}
+                      to={localLink(benefit.link.to)}
                       className="mt-3 inline-block text-[0.85rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]"
                     >
-                      {benefit.link.label} →
-                    </Link>
+                      {tr(benefit.link.label)}{" →"}</Link>
                   )}
                 </GlowCard>
               </AnimateIn>

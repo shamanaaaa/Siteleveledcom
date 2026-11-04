@@ -1,3 +1,4 @@
+import type { Locale } from "../i18n/routes";
 import {
   CLIENTS,
   CONSTRUCTION_LOT,
@@ -594,7 +595,7 @@ export function constructionPhase(t: number): BuildPhase {
 
 const CONSTRUCTION_H = 40;
 
-function drawConstruction(s: Surface, lot: Lot, t: number) {
+function drawConstruction(s: Surface, lot: Lot, t: number, locale: Locale = "sk") {
   const P = PAL.lilac;
   const p = (t % BUILD_CYCLE) / BUILD_CYCLE;
   const wire = box(lot.gx, lot.gy, 2, 2, 0, CONSTRUCTION_H);
@@ -640,7 +641,7 @@ function drawConstruction(s: Surface, lot: Lot, t: number) {
   s.fill(sx - 1, sy - 6, 1, 6, "#8a8aa6");
   s.fill(sx - Math.floor(w / 2) - 1, sy - 18, w + 2, 12, GOLD);
   s.fill(sx - Math.floor(w / 2), sy - 17, w, 10, INK);
-  drawText(s, "24H", sx - Math.floor(w / 2) + 2, sy - 15, GOLD);
+  drawText(s, locale === "en" ? "WEB" : "24H", sx - Math.floor(w / 2) + 2, sy - 15, GOLD);
 }
 
 /* ── Free lots ───────────────────────────────────────────── */
@@ -668,12 +669,13 @@ function signBox(lot: Lot) {
   return { x: cx - Math.floor(w / 2), y: cy - 6 - h, w, h, cx, cy };
 }
 
-function drawLotSign(s: Surface, lot: Lot, active: boolean, t: number) {
+function drawLotSign(s: Surface, lot: Lot, active: boolean, t: number, locale: Locale = "sk") {
   const { x, y, w, h, cx, cy } = signBox(lot);
   s.fill(cx, cy - 6, 1, 6, "#8a8aa6");
   s.fill(x, y, w, h, active ? NEON : NEON_DIM);
   s.fill(x + 1, y + 1, w - 2, h - 2, INK);
-  drawText(s, SIGN_TEXT, x + 3, y + 2 + FONT_ASCENT, active || t % 2400 < 1800 ? NEON : NEON_DIM);
+  const text = locale === "en" ? "PLOT" : SIGN_TEXT;
+  drawText(s, text, x + Math.floor((w - textWidth(text)) / 2), y + 2 + FONT_ASCENT, active || t % 2400 < 1800 ? NEON : NEON_DIM);
 }
 
 /** Wireframe preview of "your building" while a free lot is hovered. */
@@ -774,6 +776,7 @@ function carObjects(t: number): CityObject[] {
 /* ── Scene ───────────────────────────────────────────────── */
 
 export interface CityState {
+  locale?: Locale;
   /** Animation clock in ms */
   t: number;
   /** Time since the intro started in ms; Infinity once the city stands */
@@ -826,7 +829,7 @@ const STATIC_OBJECTS: CityObject[] = [
   {
     key: lotKey(CONSTRUCTION_LOT, 2, 2),
     draw: (s, st) => {
-      if (st.intro >= INTRO_MS - 400) drawConstruction(s, CONSTRUCTION_LOT, st.t);
+      if (st.intro >= INTRO_MS - 400) drawConstruction(s, CONSTRUCTION_LOT, st.t, st.locale);
     },
   },
   ...FREE_LOTS.map(
@@ -836,7 +839,7 @@ const STATIC_OBJECTS: CityObject[] = [
         if (st.intro < INTRO_MS - 300 + i * 120) return;
         const active = st.hovered === `plot-${i + 1}`;
         if (active) drawGhost(s, lot, st.t);
-        drawLotSign(s, lot, active, st.t + i * 700);
+        drawLotSign(s, lot, active, st.t + i * 700, st.locale);
       },
     }),
   ),
