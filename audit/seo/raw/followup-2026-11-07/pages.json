@@ -1,0 +1,5589 @@
+{
+ "blog_.html": {
+  "lang": "sk",
+  "title": "Blog o tvorbe webu a SEO pre malé firmy | SiteLeveled",
+  "description": "Praktické rady o tvorbe webstránok, cenách, SEO a správe webu pre slovenských podnikateľov – z projektov, ktoré sme naozaj robili.",
+  "robots": "noindex, follow",
+  "canonical": null,
+  "hreflang": [],
+  "og": {
+   "og:title": "Blog o tvorbe webu a SEO pre malé firmy | SiteLeveled",
+   "og:description": "Praktické rady o tvorbe webstránok, cenách, SEO a správe webu pre slovenských podnikateľov – z projektov, ktoré sme naozaj robili.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630"
+  },
+  "ld": [],
+  "h1": [
+   "Blog o tvorbe webu a SEO"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Blog o tvorbe webu a SEO",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "5 dôvodov, prečo váš web stráca zákazníkov (a ako to opraviť)",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Koľko stojí dobrý web v roku 2026? Úprimný pohľad bez salespitchu",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Prečo rýchlosť webu ovplyvňuje vaše tržby (s číslami)",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Lokálne SEO pre malé firmy: sprievodca krok za krokom",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "WordPress vs. vlastný kód: Čo je lepšie pre váš biznis?",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Dostávajte tipy priamo do mailu.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 204,
+  "bodyWords": 332,
+  "links": 27,
+  "images": [
+   {
+    "src": "/blog-1.webp",
+    "alt": "5 dôvodov, prečo váš web stráca zákazníkov (a ako to opraviť)",
+    "w": null,
+    "h": null,
+    "loading": null,
+    "inMain": true
+   },
+   {
+    "src": "/blog-2.webp",
+    "alt": "Koľko stojí dobrý web v roku 2026? Úprimný pohľad bez salespitchu",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/blog-3.webp",
+    "alt": "Prečo rýchlosť webu ovplyvňuje vaše tržby (s číslami)",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/blog-4.webp",
+    "alt": "Lokálne SEO pre malé firmy: sprievodca krok za krokom",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/blog-5.webp",
+    "alt": "WordPress vs. vlastný kód: Čo je lepšie pre váš biznis?",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 0,
+  "bytes": 41426
+ },
+ "cennik_.html": {
+  "lang": "sk",
+  "title": "Cenník: koľko stojí webstránka a e-shop | SiteLeveled",
+  "description": "Web od 300 € (do 7 dní), e-shop od 1 000 € (do 14 dní), SEO audit 199 €, správa webu od 30 €/mesiac. Bez zálohy – platíte až po spustení.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/cennik/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/cennik/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/pricing/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/pricing/"
+   ]
+  ],
+  "og": {
+   "og:title": "Cenník: koľko stojí webstránka a e-shop | SiteLeveled",
+   "og:description": "Web od 300 € (do 7 dní), e-shop od 1 000 € (do 14 dní), SEO audit 199 €, správa webu od 30 €/mesiac. Bez zálohy – platíte až po spustení.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/cennik/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cenník",
+        "item": "https://siteleveled.com/cennik/"
+       }
+      ]
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#tvorba-webu",
+      "name": "Tvorba webstránky na mieru",
+      "serviceType": "Tvorba webstránok",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "areaServed": {
+       "@type": "Country",
+       "name": "Slovensko"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 300,
+        "priceCurrency": "EUR"
+       },
+       "description": "Web od 300 €, hotový do 7 dní. Bez zálohy, platíte až po spustení."
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#tvorba-eshopu",
+      "name": "Tvorba e-shopu na mieru",
+      "serviceType": "Tvorba e-shopov",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "areaServed": {
+       "@type": "Country",
+       "name": "Slovensko"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 1000,
+        "priceCurrency": "EUR"
+       },
+       "description": "E-shop od 1 000 €, hotový do 14 dní. Bez zálohy, platíte až po spustení."
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#seo-audit",
+      "name": "SEO audit webu",
+      "serviceType": "SEO audit",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "price": 199,
+       "priceCurrency": "EUR"
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#sprava-webu",
+      "name": "Správa webu",
+      "serviceType": "Správa a údržba webu",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "minPrice": 30,
+        "priceCurrency": "EUR",
+        "unitCode": "MON",
+        "unitText": "mesiac"
+       }
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/cennik/#webpage",
+      "url": "https://siteleveled.com/cennik/",
+      "name": "Cenník: koľko stojí webstránka a e-shop | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Cenník tvorby webstránok a e-shopov"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Cenník tvorby webstránok a e-shopov",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Jednoduchý web",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Internetový obchod",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Kontrola webu",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Mesačná správa webu",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Koľko stojí webstránka?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Čo ovplyvňuje cenu",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Čo a kedy platíte",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Časté otázky.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 546,
+  "bodyWords": 673,
+  "links": 34,
+  "images": [],
+  "forms": 0,
+  "bytes": 61432
+ },
+ "en_.html": {
+  "lang": "en",
+  "title": "Custom websites and online stores | SiteLeveled",
+  "description": "Custom websites and online stores, direct contact with the developer, and a clear process. Start with a free design proposal and quote.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/"
+   ]
+  ],
+  "og": {
+   "og:title": "Custom websites and online stores | SiteLeveled",
+   "og:description": "Custom websites and online stores, direct contact with the developer, and a clear process. Start with a free design proposal and quote.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/#webpage",
+      "url": "https://siteleveled.com/en/",
+      "name": "Custom websites and online stores | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Custom websites for your business.A free design proposal."
+  ],
+  "headings": [
+   [
+    "H1",
+    "Custom websites for your business.A free design proposal.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "How it works.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Share your brief",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Review your design proposal",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "You decide",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "What you get free and without obligation.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Get a design proposal for free.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "One website after another. Scroll to explore our work.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "springnitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "jogaslaskou.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zuzu-photo.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zeriavynitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "mdfoto.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "nosekrst.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "fotkynavyber.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Your website could be next.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Why choose SiteLeveled?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Personal attention",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Speed",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Clear quotes",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Communication",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Experience",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "What our clients say.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "A real person behind your project.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Common questions.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Ready to plan your website?Start with a free design proposal.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 1084,
+  "bodyWords": 1214,
+  "links": 64,
+  "images": [
+   {
+    "src": "/images/en/springnitra-preview.webp",
+    "alt": "Preview of springnitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/jogaslaskou-preview.webp",
+    "alt": "Preview of jogaslaskou.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/zuzu-photo-preview.webp",
+    "alt": "Preview of zuzu-photo.sk",
+    "w": "1200",
+    "h": "1078",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/sanifix-preview.webp",
+    "alt": "Preview of sanifix.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/zeriavynitra-preview.webp",
+    "alt": "Preview of zeriavynitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/mdfoto-preview.webp",
+    "alt": "Preview of mdfoto.sk",
+    "w": "1200",
+    "h": "896",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/nosekrst-preview.webp",
+    "alt": "Preview of nosekrst.sk",
+    "w": "1200",
+    "h": "624",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/fotkynavyber-preview.webp",
+    "alt": "Preview of fotkynavyber.sk",
+    "w": "1200",
+    "h": "980",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/profile.webp",
+    "alt": "Mário Doman",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 1,
+  "bytes": 129319
+ },
+ "en_about_.html": {
+  "lang": "en",
+  "title": "About Mário Doman and DOMAN s.r.o. | SiteLeveled",
+  "description": "Meet the people behind SiteLeveled: developer Mário Doman and DOMAN s.r.o., based in Slovakia.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/about/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/o-nas/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/about/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/about/"
+   ]
+  ],
+  "og": {
+   "og:title": "About Mário Doman and DOMAN s.r.o. | SiteLeveled",
+   "og:description": "Meet the people behind SiteLeveled: developer Mário Doman and DOMAN s.r.o., based in Slovakia.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/about/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About us",
+        "item": "https://siteleveled.com/en/about/"
+       }
+      ]
+     },
+     {
+      "@type": "AboutPage",
+      "@id": "https://siteleveled.com/en/about/#webpage",
+      "url": "https://siteleveled.com/en/about/",
+      "name": "About Mário Doman and DOMAN s.r.o. | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "mainEntity": {
+       "@id": "https://siteleveled.com/o-nas/#mario-doman"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "About the people behind SiteLeveled"
+  ],
+  "headings": [
+   [
+    "H1",
+    "About the people behind SiteLeveled",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Mário Doman — developer. Mária Domanová — managing director of DOMAN s.r.o.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "The values we build on.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Transparency",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Craftsmanship",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Long-term support",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 201,
+  "bodyWords": 331,
+  "links": 29,
+  "images": [
+   {
+    "src": "/profile.webp",
+    "alt": "Mário Doman, SiteLeveled developer",
+    "w": null,
+    "h": null,
+    "loading": null,
+    "inMain": true
+   }
+  ],
+  "forms": 0,
+  "bytes": 44613
+ },
+ "en_city_jogaslaskou_.html": {
+  "lang": "en",
+  "title": "jogaslaskou.sk — SiteLeveled client city",
+  "description": "jogaslaskou.sk: Yoga studio in Pezinok, Slovakia. Explore this Slovak business project in the SiteLeveled pixel city.",
+  "robots": "noindex, follow",
+  "canonical": null,
+  "hreflang": [],
+  "og": {
+   "og:title": "jogaslaskou.sk — SiteLeveled client city",
+   "og:description": "jogaslaskou.sk: Yoga studio in Pezinok, Slovakia. Explore this Slovak business project in the SiteLeveled pixel city.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-mesto-jogaslaskou.png",
+   "og:image:alt": "jogaslaskou.sk in the SiteLeveled client city",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/city/jogaslaskou/"
+  },
+  "ld": [],
+  "h1": [
+   "Custom websites for your business.A free design proposal."
+  ],
+  "headings": [
+   [
+    "H1",
+    "Custom websites for your business.A free design proposal.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "How it works.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Share your brief",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Review your design proposal",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "You decide",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "What you get free and without obligation.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Get a design proposal for free.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "One website after another. Scroll to explore our work.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "springnitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "jogaslaskou.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zuzu-photo.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zeriavynitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "mdfoto.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "nosekrst.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "fotkynavyber.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Your website could be next.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Why choose SiteLeveled?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Personal attention",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Speed",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Clear quotes",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Communication",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Experience",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "What our clients say.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "A real person behind your project.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Common questions.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Ready to plan your website?Start with a free design proposal.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 1084,
+  "bodyWords": 1214,
+  "links": 64,
+  "images": [
+   {
+    "src": "/images/en/springnitra-preview.webp",
+    "alt": "Preview of springnitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/jogaslaskou-preview.webp",
+    "alt": "Preview of jogaslaskou.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/zuzu-photo-preview.webp",
+    "alt": "Preview of zuzu-photo.sk",
+    "w": "1200",
+    "h": "1078",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/sanifix-preview.webp",
+    "alt": "Preview of sanifix.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/zeriavynitra-preview.webp",
+    "alt": "Preview of zeriavynitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/mdfoto-preview.webp",
+    "alt": "Preview of mdfoto.sk",
+    "w": "1200",
+    "h": "896",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/nosekrst-preview.webp",
+    "alt": "Preview of nosekrst.sk",
+    "w": "1200",
+    "h": "624",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/fotkynavyber-preview.webp",
+    "alt": "Preview of fotkynavyber.sk",
+    "w": "1200",
+    "h": "980",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/profile.webp",
+    "alt": "Mário Doman",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 1,
+  "bytes": 127546
+ },
+ "en_contact_.html": {
+  "lang": "en",
+  "title": "Contact us about your website | SiteLeveled",
+  "description": "Tell us about your business and website project. Email info@siteleveled.com to discuss a free design proposal.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/contact/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/kontakt/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/contact/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/contact/"
+   ]
+  ],
+  "og": {
+   "og:title": "Contact us about your website | SiteLeveled",
+   "og:description": "Tell us about your business and website project. Email info@siteleveled.com to discuss a free design proposal.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/contact/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://siteleveled.com/en/contact/"
+       }
+      ]
+     },
+     {
+      "@type": "ContactPage",
+      "@id": "https://siteleveled.com/en/contact/#webpage",
+      "url": "https://siteleveled.com/en/contact/",
+      "name": "Contact us about your website | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Contact us"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Contact us",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Contact details",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Company and billing details",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Social media",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 99,
+  "bodyWords": 229,
+  "links": 30,
+  "images": [],
+  "forms": 1,
+  "bytes": 38872
+ },
+ "en_nothing-here_.html": {
+  "lang": "en",
+  "title": "Page not found | SiteLeveled",
+  "description": "This page could not be found. Explore SiteLeveled services, pricing, or the homepage.",
+  "robots": "noindex, follow",
+  "canonical": null,
+  "hreflang": [],
+  "og": {
+   "og:title": "Page not found | SiteLeveled",
+   "og:description": "This page could not be found. Explore SiteLeveled services, pricing, or the homepage.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630"
+  },
+  "ld": [],
+  "h1": [
+   "Page not found (404)"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Page not found (404)",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 57,
+  "bodyWords": 188,
+  "links": 31,
+  "images": [],
+  "forms": 0,
+  "bytes": 33221
+ },
+ "en_online-stores_.html": {
+  "lang": "en",
+  "title": "Custom online store development | SiteLeveled",
+  "description": "An online store built around your products, customers, and workflow. Review a free design proposal and quote before deciding.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/online-stores/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/tvorba-eshopu/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/online-stores/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/online-stores/"
+   ]
+  ],
+  "og": {
+   "og:title": "Custom online store development | SiteLeveled",
+   "og:description": "An online store built around your products, customers, and workflow. Review a free design proposal and quote before deciding.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/online-stores/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Online stores",
+        "item": "https://siteleveled.com/en/online-stores/"
+       }
+      ]
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/online-stores/#service-0",
+      "name": "Custom online store",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/online-stores/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 1000,
+        "priceCurrency": "EUR"
+       }
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/online-stores/#webpage",
+      "url": "https://siteleveled.com/en/online-stores/",
+      "name": "Custom online store development | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Custom online store development"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Custom online store development",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Your online store, planned around you.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Custom online store",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Product catalog and cart",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Product and order management",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Mobile and desktop",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "How we build your online store.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Complete a short brief",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Get a free design proposal",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "We build your online store",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Pay after launch",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "How much does an online store cost?",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Online store or website?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Choose an online store if you",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "A website may be enough if you",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Common questions about online stores.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Get a design proposal for free.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 792,
+  "bodyWords": 922,
+  "links": 32,
+  "images": [
+   {
+    "src": "/images/en/sanifix-preview.webp",
+    "alt": "Preview of sanifix.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 1,
+  "bytes": 72881
+ },
+ "en_portfolio_.html": {
+  "lang": "en",
+  "title": "Portfolio: real Slovak business websites | SiteLeveled",
+  "description": "Explore websites and applications built for Slovak businesses: photography, logistics, service management, yoga, and more.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/portfolio/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/portfolio/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/portfolio/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/portfolio/"
+   ]
+  ],
+  "og": {
+   "og:title": "Portfolio: real Slovak business websites | SiteLeveled",
+   "og:description": "Explore websites and applications built for Slovak businesses: photography, logistics, service management, yoga, and more.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/portfolio/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Portfolio",
+        "item": "https://siteleveled.com/en/portfolio/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/portfolio/#webpage",
+      "url": "https://siteleveled.com/en/portfolio/",
+      "name": "Portfolio: real Slovak business websites | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Portfolio: websites we have built"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Portfolio: websites we have built",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "mdfoto.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "zuzu-photo.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "nosekrst.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "fotkynavyber.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "zeriavynitra.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "jogaslaskou.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "springnitra.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Want a similar solution?",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 563,
+  "bodyWords": 693,
+  "links": 43,
+  "images": [
+   {
+    "src": "/images/en/mdfoto-preview.webp",
+    "alt": "Preview of mdfoto.sk",
+    "w": null,
+    "h": null,
+    "loading": "eager",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/zuzu-photo-preview.webp",
+    "alt": "Preview of zuzu-photo.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/nosekrst-preview.webp",
+    "alt": "Preview of nosekrst.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/fotkynavyber-preview.webp",
+    "alt": "Preview of fotkynavyber.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/sanifix-preview.webp",
+    "alt": "Preview of sanifix.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/zeriavynitra-preview.webp",
+    "alt": "Preview of zeriavynitra.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/jogaslaskou-preview.webp",
+    "alt": "Preview of jogaslaskou.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/images/en/springnitra-preview.webp",
+    "alt": "Preview of springnitra.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 0,
+  "bytes": 58118
+ },
+ "en_pricing_.html": {
+  "lang": "en",
+  "title": "Website and online store pricing | SiteLeveled",
+  "description": "Websites from €300, stores from €1,000, manual SEO audit €199, maintenance from €30/month. No deposit; pay after launch.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/pricing/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/cennik/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/pricing/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/pricing/"
+   ]
+  ],
+  "og": {
+   "og:title": "Website and online store pricing | SiteLeveled",
+   "og:description": "Websites from €300, stores from €1,000, manual SEO audit €199, maintenance from €30/month. No deposit; pay after launch.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/pricing/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pricing",
+        "item": "https://siteleveled.com/en/pricing/"
+       }
+      ]
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/pricing/#service-0",
+      "name": "Custom website",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/pricing/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 300,
+        "priceCurrency": "EUR"
+       }
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/pricing/#service-1",
+      "name": "Custom online store",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/pricing/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 1000,
+        "priceCurrency": "EUR"
+       }
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/pricing/#service-2",
+      "name": "Manual SEO audit",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/pricing/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "price": 199
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/pricing/#service-3",
+      "name": "Website maintenance",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/pricing/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "minPrice": 30,
+        "priceCurrency": "EUR",
+        "unitCode": "MON",
+        "unitText": "month"
+       }
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/pricing/#webpage",
+      "url": "https://siteleveled.com/en/pricing/",
+      "name": "Website and online store pricing | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Website and online store pricing"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Website and online store pricing",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Business website",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Online store",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Website review",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Monthly website maintenance",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "How much does a website cost?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "What affects the price",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Scope and payment",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Common questions.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 573,
+  "bodyWords": 703,
+  "links": 33,
+  "images": [],
+  "forms": 0,
+  "bytes": 62525
+ },
+ "en_privacy_.html": {
+  "lang": "en",
+  "title": "Privacy policy | SiteLeveled",
+  "description": "How DOMAN s.r.o. processes inquiries and SEO audits, uses browser storage, and handles your personal data and rights.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/privacy/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/ochrana-osobnych-udajov/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/privacy/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/privacy/"
+   ]
+  ],
+  "og": {
+   "og:title": "Privacy policy | SiteLeveled",
+   "og:description": "How DOMAN s.r.o. processes inquiries and SEO audits, uses browser storage, and handles your personal data and rights.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/privacy/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Privacy policy",
+        "item": "https://siteleveled.com/en/privacy/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/privacy/#webpage",
+      "url": "https://siteleveled.com/en/privacy/",
+      "name": "Privacy policy | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Privacy policy"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Privacy policy",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Who processes your data",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "What we process and why",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "“Free design proposal” form on the homepage",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Contact form",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Email and phone",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Free SEO audit",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Clients",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Server logs",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "How long we keep data",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Who can access your data",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Transfers outside the European Union",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Cookies and browser storage",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Your rights",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Changes",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 928,
+  "bodyWords": 1058,
+  "links": 29,
+  "images": [],
+  "forms": 0,
+  "bytes": 46543
+ },
+ "en_process_.html": {
+  "lang": "en",
+  "title": "Our website development process | SiteLeveled",
+  "description": "From your brief to design approval, preview, testing, and launch. Understand the steps and how to work directly with the developer.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/process/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/proces/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/process/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/process/"
+   ]
+  ],
+  "og": {
+   "og:title": "Our website development process | SiteLeveled",
+   "og:description": "From your brief to design approval, preview, testing, and launch. Understand the steps and how to work directly with the developer.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/process/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Process",
+        "item": "https://siteleveled.com/en/process/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/process/#webpage",
+      "url": "https://siteleveled.com/en/process/",
+      "name": "Our website development process | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "How website development works"
+  ],
+  "headings": [
+   [
+    "H1",
+    "How website development works",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "A short brief",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Free design proposal",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Your decision",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Website development",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Review, testing, launch, and handover",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Maintenance (optional)",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "How long does development take?",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "What we need from you.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 432,
+  "bodyWords": 562,
+  "links": 27,
+  "images": [],
+  "forms": 0,
+  "bytes": 55493
+ },
+ "en_seo-audit_.html": {
+  "lang": "en",
+  "title": "Free website SEO audit | SiteLeveled",
+  "description": "Check SEO, performance, accessibility, and best practices for up to 15 pages using Lighthouse. Get a free automated website audit.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/seo-audit/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/seo-audit/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/seo-audit/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/seo-audit/"
+   ]
+  ],
+  "og": {
+   "og:title": "Free website SEO audit | SiteLeveled",
+   "og:description": "Check SEO, performance, accessibility, and best practices for up to 15 pages using Lighthouse. Get a free automated website audit.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/seo-audit/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SEO audit",
+        "item": "https://siteleveled.com/en/seo-audit/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/seo-audit/#webpage",
+      "url": "https://siteleveled.com/en/seo-audit/",
+      "name": "Free website SEO audit | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Free website SEO audit"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Free website SEO audit",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "What the audit checks and why.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "SEO",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Speed",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Accessibility",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Best practices",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Understanding scores",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "What an automated check cannot tell you",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Free check and €199 manual SEO audit",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Common questions.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 382,
+  "bodyWords": 512,
+  "links": 29,
+  "images": [],
+  "forms": 1,
+  "bytes": 45910
+ },
+ "en_services_.html": {
+  "lang": "en",
+  "title": "Website development, SEO, and maintenance | SiteLeveled",
+  "description": "Custom websites, online stores, copy, SEO, and ongoing maintenance. Explore the services and request a quote.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/en/services/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/sluzby/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/services/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/services/"
+   ]
+  ],
+  "og": {
+   "og:title": "Website development, SEO, and maintenance | SiteLeveled",
+   "og:description": "Custom websites, online stores, copy, SEO, and ongoing maintenance. Explore the services and request a quote.",
+   "og:locale": "en_US",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/en-siteleveled.png",
+   "og:image:alt": "SiteLeveled — custom websites and online stores",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/en/services/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/en-siteleveled.png",
+      "description": "Custom websites and online stores, with direct developer contact by email.",
+      "email": "info@siteleveled.com",
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": [
+       "sk",
+       "en"
+      ],
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Developer",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Managing director",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://siteleveled.com/en/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://siteleveled.com/en/services/"
+       }
+      ]
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/services/#service-0",
+      "name": "Custom website",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/services/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 300,
+        "priceCurrency": "EUR"
+       }
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/services/#service-1",
+      "name": "Custom online store",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/services/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 1000,
+        "priceCurrency": "EUR"
+       }
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/services/#service-2",
+      "name": "Manual SEO audit",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/services/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "price": 199
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/en/services/#service-3",
+      "name": "Website maintenance",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "url": "https://siteleveled.com/en/services/",
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/en/pricing/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "minPrice": 30,
+        "priceCurrency": "EUR",
+        "unitCode": "MON",
+        "unitText": "month"
+       }
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/en/services/#webpage",
+      "url": "https://siteleveled.com/en/services/",
+      "name": "Website development, SEO, and maintenance | SiteLeveled",
+      "inLanguage": "en",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Websites, online stores, and SEO"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Websites, online stores, and SEO",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "A custom website for your business.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Help customers find you.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Words with a clear purpose.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Care beyond launch.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Find what needs improving.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 293,
+  "bodyWords": 423,
+  "links": 32,
+  "images": [],
+  "forms": 0,
+  "bytes": 55590
+ },
+ "kontakt_.html": {
+  "lang": "sk",
+  "title": "Kontakt – návrh webu zadarmo do 24 hodín | SiteLeveled",
+  "description": "Napíšte na info@siteleveled.com alebo zavolajte na 0910 803 993. Návrh vašej novej webstránky pripravíme zadarmo do 24 hodín.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/kontakt/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/kontakt/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/contact/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/contact/"
+   ]
+  ],
+  "og": {
+   "og:title": "Kontakt – návrh webu zadarmo do 24 hodín | SiteLeveled",
+   "og:description": "Napíšte na info@siteleveled.com alebo zavolajte na 0910 803 993. Návrh vašej novej webstránky pripravíme zadarmo do 24 hodín.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/kontakt/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kontakt",
+        "item": "https://siteleveled.com/kontakt/"
+       }
+      ]
+     },
+     {
+      "@type": "ContactPage",
+      "@id": "https://siteleveled.com/kontakt/#webpage",
+      "url": "https://siteleveled.com/kontakt/",
+      "name": "Kontakt – návrh webu zadarmo do 24 hodín | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Kontaktujte nás"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Kontaktujte nás",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Kontaktné údaje",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Fakturačné údaje",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Sociálne siete",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 92,
+  "bodyWords": 219,
+  "links": 32,
+  "images": [],
+  "forms": 1,
+  "bytes": 39385
+ },
+ "mesto_jogaslaskou_.html": {
+  "lang": "sk",
+  "title": "jogaslaskou.sk — budova v meste klientov SiteLeveled",
+  "description": "jogaslaskou.sk (Jogové štúdio v Pezinku) má svoju budovu v pixelovom meste klientov SiteLeveled. Pozrite si projekt a postavte tam aj svoj web — návrh zadarmo do 24 hodín.",
+  "robots": "noindex, follow",
+  "canonical": null,
+  "hreflang": [],
+  "og": {
+   "og:title": "jogaslaskou.sk — budova v meste klientov SiteLeveled",
+   "og:description": "jogaslaskou.sk (Jogové štúdio v Pezinku) má svoju budovu v pixelovom meste klientov SiteLeveled. Pozrite si projekt a postavte tam aj svoj web — návrh zadarmo do 24 hodín.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/mesto-jogaslaskou.png",
+   "og:image:alt": "Budova jogaslaskou.sk v pixelovom meste klientov SiteLeveled",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/mesto/jogaslaskou/"
+  },
+  "ld": [],
+  "h1": [
+   "Tvorba webstránok na mieru.Návrh zadarmo do 24 hodín."
+  ],
+  "headings": [
+   [
+    "H1",
+    "Tvorba webstránok na mieru.Návrh zadarmo do 24 hodín.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Ako to funguje?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Vyplníte formulár",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Do 24h dostanete návrh",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Rozhodnete sa",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Čo dostanete úplne zadarmo.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Chcete návrh zadarmo?",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Jeden web za druhým. Scrollujte a stoh rastie.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "springnitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "jogaslaskou.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zuzu-photo.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zeriavynitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "mdfoto.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "nosekrst.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "fotkynavyber.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Na vrch stohu patrí váš web.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Prečo práve SiteLeveled?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Individuálny prístup",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Rýchlosť",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Transparentné ceny",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Komunikácia",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Skúsenosti",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Čo hovoria naši klienti.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Za každým projektom je reálny človek.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Časté otázky.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Získajte návrh vašej webstránkydo 24 hodín – bez rizika.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 992,
+  "bodyWords": 1119,
+  "links": 65,
+  "images": [
+   {
+    "src": "/springnitra-preview.webp",
+    "alt": "Ukážka webu springnitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/jogaslaskou-preview.webp",
+    "alt": "Ukážka webu jogaslaskou.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/zuzu-photo-preview.webp",
+    "alt": "Ukážka webu zuzu-photo.sk",
+    "w": "1200",
+    "h": "1079",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/sanifix-preview.webp",
+    "alt": "Ukážka webu sanifix.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/zeriavynitra-preview.webp",
+    "alt": "Ukážka webu zeriavynitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/mdfoto-preview.webp",
+    "alt": "Ukážka webu mdfoto.sk",
+    "w": "1200",
+    "h": "897",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/nosekrst-preview.webp",
+    "alt": "Ukážka webu nosekrst.sk",
+    "w": "1200",
+    "h": "972",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/fotkynavyber-preview.webp",
+    "alt": "Ukážka webu fotkynavyber.sk",
+    "w": "1200",
+    "h": "1020",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/profile.webp",
+    "alt": "Mário Doman",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 1,
+  "bytes": 125021
+ },
+ "nic-tu-nie-je_.html": {
+  "lang": "sk",
+  "title": "Stránka sa nenašla | SiteLeveled",
+  "description": "Táto stránka neexistuje. Pokračujte na úvod, cenník alebo služby SiteLeveled.",
+  "robots": "noindex, follow",
+  "canonical": null,
+  "hreflang": [],
+  "og": {
+   "og:title": "Stránka sa nenašla | SiteLeveled",
+   "og:description": "Táto stránka neexistuje. Pokračujte na úvod, cenník alebo služby SiteLeveled.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630"
+  },
+  "ld": [],
+  "h1": [
+   "Stránka sa nenašla (404)"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Stránka sa nenašla (404)",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 54,
+  "bodyWords": 182,
+  "links": 32,
+  "images": [],
+  "forms": 0,
+  "bytes": 31590
+ },
+ "o-nas_.html": {
+  "lang": "sk",
+  "title": "O nás: Mário Doman a DOMAN s.r.o. | SiteLeveled",
+  "description": "Za SiteLeveled stojí vývojár Mário Doman a spoločnosť DOMAN s.r.o. Každý projekt vedie osobne – zavolajte mu priamo na 0910 803 993.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/o-nas/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/o-nas/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/about/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/about/"
+   ]
+  ],
+  "og": {
+   "og:title": "O nás: Mário Doman a DOMAN s.r.o. | SiteLeveled",
+   "og:description": "Za SiteLeveled stojí vývojár Mário Doman a spoločnosť DOMAN s.r.o. Každý projekt vedie osobne – zavolajte mu priamo na 0910 803 993.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/o-nas/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "O nás",
+        "item": "https://siteleveled.com/o-nas/"
+       }
+      ]
+     },
+     {
+      "@type": "AboutPage",
+      "@id": "https://siteleveled.com/o-nas/#webpage",
+      "url": "https://siteleveled.com/o-nas/",
+      "name": "O nás: Mário Doman a DOMAN s.r.o. | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "mainEntity": {
+       "@id": "https://siteleveled.com/o-nas/#mario-doman"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "O nás: kto stojí za SiteLeveled"
+  ],
+  "headings": [
+   [
+    "H1",
+    "O nás: kto stojí za SiteLeveled",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Mário Doman — vývojár. Mária Domanová — konateľka DOMAN s.r.o.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Hodnoty, na ktorých staviame.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Transparentnosť",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Remeselná kvalita",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Dlhodobé partnerstvo",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 201,
+  "bodyWords": 328,
+  "links": 30,
+  "images": [
+   {
+    "src": "/profile.webp",
+    "alt": "Mário Doman, vývojár SiteLeveled",
+    "w": null,
+    "h": null,
+    "loading": null,
+    "inMain": true
+   }
+  ],
+  "forms": 0,
+  "bytes": 43116
+ },
+ "ochrana-osobnych-udajov_.html": {
+  "lang": "sk",
+  "title": "Ochrana osobných údajov | SiteLeveled",
+  "description": "Ako DOMAN s.r.o. (SiteLeveled) spracúva údaje z formulárov a SEO auditu, kto k nim má prístup, ako dlho ich uchováva a aké máte práva. Bez cookies.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/ochrana-osobnych-udajov/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/ochrana-osobnych-udajov/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/privacy/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/privacy/"
+   ]
+  ],
+  "og": {
+   "og:title": "Ochrana osobných údajov | SiteLeveled",
+   "og:description": "Ako DOMAN s.r.o. (SiteLeveled) spracúva údaje z formulárov a SEO auditu, kto k nim má prístup, ako dlho ich uchováva a aké máte práva. Bez cookies.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/ochrana-osobnych-udajov/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Ochrana osobných údajov",
+        "item": "https://siteleveled.com/ochrana-osobnych-udajov/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/ochrana-osobnych-udajov/#webpage",
+      "url": "https://siteleveled.com/ochrana-osobnych-udajov/",
+      "name": "Ochrana osobných údajov | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Ochrana osobných údajov"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Ochrana osobných údajov",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Kto spracúva vaše údaje",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Aké údaje spracúvame a prečo",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Formulár „Návrh zadarmo“ na úvodnej stránke",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Kontaktný formulár",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "E-mail a telefón",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "SEO audit zadarmo",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Klienti",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Technické záznamy servera",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Ako dlho údaje uchovávame",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Kto má k údajom prístup",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Prenos mimo Európskej únie",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Cookies a úložisko v prehliadači",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Vaše práva",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Zmeny",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 957,
+  "bodyWords": 1084,
+  "links": 31,
+  "images": [],
+  "forms": 0,
+  "bytes": 47160
+ },
+ "portfolio_.html": {
+  "lang": "sk",
+  "title": "Portfólio a referencie: naše weby | SiteLeveled",
+  "description": "Weby a webové aplikácie, ktoré sme navrhli a naprogramovali pre slovenské firmy – od fotografiek po servisný systém. Každý projekt si môžete otvoriť naživo.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/portfolio/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/portfolio/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/portfolio/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/portfolio/"
+   ]
+  ],
+  "og": {
+   "og:title": "Portfólio a referencie: naše weby | SiteLeveled",
+   "og:description": "Weby a webové aplikácie, ktoré sme navrhli a naprogramovali pre slovenské firmy – od fotografiek po servisný systém. Každý projekt si môžete otvoriť naživo.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/portfolio/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Portfólio",
+        "item": "https://siteleveled.com/portfolio/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/portfolio/#webpage",
+      "url": "https://siteleveled.com/portfolio/",
+      "name": "Portfólio a referencie: naše weby | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Portfólio: weby, ktoré sme vytvorili"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Portfólio: weby, ktoré sme vytvorili",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "mdfoto.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "zuzu-photo.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "nosekrst.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "fotkynavyber.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "zeriavynitra.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "jogaslaskou.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "springnitra.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Chcete podobné výsledky?",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 519,
+  "bodyWords": 646,
+  "links": 44,
+  "images": [
+   {
+    "src": "/mdfoto-preview.webp",
+    "alt": "Ukážka webu mdfoto.sk",
+    "w": null,
+    "h": null,
+    "loading": "eager",
+    "inMain": true
+   },
+   {
+    "src": "/zuzu-photo-preview.webp",
+    "alt": "Ukážka webu zuzu-photo.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/nosekrst-preview.webp",
+    "alt": "Ukážka webu nosekrst.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/fotkynavyber-preview.webp",
+    "alt": "Ukážka webu fotkynavyber.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/sanifix-preview.webp",
+    "alt": "Ukážka webu sanifix.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/zeriavynitra-preview.webp",
+    "alt": "Ukážka webu zeriavynitra.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/jogaslaskou-preview.webp",
+    "alt": "Ukážka webu jogaslaskou.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/springnitra-preview.webp",
+    "alt": "Ukážka webu springnitra.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 0,
+  "bytes": 57235
+ },
+ "proces_.html": {
+  "lang": "sk",
+  "title": "Ako prebieha tvorba webu krok za krokom | SiteLeveled",
+  "description": "Návrh dostanete do 24 hodín, jednoduchý web je hotový do 7 dní, e-shop do 14 dní. Pozrite si, ako prebieha spolupráca od návrhu po spustenie.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/proces/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/proces/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/process/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/process/"
+   ]
+  ],
+  "og": {
+   "og:title": "Ako prebieha tvorba webu krok za krokom | SiteLeveled",
+   "og:description": "Návrh dostanete do 24 hodín, jednoduchý web je hotový do 7 dní, e-shop do 14 dní. Pozrite si, ako prebieha spolupráca od návrhu po spustenie.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/proces/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Proces",
+        "item": "https://siteleveled.com/proces/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/proces/#webpage",
+      "url": "https://siteleveled.com/proces/",
+      "name": "Ako prebieha tvorba webu krok za krokom | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Ako prebieha tvorba webu"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Ako prebieha tvorba webu",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Krátky formulár",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Návrh zadarmo",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Vaše rozhodnutie",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Tvorba webu",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Testovanie, spustenie a platba",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Správa webu (voliteľná)",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Ako dlho trvá tvorba webu?",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Čo budeme od vás potrebovať.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 393,
+  "bodyWords": 520,
+  "links": 28,
+  "images": [],
+  "forms": 0,
+  "bytes": 54306
+ },
+ "root.html": {
+  "lang": "sk",
+  "title": "Tvorba webstránok a e-shopov na mieru | SiteLeveled",
+  "description": "Tvorba webstránok od 300 € a e-shopov od 1 000 € pre slovenské firmy. Návrh vášho nového webu dostanete zadarmo do 24 hodín, bez zálohy.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/"
+   ]
+  ],
+  "og": {
+   "og:title": "Tvorba webstránok a e-shopov na mieru | SiteLeveled",
+   "og:description": "Tvorba webstránok od 300 € a e-shopov od 1 000 € pre slovenské firmy. Návrh vášho nového webu dostanete zadarmo do 24 hodín, bez zálohy.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/#webpage",
+      "url": "https://siteleveled.com/",
+      "name": "Tvorba webstránok a e-shopov na mieru | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Tvorba webstránok na mieru.Návrh zadarmo do 24 hodín."
+  ],
+  "headings": [
+   [
+    "H1",
+    "Tvorba webstránok na mieru.Návrh zadarmo do 24 hodín.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Ako to funguje?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Vyplníte formulár",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Do 24h dostanete návrh",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Rozhodnete sa",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Čo dostanete úplne zadarmo.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Chcete návrh zadarmo?",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Jeden web za druhým. Scrollujte a stoh rastie.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "springnitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "jogaslaskou.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zuzu-photo.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "zeriavynitra.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "mdfoto.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "nosekrst.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "fotkynavyber.sk",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Na vrch stohu patrí váš web.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Prečo práve SiteLeveled?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Individuálny prístup",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Rýchlosť",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Transparentné ceny",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Komunikácia",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Skúsenosti",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Čo hovoria naši klienti.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Za každým projektom je reálny človek.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Časté otázky.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Získajte návrh vašej webstránkydo 24 hodín – bez rizika.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 992,
+  "bodyWords": 1119,
+  "links": 65,
+  "images": [
+   {
+    "src": "/springnitra-preview.webp",
+    "alt": "Ukážka webu springnitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/jogaslaskou-preview.webp",
+    "alt": "Ukážka webu jogaslaskou.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/zuzu-photo-preview.webp",
+    "alt": "Ukážka webu zuzu-photo.sk",
+    "w": "1200",
+    "h": "1079",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/sanifix-preview.webp",
+    "alt": "Ukážka webu sanifix.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/zeriavynitra-preview.webp",
+    "alt": "Ukážka webu zeriavynitra.sk",
+    "w": "1200",
+    "h": "1000",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/mdfoto-preview.webp",
+    "alt": "Ukážka webu mdfoto.sk",
+    "w": "1200",
+    "h": "897",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/nosekrst-preview.webp",
+    "alt": "Ukážka webu nosekrst.sk",
+    "w": "1200",
+    "h": "972",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/fotkynavyber-preview.webp",
+    "alt": "Ukážka webu fotkynavyber.sk",
+    "w": "1200",
+    "h": "1020",
+    "loading": "lazy",
+    "inMain": true
+   },
+   {
+    "src": "/profile.webp",
+    "alt": "Mário Doman",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 1,
+  "bytes": 126865
+ },
+ "seo-audit_.html": {
+  "lang": "sk",
+  "title": "SEO audit webu zadarmo – online kontrola | SiteLeveled",
+  "description": "Zadajte adresu webu a o pár minút uvidíte skóre SEO, rýchlosti a prístupnosti pre až 15 podstránok. Bezplatná kontrola nástrojom Lighthouse.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/seo-audit/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/seo-audit/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/seo-audit/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/seo-audit/"
+   ]
+  ],
+  "og": {
+   "og:title": "SEO audit webu zadarmo – online kontrola | SiteLeveled",
+   "og:description": "Zadajte adresu webu a o pár minút uvidíte skóre SEO, rýchlosti a prístupnosti pre až 15 podstránok. Bezplatná kontrola nástrojom Lighthouse.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/seo-audit/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SEO audit",
+        "item": "https://siteleveled.com/seo-audit/"
+       }
+      ]
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/seo-audit/#webpage",
+      "url": "https://siteleveled.com/seo-audit/",
+      "name": "SEO audit webu zadarmo – online kontrola | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Bezplatný SEO audit webu"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Bezplatný SEO audit webu",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Čo audit kontroluje a prečo.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "SEO",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Rýchlosť",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Prístupnosť",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Osvedčené postupy",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Ako čítať skóre",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Čo automatická kontrola nezistí",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Bezplatná kontrola a SEO audit za 199 €",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Časté otázky.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 414,
+  "bodyWords": 541,
+  "links": 30,
+  "images": [],
+  "forms": 1,
+  "bytes": 45810
+ },
+ "seo-audit_admin_.html": {
+  "lang": "sk",
+  "title": "Prehľad SEO auditov | SiteLeveled",
+  "description": "Prehľad SEO auditov pre majiteľa webu.",
+  "robots": "noindex, nofollow",
+  "canonical": null,
+  "hreflang": [],
+  "og": {
+   "og:title": "Prehľad SEO auditov | SiteLeveled",
+   "og:description": "Prehľad SEO auditov pre majiteľa webu.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630"
+  },
+  "ld": [],
+  "h1": [],
+  "headings": [],
+  "rootEmpty": true,
+  "mainWords": 0,
+  "bodyWords": 0,
+  "links": 0,
+  "images": [],
+  "forms": 0,
+  "bytes": 2785
+ },
+ "sluzby_.html": {
+  "lang": "sk",
+  "title": "Tvorba webu, e-shopu, SEO a správa webu | SiteLeveled",
+  "description": "Navrhneme a naprogramujeme váš web alebo e-shop, nastavíme SEO a postaráme sa o správu webu. Web od 300 €, e-shop od 1 000 €, SEO audit 199 €.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/sluzby/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/sluzby/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/services/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/services/"
+   ]
+  ],
+  "og": {
+   "og:title": "Tvorba webu, e-shopu, SEO a správa webu | SiteLeveled",
+   "og:description": "Navrhneme a naprogramujeme váš web alebo e-shop, nastavíme SEO a postaráme sa o správu webu. Web od 300 €, e-shop od 1 000 €, SEO audit 199 €.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/sluzby/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Služby",
+        "item": "https://siteleveled.com/sluzby/"
+       }
+      ]
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#tvorba-webu",
+      "name": "Tvorba webstránky na mieru",
+      "serviceType": "Tvorba webstránok",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "areaServed": {
+       "@type": "Country",
+       "name": "Slovensko"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 300,
+        "priceCurrency": "EUR"
+       },
+       "description": "Web od 300 €, hotový do 7 dní. Bez zálohy, platíte až po spustení."
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#tvorba-eshopu",
+      "name": "Tvorba e-shopu na mieru",
+      "serviceType": "Tvorba e-shopov",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "areaServed": {
+       "@type": "Country",
+       "name": "Slovensko"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 1000,
+        "priceCurrency": "EUR"
+       },
+       "description": "E-shop od 1 000 €, hotový do 14 dní. Bez zálohy, platíte až po spustení."
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#seo-audit",
+      "name": "SEO audit webu",
+      "serviceType": "SEO audit",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "price": 199,
+       "priceCurrency": "EUR"
+      }
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#sprava-webu",
+      "name": "Správa webu",
+      "serviceType": "Správa a údržba webu",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "minPrice": 30,
+        "priceCurrency": "EUR",
+        "unitCode": "MON",
+        "unitText": "mesiac"
+       }
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/sluzby/#webpage",
+      "url": "https://siteleveled.com/sluzby/",
+      "name": "Tvorba webu, e-shopu, SEO a správa webu | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Tvorba webstránok, e-shopov a SEO"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Tvorba webstránok, e-shopov a SEO",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Weby na mieru. Bez kompromisov.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Buďte tam, kde vás hľadajú.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Slová, ktoré predávajú.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Váš web v dobrých rukách.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Zistite, čo brzdí váš rast.",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 304,
+  "bodyWords": 431,
+  "links": 33,
+  "images": [],
+  "forms": 0,
+  "bytes": 55161
+ },
+ "tvorba-eshopu_.html": {
+  "lang": "sk",
+  "title": "Tvorba e-shopu na mieru od 1 000 € | SiteLeveled",
+  "description": "Tvorba e-shopu na mieru od 1 000 €, hotový do 14 dní. Návrh dostanete zadarmo do 24 hodín, bez zálohy – platíte až po spustení.",
+  "robots": null,
+  "canonical": "https://siteleveled.com/tvorba-eshopu/",
+  "hreflang": [
+   [
+    "sk",
+    "https://siteleveled.com/tvorba-eshopu/"
+   ],
+   [
+    "en",
+    "https://siteleveled.com/en/online-stores/"
+   ],
+   [
+    "x-default",
+    "https://siteleveled.com/en/online-stores/"
+   ]
+  ],
+  "og": {
+   "og:title": "Tvorba e-shopu na mieru od 1 000 € | SiteLeveled",
+   "og:description": "Tvorba e-shopu na mieru od 1 000 €, hotový do 14 dní. Návrh dostanete zadarmo do 24 hodín, bez zálohy – platíte až po spustení.",
+   "og:locale": "sk_SK",
+   "og:type": "website",
+   "og:site_name": "SiteLeveled",
+   "og:image": "https://siteleveled.com/og/siteleveled.png",
+   "og:image:alt": "SiteLeveled — tvorba webstránok a e-shopov",
+   "og:image:width": "1200",
+   "og:image:height": "630",
+   "og:url": "https://siteleveled.com/tvorba-eshopu/"
+  },
+  "ld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Organization",
+      "@id": "https://siteleveled.com/#organization",
+      "name": "SiteLeveled",
+      "legalName": "DOMAN s.r.o.",
+      "url": "https://siteleveled.com/",
+      "logo": {
+       "@type": "ImageObject",
+       "url": "https://siteleveled.com/apple-touch-icon.png",
+       "width": 180,
+       "height": 180
+      },
+      "image": "https://siteleveled.com/og/siteleveled.png",
+      "description": "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
+      "email": "info@siteleveled.com",
+      "telephone": "+421910803993",
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "customer service",
+       "telephone": "+421910803993",
+       "email": "info@siteleveled.com",
+       "availableLanguage": "sk"
+      },
+      "employee": [
+       {
+        "@id": "https://siteleveled.com/o-nas/#mario-doman"
+       },
+       {
+        "@id": "https://siteleveled.com/o-nas/#maria-domanova"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://siteleveled.com/#website",
+      "name": "SiteLeveled",
+      "url": "https://siteleveled.com/",
+      "inLanguage": "sk",
+      "publisher": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#mario-doman",
+      "name": "Mário Doman",
+      "jobTitle": "Vývojár",
+      "telephone": "+421910803993",
+      "image": "https://siteleveled.com/profile.jpg",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "Person",
+      "@id": "https://siteleveled.com/o-nas/#maria-domanova",
+      "name": "Mária Domanová",
+      "jobTitle": "Konateľka",
+      "worksFor": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domov",
+        "item": "https://siteleveled.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tvorba e-shopu",
+        "item": "https://siteleveled.com/tvorba-eshopu/"
+       }
+      ]
+     },
+     {
+      "@type": "Service",
+      "@id": "https://siteleveled.com/sluzby/#tvorba-eshopu",
+      "name": "Tvorba e-shopu na mieru",
+      "serviceType": "Tvorba e-shopov",
+      "provider": {
+       "@id": "https://siteleveled.com/#organization"
+      },
+      "areaServed": {
+       "@type": "Country",
+       "name": "Slovensko"
+      },
+      "offers": {
+       "@type": "Offer",
+       "url": "https://siteleveled.com/cennik/",
+       "priceCurrency": "EUR",
+       "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": 1000,
+        "priceCurrency": "EUR"
+       },
+       "description": "E-shop od 1 000 €, hotový do 14 dní. Bez zálohy, platíte až po spustení."
+      }
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://siteleveled.com/tvorba-eshopu/#webpage",
+      "url": "https://siteleveled.com/tvorba-eshopu/",
+      "name": "Tvorba e-shopu na mieru od 1 000 € | SiteLeveled",
+      "inLanguage": "sk",
+      "isPartOf": {
+       "@id": "https://siteleveled.com/#website"
+      },
+      "about": {
+       "@id": "https://siteleveled.com/#organization"
+      }
+     }
+    ]
+   }
+  ],
+  "h1": [
+   "Tvorba e-shopu na mieru"
+  ],
+  "headings": [
+   [
+    "H1",
+    "Tvorba e-shopu na mieru",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Čo váš e-shop obsahuje.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "E-shop na mieru",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Katalóg produktov a košík",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Správa produktov a objednávok",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Mobil aj počítač",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Ako prebieha tvorba e-shopu.",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Vyplníte krátky formulár",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Dostanete návrh zadarmo",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Naprogramujeme e-shop",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Až potom platíte",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Koľko stojí e-shop?",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "E-shop, alebo stačí web?",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "E-shop sa vám oplatí, ak",
+    false,
+    true
+   ],
+   [
+    "H3",
+    "Stačí jednoduchý web, ak",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "sanifix.sk",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Časté otázky o e-shope.",
+    false,
+    true
+   ],
+   [
+    "H2",
+    "Chcete návrh zadarmo?",
+    false,
+    true
+   ]
+  ],
+  "rootEmpty": false,
+  "mainWords": 696,
+  "bodyWords": 823,
+  "links": 33,
+  "images": [
+   {
+    "src": "/sanifix-preview.webp",
+    "alt": "Ukážka webu sanifix.sk",
+    "w": null,
+    "h": null,
+    "loading": "lazy",
+    "inMain": true
+   }
+  ],
+  "forms": 1,
+  "bytes": 69478
+ }
+}

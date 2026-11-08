@@ -1,0 +1,13 @@
+# Lighthouse 12.6.1, mobile preset (simulated throttling), production, 2026-11-07, /api/* blocked
+https://siteleveled.com/cennik/	r1	perf 99	a11y 100	bp 100	seo 100	FCP 1.7 s	LCP 1.8 s	TBT 60 ms	CLS 0.001	weight 259 kB
+https://siteleveled.com/cennik/	r2	perf 99	a11y 100	bp 100	seo 100	FCP 1.0 s	LCP 1.0 s	TBT 120 ms	CLS 0.001	weight 259 kB
+https://siteleveled.com/en/online-stores/	r1	perf 95	a11y 100	bp 100	seo 100	FCP 2.3 s	LCP 2.4 s	TBT 0 ms	CLS 0.016	weight 290 kB
+https://siteleveled.com/en/online-stores/	r2	perf 99	a11y 100	bp 100	seo 100	FCP 1.0 s	LCP 1.0 s	TBT 120 ms	CLS 0.016	weight 290 kB
+https://siteleveled.com/en/pricing/	r1	perf 98	a11y 100	bp 100	seo 100	FCP 1.9 s	LCP 2.0 s	TBT 50 ms	CLS 0.016	weight 284 kB
+https://siteleveled.com/en/pricing/	r2	perf 97	a11y 100	bp 100	seo 100	FCP 2.1 s	LCP 2.2 s	TBT 0 ms	CLS 0.016	weight 284 kB
+https://siteleveled.com/en/	r1	perf 89	a11y 100	bp 100	seo 100	FCP 2.8 s	LCP 3.0 s	TBT 50 ms	CLS 0.005	weight 331 kB
+https://siteleveled.com/en/	r2	perf 91	a11y 100	bp 100	seo 100	FCP 2.3 s	LCP 2.3 s	TBT 250 ms	CLS 0.002	weight 331 kB
+https://siteleveled.com/	r1	perf 92	a11y 100	bp 100	seo 100	FCP 2.4 s	LCP 2.5 s	TBT 160 ms	CLS 0.005	weight 306 kB
+https://siteleveled.com/	r2	perf 90	a11y 100	bp 100	seo 100	FCP 1.8 s	LCP 1.9 s	TBT 360 ms	CLS 0.005	weight 306 kB
+https://siteleveled.com/tvorba-eshopu/	r1	perf 98	a11y 100	bp 100	seo 100	FCP 1.7 s	LCP 1.7 s	TBT 130 ms	CLS 0	weight 264 kB
+https://siteleveled.com/tvorba-eshopu/	r2	perf 98	a11y 100	bp 100	seo 100	FCP 1.7 s	LCP 1.8 s	TBT 140 ms	CLS 0	weight 264 kB

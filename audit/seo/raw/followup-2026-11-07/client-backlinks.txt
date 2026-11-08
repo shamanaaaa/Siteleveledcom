@@ -1,0 +1,9 @@
+# 2026-11-07, raw HTML of each portfolio site's home page, grep -i siteleveled
+www.jogaslaskou.sk    none
+www.springnitra.sk    none
+www.zuzu-photo.sk     none (client-rendered shell, 3.6 kB; the rendered check on 2026-11-01 also found none)
+www.nosekrst.sk       none
+www.zeriavynitra.sk   none
+sanifix.sk            none
+www.mdfoto.sk         none (DOMAN s.r.o. property)
+www.fotkynavyber.sk   none (DOMAN s.r.o. property)

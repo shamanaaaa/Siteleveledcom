@@ -1,0 +1,27 @@
+file	lang	title_len	desc_len	canonical	robots	hreflang	h1	main_words	imgs_no_wh
+blog_.html	sk	53	130		noindex, follow		Blog o tvorbe webu a SEO	204	5
+cennik_.html	sk	53	137	https://siteleveled.com/cennik/		sk,en,x-default	Cenník tvorby webstránok a e-shopov	546	0
+en_.html	en	47	135	https://siteleveled.com/en/		sk,en,x-default	Custom websites for your business.A free design proposal.	1084	1
+en_about_.html	en	48	94	https://siteleveled.com/en/about/		sk,en,x-default	About the people behind SiteLeveled	201	1
+en_city_jogaslaskou_.html	en	40	117		noindex, follow		Custom websites for your business.A free design proposal.	1084	1
+en_contact_.html	en	43	110	https://siteleveled.com/en/contact/		sk,en,x-default	Contact us	99	0
+en_nothing-here_.html	en	28	85		noindex, follow		Page not found (404)	57	0
+en_online-stores_.html	en	45	125	https://siteleveled.com/en/online-stores/		sk,en,x-default	Custom online store development	792	1
+en_portfolio_.html	en	54	122	https://siteleveled.com/en/portfolio/		sk,en,x-default	Portfolio: websites we have built	563	8
+en_pricing_.html	en	46	120	https://siteleveled.com/en/pricing/		sk,en,x-default	Website and online store pricing	573	0
+en_privacy_.html	en	28	117	https://siteleveled.com/en/privacy/		sk,en,x-default	Privacy policy	928	0
+en_process_.html	en	45	131	https://siteleveled.com/en/process/		sk,en,x-default	How website development works	432	0
+en_seo-audit_.html	en	36	130	https://siteleveled.com/en/seo-audit/		sk,en,x-default	Free website SEO audit	382	0
+en_services_.html	en	55	109	https://siteleveled.com/en/services/		sk,en,x-default	Websites, online stores, and SEO	293	0
+kontakt_.html	sk	54	125	https://siteleveled.com/kontakt/		sk,en,x-default	Kontaktujte nás	92	0
+mesto_jogaslaskou_.html	sk	52	171		noindex, follow		Tvorba webstránok na mieru.Návrh zadarmo do 24 hodín.	992	1
+nic-tu-nie-je_.html	sk	32	77		noindex, follow		Stránka sa nenašla (404)	54	0
+o-nas_.html	sk	47	132	https://siteleveled.com/o-nas/		sk,en,x-default	O nás: kto stojí za SiteLeveled	201	1
+ochrana-osobnych-udajov_.html	sk	37	147	https://siteleveled.com/ochrana-osobnych-udajov/		sk,en,x-default	Ochrana osobných údajov	957	0
+portfolio_.html	sk	47	156	https://siteleveled.com/portfolio/		sk,en,x-default	Portfólio: weby, ktoré sme vytvorili	519	8
+proces_.html	sk	53	141	https://siteleveled.com/proces/		sk,en,x-default	Ako prebieha tvorba webu	393	0
+root.html	sk	51	136	https://siteleveled.com/		sk,en,x-default	Tvorba webstránok na mieru.Návrh zadarmo do 24 hodín.	992	1
+seo-audit_.html	sk	54	140	https://siteleveled.com/seo-audit/		sk,en,x-default	Bezplatný SEO audit webu	414	0
+seo-audit_admin_.html	sk	33	38		noindex, nofollow			0	0
+sluzby_.html	sk	53	142	https://siteleveled.com/sluzby/		sk,en,x-default	Tvorba webstránok, e-shopov a SEO	304	0
+tvorba-eshopu_.html	sk	48	127	https://siteleveled.com/tvorba-eshopu/		sk,en,x-default	Tvorba e-shopu na mieru	696	1

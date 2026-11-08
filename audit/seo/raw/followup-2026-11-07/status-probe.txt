@@ -1,0 +1,23 @@
+# 2026-11-07, curl, 1 request/s, no redirects followed
+https://siteleveled.com/en -> 301 https://siteleveled.com/en/
+https://siteleveled.com/en/services -> 301 https://siteleveled.com/en/services/
+https://siteleveled.com/sluzby -> 301 https://siteleveled.com/sluzby/
+https://www.siteleveled.com/en/ -> 301 https://siteleveled.com/en/
+http://siteleveled.com/en/pricing/ -> 301 https://siteleveled.com/en/pricing/
+https://siteleveled.com/en/blog/ -> 404
+https://siteleveled.com/blog/ -> 200 (noindex, follow)
+https://siteleveled.com/en/nothing-here/ -> 404 (English 404 page)
+https://siteleveled.com/nic-tu-nie-je/ -> 404 (Slovak 404 page)
+https://siteleveled.com/EN/ -> 404
+https://siteleveled.com/en/index.html -> 200 (canonical https://siteleveled.com/en/)
+https://siteleveled.com/index.html -> 200 (canonical https://siteleveled.com/)
+https://siteleveled.com/en/city/jogaslaskou/ -> 200 (noindex, follow)
+https://siteleveled.com/mesto/jogaslaskou/ -> 200 (noindex, follow)
+https://siteleveled.com/en/seo-audit/admin/ -> 404
+https://siteleveled.com/seo-audit/admin/ -> 200 (noindex, nofollow)
+https://siteleveled.com/en/pricing/?utm_source=x -> 200 (canonical without the parameter)
+https://siteleveled.com/favicon.ico -> 200 image/x-icon
+https://siteleveled.com/robots.txt -> 200: User-agent: * / Disallow: /api/ / Sitemap line
+https://siteleveled.com/sitemap.xml -> 200 text/xml, 20 URLs (10 sk + 10 en), Last-Modified 2026-11-04
+Headers on /en/pricing/: gzip, Cache-Control no-cache, HSTS max-age=15552000, nosniff, Referrer-Policy, X-Frame-Options
+Headers on /assets/*.js: gzip, Cache-Control public, max-age=31536000, immutable
