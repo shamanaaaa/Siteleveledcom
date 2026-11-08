@@ -6,8 +6,8 @@ const MARIO = `${SITE}/o-nas/#mario-doman`;
 const MARIA = `${SITE}/o-nas/#maria-domanova`;
 
 // Only facts the pages already show. Address and IČO match the footer and the RPO registry
-// (checked 2026-11-08). No review stars for our own reviews. sameAs waits for the Facebook
-// business page URL and a Google Business Profile.
+// (checked 2026-11-08). No review stars for our own reviews. Add the Google Business Profile
+// to sameAs once it exists.
 const SITEWIDE = [
   {
     "@type": "Organization",
@@ -29,6 +29,7 @@ const SITEWIDE = [
     },
     identifier: { "@type": "PropertyValue", propertyID: "IČO", value: "47912383" },
     areaServed: { "@type": "Country", name: "Slovensko" },
+    sameAs: ["https://www.facebook.com/profile.php?id=61591427407101"],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",

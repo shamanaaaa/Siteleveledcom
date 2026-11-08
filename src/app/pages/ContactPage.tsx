@@ -343,7 +343,7 @@ export function ContactPage() {
                           label: "LinkedIn",
                           href: "https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/",
                         },
-                        { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/mario.doman" },
+                        { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61591427407101" },
                       ].map(({ icon: Icon, label, href }) => (
                         <a
                           key={label}

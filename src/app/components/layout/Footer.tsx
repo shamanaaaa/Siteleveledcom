@@ -137,7 +137,7 @@ export function Footer() {
                   <Linkedin size={18} />
                 </a>
                 <a
-                  href={localLink("https://www.facebook.com/mario.doman")}
+                  href={localLink("https://www.facebook.com/profile.php?id=61591427407101")}
                   className="text-[#F5F5F0]/60 transition-colors hover:text-[#9F97FF]"
                   aria-label={tr("Facebook")}
                 >
