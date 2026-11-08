@@ -8,7 +8,7 @@ import { MagneticButton } from "../components/fx/MagneticButton";
 import { PageHero } from "../components/fx/PageHero";
 import { SectionHeading } from "../components/fx/SectionHeading";
 import { LeadFormSection } from "../components/sections/LeadFormSection";
-import { IMAGE_SIZES, imageSrcSet, localizedImage } from "../lib/images";
+import { IMAGE_SIZES, imageSrcSet, localizedImage, projectPreviewDimensions } from "../lib/images";
 
 const includes = [
   {
@@ -257,6 +257,7 @@ export function EshopPage() {
                     src={localizedImage("/sanifix-preview.webp", language)}
                     srcSet={imageSrcSet(localizedImage("/sanifix-preview.webp", language), 1200)}
                     sizes={IMAGE_SIZES}
+                    {...projectPreviewDimensions("/sanifix-preview.webp", language)}
                     alt={tr("Ukážka webu sanifix.sk")}
                     loading="lazy"
                     decoding="async"

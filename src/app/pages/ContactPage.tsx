@@ -319,7 +319,7 @@ export function ContactPage() {
                       <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
                         <Clock size={18} className="shrink-0 text-[#6C63FF]" />{tr("Odpovieme do 24 hodín v pracovný deň")}</div>
                       <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
-                        <MapPin size={18} className="shrink-0 text-[#6C63FF]" />{tr("Slovensko (pracujeme remote, celá SR)")}</div>
+                        <MapPin size={18} className="shrink-0 text-[#6C63FF]" />{tr("Cabaj-Čápor pri Nitre · pracujeme pre celé Slovensko")}</div>
                     </div>
                   </GlowCard>
 

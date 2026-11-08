@@ -59,6 +59,8 @@ export function AboutPage() {
                   <div className="overflow-hidden rounded-[calc(1.25rem-2px)]">
                     <img
                       src="/profile.webp"
+                      width={600}
+                      height={899}
                       alt={tr("Mário Doman, vývojár SiteLeveled")}
                       className="aspect-[4/5] w-full object-cover"
                     />

@@ -7,7 +7,7 @@ import { GlowCard } from "../components/fx/GlowCard";
 import { KineticHeading } from "../components/fx/KineticHeading";
 import { MagneticButton } from "../components/fx/MagneticButton";
 import { PageHero } from "../components/fx/PageHero";
-import { IMAGE_SIZES, imageSrcSet, localizedImage } from "../lib/images";
+import { IMAGE_SIZES, imageSrcSet, localizedImage, projectPreviewDimensions } from "../lib/images";
 
 const projects = [
   {
@@ -206,6 +206,7 @@ export function PortfolioPage() {
                           src={localizedImage(project.image, language)}
                           srcSet={imageSrcSet(localizedImage(project.image, language), 1200)}
                           sizes={IMAGE_SIZES}
+                          {...projectPreviewDimensions(project.image, language)}
                           alt={language === "en" ? `Preview of ${project.title}` : `Ukážka webu ${project.title}`}
                           // The first one is the largest thing on the first screen
                           loading={i === 0 ? "eager" : "lazy"}

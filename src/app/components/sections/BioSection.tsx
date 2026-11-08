@@ -16,6 +16,8 @@ export function BioSection() {
                 <div className="h-48 w-48 overflow-hidden rounded-[calc(1rem-1px)]">
                   <img
                     src="/profile.webp"
+                    width={600}
+                    height={899}
                     alt={tr("Mário Doman")}
                     loading="lazy"
                     decoding="async"
@@ -40,6 +42,7 @@ export function BioSection() {
               <div className="space-y-4 text-[0.95rem] leading-relaxed text-[#F5F5F0]/60">
                 <p>{tr("Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich")}{" "}
                   <span className="text-[#F5F5F0]/90">{tr("Mário Doman")}</span>{tr(", spoločnosť DOMAN s.r.o. vedie konateľka ")}<span className="text-[#F5F5F0]/90">{tr("Mária Domanová")}</span>{"."}</p>
+                <p>{tr("Sídlo máme v Cabaji-Čápore pri Nitre a pracujeme pre firmy z celého Slovenska.")}</p>
                 <p>{tr("Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať. Chceme, aby ste videli, čo pre vás vieme spraviť.")}</p>
               </div>
               <div className="mt-7 flex items-center gap-5">

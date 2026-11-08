@@ -386,7 +386,7 @@
     ]
   },
   {
-    "sk": "Slovensko (pracujeme remote, celá SR)",
+    "sk": "Cabaj-Čápor pri Nitre · pracujeme pre celé Slovensko",
     "files": [
       "src/app/pages/ContactPage.tsx"
     ]
@@ -3203,6 +3203,12 @@
     ]
   },
   {
+    "sk": "Sídlo máme v Cabaji-Čápore pri Nitre a pracujeme pre firmy z celého Slovenska.",
+    "files": [
+      "src/app/components/sections/BioSection.tsx"
+    ]
+  },
+  {
     "sk": "Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať. Chceme, aby ste videli, čo pre vás vieme spraviť.",
     "files": [
       "src/app/components/sections/BioSection.tsx"
@@ -3681,7 +3687,7 @@
     ]
   },
   {
-    "sk": "Každá karta je skutočný klient a skutočný web, ktorý si môžete hneď otvoriť.",
+    "sk": "Každá karta je skutočný projekt a skutočný web, ktorý si môžete hneď otvoriť.",
     "files": [
       "src/app/components/sections/PortfolioSection.tsx"
     ]

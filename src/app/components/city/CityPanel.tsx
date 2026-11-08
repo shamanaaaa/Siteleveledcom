@@ -9,7 +9,7 @@ import { Check, Copy, ExternalLink, Facebook, Linkedin, Share2, Trophy, X } from
 import { MagneticButton } from "../fx/MagneticButton";
 import { findClient, type CityClient } from "../../city/cityData";
 import { scrollToForm } from "../../lib/scroll";
-import { IMAGE_SIZES, imageSrcSet, localizedImage } from "../../lib/images";
+import { IMAGE_SIZES, imageSrcSet, localizedImage, projectPreviewDimensions } from "../../lib/images";
 
 export type PanelTarget = { kind: "client"; id: string } | { kind: "hq" | "construction" | "plot" };
 
@@ -127,6 +127,7 @@ function ClientWindow({ client, onClose }: { client: CityClient; onClose: () => 
           src={localizedImage(client.image, language)}
           srcSet={imageSrcSet(localizedImage(client.image, language), 1200)}
           sizes={IMAGE_SIZES}
+          {...projectPreviewDimensions(client.image, language)}
           alt={language === "en" ? `Preview of ${client.name}` : tr(`Screenshot ${client.name}`)}
           className="aspect-[2/1] w-full object-cover object-top"
         />

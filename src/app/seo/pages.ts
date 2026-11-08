@@ -114,13 +114,13 @@ const SK_PAGES = [
 ];
 
 const EN_META: Record<string, [string, string, string?]> = {
-  home: ["Custom websites and online stores | SiteLeveled", "Custom websites and online stores, direct contact with the developer, and a clear process. Start with a free design proposal and quote."],
-  services: ["Website development, SEO, and maintenance | SiteLeveled", "Custom websites, online stores, copy, SEO, and ongoing maintenance. Explore the services and request a quote.", "Services"],
-  onlineStores: ["Custom online store development | SiteLeveled", "An online store built around your products, customers, and workflow. Review a free design proposal and quote before deciding.", "Online stores"],
-  pricing: ["Website and online store pricing | SiteLeveled", "Websites from €300, stores from €1,000, manual SEO audit €199, maintenance from €30/month. No deposit; pay after launch.", "Pricing"],
+  home: ["Web design and development from Slovakia | SiteLeveled", "Custom websites and online stores, direct contact with the developer, and a clear process. Start with a free design proposal and quote."],
+  services: ["Web design, online stores and SEO | SiteLeveled", "Custom websites, online stores, copy, SEO and maintenance, built in Slovakia. Websites from €300, online stores from €1,000. Request a free proposal.", "Services"],
+  onlineStores: ["Online store development from Slovakia | SiteLeveled", "An online store built around your products, customers, and workflow. Review a free design proposal and quote before deciding.", "Online stores"],
+  pricing: ["Website and online store pricing from €300 | SiteLeveled", "Websites from €300, stores from €1,000, manual SEO audit €199, maintenance from €30/month. No deposit; pay after launch.", "Pricing"],
   portfolio: ["Portfolio: real Slovak business websites | SiteLeveled", "Explore websites and applications built for Slovak businesses: photography, logistics, service management, yoga, and more.", "Portfolio"],
   process: ["Our website development process | SiteLeveled", "From your brief to design approval, preview, testing, and launch. Understand the steps and how to work directly with the developer.", "Process"],
-  about: ["About Mário Doman and DOMAN s.r.o. | SiteLeveled", "Meet the people behind SiteLeveled: developer Mário Doman and DOMAN s.r.o., based in Slovakia.", "About us"],
+  about: ["About Mário Doman and DOMAN s.r.o. | SiteLeveled", "Meet the people behind SiteLeveled: developer Mário Doman and DOMAN s.r.o., a Slovak company. Work directly with the developer who builds your website.", "About us"],
   contact: ["Contact us about your website | SiteLeveled", "Tell us about your business and website project. Email info@siteleveled.com to discuss a free design proposal.", "Contact"],
   seoAudit: ["Free website SEO audit | SiteLeveled", "Check SEO, performance, accessibility, and best practices for up to 15 pages using Lighthouse. Get a free automated website audit.", "SEO audit"],
   privacy: ["Privacy policy | SiteLeveled", "How DOMAN s.r.o. processes inquiries and SEO audits, uses browser storage, and handles your personal data and rights.", "Privacy policy"],

@@ -165,7 +165,7 @@ export function PortfolioSection() {
             { text: "Jeden web za druhým." },
             { text: "Scrollujte a stoh rastie.", className: "text-gradient-primary" },
           ])}
-          sub={tr("Každá karta je skutočný klient a skutočný web, ktorý si môžete hneď otvoriť.")}
+          sub={tr("Každá karta je skutočný projekt a skutočný web, ktorý si môžete hneď otvoriť.")}
           className="mb-16"
         />
 

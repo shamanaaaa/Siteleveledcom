@@ -5,7 +5,9 @@ const ORG = `${SITE}/#organization`;
 const MARIO = `${SITE}/o-nas/#mario-doman`;
 const MARIA = `${SITE}/o-nas/#maria-domanova`;
 
-// Only owner-confirmed facts: no address or IČO, no review stars for our own reviews
+// Only facts the pages already show. Address and IČO match the footer and the RPO registry
+// (checked 2026-11-08). No review stars for our own reviews. sameAs waits for the Facebook
+// business page URL and a Google Business Profile.
 const SITEWIDE = [
   {
     "@type": "Organization",
@@ -18,6 +20,15 @@ const SITEWIDE = [
     description: "Tvorba webstránok a e-shopov pre slovenské firmy. Návrh webu zadarmo do 24 hodín.",
     email: "info@siteleveled.com",
     telephone: "+421910803993",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Ulica Funduše 1165/26",
+      addressLocality: "Cabaj-Čápor",
+      postalCode: "951 17",
+      addressCountry: "SK",
+    },
+    identifier: { "@type": "PropertyValue", propertyID: "IČO", value: "47912383" },
+    areaServed: { "@type": "Country", name: "Slovensko" },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -42,6 +53,7 @@ const SITEWIDE = [
     jobTitle: "Vývojár",
     telephone: "+421910803993",
     image: `${SITE}/profile.jpg`,
+    sameAs: ["https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/"],
     worksFor: { "@id": ORG },
   },
   {
@@ -130,8 +142,10 @@ export function jsonLd(page: PageMeta) {
     if (next["@type"] === "Organization") {
       next.description = "Custom websites and online stores, with direct developer contact by email.";
       next.image = `${SITE}/og/en-siteleveled.png`;
-      delete next.contactPoint;
+      // English enquiries go by email only; the service area is not limited to Slovakia
+      next.contactPoint = { "@type": "ContactPoint", contactType: "customer service", email: "info@siteleveled.com", availableLanguage: ["en", "sk"] };
       delete next.telephone;
+      delete next.areaServed;
     }
     if (next["@type"] === "WebSite") { next.inLanguage = ["sk", "en"]; }
     if (next.jobTitle === "Vývojár") { next.jobTitle = "Developer"; delete next.telephone; }
