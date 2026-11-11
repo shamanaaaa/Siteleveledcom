@@ -21,6 +21,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
     email: "",
     company: "",
     webUrl: "",
+    website: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -76,6 +77,9 @@ export function LeadFormSection({ interest }: { interest?: string }) {
           hasWeb: webUrl ? "ano" : "",
           webUrl,
           notes: interest && `Záujem: ${interest}`,
+          // Read on the server: a bot fills in the hidden field or submits within moments of the page loading
+          website: formData.website,
+          elapsed: Math.round(performance.now()),
         }),
       });
       if (!res.ok) {
@@ -118,6 +122,17 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                   className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#6C63FF]/60 to-transparent"
                 />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {/* Bots fill in every field; people never see or reach this one */}
+                  <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+                    <input
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website}
+                      onChange={(e) => handleChange("website", e.target.value)}
+                    />
+                  </div>
                   <div>
                     <label htmlFor="lead-name" className="block text-[0.8rem] text-[#F5F5F0]/50 mb-2">{tr("Meno *")}</label>
                     <input

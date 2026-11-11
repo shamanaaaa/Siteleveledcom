@@ -40,6 +40,7 @@ export function ContactPage() {
     phone: "",
     service: "",
     message: "",
+    website: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -88,6 +89,9 @@ export function ContactPage() {
           notes,
           // Tells the server to send the contact wording, not the free-proposal one
           source: "kontakt",
+          // Read on the server: a bot fills in the hidden field or submits within moments of the page loading
+          website: formData.website,
+          elapsed: Math.round(performance.now()),
         }),
       });
       if (!res.ok) {
@@ -150,6 +154,17 @@ export function ContactPage() {
                         exit={{ opacity: 0 }}
                       >
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                          {/* Bots fill in every field; people never see or reach this one */}
+                          <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+                            <input
+                              name="website"
+                              type="text"
+                              tabIndex={-1}
+                              autoComplete="off"
+                              value={formData.website}
+                              onChange={(e) => handleChange("website", e.target.value)}
+                            />
+                          </div>
                           <div>
                             <label htmlFor="contact-name" className={labelBase}>{tr("Meno a priezvisko *")}</label>
                             <input

@@ -5,6 +5,7 @@ const cors = require("cors");
 const path = require("path");
 const seoAudit = require("./seoAudit");
 const { localizedErrors } = require("./publicErrors");
+const formGuard = require("./formGuard");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -106,6 +107,7 @@ function buildAdminEmail(data, form) {
     <div style="padding:24px 32px 16px;">
       <p style="margin:0 0 12px;font-size:11px;color:#6C63FF;letter-spacing:2px;text-transform:uppercase;">Kontakt</p>
       <table style="width:100%;border-collapse:collapse;background:#0d0d14;border-radius:10px;overflow:hidden;">
+        ${row("Možný spam", data.spamReasons?.length ? `${data.spamReasons.map(escapeHtml).join(", ")} – potvrdenie odosielateľovi nešlo` : null)}
         ${row("Jazyk dopytu", data.locale === "en" ? "English (en)" : "Slovenčina (sk)")}
         ${row("Meno", text(data.name))}
         ${row("Email", `<a href="mailto:${escapeHtml(data.email)}" style="color:#6C63FF;">${escapeHtml(data.email)}</a>`)}
@@ -205,6 +207,7 @@ app.post("/api/navrh", async (req, res) => {
     goal, goalOther, style, colors,
     inspiration, socialMedia, notes,
     source,
+    website, elapsed,
     locale = "sk",
   } = req.body || {};
   if (locale !== "sk" && locale !== "en") return res.status(400).json({ error: "INVALID_LOCALE" });
@@ -214,9 +217,18 @@ app.post("/api/navrh", async (req, res) => {
   if (![name, email, company].every(value => typeof value === "string" && value.trim())) {
     return res.status(400).json({ error: "Chýbajú povinné polia." });
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  // A dot may not start or end the part before @, or follow another dot
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || /^\.|\.\.|\.@/.test(email)) {
     return res.status(400).json({ error: "Neplatný email." });
   }
+  if (formGuard.overLimit(req.ip)) return res.status(429).json({ error: "FORM_LIMIT" });
+  const check = formGuard.inspect({ website, elapsed, name, company, notes, email });
+  if (check.drop) {
+    // No form fields or IP in the log, only which check fired
+    console.warn(`Form submission dropped (${check.reasons.join(", ")})`);
+    return res.json({ ok: true });
+  }
+  const suspect = check.reasons.length > 0;
 
   // Check env config
   if (!app.locals.mailTransport && (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS)) {
@@ -226,19 +238,20 @@ app.post("/api/navrh", async (req, res) => {
 
   try {
     const transporter = app.locals.mailTransport || createTransporter();
-    const data = { locale, name, email, company, about, hasWeb, webUrl, goal, goalOther, style, colors, inspiration, socialMedia, notes };
+    const data = { locale, name, email, company, about, hasWeb, webUrl, goal, goalOther, style, colors, inspiration, socialMedia, notes, spamReasons: check.reasons };
 
     // 1. Email to site owner
     await transporter.sendMail({
       from: `"SiteLeveled" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: process.env.MAIL_TO || process.env.SMTP_USER,
       replyTo: email,
-      subject: `${form.adminSubject} – ${name} (${company})`,
+      subject: `${suspect ? "[Možný spam] " : ""}${form.adminSubject} – ${name} (${company})`,
       html: buildAdminEmail(data, form),
     });
 
-    // 2. Confirmation email to client
-    await transporter.sendMail({
+    // 2. Confirmation email to client, unless the enquiry looks like a bot's: bots type in other
+    // people's addresses, and mail they never asked for hurts the domain's sender reputation
+    if (!suspect) await transporter.sendMail({
       from: `"SiteLeveled" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: email,
       subject: locale === "en" ? (source === "kontakt" ? "We received your message – SiteLeveled" : "We received your design brief – SiteLeveled") : form.clientSubject,

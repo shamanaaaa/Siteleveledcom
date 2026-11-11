@@ -209,6 +209,8 @@ try {
   assert.equal(submitted.at(-1).locale, 'en');
   assert.equal(submitted.at(-1).source, 'kontakt');
   assert.match(submitted.at(-1).notes, /Nový web/);
+  assert.equal(submitted.at(-1).website, '');
+  assert.ok(Number.isInteger(submitted.at(-1).elapsed) && submitted.at(-1).elapsed > 0);
   formMode = 'failure';
   await ready(page, '/en/contact/');
   await submitContact(page);

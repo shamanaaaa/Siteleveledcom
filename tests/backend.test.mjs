@@ -24,6 +24,7 @@ const lookup = dns.lookup;
 dns.lookup = async () => [{ address: '93.184.216.34', family: 4 }];
 const { app, FORMS, buildConfirmationEmail } = require('../server/index.js');
 const { publicError } = require('../server/publicErrors.js');
+const formGuard = require('../server/formGuard.js');
 let server, base;
 const sent = [];
 before(async () => {
@@ -35,9 +36,10 @@ before(async () => {
 after(async () => { dns.lookup = lookup; await new Promise(resolve => server.close(resolve)); fs.rmSync(fixtures, { recursive: true, force: true }); });
 const post = (route, body, headers = {}) => fetch(base + route, { method: 'POST', headers: { 'Content-Type': 'application/json', ...headers }, body: JSON.stringify(body) });
 test('missing locale remains Slovak; English confirmations, owner language, stable values, and escaping', async () => {
-  const fields = { name: '<Alex>', email: 'alex@example.test', company: 'Test project', hasWeb: 'ano', webUrl: 'https://example.test', goal: ['Iné'], goalOther: 'Details' };
+  const fields = { name: '<Alex>', email: 'alex@example.test', company: 'Test project', hasWeb: 'ano', webUrl: 'https://example.test', goal: ['Iné'], goalOther: 'Details', elapsed: 5000 };
   for (const locale of [undefined, 'sk', 'en']) for (const source of [undefined, 'kontakt']) {
     sent.length = 0;
+    formGuard.reset();
     const response = await post('/api/navrh', { ...fields, locale, source });
     assert.equal(response.status, 200);
     assert.equal(sent.length, 2);
@@ -63,13 +65,61 @@ test('invalid locale and form validation return stable codes, without email', as
   assert.equal((await invalid.json()).error, 'Enter a valid email address.');
   assert.equal(sent.length, 0);
 });
+test('bots get a silent success: hidden field filled or sent too fast, nothing is emailed', async () => {
+  const warn = console.warn;
+  console.warn = () => {};
+  try {
+    for (const extra of [{ website: 'https://spam.test', elapsed: 9000 }, { elapsed: 600 }]) {
+      sent.length = 0;
+      formGuard.reset();
+      const response = await post('/api/navrh', { locale: 'en', name: 'Alex', company: 'Example', email: 'alex@example.test', source: 'kontakt', ...extra });
+      assert.equal(response.status, 200);
+      assert.deepEqual(await response.json(), { ok: true });
+      assert.equal(sent.length, 0);
+    }
+  } finally { console.warn = warn; }
+});
+test('suspicious enquiries reach the owner marked, without a confirmation to the address typed in', async () => {
+  formGuard.reset();
+  // The 2026-11-11 spam: "..." in the address is not valid at all
+  const spam = { locale: 'en', source: 'kontakt', name: 'YtGulMDpoAWikzOn', company: 'Srcipqucg LLC', notes: 'mCroDxXDLqOeFPzBqHhPyZEW', elapsed: 5000 };
+  sent.length = 0;
+  const invalid = await post('/api/navrh', { ...spam, email: 'de.v.i.n...r.uet.z.el@gmail.com' });
+  assert.equal(invalid.status, 400);
+  assert.equal((await invalid.json()).code, 'INVALID_EMAIL');
+  for (const body of [{ ...spam, email: 'de.v.i.n.r.uet.z.el@gmail.com' }, { locale: 'sk', name: 'Alex', company: 'Example', email: 'alex@example.test' }]) {
+    sent.length = 0;
+    const response = await post('/api/navrh', body);
+    assert.equal(response.status, 200);
+    assert.equal(sent.length, 1);
+    assert.match(sent[0].subject, /^\[Možný spam\] /);
+    assert.match(sent[0].html, /Možný spam/);
+  }
+  assert.match(sent[0].html, /odoslané mimo formulára/);
+  for (const value of ['Mário Doman', 'SiteLeveled', 'McDonald', 'JavaScriptDev', 'Zuzana Kondeková', 'Srcipqucg LLC']) assert.equal(formGuard.looksRandom(value), false, value);
+  for (const value of ['YtGulMDpoAWikzOn', 'mCroDxXDLqOeFPzBqHhPyZEW']) assert.equal(formGuard.looksRandom(value), true, value);
+});
+test('more than five enquiries an hour from one address are refused with a localized error', async () => {
+  formGuard.reset();
+  const body = { locale: 'en', name: 'Alex', company: 'Example', email: 'alex@example.test', elapsed: 5000 };
+  for (let i = 0; i < 5; i++) assert.equal((await post('/api/navrh', body)).status, 200);
+  sent.length = 0;
+  const limited = await post('/api/navrh', body);
+  assert.equal(limited.status, 429);
+  const json = await limited.json();
+  assert.equal(json.code, 'FORM_LIMIT');
+  assert.match(json.error, /Too many messages/);
+  assert.equal(sent.length, 0);
+  formGuard.reset();
+});
 test('mail transport failure returns the localized stable error', async () => {
   const transport = app.locals.mailTransport;
   const log = console.error;
   console.error = () => {};
   app.locals.mailTransport = { sendMail: async () => { throw new Error('fixture transport failure'); } };
   try {
-    const response = await post('/api/navrh', { locale: 'en', name: 'Alex', company: 'Example', email: 'alex@example.test' });
+    formGuard.reset();
+    const response = await post('/api/navrh', { locale: 'en', name: 'Alex', company: 'Example', email: 'alex@example.test', elapsed: 5000 });
     assert.equal(response.status, 500);
     assert.equal((await response.json()).code, 'MAIL_FAILED');
   } finally { app.locals.mailTransport = transport; console.error = log; }

@@ -19,6 +19,10 @@
     "sk": "Odoslanie emailu zlyhalo.",
     "en": "Your message could not be sent. Please try again or email info@siteleveled.com."
   },
+  "FORM_LIMIT": {
+    "sk": "Za krátky čas prišlo z vášho pripojenia priveľa správ. Skúste to o hodinu alebo napíšte na info@siteleveled.com.",
+    "en": "Too many messages from your connection in a short time. Please try again in an hour or email info@siteleveled.com."
+  },
   "URL_REQUIRED": {
     "sk": "Zadajte adresu webu.",
     "en": "Enter a website address."
