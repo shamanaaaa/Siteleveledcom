@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { A, Checklist, Contents, H2, H3, Numbered, P, Summary } from "./prose";
+import { A, Checklist, CompareTable, Contents, H2, H3, Numbered, P, Summary } from "./prose";
 
 /*
  * Article bodies by slug (metadata in posts.ts). Only facts the live pages already state, plus
@@ -67,7 +67,8 @@ function KolkoStojiWebstranka() {
       <P>
         Cenu e-shopu ovplyvňuje najmä počet produktov a ich variantov, napríklad veľkostí alebo farieb, a to, aké spôsoby
         platby a dopravy chcete ponúkať. Tie dohodneme pri návrhu a budú v cenovej ponuke. Viac o tom, ako e-shop
-        pripravujeme, nájdete na stránke <A to="/tvorba-eshopu/">tvorba e-shopu</A>.
+        pripravujeme, nájdete na stránke <A to="/tvorba-eshopu/">tvorba e-shopu</A>. Ak sa ešte rozhodujete, či e-shop
+        vôbec potrebujete, prečítajte si <A to="/blog/eshop-alebo-web/">E-shop alebo jednoduchý web?</A>
       </P>
 
       <H2 id="co-zvysuje-cenu">Čo cenu zvyšuje</H2>
@@ -147,6 +148,146 @@ function KolkoStojiWebstranka() {
   );
 }
 
+const CHOICE_SECTIONS = [
+  { id: "kedy-web", label: "Kedy stačí jednoduchý web" },
+  { id: "kedy-eshop", label: "Kedy sa oplatí e-shop" },
+  { id: "katalog", label: "Medzikrok: katalóg s nezáväzným dopytom" },
+  { id: "porovnanie", label: "Web a e-shop vedľa seba" },
+  { id: "eshop-vopred", label: "Na čo pri e-shope myslieť vopred" },
+  { id: "neskor", label: "Začať webom a e-shop pridať neskôr?" },
+  { id: "rozhodnutie", label: "Neviete sa rozhodnúť?" },
+];
+
+const strong = "font-semibold text-[#F5F5F0]";
+
+function EshopAleboWeb() {
+  return (
+    <>
+      <Summary>
+        Jednoduchý web stačí, ak ponúkate najmä služby, máte len zopár produktov alebo chcete hlavne predstaviť firmu.
+        U nás stojí od 300 € a je hotový do 7 dní. E-shop sa oplatí, keď si má zákazník sám vybrať tovar a objednať ho bez
+        telefonátu, keď máte viac produktov alebo variantov a keď chcete mať objednávky na jednom mieste. Začína na 1 000 €
+        a je hotový do 14 dní. Medzi nimi je katalóg produktov, z ktorého zákazník pošle nezáväzný dopyt.
+      </Summary>
+
+      <P>
+        Či potrebujete e-shop, závisí hlavne od toho, ako u vás zákazník nakupuje: či si tovar vyberie a objedná sám,
+        alebo sa vám najprv ozve. V článku porovnávame obe možnosti aj jednu medzi nimi, s našimi cenami a termínmi.
+      </P>
+
+      <Contents items={CHOICE_SECTIONS} />
+
+      <H2 id="kedy-web">Kedy stačí jednoduchý web</H2>
+      <Checklist
+        items={[
+          "Ponúkate najmä služby a chcete, aby sa vám zákazník ozval",
+          "Máte len zopár produktov a predávate ich na dopyt",
+          "Chcete hlavne predstaviť firmu",
+        ]}
+      />
+      <P>
+        Jednoduchý web u nás začína na 300 € a je hotový do 7 dní od schválenia návrhu a dodania podkladov. V cene je do
+        5 podstránok, kontaktný formulár, zobrazenie na mobile aj počítači a základné SEO nastavenie. Zákazník si na ňom
+        prečíta, čo robíte, a ozve sa cez formulár, e-mail alebo telefón.
+      </P>
+      <P>
+        Ak už tovar alebo termíny predávate cez iný e-shop či rezervačný systém, web naň môže odkazovať. Vlastný e-shop
+        potom nepotrebujete.
+      </P>
+
+      <H2 id="kedy-eshop">Kedy sa oplatí e-shop</H2>
+      <Checklist
+        items={[
+          "Chcete, aby si zákazník sám vybral tovar a objednal ho bez telefonátu",
+          "Predávate viac produktov alebo variantov a ponuka sa často mení",
+          "Chcete mať objednávky prehľadne na jednom mieste",
+        ]}
+      />
+      <P>
+        E-shop u nás začína na 1 000 € a je hotový do 14 dní od schválenia návrhu a dodania podkladov. Zákazník si v
+        katalógu prezrie ponuku, vyberie si a vloží tovar do košíka. Produkty aj objednávky spravujete sami, bez kódovania.
+        Spôsoby platby a dopravy dohodneme pri návrhu a budú v cenovej ponuke. Viac nájdete na stránke{" "}
+        <A to="/tvorba-eshopu/">tvorba e-shopu</A>.
+      </P>
+
+      <H2 id="katalog">Medzikrok: katalóg s nezáväzným dopytom</H2>
+      <P>
+        Niekedy chcete ukázať celú ponuku aj s cenami, ale predaj dotiahnuť osobne, napríklad keď tovar treba namontovať
+        alebo cenu prispôsobiť zákazke. Vtedy pomôže katalóg produktov, v ktorom zákazník namiesto košíka pošle
+        nezáväzný dopyt. Vy sa mu potom ozvete s konkrétnou ponukou.
+      </P>
+      <P>
+        Takto sme to riešili pre SaniFIX s.r.o., autorizované servisné centrum kúpeľňového vybavenia. Web{" "}
+        <A to="https://sanifix.sk">sanifix.sk</A> má produkty s cenami, variantmi a akciami značiek, nezáväzný dopyt na
+        produkt a k tomu online nahlásenie servisu. Koľko by stál katalóg pre vás, závisí od rozsahu a presnú sumu uvidíte
+        v návrhu.
+      </P>
+
+      <H2 id="porovnanie">Web a e-shop vedľa seba</H2>
+      <CompareTable
+        head={["Jednoduchý web", "E-shop"]}
+        rows={[
+          { label: "Cena", a: "od 300 €", b: "od 1 000 €" },
+          { label: "Hotové", a: "do 7 dní", b: "do 14 dní" },
+          {
+            label: "Ako zákazník nakupuje",
+            a: <>Ozve sa cez formulár, <span className="whitespace-nowrap">e-mail</span> alebo telefón</>,
+            b: "Vyberie si tovar, vloží ho do košíka a objedná",
+          },
+          {
+            label: "Čo dodáte vy",
+            a: "Logo a fotky. Texty pripravíme z vášho zadania",
+            b: "Zoznam produktov s cenami, fotky, popisy produktov, logo a predstavu o platbe a doprave",
+          },
+          {
+            label: "Práca po spustení",
+            a: "Upraviť obsah, keď sa niečo zmení",
+            b: "Vybavovať objednávky, posielať tovar a udržiavať produkty a ceny",
+          },
+        ]}
+      />
+      <P>
+        Termíny platia od schválenia návrhu a dodania podkladov. Pri oboch platíte až po spustení, bez zálohy, a DOMAN s.r.o.
+        nie je platiteľom DPH, takže k cene sa DPH nepripočítava.
+      </P>
+
+      <H2 id="eshop-vopred">Na čo pri e-shope myslieť vopred</H2>
+      <P>Okrem vyššej ceny prináša e-shop aj prácu a povinnosti, ktoré pri jednoduchom webe nemáte:</P>
+      <Checklist
+        items={[
+          <><strong className={strong}>Objednávky treba vybavovať.</strong> Niekto musí tovar zabaliť, odoslať a odpovedať zákazníkom.</>,
+          <><strong className={strong}>Ponuku treba udržiavať.</strong> Ceny, fotky a dostupnosť musia sedieť s tým, čo naozaj máte.</>,
+          <><strong className={strong}>Produkty treba dostať do e-shopu.</strong> Dajú sa preniesť ručne alebo zo súboru od dodávateľa.</>,
+          <><strong className={strong}>Pravidlá pre predaj spotrebiteľom.</strong> Budete potrebovať obchodné podmienky a informácie o reklamácii a odstúpení od zmluvy. Pri nákupe cez internet môže spotrebiteľ spravidla odstúpiť od zmluvy do 14 dní bez udania dôvodu.</>,
+        ]}
+      />
+      <P>Ak vám niečo z podkladov chýba, povedzte nám to a dohodneme sa, ako to vyriešiť.</P>
+
+      <H2 id="neskor">Začať webom a e-shop pridať neskôr?</H2>
+      <P>
+        Ak si nie ste istí, či sa vám predaj cez internet oplatí, môžete začať jednoduchým webom a o e-shope rozhodnúť,
+        keď uvidíte, koľko dopytov prichádza. Ak e-shop plánujete do budúcna, spomeňte to pri návrhu.
+      </P>
+      <P>
+        Z čoho sa skladá cena webu aj e-shopu a s čím počítať každý rok, píšeme v článku{" "}
+        <A to="/blog/kolko-stoji-webstranka/">Koľko stojí webstránka a od čoho závisí cena</A>.
+      </P>
+
+      <H2 id="rozhodnutie">Neviete sa rozhodnúť?</H2>
+      <P>
+        Súčasťou návrhu zadarmo sú aj odporúčania pre funkcie, takže sa nemusíte rozhodnúť vopred.{" "}
+        <A to="/#formular">Napíšte nám pár viet</A> o tom, čo predávate a ako k vám zákazníci chodia. Do 24 hodín dostanete
+        návrh s cenovou ponukou a odporučíme vám, či stačí web, katalóg alebo e-shop. Návrh vás k ničomu nezaväzuje.
+      </P>
+      <P>
+        Ak sa chcete radšej rovno porozprávať, zavolajte Máriovi na <A to="tel:+421910803993">0910 803 993</A> alebo
+        napíšte na <A to="mailto:info@siteleveled.com">info@siteleveled.com</A>.
+      </P>
+    </>
+  );
+}
+
 export const ARTICLES: Record<string, ComponentType> = {
   "kolko-stoji-webstranka": KolkoStojiWebstranka,
+  "eshop-alebo-web": EshopAleboWeb,
 };

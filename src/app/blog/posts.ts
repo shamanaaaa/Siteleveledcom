@@ -21,6 +21,18 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: "eshop-alebo-web",
+    heading: "E-shop alebo jednoduchý web? Ako sa rozhodnúť",
+    title: "E-shop alebo jednoduchý web? Ako sa rozhodnúť | SiteLeveled",
+    description:
+      "Kedy stačí web od 300 € a kedy sa oplatí e-shop od 1 000 €. Rozdiel v cene, čase a práci po spustení, medzikrok s katalógom a čo si pripraviť.",
+    excerpt:
+      "Kedy stačí jednoduchý web, kedy sa oplatí e-shop a kedy pomôže katalóg s nezáväzným dopytom. Porovnanie ceny, času a práce, ktorá príde po spustení.",
+    published: "2026-11-12",
+    modified: "2026-11-12",
+    readMinutes: 4,
+  },
+  {
     slug: "kolko-stoji-webstranka",
     heading: "Koľko stojí webstránka a od čoho závisí cena",
     title: "Koľko stojí webstránka a od čoho závisí cena | SiteLeveled",

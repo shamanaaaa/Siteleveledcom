@@ -238,6 +238,13 @@ export function EshopPage() {
               </AnimateIn>
             ))}
           </div>
+          {/* The article is Slovak only */}
+          {language === "sk" && (
+            <p className="mx-auto mt-10 max-w-3xl text-center text-[0.95rem] leading-relaxed text-[#F5F5F0]/70">
+              Porovnanie ceny, času a práce po spustení aj medzikrok s katalógom nájdete v článku{" "}
+              <Link to="/blog/eshop-alebo-web/" className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">E-shop alebo jednoduchý web? Ako sa rozhodnúť</Link>.
+            </p>
+          )}
         </div>
       </section>
 

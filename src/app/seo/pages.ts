@@ -102,13 +102,12 @@ const SK_PAGES = [
       "Ako DOMAN s.r.o. (SiteLeveled) spracúva údaje z formulárov a SEO auditu, kto k nim má prístup, ako dlho ich uchováva a aké máte práva. Bez cookies.",
   },
   {
-    // Out of the index until it lists two or three articles; the articles themselves are indexed
+    // Slovak only; lists the articles in src/app/blog/posts.ts
     path: "/blog/",
     name: "Blog",
     title: "Blog o tvorbe webu a SEO pre malé firmy | SiteLeveled",
     description:
-      "Praktické rady o tvorbe webstránok, cenách, SEO a správe webu pre slovenských podnikateľov – z projektov, ktoré sme naozaj robili.",
-    robots: "noindex, follow",
+      "Praktické rady o cenách webstránok a e-shopov, tvorbe webu a SEO pre slovenské firmy a živnostníkov. Ceny a príklady z našich projektov.",
   },
   {
     path: "/seo-audit/admin/",

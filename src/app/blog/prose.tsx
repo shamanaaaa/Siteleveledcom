@@ -84,3 +84,34 @@ export function Contents({ items }: { items: { id: string; label: string }[] }) 
     </nav>
   );
 }
+
+/**
+ * Two options side by side. Row labels are header cells, so screen readers announce them.
+ * On phones each row stacks: the label, then one line per option, prefixed with its name
+ */
+export function CompareTable({ head, rows }: { head: [string, string]; rows: { label: string; a: ReactNode; b: ReactNode }[] }) {
+  const cell = "block px-4 py-1 text-[#F5F5F0]/75 before:mr-1.5 before:font-semibold before:text-[#9F97FF] before:content-[attr(data-label)] sm:table-cell sm:p-4 sm:before:content-none";
+  return (
+    <div className="mb-8 overflow-hidden rounded-card border border-white/10">
+      <table className="block w-full border-collapse text-left text-[0.95rem] leading-[1.55] sm:table">
+        <thead className="hidden sm:table-header-group">
+          <tr className="bg-surface-1">
+            <td className="w-[28%] p-4" />
+            {head.map(label => (
+              <th key={label} scope="col" className="p-4 font-heading text-[1.05rem] font-bold text-[#F5F5F0]">{label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="block sm:table-row-group">
+          {rows.map((row, i) => (
+            <tr key={row.label} className={`block pb-3 align-top sm:table-row sm:pb-0 ${i ? "border-t border-white/10" : ""}`}>
+              <th scope="row" className="block px-4 pb-1 pt-4 font-semibold text-[#F5F5F0] sm:table-cell sm:p-4 sm:text-[#F5F5F0]/85">{row.label}</th>
+              <td data-label={`${head[0]}:`} className={cell}>{row.a}</td>
+              <td data-label={`${head[1]}:`} className={cell}>{row.b}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
