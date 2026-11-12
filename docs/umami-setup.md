@@ -6,6 +6,14 @@ What the site sends: page views, the referrer, UTM parameters, Core Web Vitals (
 
 Pinned version: **Umami 3.4.1** (`ghcr.io/umami-software/umami:3.4.1`) with PostgreSQL 15. 3.5.0 came out on 2026-11-12, the day this was written. Upgrade once it has been out a few weeks (see "Updating").
 
+## This server (set up 2026-11-12)
+
+- `/opt/umami` is owned by `shamanaaaa` (mode 700), so run `docker compose` there as that user, without sudo. `.env` is mode 600.
+- There's no anacron, so `/etc/crontab` runs the retention job from step 5 as root on the 1st of each month at 06:52.
+- The certificate came from `certbot --nginx --redirect`, with the same `renew_hook` (reload nginx) as the server's other certificates.
+- The admin password is in `/root/umami-admin-password` (root, 600).
+- Backups: `backup-all-services.sh` does **not** cover the `umami_umami-db-data` volume or `/opt/umami` yet (see "Backups").
+
 ## Before you start
 
 - `docker compose version` works. If Docker isn't installed, install Docker Engine with the compose plugin from docker.com first.
@@ -146,7 +154,7 @@ Clearing the site's data undoes it. The Umami docs also offer `IGNORE_IP`, but h
 
 ## 7. Turn it on in the site
 
-Replace `UMAMI_WEBSITE_ID` in `index.html` with the Website ID from step 3. Set the "Aktualizované" date in the privacy page's `sub` text to the day it goes live, in both `PrivacyPage.tsx` and `en.json` plus `docs/english-copy/inventory.json`. Then build, test and deploy as usual.
+Put the Website ID from step 3 into `data-website-id` in `index.html` (done: `21496767-d9b3-47a6-ac41-f7a0c60fc229`). Set the "Aktualizované" date in the privacy page's `sub` text to the day it goes live, in both `PrivacyPage.tsx` and `en.json` plus `docs/english-copy/inventory.json`. Then build, test and deploy as usual.
 
 Check it from a private window, where step 6 doesn't apply:
 
