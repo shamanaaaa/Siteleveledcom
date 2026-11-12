@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { useTypedBeforeLoad } from "../../lib/useTypedBeforeLoad";
+import { trackEnquiry } from "../../lib/analytics";
 import { CheckCircle2, Send } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 
@@ -87,6 +88,8 @@ export function LeadFormSection({ interest }: { interest?: string }) {
         // While the backend restarts (a few seconds per deploy) nginx answers 502 with HTML, not JSON
         throw new Error(errorMessage(body, language, tr(SEND_FAILED)));
       }
+      // Home has no interest, the e-shop page passes "E-shop"
+      trackEnquiry(interest === "E-shop" ? "eshop" : "uvod", language);
       setSubmitted(true);
     } catch (err) {
       // fetch itself fails with an English TypeError ("Failed to fetch") when the connection drops

@@ -1850,7 +1850,7 @@
     ]
   },
   {
-    "sk": "Nepoužívame cookies, analytiku ani reklamné nástroje.",
+    "sk": "Nepoužívame cookies ani reklamné nástroje. Návštevnosť meriame bez cookies na vlastnom serveri.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
     ]
@@ -2187,7 +2187,43 @@
     ]
   },
   {
-    "sk": "(Nemecko) prevádzkuje server v Európskej únii, na ktorom beží tento web aj SEO audit, a robí jeho denné zálohy.",
+    "sk": "(Nemecko) prevádzkuje server v Európskej únii, na ktorom beží tento web, SEO audit aj štatistika návštevnosti, a robí jeho denné zálohy.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Štatistika návštevnosti",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "ktorú stránku ste otvorili a odkiaľ ste na ňu prišli (napríklad z vyhľadávača), typ prehliadača, operačného systému a zariadenia, veľkosť obrazovky, jazyk prehliadača, približná poloha (krajina, kraj a mesto) určená z IP adresy a rýchlosť načítania stránky; pri odoslanom formulári aj to, o ktorý formulár išlo a v akom jazyku",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "zistiť, ktoré stránky ľudia čítajú, odkiaľ prichádzajú a ako rýchlo sa web načítava, aby sme ho mohli zlepšovať. IP adresu neukladáme: spolu s typom prehliadača z nej vypočítame označenie návštevníka, ktoré sa každý mesiac mení, takže návštevy z rôznych mesiacov nevieme spojiť. Štatistiku nespájame s údajmi z formulárov a nenahrávame, čo na stránke robíte (pohyb myši, kliknutia ani text, ktorý píšete)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "oprávnený záujem na meraní a zlepšovaní webu (čl. 6 ods. 1 písm. f) GDPR)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "2 roky, potom ju automaticky vymažeme",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Ak má váš prehliadač zapnutú funkciu „Do Not Track“ (Nesledovať), vašu návštevu do štatistiky nezapočítame. Nezapočítame ju ani vtedy, keď stats.siteleveled.com zablokujete v prehliadači alebo v blokovači reklám. Web funguje aj tak.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
     ]
@@ -2229,7 +2265,7 @@
     ]
   },
   {
-    "sk": "Nepoužívame cookies ani analytické a reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Písma a obrázky načítavame z vlastného servera, takže pri návšteve webu sa o vás nič nedozvedia tretie strany.",
+    "sk": "Nepoužívame cookies ani reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Návštevnosť meriame nástrojom Umami, ktorý beží na našom serveri (stats.siteleveled.com) a do vášho prehliadača nič neukladá. Písma, obrázky aj tento nástroj načítavame z vlastného servera, takže pri návšteve webu sa o vás nič nedozvedia tretie strany.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
     ]
@@ -2289,7 +2325,7 @@
     ]
   },
   {
-    "sk": "Údaje spracúvame podľa nariadenia (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov. Keď začneme údaje spracúvať inak, napríklad pridáme analytiku, tento text upravíme a zmeníme dátum účinnosti na začiatku stránky.",
+    "sk": "Údaje spracúvame podľa nariadenia (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov. Keď začneme údaje spracúvať inak, napríklad pridáme nový nástroj, tento text upravíme a zmeníme dátum účinnosti na začiatku stránky.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
     ]
@@ -4373,7 +4409,7 @@
     ]
   },
   {
-    "sk": "Ako DOMAN s.r.o., prevádzkovateľ siteleveled.com, spracúva osobné údaje, keď nám napíšete alebo použijete SEO audit. Aktualizované 3. novembra 2026.",
+    "sk": "Ako DOMAN s.r.o., prevádzkovateľ siteleveled.com, spracúva osobné údaje, keď navštívite web, napíšete nám alebo použijete SEO audit. Aktualizované 12. novembra 2026.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
     ]

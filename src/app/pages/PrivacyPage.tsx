@@ -5,11 +5,12 @@ import { GlowCard } from "../components/fx/GlowCard";
 import { PageHero } from "../components/fx/PageHero";
 
 // Every statement here describes what the code and the server actually do (forms → e-mail only,
-// SEO audit results deleted after 30 days, no cookies). Change the text when that changes.
+// SEO audit results deleted after 30 days, no cookies, visit statistics in Umami: index.html,
+// src/app/lib/analytics.ts and the 2-year clean-up in docs/umami-setup.md). Change the text when that changes.
 
 const summary = [
   "Údaje z formulárov použijeme len na odpoveď na váš dopyt a prípravu ponuky.",
-  "Nepoužívame cookies, analytiku ani reklamné nástroje.",
+  "Nepoužívame cookies ani reklamné nástroje. Návštevnosť meriame bez cookies na vlastnom serveri.",
   "Údaje nepredávame a nikomu ich nedávame na marketing.",
   "Dopyt, z ktorého nebola spolupráca, vymažeme do 12 mesiacov.",
 ];
@@ -43,6 +44,13 @@ const activities: { title: string; data: string; purpose: string; basis: string 
       "poskytnutie vyžiadanej služby (čl. 6 ods. 1 písm. b) GDPR), pri IP adrese oprávnený záujem chrániť nástroj (písm. f)",
   },
   {
+    title: "Štatistika návštevnosti",
+    data: "ktorú stránku ste otvorili a odkiaľ ste na ňu prišli (napríklad z vyhľadávača), typ prehliadača, operačného systému a zariadenia, veľkosť obrazovky, jazyk prehliadača, približná poloha (krajina, kraj a mesto) určená z IP adresy a rýchlosť načítania stránky; pri odoslanom formulári aj to, o ktorý formulár išlo a v akom jazyku",
+    purpose:
+      "zistiť, ktoré stránky ľudia čítajú, odkiaľ prichádzajú a ako rýchlo sa web načítava, aby sme ho mohli zlepšovať. IP adresu neukladáme: spolu s typom prehliadača z nej vypočítame označenie návštevníka, ktoré sa každý mesiac mení, takže návštevy z rôznych mesiacov nevieme spojiť. Štatistiku nespájame s údajmi z formulárov a nenahrávame, čo na stránke robíte (pohyb myši, kliknutia ani text, ktorý píšete)",
+    basis: "oprávnený záujem na meraní a zlepšovaní webu (čl. 6 ods. 1 písm. f) GDPR)",
+  },
+  {
     title: "Klienti",
     data: "kontaktné a fakturačné údaje a komunikácia k projektu",
     purpose: "plnenie zmluvy a vedenie účtovníctva",
@@ -60,6 +68,7 @@ const retention = [
   ["Dopyt, z ktorého nebola spolupráca", "12 mesiacov od poslednej komunikácie, potom ho vymažeme"],
   ["Klienti", "počas spolupráce; účtovné doklady 10 rokov podľa zákona č. 431/2002 Z. z. o účtovníctve"],
   ["SEO audit", "výsledky 30 dní, potom sa automaticky vymažú; IP adresa pre denný limit zostáva len v pamäti servera, najviac 24 hodín"],
+  ["Štatistika návštevnosti", "2 roky, potom ju automaticky vymažeme"],
   ["Zálohy servera", "denné zálohy celého servera uchováva Contabo 10 dní, naše týždenné zálohy najviac 3 týždne; údaje vymazané zo servera (napríklad výsledky SEO auditov alebo technické záznamy) v nich preto môžu zostať ešte najviac 3 týždne"],
   ["Technické záznamy servera", "prístupové záznamy 15 dní, chybové a systémové záznamy najviac 5 týždňov"],
 ];
@@ -92,7 +101,7 @@ export function PrivacyPage() {
       <PageHero
         title={tr("Ochrana osobných údajov")}
         segments={tr([{ text: "Len to, čo potrebujeme." }, { text: "Nič navyše.", className: "text-gradient-primary" }])}
-        sub={tr("Ako DOMAN s.r.o., prevádzkovateľ siteleveled.com, spracúva osobné údaje, keď nám napíšete alebo použijete SEO audit. Aktualizované 3. novembra 2026.")}
+        sub={tr("Ako DOMAN s.r.o., prevádzkovateľ siteleveled.com, spracúva osobné údaje, keď navštívite web, napíšete nám alebo použijete SEO audit. Aktualizované 12. novembra 2026.")}
       />
 
       <div className="mx-auto max-w-3xl px-6 pb-32">
@@ -155,7 +164,7 @@ export function PrivacyPage() {
           <p>{tr("Údaje vidí len náš tím. Nepredávame ich a nikomu ich nedávame na marketing. Pri prevádzke nám pomáhajú títo sprostredkovatelia, ktorí s údajmi pracujú len podľa našich pokynov:")}</p>
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <strong className="font-semibold text-[#F5F5F0]">{tr("Contabo GmbH")}</strong>{tr(" (Nemecko) prevádzkuje server v Európskej únii, na ktorom beží tento web aj SEO audit, a robí jeho denné zálohy.")}</li>
+              <strong className="font-semibold text-[#F5F5F0]">{tr("Contabo GmbH")}</strong>{tr(" (Nemecko) prevádzkuje server v Európskej únii, na ktorom beží tento web, SEO audit aj štatistika návštevnosti, a robí jeho denné zálohy.")}</li>
             <li>
               <strong className="font-semibold text-[#F5F5F0]">{tr("Google Ireland Limited")}</strong>{tr(" (Írsko) poskytuje e-mailovú službu, cez ktorú odosielame správy z formulárov aj potvrdenia o ich prijatí a prijímame bežné e-maily, a úložisko (Google Drive) pre zálohy servera.")}</li>
           </ul>
@@ -167,7 +176,8 @@ export function PrivacyPage() {
         </Section>
 
         <Section title={tr("Cookies a úložisko v prehliadači")}>
-          <p>{tr("Nepoužívame cookies ani analytické a reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Písma a obrázky načítavame z vlastného servera, takže pri návšteve webu sa o vás nič nedozvedia tretie strany.")}</p>
+          <p>{tr("Nepoužívame cookies ani reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Návštevnosť meriame nástrojom Umami, ktorý beží na našom serveri (stats.siteleveled.com) a do vášho prehliadača nič neukladá. Písma, obrázky aj tento nástroj načítavame z vlastného servera, takže pri návšteve webu sa o vás nič nedozvedia tretie strany.")}</p>
+          <p>{tr("Ak má váš prehliadač zapnutú funkciu „Do Not Track“ (Nesledovať), vašu návštevu do štatistiky nezapočítame. Nezapočítame ju ani vtedy, keď stats.siteleveled.com zablokujete v prehliadači alebo v blokovači reklám. Web funguje aj tak.")}</p>
           <p>{tr("SEO audit si v úložisku vášho prehliadača (localStorage) pamätá označenie vášho posledného auditu, aby ste sa k výsledkom mohli vrátiť. Zostáva len vo vašom zariadení. Vymaže ho tlačidlo „Nový audit“ alebo vymazanie údajov stránky v prehliadači.")}</p>
             <p className="mt-4">
               {language === "en"
@@ -191,7 +201,7 @@ export function PrivacyPage() {
         </Section>
 
         <Section title={tr("Zmeny")}>
-          <p>{tr("Údaje spracúvame podľa nariadenia (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov. Keď začneme údaje spracúvať inak, napríklad pridáme analytiku, tento text upravíme a zmeníme dátum účinnosti na začiatku stránky.")}</p>
+          <p>{tr("Údaje spracúvame podľa nariadenia (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov. Keď začneme údaje spracúvať inak, napríklad pridáme nový nástroj, tento text upravíme a zmeníme dátum účinnosti na začiatku stránky.")}</p>
         </Section>
       </div>
     </>

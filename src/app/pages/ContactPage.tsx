@@ -15,6 +15,7 @@ import {
 import { AnimateIn } from "../components/AnimateIn";
 import { motion, AnimatePresence } from "motion/react";
 import { useTypedBeforeLoad } from "../lib/useTypedBeforeLoad";
+import { trackEnquiry } from "../lib/analytics";
 import { GlowCard } from "../components/fx/GlowCard";
 import { PageHero } from "../components/fx/PageHero";
 import {
@@ -99,6 +100,7 @@ export function ContactPage() {
         // While the backend restarts (a few seconds per deploy) nginx answers 502 with HTML, not JSON
         throw new Error(errorMessage(body, language, tr(SEND_FAILED)));
       }
+      trackEnquiry("kontakt", language);
       setSubmitted(true);
     } catch (err) {
       // fetch itself fails with an English TypeError ("Failed to fetch") when the connection drops
