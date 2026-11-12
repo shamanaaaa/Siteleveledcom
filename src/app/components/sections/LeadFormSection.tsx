@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { useTypedBeforeLoad } from "../../lib/useTypedBeforeLoad";
 import { trackEnquiry } from "../../lib/analytics";
+import { useTurnstile } from "../../lib/turnstile";
 import { CheckCircle2, Send } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
 
@@ -52,6 +53,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
     }
   };
   const ready = useTypedBeforeLoad("lead-form", handleChange);
+  const turnstile = useTurnstile();
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,6 +69,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
     const url = formData.webUrl.trim();
     const webUrl = url && !/^https?:\/\//i.test(url) ? `https://${url}` : url;
     try {
+      const token = await turnstile.token();
       const res = await fetch("/api/navrh", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -81,6 +84,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
           // Read on the server: a bot fills in the hidden field or submits within moments of the page loading
           website: formData.website,
           elapsed: Math.round(performance.now()),
+          turnstile: token,
         }),
       });
       if (!res.ok) {
@@ -92,6 +96,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
       trackEnquiry(interest === "E-shop" ? "eshop" : "uvod", language);
       setSubmitted(true);
     } catch (err) {
+      turnstile.renew();
       // fetch itself fails with an English TypeError ("Failed to fetch") when the connection drops
       setSubmitError(err instanceof Error && !(err instanceof TypeError) ? err.message : SEND_FAILED);
     } finally {
@@ -116,6 +121,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                 key="form"
                 id="lead-form"
                 onSubmit={handleSubmit}
+                onFocus={turnstile.start}
                 className="relative space-y-5 overflow-hidden rounded-card border border-white/8 bg-surface-1 p-8"
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -202,6 +208,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                 </div>
 
                 <div className="pt-2">
+                  <div ref={turnstile.box} className="mb-4 empty:hidden" />
                   <button
                     type="submit"
                     disabled={!ready || isLoading}

@@ -6,7 +6,8 @@ import { PageHero } from "../components/fx/PageHero";
 
 // Every statement here describes what the code and the server actually do (forms → e-mail only,
 // SEO audit results deleted after 30 days, no cookies, visit statistics in Umami: index.html,
-// src/app/lib/analytics.ts and the 2-year clean-up in docs/umami-setup.md). Change the text when that changes.
+// src/app/lib/analytics.ts and the 2-year clean-up in docs/umami-setup.md; Cloudflare Turnstile loads
+// only once a visitor starts on a form: src/app/lib/turnstile.ts). Change the text when that changes.
 
 const summary = [
   "Údaje z formulárov použijeme len na odpoveď na váš dopyt a prípravu ponuky.",
@@ -27,6 +28,12 @@ const activities: { title: string; data: string; purpose: string; basis: string 
     data: "meno, firma alebo projekt, e-mail, telefón (nepovinné), služba, o ktorú máte záujem, a text správy",
     purpose: "odpovedať na váš dopyt",
     basis: "opatrenia pred uzavretím zmluvy na vašu žiadosť (čl. 6 ods. 1 písm. b) GDPR)",
+  },
+  {
+    title: "Ochrana formulárov pred robotmi",
+    data: "IP adresa a technické údaje o prehliadači a spojení, ktoré pri overení vyhodnotí Cloudflare; my dostaneme len výsledok overenia",
+    purpose: "rozlíšiť ľudí od robotov, aby cez formuláre nechodil spam. Overenie sa spustí, až keď začnete vypĺňať formulár",
+    basis: "oprávnený záujem chrániť formuláre pred zneužitím (čl. 6 ods. 1 písm. f) GDPR)",
   },
   {
     title: "E-mail a telefón",
@@ -167,16 +174,19 @@ export function PrivacyPage() {
               <strong className="font-semibold text-[#F5F5F0]">{tr("Contabo GmbH")}</strong>{tr(" (Nemecko) prevádzkuje server v Európskej únii, na ktorom beží tento web, SEO audit aj štatistika návštevnosti, a robí jeho denné zálohy.")}</li>
             <li>
               <strong className="font-semibold text-[#F5F5F0]">{tr("Google Ireland Limited")}</strong>{tr(" (Írsko) poskytuje e-mailovú službu, cez ktorú odosielame správy z formulárov aj potvrdenia o ich prijatí a prijímame bežné e-maily, a úložisko (Google Drive) pre zálohy servera.")}</li>
+            <li>
+              <strong className="font-semibold text-[#F5F5F0]">{tr("Cloudflare, Inc.")}</strong>{tr(" (USA) prevádzkuje overenie Turnstile, ktoré pri vypĺňaní formulára zisťuje, či ho posiela človek. Na to pracuje podľa našich pokynov; tie isté údaje používa aj na zlepšovanie svojej ochrany pred robotmi a za to zodpovedá sama.")}</li>
           </ul>
           <p>{tr("Orgánom verejnej moci poskytneme údaje len vtedy, keď nám to ukladá zákon.")}</p>
         </Section>
 
         <Section title={tr("Prenos mimo Európskej únie")}>
-          <p>{tr("Google môže e-maily a zálohy spracúvať aj v USA. Takýto prenos chráni rámec ochrany údajov medzi EÚ a USA (EU-US Data Privacy Framework), v ktorom je spoločnosť Google certifikovaná, a štandardné zmluvné doložky schválené Európskou komisiou. Iné prenosy mimo EÚ nerobíme.")}</p>
+          <p>{tr("Google môže e-maily a zálohy spracúvať aj v USA a Cloudflare tam môže spracúvať údaje z overenia formulárov. Takýto prenos chráni rámec ochrany údajov medzi EÚ a USA (EU-US Data Privacy Framework), v ktorom sú obe spoločnosti certifikované, a štandardné zmluvné doložky schválené Európskou komisiou. Iné prenosy mimo EÚ nerobíme.")}</p>
         </Section>
 
         <Section title={tr("Cookies a úložisko v prehliadači")}>
-          <p>{tr("Nepoužívame cookies ani reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Návštevnosť meriame nástrojom Umami, ktorý beží na našom serveri (stats.siteleveled.com) a do vášho prehliadača nič neukladá. Písma, obrázky aj tento nástroj načítavame z vlastného servera, takže pri návšteve webu sa o vás nič nedozvedia tretie strany.")}</p>
+          <p>{tr("Nepoužívame cookies ani reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Návštevnosť meriame nástrojom Umami, ktorý beží na našom serveri (stats.siteleveled.com) a do vášho prehliadača nič neukladá. Písma, obrázky aj tento nástroj načítavame z vlastného servera, takže kým nezačnete vypĺňať formulár, nič sa o vás nedozvedia tretie strany.")}</p>
+          <p>{tr("Keď začnete vypĺňať formulár, prehliadač načíta z challenges.cloudflare.com overenie Cloudflare Turnstile, ktoré zistí, či formulár vypĺňa človek. Zvyčajne prebehne bez vášho zásahu, len niekedy požiada o kliknutie. Cloudflare pritom môže vo vašom prehliadači uložiť údaje potrebné na toto bezpečnostné overenie, nie na sledovanie ani reklamu. Ak overenie zablokujete, formulár sa neodošle; napíšte nám vtedy na info@siteleveled.com.")}</p>
           <p>{tr("Ak má váš prehliadač zapnutú funkciu „Do Not Track“ (Nesledovať), vašu návštevu do štatistiky nezapočítame. Nezapočítame ju ani vtedy, keď stats.siteleveled.com zablokujete v prehliadači alebo v blokovači reklám. Web funguje aj tak.")}</p>
           <p>{tr("SEO audit si v úložisku vášho prehliadača (localStorage) pamätá označenie vášho posledného auditu, aby ste sa k výsledkom mohli vrátiť. Zostáva len vo vašom zariadení. Vymaže ho tlačidlo „Nový audit“ alebo vymazanie údajov stránky v prehliadači.")}</p>
             <p className="mt-4">

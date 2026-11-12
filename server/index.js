@@ -205,7 +205,7 @@ app.post("/api/navrh", async (req, res) => {
     goal, goalOther, style, colors,
     inspiration, socialMedia, notes,
     source,
-    website, elapsed,
+    website, elapsed, turnstile,
     locale = "sk",
   } = req.body || {};
   if (locale !== "sk" && locale !== "en") return res.status(400).json({ error: "INVALID_LOCALE" });
@@ -220,7 +220,13 @@ app.post("/api/navrh", async (req, res) => {
     return res.status(400).json({ error: "Neplatný email." });
   }
   if (formGuard.overLimit(req.ip)) return res.status(429).json({ error: "FORM_LIMIT" });
-  const check = formGuard.inspect({ website, elapsed, name, company, notes, email });
+  const human = await formGuard.verifyHuman(turnstile);
+  if (human === "fail") {
+    // A visible error, not a silent success: a real visitor whose check failed must know to retry
+    console.warn("Form submission refused (Turnstile)");
+    return res.status(400).json({ error: "CAPTCHA_FAILED" });
+  }
+  const check = formGuard.inspect({ website, elapsed, name, company, notes, email, turnstile: human });
   if (check.drop) {
     // No form fields or IP in the log, only which check fired
     console.warn(`Form submission dropped (${check.reasons.join(", ")})`);

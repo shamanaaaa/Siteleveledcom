@@ -23,6 +23,10 @@
     "sk": "Za krátky čas prišlo z vášho pripojenia priveľa správ. Skúste to o hodinu alebo napíšte na info@siteleveled.com.",
     "en": "Too many messages from your connection in a short time. Please try again in an hour or email info@siteleveled.com."
   },
+  "CAPTCHA_FAILED": {
+    "sk": "Nepodarilo sa overiť, že formulár posielate vy a nie robot. Skúste ho odoslať znova alebo napíšte na info@siteleveled.com.",
+    "en": "We couldn't confirm that this form was sent by a person. Please send it again or email info@siteleveled.com."
+  },
   "URL_REQUIRED": {
     "sk": "Zadajte adresu webu.",
     "en": "Enter a website address."

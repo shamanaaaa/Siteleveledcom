@@ -2253,7 +2253,7 @@
     ]
   },
   {
-    "sk": "Google môže e-maily a zálohy spracúvať aj v USA. Takýto prenos chráni rámec ochrany údajov medzi EÚ a USA (EU-US Data Privacy Framework), v ktorom je spoločnosť Google certifikovaná, a štandardné zmluvné doložky schválené Európskou komisiou. Iné prenosy mimo EÚ nerobíme.",
+    "sk": "Google môže e-maily a zálohy spracúvať aj v USA a Cloudflare tam môže spracúvať údaje z overenia formulárov. Takýto prenos chráni rámec ochrany údajov medzi EÚ a USA (EU-US Data Privacy Framework), v ktorom sú obe spoločnosti certifikované, a štandardné zmluvné doložky schválené Európskou komisiou. Iné prenosy mimo EÚ nerobíme.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
     ]
@@ -2265,7 +2265,7 @@
     ]
   },
   {
-    "sk": "Nepoužívame cookies ani reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Návštevnosť meriame nástrojom Umami, ktorý beží na našom serveri (stats.siteleveled.com) a do vášho prehliadača nič neukladá. Písma, obrázky aj tento nástroj načítavame z vlastného servera, takže pri návšteve webu sa o vás nič nedozvedia tretie strany.",
+    "sk": "Nepoužívame cookies ani reklamné nástroje, preto u nás neuvidíte lištu so súhlasom s cookies. Návštevnosť meriame nástrojom Umami, ktorý beží na našom serveri (stats.siteleveled.com) a do vášho prehliadača nič neukladá. Písma, obrázky aj tento nástroj načítavame z vlastného servera, takže kým nezačnete vypĺňať formulár, nič sa o vás nedozvedia tretie strany.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
     ]
@@ -4506,6 +4506,48 @@
     "sk": "ponuka",
     "files": [
       "src/app/components/fx/ProposalLayers.tsx"
+    ]
+  },
+  {
+    "sk": "Ochrana formulárov pred robotmi",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "IP adresa a technické údaje o prehliadači a spojení, ktoré pri overení vyhodnotí Cloudflare; my dostaneme len výsledok overenia",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "rozlíšiť ľudí od robotov, aby cez formuláre nechodil spam. Overenie sa spustí, až keď začnete vypĺňať formulár",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "oprávnený záujem chrániť formuláre pred zneužitím (čl. 6 ods. 1 písm. f) GDPR)",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Cloudflare, Inc.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "(USA) prevádzkuje overenie Turnstile, ktoré pri vypĺňaní formulára zisťuje, či ho posiela človek. Na to pracuje podľa našich pokynov; tie isté údaje používa aj na zlepšovanie svojej ochrany pred robotmi a za to zodpovedá sama.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "Keď začnete vypĺňať formulár, prehliadač načíta z challenges.cloudflare.com overenie Cloudflare Turnstile, ktoré zistí, či formulár vypĺňa človek. Zvyčajne prebehne bez vášho zásahu, len niekedy požiada o kliknutie. Cloudflare pritom môže vo vašom prehliadači uložiť údaje potrebné na toto bezpečnostné overenie, nie na sledovanie ani reklamu. Ak overenie zablokujete, formulár sa neodošle; napíšte nám vtedy na info@siteleveled.com.",
+    "files": [
+      "src/app/pages/PrivacyPage.tsx"
     ]
   }
 ]

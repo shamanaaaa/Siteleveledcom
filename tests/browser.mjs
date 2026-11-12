@@ -40,6 +40,8 @@ async function newPage(width = 1440, preferences = { languages: ['en-GB', 'sk-SK
   await page.setRequestInterception(true);
   page.on('request', request => {
     const url = new URL(request.url());
+    // Offline: the live Umami tracker and Cloudflare Turnstile stay out of the test
+    if (url.protocol.startsWith('http') && url.origin !== base) return request.abort();
     if (!url.pathname.startsWith('/api/')) return request.continue();
     const respond = (body, status = 200) => request.respond({ status, contentType: 'application/json', body: JSON.stringify(body) });
     if (url.pathname === '/api/navrh') {

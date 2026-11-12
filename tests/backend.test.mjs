@@ -87,7 +87,8 @@ test('suspicious enquiries reach the owner marked, without a confirmation to the
   const invalid = await post('/api/navrh', { ...spam, email: 'de.v.i.n...r.uet.z.el@gmail.com' });
   assert.equal(invalid.status, 400);
   assert.equal((await invalid.json()).code, 'INVALID_EMAIL');
-  for (const body of [{ ...spam, email: 'de.v.i.n.r.uet.z.el@gmail.com' }, { locale: 'sk', name: 'Alex', company: 'Example', email: 'alex@example.test' }]) {
+  // One soft sign each: random letters, a dotted Gmail, no fill time
+  for (const body of [{ ...spam, email: 'alex@example.test' }, { locale: 'en', name: 'Alex', company: 'Example', email: 'de.v.i.n.r.uet.z.el@gmail.com', elapsed: 5000 }, { locale: 'sk', name: 'Alex', company: 'Example', email: 'alex@example.test' }]) {
     sent.length = 0;
     const response = await post('/api/navrh', body);
     assert.equal(response.status, 200);
@@ -103,8 +104,68 @@ test('suspicious enquiries reach the owner marked, without a confirmation to the
   assert.equal(sent.length, 1);
   assert.match(sent[0].subject, /^\[Možný spam\] /);
   assert.match(sent[0].html, /vyplnené skryté pole/);
+  // Two soft signs together are a bot, dropped with a silent success: the 2026-11-11 spam (random
+  // letters, dotted Gmail) and the 2026-11-12 flood (hidden field filled, random letters)
+  const warn = console.warn;
+  console.warn = () => {};
+  try {
+    for (const body of [{ ...spam, email: 'de.v.i.n.r.uet.z.el@gmail.com' }, { locale: 'sk', source: 'kontakt', name: 'cQlAmacoTfPirnWRkbQrThwQ', company: 'Cbcbpq LLC', email: 'bot@example.test', website: 'x', elapsed: 9000 }]) {
+      sent.length = 0;
+      formGuard.reset();
+      const response = await post('/api/navrh', body);
+      assert.equal(response.status, 200);
+      assert.deepEqual(await response.json(), { ok: true });
+      assert.equal(sent.length, 0);
+    }
+  } finally { console.warn = warn; }
   for (const value of ['Mário Doman', 'SiteLeveled', 'McDonald', 'JavaScriptDev', 'Zuzana Kondeková', 'Srcipqucg LLC']) assert.equal(formGuard.looksRandom(value), false, value);
   for (const value of ['YtGulMDpoAWikzOn', 'mCroDxXDLqOeFPzBqHhPyZEW']) assert.equal(formGuard.looksRandom(value), true, value);
+});
+test('with Turnstile on, an enquiry needs a token Cloudflare accepts', async () => {
+  const realFetch = globalThis.fetch;
+  const asked = [];
+  // Cloudflare's answer is faked: "good" passes, "down" means Cloudflare can't be reached
+  globalThis.fetch = async (url, options) => {
+    if (!String(url).startsWith('https://challenges.cloudflare.com/')) return realFetch(url, options);
+    const body = JSON.parse(options.body);
+    asked.push(body);
+    if (body.response === 'down') throw new TypeError('fetch failed');
+    return new Response(JSON.stringify({ success: body.response === 'good' }), { headers: { 'Content-Type': 'application/json' } });
+  };
+  process.env.TURNSTILE_SECRET_KEY = 'fixture-secret';
+  const warn = console.warn;
+  console.warn = () => {};
+  try {
+    const body = { locale: 'en', source: 'kontakt', name: 'Alex', company: 'Example', email: 'alex@example.test', elapsed: 5000 };
+    for (const turnstile of [undefined, 'bad']) {
+      sent.length = 0;
+      formGuard.reset();
+      const response = await post('/api/navrh', { ...body, turnstile });
+      assert.equal(response.status, 400);
+      const failure = await response.json();
+      assert.equal(failure.code, 'CAPTCHA_FAILED');
+      assert.match(failure.error, /info@siteleveled\.com/);
+      assert.equal(sent.length, 0);
+    }
+    sent.length = 0;
+    formGuard.reset();
+    assert.equal((await post('/api/navrh', { ...body, turnstile: 'good' })).status, 200);
+    assert.equal(sent.length, 2);
+    assert.doesNotMatch(sent[0].subject, /Možný spam/);
+    // Cloudflare down: the enquiry still arrives, marked, without a confirmation
+    sent.length = 0;
+    formGuard.reset();
+    assert.equal((await post('/api/navrh', { ...body, turnstile: 'down' })).status, 200);
+    assert.equal(sent.length, 1);
+    assert.match(sent[0].subject, /^\[Možný spam\] /);
+    assert.match(sent[0].html, /overenie Cloudflare neodpovedalo/);
+    // No token means no call; the visitor's IP never goes to Cloudflare
+    assert.deepEqual(asked, ['bad', 'good', 'down'].map(response => ({ secret: 'fixture-secret', response })));
+  } finally {
+    globalThis.fetch = realFetch;
+    delete process.env.TURNSTILE_SECRET_KEY;
+    console.warn = warn;
+  }
 });
 test('more than five enquiries an hour from one address are refused with a localized error', async () => {
   formGuard.reset();

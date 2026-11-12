@@ -16,6 +16,7 @@ import { AnimateIn } from "../components/AnimateIn";
 import { motion, AnimatePresence } from "motion/react";
 import { useTypedBeforeLoad } from "../lib/useTypedBeforeLoad";
 import { trackEnquiry } from "../lib/analytics";
+import { useTurnstile } from "../lib/turnstile";
 import { GlowCard } from "../components/fx/GlowCard";
 import { PageHero } from "../components/fx/PageHero";
 import {
@@ -79,6 +80,7 @@ export function ContactPage() {
       .filter(Boolean)
       .join("\n");
     try {
+      const token = await turnstile.token();
       const res = await fetch("/api/navrh", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -93,6 +95,7 @@ export function ContactPage() {
           // Read on the server: a bot fills in the hidden field or submits within moments of the page loading
           website: formData.website,
           elapsed: Math.round(performance.now()),
+          turnstile: token,
         }),
       });
       if (!res.ok) {
@@ -103,6 +106,7 @@ export function ContactPage() {
       trackEnquiry("kontakt", language);
       setSubmitted(true);
     } catch (err) {
+      turnstile.renew();
       // fetch itself fails with an English TypeError ("Failed to fetch") when the connection drops
       setSubmitError(err instanceof Error && !(err instanceof TypeError) ? err.message : SEND_FAILED);
     } finally {
@@ -121,6 +125,7 @@ export function ContactPage() {
     }
   };
   const ready = useTypedBeforeLoad("contact-form", handleChange);
+  const turnstile = useTurnstile();
 
   return (
     <>
@@ -151,6 +156,7 @@ export function ContactPage() {
                         key="form"
                         id="contact-form"
                         onSubmit={handleSubmit}
+                        onFocus={turnstile.start}
                         className="space-y-5"
                         initial={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -274,6 +280,8 @@ export function ContactPage() {
                             placeholder={tr("Opíšte nám svoj projekt, ciele alebo akékoľvek otázky...")}
                           />
                         </div>
+
+                        <div ref={turnstile.box} className="empty:hidden" />
 
                         {submitError && (
                           <p role="alert" className="text-[0.85rem] text-red-400">
