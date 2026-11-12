@@ -152,6 +152,12 @@ test('with Turnstile on, an enquiry needs a token Cloudflare accepts', async () 
     assert.equal((await post('/api/navrh', { ...body, turnstile: 'good' })).status, 200);
     assert.equal(sent.length, 2);
     assert.doesNotMatch(sent[0].subject, /Možný spam/);
+    // The 2026-11-12 owner test: autofill put a web address into the hidden field
+    sent.length = 0;
+    formGuard.reset();
+    assert.equal((await post('/api/navrh', { ...body, website: 'https://www.aaa.sk', turnstile: 'good' })).status, 200);
+    assert.equal(sent.length, 2);
+    assert.doesNotMatch(sent[0].subject, /Možný spam/);
     // Cloudflare down: the enquiry still arrives, marked, without a confirmation
     sent.length = 0;
     formGuard.reset();
@@ -160,7 +166,7 @@ test('with Turnstile on, an enquiry needs a token Cloudflare accepts', async () 
     assert.match(sent[0].subject, /^\[Možný spam\] /);
     assert.match(sent[0].html, /overenie Cloudflare neodpovedalo/);
     // No token means no call; the visitor's IP never goes to Cloudflare
-    assert.deepEqual(asked, ['bad', 'good', 'down'].map(response => ({ secret: 'fixture-secret', response })));
+    assert.deepEqual(asked, ['bad', 'good', 'good', 'down'].map(response => ({ secret: 'fixture-secret', response })));
   } finally {
     globalThis.fetch = realFetch;
     delete process.env.TURNSTILE_SECRET_KEY;

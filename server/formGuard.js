@@ -22,7 +22,8 @@ function inspect(body) {
 
   const reasons = [];
   // Browser autofill and password managers fill the hidden field too, ignoring autocomplete="off"
-  if (body.website) reasons.push("vyplnené skryté pole");
+  // (the 2026-11-12 owner test got "https://www.aaa.sk"), so it doesn't count once Cloudflare vouched
+  if (body.website && body.turnstile !== "ok") reasons.push("vyplnené skryté pole");
   // The site's own forms always send the time; a direct POST to the API doesn't
   if (!timed) reasons.push("odoslané mimo formulára na webe");
   // Cloudflare didn't answer, so nobody vouched for the visitor (see verifyHuman)
