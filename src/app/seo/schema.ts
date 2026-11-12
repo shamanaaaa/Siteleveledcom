@@ -54,6 +54,7 @@ const SITEWIDE = [
     jobTitle: "Vývojár",
     telephone: "+421910803993",
     image: `${SITE}/profile.jpg`,
+    url: `${SITE}/o-nas/`,
     sameAs: ["https://www.linkedin.com/in/m%C3%A1rio-doman-65b08663/"],
     worksFor: { "@id": ORG },
   },
@@ -149,17 +150,34 @@ export function jsonLd(page: PageMeta) {
       delete next.areaServed;
     }
     if (next["@type"] === "WebSite") { next.inLanguage = ["sk", "en"]; }
-    if (next.jobTitle === "Vývojár") { next.jobTitle = "Developer"; delete next.telephone; }
+    if (next.jobTitle === "Vývojár") { next.jobTitle = "Developer"; next.url = SITE + pathFor("about", "en"); delete next.telephone; }
     if (next.jobTitle === "Konateľka") next.jobTitle = "Managing director";
     return next;
   });
   if (page.name) {
+    const trail = [
+      { name: page.locale === "en" ? "Home" : "Domov", path: pathFor("home", page.locale) },
+      ...(page.parent ? [page.parent] : []),
+      { name: page.name, path: page.path },
+    ];
     graph.push({
       "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: page.locale === "en" ? "Home" : "Domov", item: SITE + pathFor("home", page.locale) },
-        { "@type": "ListItem", position: 2, name: page.name, item: SITE + page.path },
-      ],
+      itemListElement: trail.map((step, i) => ({ "@type": "ListItem", position: i + 1, name: step.name, item: SITE + step.path })),
+    });
+  }
+  if (page.article) {
+    graph.push({
+      "@type": "BlogPosting",
+      "@id": `${SITE}${page.path}#article`,
+      headline: page.name,
+      description: page.description,
+      inLanguage: page.locale,
+      datePublished: page.article.published,
+      dateModified: page.article.modified,
+      image: `${SITE}/og/siteleveled.png`,
+      author: { "@id": MARIO },
+      publisher: { "@id": ORG },
+      mainEntityOfPage: { "@id": `${SITE}${page.path}#webpage` },
     });
   }
   if (page.locale === "sk" && (page.path === "/sluzby/" || page.path === "/cennik/")) graph.push(...SERVICES);

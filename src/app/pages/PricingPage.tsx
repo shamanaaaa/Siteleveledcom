@@ -265,6 +265,13 @@ export function PricingPage() {
               </GlowCard>
             </AnimateIn>
           </div>
+          {/* The article is Slovak only */}
+          {language === "sk" && (
+            <p className="mx-auto mt-10 max-w-3xl text-center text-[0.95rem] leading-relaxed text-[#F5F5F0]/70">
+              Podrobne o tom, čo je v cene, čo ju zvyšuje a s čím počítať každý rok, píšeme v článku{" "}
+              <Link to="/blog/kolko-stoji-webstranka/" className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">Koľko stojí webstránka a od čoho závisí cena</Link>.
+            </p>
+          )}
         </div>
       </section>
 

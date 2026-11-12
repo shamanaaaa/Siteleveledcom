@@ -16,6 +16,7 @@ const navLinks = [
   { label: "Proces spolupráce", href: "/proces/" },
   { label: "O nás", href: "/o-nas/" },
   { label: "SEO audit zadarmo", href: "/seo-audit/" },
+  { label: "Blog", href: "/blog/", skOnly: true },
   { label: "Kontakt", href: "/kontakt/" },
 ];
 
@@ -79,7 +80,7 @@ export function Footer() {
           <div>
             <p className="mb-5 font-heading text-[0.85rem] uppercase tracking-widest text-[#F5F5F0]/60">{tr("Navigácia")}</p>
             <div className="flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {navLinks.filter((link) => !(link.skOnly && locale === "en")).map((link) => (
                 <span key={link.label}>
                   {link.hash ? (
                     <Link

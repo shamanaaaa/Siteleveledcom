@@ -3,6 +3,7 @@ import { jsonLd } from "../src/app/seo/schema";
 import { LOCALES, ROUTES } from "../src/app/i18n/routes";
 import { CLIENTS } from "../src/app/city/cityData";
 import { cityMeta } from "../src/app/seo/city";
+import { POSTS, postPath } from "../src/app/blog/posts";
 import { PROJECT_PREVIEW_IMAGES, localizedImage } from "../src/app/lib/images";
 import fs from "node:fs";
 import path from "node:path";
@@ -39,7 +40,8 @@ function headHtml(page: PageMeta) {
     `<meta property="og:title" content="${escapeHtml(page.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(page.description)}" />`,
     `<meta property="og:locale" content="${page.locale === "en" ? "en_US" : "sk_SK"}" />`,
-    `<meta property="og:type" content="website" />`, `<meta property="og:site_name" content="SiteLeveled" />`,
+    `<meta property="og:type" content="${page.article ? "article" : "website"}" />`, `<meta property="og:site_name" content="SiteLeveled" />`,
+    ...(page.article ? [`<meta property="article:published_time" content="${page.article.published}" />`, `<meta property="article:modified_time" content="${page.article.modified}" />`] : []),
     `<meta property="og:image" content="${SITE}${page.image ?? `/og/${page.locale === "en" ? "en-" : ""}siteleveled.png`}" />`,
     `<meta property="og:image:alt" content="${escapeHtml(page.imageAlt ?? (page.locale === "en" ? "SiteLeveled — custom websites and online stores" : "SiteLeveled — tvorba webstránok a e-shopov"))}" />`,
     `<meta property="og:image:width" content="1200" />`, `<meta property="og:image:height" content="630" />`,
@@ -111,7 +113,8 @@ export function seoPages(): Plugin {
       const chunks = Object.values(bundle).flatMap(file => file.type === "chunk" ? [file] : []);
       const entries = new Set(chunks.filter(chunk => chunk.isEntry).map(chunk => chunk.fileName));
       const modules = [...ROUTES.flatMap(route => LOCALES.flatMap(locale => route.id === "cityClient" ? CLIENTS.map(client => ({ path: route[locale].replace(":slug", client.id), module: route.module })) : [{ path: route[locale], module: route.module }])),
-        { path: "/blog/", module: "BlogPage" }, { path: "/seo-audit/admin/", module: "SeoAuditAdminPage" },
+        { path: "/blog/", module: "BlogPage" }, ...POSTS.map(post => ({ path: postPath(post.slug), module: "BlogPostPage" })),
+        { path: "/seo-audit/admin/", module: "SeoAuditAdminPage" },
         { path: NOT_FOUND.path, module: "NotFoundPage" }, { path: EN_NOT_FOUND.path, module: "NotFoundPage" }];
       for (const route of modules) {
         const chunk = chunks.find(chunk => chunk.moduleIds.some(id => id.endsWith(`/pages/${route.module}.tsx`)));

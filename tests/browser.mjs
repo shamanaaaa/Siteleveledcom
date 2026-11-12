@@ -94,7 +94,7 @@ async function submitContact(page) {
 async function checkContrast() {
   // Measures every page in both languages: text and placeholders must stay readable, and links inside text must not rely on colour alone.
   const axe = require.resolve('axe-core/axe.min.js');
-  const routes = ['/en/', '/en/services/', '/en/online-stores/', '/en/pricing/', '/en/portfolio/', '/en/process/', '/en/about/', '/en/contact/', '/en/seo-audit/', '/en/privacy/', '/en/city/springnitra/', '/', '/sluzby/', '/tvorba-eshopu/', '/cennik/', '/portfolio/', '/proces/', '/o-nas/', '/kontakt/', '/seo-audit/', '/ochrana-osobnych-udajov/', '/blog/'];
+  const routes = ['/en/', '/en/services/', '/en/online-stores/', '/en/pricing/', '/en/portfolio/', '/en/process/', '/en/about/', '/en/contact/', '/en/seo-audit/', '/en/privacy/', '/en/city/springnitra/', '/', '/sluzby/', '/tvorba-eshopu/', '/cennik/', '/portfolio/', '/proces/', '/o-nas/', '/kontakt/', '/seo-audit/', '/ochrana-osobnych-udajov/', '/blog/', '/blog/kolko-stoji-webstranka/'];
   const problems = [];
   for (const width of [1440, 390]) {
     const context = await browser.createBrowserContext();

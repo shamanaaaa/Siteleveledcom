@@ -108,11 +108,17 @@ test('built files have localized body, metadata, alternates, preloads, and sitem
     }
     if (!page.robots) {
       assert.ok(html.includes(`rel="canonical" href="${metadata.SITE}${page.path}"`), page.path);
-      assert.ok(sitemap.includes(metadata.SITE + page.path));
-      assert.equal((html.match(/rel="alternate" hreflang=/g) || []).length, 3);
-      assert.match(html, new RegExp(`hreflang="x-default" href="${metadata.SITE}/en/`), page.path);
+      assert.ok(sitemap.includes(`<loc>${metadata.SITE}${page.path}</loc>`), page.path);
+      const translated = metadata.PAGES.some(other => other.id === page.id && other.locale !== page.locale);
+      assert.equal((html.match(/rel="alternate" hreflang=/g) || []).length, translated ? 3 : 0, page.path);
+      if (translated) assert.match(html, new RegExp(`hreflang="x-default" href="${metadata.SITE}/en/`), page.path);
       assert.match(html, /"@type":"WebPage"|"@type":"AboutPage"|"@type":"ContactPage"/);
-    } else assert.ok(!sitemap.includes(metadata.SITE + page.path));
+      if (page.article) {
+        assert.match(html, /<meta property="og:type" content="article" \/>/, page.path);
+        assert.match(html, /"@type":"BlogPosting"/, page.path);
+        assert.ok(html.includes(`"position":3,"name":${JSON.stringify(page.name)}`), `Article breadcrumb: ${page.path}`);
+      }
+    } else assert.ok(!sitemap.includes(`<loc>${metadata.SITE}${page.path}</loc>`), page.path);
     if (page.locale === 'sk') assert.ok(!/rel="modulepreload" href="\/assets\/en-/.test(html), page.path);
     if (page.locale === 'en') {
       assert.match(html, /rel="modulepreload" href="\/assets\/en-/);

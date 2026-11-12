@@ -1,5 +1,6 @@
 import { loadMessages } from "./i18n/messages";
 import { CLIENTS } from "./city/cityData";
+import { POSTS, postPath } from "./blog/posts";
 import type { RouteObject } from "react-router";
 import { Layout } from "./components/layout/Layout";
 import { LOCALES, ROUTES } from "./i18n/routes";
@@ -17,6 +18,7 @@ const loaders = {
   SeoAuditPage: () => import("./pages/SeoAuditPage").then(m => ({ Component: m.SeoAuditPage })),
   PrivacyPage: () => import("./pages/PrivacyPage").then(m => ({ Component: m.PrivacyPage })),
   BlogPage: () => import("./pages/BlogPage").then(m => ({ Component: m.BlogPage })),
+  BlogPostPage: () => import("./pages/BlogPostPage").then(m => ({ Component: m.BlogPostPage })),
   SeoAuditAdminPage: () => import("./pages/SeoAuditAdminPage").then(m => ({ Component: m.SeoAuditAdminPage })),
   NotFoundPage: () => import("./pages/NotFoundPage").then(m => ({ Component: m.NotFoundPage })),
 };
@@ -35,6 +37,7 @@ export const routes: RouteObject[] = [{
       return [{ path: route[locale], lazy: localized(locale, route.module) }];
     })),
     { path: "/blog/", lazy: loaders.BlogPage },
+    ...POSTS.map(post => ({ path: postPath(post.slug), lazy: loaders.BlogPostPage })),
     { path: "/seo-audit/admin/", lazy: loaders.SeoAuditAdminPage },
     { path: "/en/*", lazy: localized("en", "NotFoundPage") },
     { path: "*", lazy: loaders.NotFoundPage },

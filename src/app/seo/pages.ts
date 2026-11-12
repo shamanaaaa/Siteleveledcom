@@ -1,4 +1,5 @@
 import { ROUTES, localeForPath, normalizePath, type Locale, type PageId } from "../i18n/routes";
+import { POSTS, postPath } from "../blog/posts";
 /*
  * Search metadata of every route. scripts/seoPages.ts writes a static dist/<path>/index.html
  * with this head for each entry (nginx serves dist/ as plain files, so crawlers only see what
@@ -9,7 +10,8 @@ import { ROUTES, localeForPath, normalizePath, type Locale, type PageId } from "
 export const SITE = "https://siteleveled.com";
 
 export interface PageMeta {
-  id: PageId | "blog" | "admin" | "notFound";
+  /** Articles get their own id each, so alternates() never pairs two of them */
+  id: PageId | "blog" | `blog:${string}` | "admin" | "notFound";
   locale: Locale;
   image?: string;
   imageAlt?: string;
@@ -23,6 +25,10 @@ export interface PageMeta {
   robots?: string;
   /** Not pre-rendered: what it shows depends on the browser (the owner's token in localStorage) */
   clientOnly?: boolean;
+  /** Middle breadcrumb level, for pages below another page */
+  parent?: { name: string; path: string };
+  /** Blog articles: ISO dates for og:type article and BlogPosting */
+  article?: { published: string; modified: string };
 }
 
 const SK_PAGES = [
@@ -96,7 +102,7 @@ const SK_PAGES = [
       "Ako DOMAN s.r.o. (SiteLeveled) spracúva údaje z formulárov a SEO auditu, kto k nim má prístup, ako dlho ich uchováva a aké máte práva. Bez cookies.",
   },
   {
-    // Placeholder posts without articles: kept out of the index until real ones exist
+    // Out of the index until it lists two or three articles; the articles themselves are indexed
     path: "/blog/",
     name: "Blog",
     title: "Blog o tvorbe webu a SEO pre malé firmy | SiteLeveled",
@@ -127,6 +133,11 @@ const EN_META: Record<string, [string, string, string?]> = {
 };
 export const PAGES: PageMeta[] = [
   ...SK_PAGES.map(page => ({ ...page, locale: "sk" as const, id: ROUTES.find(route => route.sk === page.path)?.id ?? (page.path === "/blog/" ? "blog" as const : "admin" as const) })),
+  ...POSTS.map(post => ({
+    id: `blog:${post.slug}` as const, locale: "sk" as const, path: postPath(post.slug),
+    title: post.title, description: post.description, name: post.heading,
+    parent: { name: "Blog", path: "/blog/" }, article: { published: post.published, modified: post.modified },
+  })),
   ...ROUTES.filter(route => route.id !== "cityClient").map(route => ({
     id: route.id, locale: "en" as const, path: route.en,
     title: EN_META[route.id][0], description: EN_META[route.id][1], name: EN_META[route.id][2],
@@ -154,7 +165,9 @@ export const EN_NOT_FOUND: PageMeta = {
 export const notFoundFor = (path: string) => localeForPath(path) === "en" ? EN_NOT_FOUND : NOT_FOUND;
 export function alternates(page: PageMeta) {
   if (page.robots?.includes("noindex")) return [];
-  return PAGES.filter(candidate => candidate.id === page.id && !candidate.robots?.includes("noindex"));
+  const versions = PAGES.filter(candidate => candidate.id === page.id && !candidate.robots?.includes("noindex"));
+  // A page without a translation (the Slovak articles) gets no hreflang at all
+  return versions.length > 1 ? versions : [];
 }
 /** Searchers in any other language get the international English page. */
 export const xDefault = (page: PageMeta) => alternates(page).find(other => other.locale === "en");
