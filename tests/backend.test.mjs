@@ -65,11 +65,11 @@ test('invalid locale and form validation return stable codes, without email', as
   assert.equal((await invalid.json()).error, 'Enter a valid email address.');
   assert.equal(sent.length, 0);
 });
-test('bots get a silent success: hidden field filled or sent too fast, nothing is emailed', async () => {
+test('bots get a silent success when sent too fast, nothing is emailed', async () => {
   const warn = console.warn;
   console.warn = () => {};
   try {
-    for (const extra of [{ website: 'https://spam.test', elapsed: 9000 }, { elapsed: 600 }]) {
+    for (const extra of [{ elapsed: 600 }, { website: 'https://spam.test', elapsed: 600 }]) {
       sent.length = 0;
       formGuard.reset();
       const response = await post('/api/navrh', { locale: 'en', name: 'Alex', company: 'Example', email: 'alex@example.test', source: 'kontakt', ...extra });
@@ -96,6 +96,13 @@ test('suspicious enquiries reach the owner marked, without a confirmation to the
     assert.match(sent[0].html, /Možný spam/);
   }
   assert.match(sent[0].html, /odoslané mimo formulára/);
+  // The 2026-11-12 owner test: autofill put their address into the hidden field
+  sent.length = 0;
+  const autofilled = await post('/api/navrh', { locale: 'sk', source: 'kontakt', name: 'Mário Doman', company: 'SiteLeveled', email: 'info@siteleveled.com', website: 'info@siteleveled.com', elapsed: 40000 });
+  assert.equal(autofilled.status, 200);
+  assert.equal(sent.length, 1);
+  assert.match(sent[0].subject, /^\[Možný spam\] /);
+  assert.match(sent[0].html, /vyplnené skryté pole/);
   for (const value of ['Mário Doman', 'SiteLeveled', 'McDonald', 'JavaScriptDev', 'Zuzana Kondeková', 'Srcipqucg LLC']) assert.equal(formGuard.looksRandom(value), false, value);
   for (const value of ['YtGulMDpoAWikzOn', 'mCroDxXDLqOeFPzBqHhPyZEW']) assert.equal(formGuard.looksRandom(value), true, value);
 });

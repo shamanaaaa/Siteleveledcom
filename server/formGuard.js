@@ -15,12 +15,13 @@ function looksRandom(value) {
 
 // Returns { drop: true } for a certain bot, otherwise { drop: false, reasons } with the soft signs found
 function inspect(body) {
-  if (body.website) return { drop: true, reasons: ["honeypot"] };
   const elapsed = Number(body.elapsed);
   const timed = body.elapsed !== undefined && body.elapsed !== null && Number.isFinite(elapsed);
   if (timed && elapsed < MIN_FILL_MS) return { drop: true, reasons: ["odoslané príliš rýchlo"] };
 
   const reasons = [];
+  // Browser autofill and password managers fill the hidden field too, ignoring autocomplete="off"
+  if (body.website) reasons.push("vyplnené skryté pole");
   // The site's own forms always send the time; a direct POST to the API doesn't
   if (!timed) reasons.push("odoslané mimo formulára na webe");
   if (["name", "company", "notes"].some((field) => looksRandom(body[field]))) reasons.push("náhodné znaky");
