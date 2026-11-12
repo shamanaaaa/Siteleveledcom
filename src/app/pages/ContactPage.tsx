@@ -118,7 +118,7 @@ export function ContactPage() {
       });
     }
   };
-  useTypedBeforeLoad("contact-form", handleChange);
+  const ready = useTypedBeforeLoad("contact-form", handleChange);
 
   return (
     <>
@@ -281,7 +281,7 @@ export function ContactPage() {
 
                         <button
                           type="submit"
-                          disabled={isLoading}
+                          disabled={!ready || isLoading}
                           className="inline-flex items-center gap-2 rounded-full bg-[#665DFA] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)] transition-all duration-200 hover:bg-[#5b53e8] hover:shadow-[0_8px_44px_rgba(108,99,255,0.5)] disabled:cursor-wait disabled:opacity-60"
                         >
                           {tr(isLoading ? "Odosielam…" : "Odoslať")} <Send size={16} />

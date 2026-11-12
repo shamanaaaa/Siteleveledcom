@@ -50,7 +50,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
       });
     }
   };
-  useTypedBeforeLoad("lead-form", handleChange);
+  const ready = useTypedBeforeLoad("lead-form", handleChange);
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -201,7 +201,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    disabled={isLoading}
+                    disabled={!ready || isLoading}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-[#665DFA] hover:bg-[#5b53e8] disabled:opacity-60 disabled:cursor-not-allowed text-white rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(108,99,255,0.3)] text-[0.95rem]"
                   >
                     {isLoading ? (

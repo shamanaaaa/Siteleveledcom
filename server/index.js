@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
-const cors = require("cors");
 const path = require("path");
 const seoAudit = require("./seoAudit");
 const { localizedErrors } = require("./publicErrors");
@@ -14,7 +13,6 @@ const PORT = process.env.PORT || 3001;
 app.set("trust proxy", "loopback");
 
 // ── Middleware ──────────────────────────────────────────────
-app.use(cors());
 app.use(express.json());
 app.use("/api", localizedErrors);
 // Nothing under /api belongs in search results, least of all customers' SEO reports about other sites

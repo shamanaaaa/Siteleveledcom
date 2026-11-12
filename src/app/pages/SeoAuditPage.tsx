@@ -322,7 +322,7 @@ export function SeoAuditPage() {
   const [job, setJob] = useState<AuditJob | null>(null);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  useTypedBeforeLoad("audit-form", (name, value) => (name === "url" ? setUrl(value) : setAccessCode(value)));
+  const ready = useTypedBeforeLoad("audit-form", (name, value) => (name === "url" ? setUrl(value) : setAccessCode(value)));
 
   useEffect(() => {
     fetch("/api/seo-audit/config")
@@ -465,7 +465,7 @@ export function SeoAuditPage() {
                             />
                           </div>
                         )}
-                        <MagneticButton type="submit" disabled={submitting} arrow={false} className="shrink-0">
+                        <MagneticButton type="submit" disabled={!ready || submitting} arrow={false} className="shrink-0">
                           {submitting ? <Loader2 size={18} className="animate-spin" /> : <Search size={18} />}{tr("Spustiť audit")}</MagneticButton>
                       </div>
                       {error && (

@@ -13,6 +13,13 @@ const { app } = require('./index.js');
 const server = app.listen(0, '127.0.0.1');
 await new Promise(resolve => server.once('listening', resolve));
 const base = `http://127.0.0.1:${server.address().port}`;
+// Before React takes over, a form without a method would send its fields as a GET into the URL
+for (const [route, form] of [['/', 'lead-form'], ['/kontakt/', 'contact-form'], ['/seo-audit/', 'audit-form'], ['/en/', 'lead-form']]) {
+  const html = await (await fetch(base + route)).text();
+  const formHtml = html.slice(html.indexOf(`id="${form}"`));
+  const button = formHtml.match(/<button[^>]*type="submit"[^>]*>/)?.[0] || '';
+  assert.match(button, /\sdisabled(=""|\s|>)/, `${route} #${form}: pre-rendered submit button must be disabled`);
+}
 const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] });
 const failures = [];
 const submitted = [];
