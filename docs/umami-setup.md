@@ -12,7 +12,7 @@ Pinned version: **Umami 3.4.1** (`ghcr.io/umami-software/umami:3.4.1`) with Post
 - There's no anacron, so `/etc/crontab` runs the retention job from step 5 as root on the 1st of each month at 06:52.
 - The certificate came from `certbot --nginx --redirect`, with the same `renew_hook` (reload nginx) as the server's other certificates.
 - The admin password is in `/root/umami-admin-password` (root, 600).
-- Backups: `backup-all-services.sh` does **not** cover the `umami_umami-db-data` volume or `/opt/umami` yet (see "Backups").
+- Backups: `backup-all-services.sh` does **not** cover the `umami_umami-db-data` volume or `/opt/umami`. The owner decided on 2026-11-12 not to back them up, so losing the disk means losing the statistics and `.env`. If that happens, make a new `.env` and set Umami up again from step 1.
 
 ## Before you start
 
