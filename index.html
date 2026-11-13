@@ -29,14 +29,9 @@
     <meta property="og:image:alt" content="Pixelové mesto klientov SiteLeveled" />
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Visit statistics: Umami on our own server, no cookies (docs/umami-setup.md, privacy page).
-         /seo-audit/?audit=<id> opens someone's audit results, so that id never reaches the statistics -->
-    <script>
-      window.slStatsFilter = function (type, payload) {
-        var strip = function (url) { return url && url.replace(/([?&])audit=[^&#]*&?/, "$1").replace(/[?&]$/, ""); };
-        if (payload) { payload.url = strip(payload.url); payload.referrer = strip(payload.referrer); }
-        return payload;
-      };
-    </script>
+         stats-filter.js keeps audit ids out of the statistics; deferred scripts run in order, so it is ready first.
+         No inline scripts here: the Content-Security-Policy in nginx allows only files (docs/security-headers.md) -->
+    <script defer src="/stats-filter.js"></script>
     <script defer src="https://stats.siteleveled.com/script.js" data-website-id="21496767-d9b3-47a6-ac41-f7a0c60fc229"
       data-domains="siteleveled.com" data-exclude-hash="true" data-do-not-track="true"
       data-performance="true" data-before-send="slStatsFilter"></script>

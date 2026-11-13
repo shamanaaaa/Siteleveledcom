@@ -22,22 +22,27 @@ interface AdminAudit {
 
 const TOKEN_KEY = "seoAudit.adminToken";
 
+// sessionStorage, not localStorage: the password is gone once the tab closes
 const storedToken = {
   get: () => {
     try {
-      return localStorage.getItem(TOKEN_KEY) || "";
+      // Older versions kept it in localStorage indefinitely
+      localStorage.removeItem(TOKEN_KEY);
+    } catch {}
+    try {
+      return sessionStorage.getItem(TOKEN_KEY) || "";
     } catch {
       return "";
     }
   },
   set: (t: string) => {
     try {
-      localStorage.setItem(TOKEN_KEY, t);
+      sessionStorage.setItem(TOKEN_KEY, t);
     } catch {}
   },
   clear: () => {
     try {
-      localStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(TOKEN_KEY);
     } catch {}
   },
 };

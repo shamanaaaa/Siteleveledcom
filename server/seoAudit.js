@@ -425,9 +425,14 @@ router.get("/:id", (req, res) => {
   res.json(publicJob(job));
 });
 
-// Static Unlighthouse report – the unguessable id is the access token
+// Static Unlighthouse report – the unguessable id is the access token.
+// Reports show content from whatever site was scanned, so the sandbox runs them in an origin of
+// their own: nothing in a report can read siteleveled.com's storage (e.g. the owner's admin token).
+// A sandboxed page sends "Origin: null", so its module scripts need the CORS header to load.
 router.use("/report/:id", (req, res, next) => {
   if (!ID_RE.test(req.params.id)) return next();
+  res.setHeader("Content-Security-Policy", "sandbox allow-scripts allow-popups allow-popups-to-escape-sandbox allow-downloads");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   express.static(reportDir(req.params.id))(req, res, next);
 });
 

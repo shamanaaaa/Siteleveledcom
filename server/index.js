@@ -8,6 +8,7 @@ const formGuard = require("./formGuard");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+app.disable("x-powered-by");
 
 // Behind a reverse proxy on the same host: take the client IP from X-Forwarded-For
 app.set("trust proxy", "loopback");
@@ -280,6 +281,29 @@ app.post("/api/navrh", async (req, res) => {
 
 // ── /api/seo-audit (customer SEO audit via Unlighthouse) ────
 app.use("/api/seo-audit", seoAudit);
+
+// ── /api/csp-report ─────────────────────────────────────────
+// Browsers post Content-Security-Policy violations here (policy in nginx, docs/security-headers.md).
+// Logged to the journal only; at most 100 an hour so junk posts can't flood it.
+let cspLogTimes = [];
+const cspText = (value) => String(value || "").replace(/[\x00-\x1f]/g, " ").slice(0, 200);
+app.post(
+  "/api/csp-report",
+  express.json({ type: ["application/csp-report", "application/reports+json"], limit: "16kb" }),
+  (req, res) => {
+    const report = req.body?.["csp-report"] || (Array.isArray(req.body) && req.body[0]?.body) || {};
+    const blocked = cspText(report["blocked-uri"] || report.blockedURL);
+    const now = Date.now();
+    cspLogTimes = cspLogTimes.filter((t) => t > now - 60 * 60 * 1000);
+    // Browser extensions inject their own scripts; those reports say nothing about the site
+    if (!/^[a-z-]*extension/.test(blocked) && cspLogTimes.length < 100) {
+      cspLogTimes.push(now);
+      const directive = cspText(report["effective-directive"] || report.effectiveDirective || report["violated-directive"]);
+      console.warn(`CSP violation: ${directive} blocked ${blocked || "(inline)"} on ${cspText(report["document-uri"] || report.documentURL)}`);
+    }
+    res.status(204).end();
+  }
+);
 
 // ── Serve built frontend in production ──────────────────────
 if (process.env.NODE_ENV === "production") {

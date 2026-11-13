@@ -237,3 +237,13 @@ test('static production serving returns language-specific real 404s and slash re
   assert.equal((await fetch(base + '/en/services', { redirect: 'manual' })).status, 301);
   assert.equal((await fetch(base + '/api/seo-audit/config')).headers.get('x-robots-tag'), 'noindex, nofollow');
 });
+test('security headers: no framework banner, sandboxed reports, CSP reports accepted', async () => {
+  assert.equal((await fetch(base + '/api/seo-audit/config')).headers.get('x-powered-by'), null);
+  const report = await fetch(`${base}/api/seo-audit/report/${doneId}/ci-result.json`);
+  assert.equal(report.status, 200);
+  // Scanned sites' content must not run in siteleveled.com's origin (the admin token lives there)
+  assert.match(report.headers.get('content-security-policy'), /^sandbox /);
+  assert.doesNotMatch(report.headers.get('content-security-policy'), /allow-same-origin/);
+  const violation = await fetch(base + '/api/csp-report', { method: 'POST', headers: { 'Content-Type': 'application/csp-report' }, body: JSON.stringify({ 'csp-report': { 'blocked-uri': 'https://evil.test/x.js' } }) });
+  assert.equal(violation.status, 204);
+});
