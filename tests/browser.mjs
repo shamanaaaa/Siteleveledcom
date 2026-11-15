@@ -111,6 +111,11 @@ async function checkContrast() {
     for (const route of routes) {
       await ready(page, route);
       await page.$$eval('main button[aria-expanded="false"]', buttons => buttons.forEach(button => button.click()));
+      // The opened answer fades in over 300 ms: measured mid-fade, its contrast reads as too low
+      await page.waitForFunction(() => [...document.querySelectorAll('main button[aria-expanded="true"][aria-controls]')].every(button => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        return !panel || getComputedStyle(panel).opacity === '1';
+      }));
       await page.addScriptTag({ path: axe });
       const found = await page.evaluate(async () => {
         const result = await window.axe.run(document, { runOnly: ['color-contrast', 'link-in-text-block'], resultTypes: ['violations'] });
