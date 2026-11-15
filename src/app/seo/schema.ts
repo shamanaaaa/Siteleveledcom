@@ -6,8 +6,9 @@ const MARIO = `${SITE}/o-nas/#mario-doman`;
 const MARIA = `${SITE}/o-nas/#maria-domanova`;
 
 // Only facts the pages already show. Address and IČO match the footer and the RPO registry
-// (checked 2026-11-08). No review stars for our own reviews. Add the Google Business Profile
-// to sameAs once it exists.
+// (checked 2026-11-08). No review stars for our own reviews. The Google link is the Business
+// Profile by its Knowledge Graph ID: it is where the owner's share link (share.google/v9NlyHuGutCfUtp9l)
+// redirects, without the tracking parameters. The ID lasts as long as the profile, a short link may not.
 const SITEWIDE = [
   {
     "@type": "Organization",
@@ -29,7 +30,10 @@ const SITEWIDE = [
     },
     identifier: { "@type": "PropertyValue", propertyID: "IČO", value: "47912383" },
     areaServed: { "@type": "Country", name: "Slovensko" },
-    sameAs: ["https://www.facebook.com/profile.php?id=61591427407101"],
+    sameAs: [
+      "https://www.facebook.com/profile.php?id=61591427407101",
+      "https://www.google.com/search?kgmid=/g/11_05c0m9t&q=SiteLeveled",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
