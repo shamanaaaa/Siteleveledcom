@@ -8,6 +8,7 @@ const items = [
   "Platba až po spustení",
   "Bez záväzkov",
   "Žiadne skryté poplatky",
+  "martinarydza.sk",
   "mdfoto.sk",
   "zuzu-photo.sk",
   "nosekrst.sk",

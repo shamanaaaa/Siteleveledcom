@@ -11,6 +11,19 @@ import { IMAGE_SIZES, imageSrcSet, localizedImage, projectPreviewDimensions } fr
 
 const projects = [
   {
+    id: "martinarydza",
+    title: "martinarydza.sk",
+    category: "Finančná sprostredkovateľka v Bratislave",
+    tags: ["Služby"],
+    type: "Osobný web + blog",
+    challenge:
+      "Predstaviť finančnú sprostredkovateľku a jej tri oblasti – hypotéky, poistenie a investície – zrozumiteľne, aby sa nový klient rýchlo zorientoval a ozval sa.",
+    solution:
+      "Predstavenie a filozofia práce, prehľad služieb, hypotekárna kalkulačka, referencie klientov, blog a e-book zadarmo, časté otázky a kontaktný formulár.",
+    image: "/martinarydza-preview.webp",
+    url: "https://www.martinarydza.sk",
+  },
+  {
     id: "mdfoto",
     title: "mdfoto.sk",
     category: "Fotografické štúdio",

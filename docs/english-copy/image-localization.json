@@ -1,6 +1,6 @@
 {
   "date": "2026-11-03",
-  "method": "Seven English previews use built-in image_gen text-localization. NOSEK RST uses the owner-provided original English screenshot. Selected images are exported as 1200 px and 720 px WebP files.",
+  "method": "Seven English previews use built-in image_gen text-localization. NOSEK RST uses the owner-provided original English screenshot. Selected images are exported as 1200 px and 720 px WebP files. martinarydza.sk (added 2026-11-15) is a capture of the live page itself with its visible text replaced in the browser, so it contains no generated imagery.",
   "scope": "English pages only. Proper brand names stay unchanged. Portraits, icons and already-English stock photos remain shared. These assets are localized portfolio previews, not evidence of English support on linked client sites.",
   "assets": [
     {
@@ -71,6 +71,20 @@
       "selectedGeneratedFile": "/home/shamanaaaa/.codex/generated_images/01a1a29b-df33-7e61-ab48-697ea4697d07/exec-c8ba0618-6f03-402c-8e44-b0ff44e0516f.png",
       "prompt": "Use case: text-localization. Image 1 is the edit target: a real website screenshot for an English-language portfolio. Replace only Slovak text with the exact US English copy specified below. Preserve the original aspect ratio and full edge-to-edge screenshot layout, exact photographs and people's identities/faces/hands/pose, objects, logos and brand names, colors, backgrounds, typography style, visual hierarchy, icons, numbers and geometry. Keep lettering in the original regions; adjust line breaks only as needed for fluent English. No device frame, no redesign, no additional elements or watermarks. All ordinary interface text must be English, including small labels. Preserve domains, product names and proper names. Output one complete screenshot. Preserve the exact woman and her face, hair, hands and pose, the arched photo crop, beige/gold design, Spring logo, typography, product and brand names. Translate the small descriptive 'ESTETICKÉ ŠTÚDIO' in the Spring logo to 'AESTHETIC STUDIO'; keep Spring. Header 'About the salon', 'Services', 'Fusion Plasma', 'Gallery', 'Reviews', 'Contact', 'Online store', 'Book an appointment'. Eyebrow 'SPRING AESTHETIC STUDIO · NITRA'. Large serif hero heading 'Luxury skincare with visible results.' with 'results.' in gold italic, naturally wrapped in the same tall left column. Description 'At Spring Aesthetic Studio in Nitra, expert skin analysis, personal care, and professional treatments come together with clinically proven cosmetics. Give your skin care that respects its needs and supports its natural beauty.' Buttons 'Book an appointment' and 'Explore services'. Bottom proof labels 'ORLY award', 'Zlatá Firma award', 'Skincare since 2018'. Keep 'Institut Esthederm', 'Idenel · SQT', and 'Biomicroneedling'. On the physical wall sign visible in the photo, translate only 'Estetické štúdio' to 'Aesthetic Studio' in the same gold script above the unchanged word Spring. Do not alter the woman or other photographic content.",
       "postEdit": "2026-11-04: restored from public/springnitra-preview.webp after the generator rewrote client branding. The whole photograph (including the wall sign) and the logo subtitle now use the original pixels; only interface text is translated."
+    },
+    {
+      "id": "martinarydza",
+      "source": "public/martinarydza-preview.webp",
+      "output": "public/images/en/martinarydza-preview.webp",
+      "mobileOutput": "public/images/en/martinarydza-preview-720.webp",
+      "method": "Headless Chrome, 1200 x 1000 viewport, https://www.martinarydza.sk/ first screen. The Slovak file is the page as served on 2026-11-15. For the English file the text of the header and hero was replaced in the DOM before the capture; photo, logo, layout and fonts are the site's own.",
+      "replacementCopy": {
+        "nav": "About me | Services | Calculator | Testimonials | Blog | Contact",
+        "buttons": "I'd like to work together",
+        "eyebrow": "Mgr. Martina Rýdza · mortgages, insurance and investments in Bratislava",
+        "heading": "You'll finally understand your finances",
+        "lead": "I explain complex and complicated matters simply, humanly and clearly. Clients leave with a sense of relief and the certainty that they understand exactly how their finances are set up, and why."
+      }
     }
   ]
 }

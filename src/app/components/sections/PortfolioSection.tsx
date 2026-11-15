@@ -25,6 +25,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "martinarydza.sk",
+    url: "https://www.martinarydza.sk",
+    image: "/martinarydza-preview.webp",
+    category: "Finančná sprostredkovateľka, Bratislava",
+    built: "Osobný web s hypotekárnou kalkulačkou, blogom, e-bookom zadarmo, referenciami klientov a kontaktným formulárom.",
+    bg: "#10151D",
+    accent: "#FF8C69",
+  },
+  {
     name: "springnitra.sk",
     url: "https://www.springnitra.sk",
     image: "/springnitra-preview.webp",
@@ -235,7 +244,7 @@ export function PortfolioSection() {
             style={{ backgroundColor: "#0E1A14" }}
           >
             <div className="flex min-h-[360px] flex-col items-start justify-center gap-5 p-8 md:p-14">
-              <p className="font-pixel text-[1.1rem] text-[#1AFF8C]">{tr("Karta číslo 9")}</p>
+              <p className="font-pixel text-[1.1rem] text-[#1AFF8C]">{tr("Karta číslo 10")}</p>
               <h3 className="font-heading text-[2rem] font-bold leading-none text-[#F5F5F0] md:text-[2.6rem]">{tr("Na vrch stohu patrí váš web.")}</h3>
               <p className="max-w-xl text-[1rem] leading-relaxed text-[#F5F5F0]/80">{tr("Návrh dostanete do 24 hodín zadarmo. Platíte až po spustení, bez zálohy.")}</p>
               <MagneticButton size="lg" onClick={scrollToForm}>{tr("Chcem návrh zadarmo")}</MagneticButton>

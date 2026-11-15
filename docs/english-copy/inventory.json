@@ -3735,7 +3735,7 @@
     ]
   },
   {
-    "sk": "Karta číslo 9",
+    "sk": "Karta číslo 10",
     "files": [
       "src/app/components/sections/PortfolioSection.tsx"
     ]
@@ -4548,6 +4548,50 @@
     "sk": "Keď začnete vypĺňať formulár, prehliadač načíta z challenges.cloudflare.com overenie Cloudflare Turnstile, ktoré zistí, či formulár vypĺňa človek. Zvyčajne prebehne bez vášho zásahu, len niekedy požiada o kliknutie. Cloudflare pritom môže vo vašom prehliadači uložiť údaje potrebné na toto bezpečnostné overenie, nie na sledovanie ani reklamu. Ak overenie zablokujete, formulár sa neodošle; napíšte nám vtedy na info@siteleveled.com.",
     "files": [
       "src/app/pages/PrivacyPage.tsx"
+    ]
+  },
+  {
+    "sk": "martinarydza.sk",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx",
+      "src/app/pages/PortfolioPage.tsx",
+      "src/app/components/sections/TrustStrip.tsx"
+    ]
+  },
+  {
+    "sk": "Finančná sprostredkovateľka, Bratislava",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Osobný web s hypotekárnou kalkulačkou, blogom, e-bookom zadarmo, referenciami klientov a kontaktným formulárom.",
+    "files": [
+      "src/app/components/sections/PortfolioSection.tsx"
+    ]
+  },
+  {
+    "sk": "Finančná sprostredkovateľka v Bratislave",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Osobný web + blog",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Predstaviť finančnú sprostredkovateľku a jej tri oblasti – hypotéky, poistenie a investície – zrozumiteľne, aby sa nový klient rýchlo zorientoval a ozval sa.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
+    ]
+  },
+  {
+    "sk": "Predstavenie a filozofia práce, prehľad služieb, hypotekárna kalkulačka, referencie klientov, blog a e-book zadarmo, časté otázky a kontaktný formulár.",
+    "files": [
+      "src/app/pages/PortfolioPage.tsx"
     ]
   }
 ]

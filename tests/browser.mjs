@@ -87,7 +87,7 @@ async function checkHomePreviewProportions(page) {
       return { src: image.currentSrc, displayedRatio: box.width / box.height, naturalRatio, clippedByCard: box.bottom > card.bottom + 1 };
     }));
   });
-  assert.equal(previews.length, 8);
+  assert.equal(previews.length, 9);
   for (const preview of previews) {
     assert.ok(Math.abs(preview.displayedRatio - preview.naturalRatio) < 0.005, `Cropped screenshot: ${preview.src}`);
     assert.equal(preview.clippedByCard, false, `Screenshot exceeds its card: ${preview.src}`);

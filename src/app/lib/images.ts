@@ -1,6 +1,7 @@
 import type { Locale } from "../i18n/routes";
 
 const PROJECT_PREVIEWS = [
+  { src: "/martinarydza-preview.webp", skHeight: 1000, enHeight: 1000 },
   { src: "/mdfoto-preview.webp", skHeight: 897, enHeight: 896 },
   { src: "/zuzu-photo-preview.webp", skHeight: 1079, enHeight: 1078 },
   { src: "/nosekrst-preview.webp", skHeight: 972, enHeight: 624 },
