@@ -61,6 +61,14 @@ const SK_PAGES = [
       "Tvorba webstránok pre firmy z Nitry a okolia. Web od 300 € do 7 dní, návrh zadarmo do 24 hodín, bez zálohy. Sídlime v Cabaji-Čápore pri Nitre.",
   },
   {
+    // Slovak only: replacing an older website, at the price of a new one
+    path: "/redizajn-webu/",
+    name: "Redizajn webu",
+    title: "Redizajn a prerábka webu od 300 € | SiteLeveled",
+    description:
+      "Starý web nahradíme novým webom na mieru. Redizajn stojí rovnako ako nový web, od 300 €. Návrh zadarmo do 24 hodín, bez zálohy, platíte až po spustení.",
+  },
+  {
     path: "/cennik/",
     name: "Cenník",
     title: "Cenník: koľko stojí webstránka a e-shop | SiteLeveled",

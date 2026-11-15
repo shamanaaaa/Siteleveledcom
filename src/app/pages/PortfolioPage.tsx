@@ -1,5 +1,6 @@
 import { useI18n } from "../i18n/LocaleContext";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { AnimateIn } from "../components/AnimateIn";
@@ -291,6 +292,12 @@ export function PortfolioPage() {
           <AnimateIn>
             <blockquote className="mb-6 font-heading text-[1.25rem] italic leading-relaxed text-[#F5F5F0]/80 sm:text-[1.5rem]">{tr("“Pán mi robil prerábku mojej webovej stránky a všetko prebehlo super. Výborná komunikácia, ochota a profesionálny prístup. Vždy vedel poradiť a výsledok dopadol ešte lepšie, ako som čakala.”")}</blockquote>
             <p className="text-[0.875rem] text-[#F5F5F0]/50">{tr("— Jaja Bieliková, springnitra.sk · odporúčanie na Facebooku")}</p>
+            {/* The redesign page is Slovak only */}
+            {language === "sk" && (
+              <p className="mt-6 text-[0.95rem]">
+                <Link to="/redizajn-webu/" className="text-[#9F97FF] transition-colors hover:text-[#F5F5F0]">Ako prebieha prerábka webu →</Link>
+              </p>
+            )}
           </AnimateIn>
         </div>
       </section>

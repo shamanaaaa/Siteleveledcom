@@ -186,7 +186,7 @@ export function jsonLd(page: PageMeta) {
   }
   if (page.locale === "sk" && (page.path === "/sluzby/" || page.path === "/cennik/")) graph.push(...SERVICES);
   if (page.path === "/tvorba-eshopu/") graph.push(...SERVICES.filter((s) => s["@id"].endsWith("#tvorba-eshopu")));
-  if (page.id === "nitra") graph.push(...SERVICES.filter((s) => s["@id"].endsWith("#tvorba-webu")));
+  if (page.id === "nitra" || page.id === "redizajn") graph.push(...SERVICES.filter((s) => s["@id"].endsWith("#tvorba-webu")));
   if (page.locale === "en" && ["services", "pricing", "onlineStores"].includes(page.id)) {
     const names = page.id === "onlineStores" ? ["Custom online store"] : ["Custom website", "Custom online store", "Manual SEO audit", "Website maintenance"];
     graph.push(...names.map((name, i) => {

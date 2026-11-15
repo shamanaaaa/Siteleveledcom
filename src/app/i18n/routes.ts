@@ -22,6 +22,7 @@ export type PageId = typeof ROUTES[number]["id"];
 export const SK_ONLY_ROUTES = [
   { id: "blog", module: "BlogPage", path: "/blog/" },
   { id: "nitra", module: "NitraPage", path: "/tvorba-webstranok-nitra/" },
+  { id: "redizajn", module: "RedesignPage", path: "/redizajn-webu/" },
 ] as const;
 export type SkOnlyId = typeof SK_ONLY_ROUTES[number]["id"];
 export const normalizePath = (path: string) => `${path.replace(/\/+$/, "")}/`;

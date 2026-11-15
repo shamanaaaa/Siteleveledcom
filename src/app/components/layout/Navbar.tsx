@@ -1,6 +1,6 @@
 import { LanguageSwitch } from "./LanguageSwitch";
 import { useI18n } from "../../i18n/LocaleContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -22,6 +22,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [ctaCovered, setCtaCovered] = useState(false);
   const location = useLocation();
+  const proposalLink = location.pathname === "/redizajn-webu/" ? "/redizajn-webu/#formular" : localLink("/#formular");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -62,7 +63,15 @@ export function Navbar() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    }
+  };
+
+  const handleProposalClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === proposalLink.split("#")[0]) {
+      if (location.pathname === localLink("/")) event.preventDefault();
+      // Scroll again even when the URL already ends in #formular.
+      scrollTo("formular");
     }
   };
 
@@ -111,13 +120,8 @@ export function Navbar() {
 
           <div className="hidden lg:block">
             <Link
-              to={localLink("/#formular")}
-              onClick={(e) => {
-                if (location.pathname === localLink("/")) {
-                  e.preventDefault();
-                  scrollTo("formular");
-                }
-              }}
+              to={proposalLink}
+              onClick={handleProposalClick}
               className="inline-flex items-center gap-2 rounded-full bg-[#665DFA] px-5 py-2.5 text-[0.875rem] font-semibold text-white shadow-[0_4px_20px_rgba(108,99,255,0.3)] transition-all duration-200 hover:bg-[#5b53e8] hover:shadow-[0_4px_28px_rgba(108,99,255,0.5)]"
             >{tr("Chcem návrh zadarmo")}<span className="text-[1rem]">{"→"}</span>
             </Link>
@@ -181,13 +185,10 @@ export function Navbar() {
                 className="mt-8"
               >
                 <Link
-                  to={localLink("/#formular")}
+                  to={proposalLink}
                   onClick={(e) => {
                     setMobileOpen(false);
-                    if (location.pathname === localLink("/")) {
-                      e.preventDefault();
-                      scrollTo("formular");
-                    }
+                    handleProposalClick(e);
                   }}
                   className="inline-flex items-center gap-2 rounded-full bg-[#665DFA] px-7 py-3.5 text-[1rem] font-semibold text-white shadow-[0_8px_32px_rgba(108,99,255,0.35)]"
                 >{tr("Chcem návrh zadarmo →")}</Link>
@@ -200,7 +201,8 @@ export function Navbar() {
       {/* Mobile floating CTA. Part of the first paint: a real link that works before the JavaScript arrives */}
       <AnimatePresence initial={false}>
         {!ctaCovered && !mobileOpen && (
-          <motion.div
+          <motion.aside
+            aria-label={tr("Chcem návrh zadarmo")}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
@@ -208,16 +210,11 @@ export function Navbar() {
             className="fixed bottom-6 left-4 right-4 z-50 lg:hidden"
           >
             <Link
-              to={localLink("/#formular")}
-              onClick={(e) => {
-                if (location.pathname === localLink("/")) {
-                  e.preventDefault();
-                  scrollTo("formular");
-                }
-              }}
+              to={proposalLink}
+              onClick={handleProposalClick}
               className="flex w-full items-center justify-center gap-2 rounded-full bg-[#665DFA] py-3.5 text-[0.9rem] font-semibold text-white shadow-[0_4px_30px_rgba(108,99,255,0.45)]"
             >{tr("Chcem návrh zadarmo →")}</Link>
-          </motion.div>
+          </motion.aside>
         )}
       </AnimatePresence>
     </>

@@ -19,6 +19,7 @@ const loaders = {
   PrivacyPage: () => import("./pages/PrivacyPage").then(m => ({ Component: m.PrivacyPage })),
   BlogPage: () => import("./pages/BlogPage").then(m => ({ Component: m.BlogPage })),
   NitraPage: () => import("./pages/NitraPage").then(m => ({ Component: m.NitraPage })),
+  RedesignPage: () => import("./pages/RedesignPage").then(m => ({ Component: m.RedesignPage })),
   BlogPostPage: () => import("./pages/BlogPostPage").then(m => ({ Component: m.BlogPostPage })),
   SeoAuditAdminPage: () => import("./pages/SeoAuditAdminPage").then(m => ({ Component: m.SeoAuditAdminPage })),
   NotFoundPage: () => import("./pages/NotFoundPage").then(m => ({ Component: m.NotFoundPage })),

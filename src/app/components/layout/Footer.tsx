@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Ako to funguje", hash: "ako-to-funguje" },
   { label: "Služby", href: "/sluzby/" },
   { label: "Tvorba e-shopu", href: "/tvorba-eshopu/" },
+  { label: "Redizajn webu", href: "/redizajn-webu/", skOnly: true },
   { label: "Tvorba webstránok Nitra", href: "/tvorba-webstranok-nitra/", skOnly: true },
   { label: "Cenník", href: "/cennik/" },
   { label: "Portfólio", href: "/portfolio/" },
@@ -24,10 +25,11 @@ const navLinks = [
 export function Footer() {
   const { t: tr, link: localLink, locale } = useI18n();
   const location = useLocation();
+  const proposalLink = location.pathname === "/redizajn-webu/" ? "/redizajn-webu/#formular" : localLink("/#formular");
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) el.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   };
 
   return (
@@ -48,10 +50,10 @@ export function Footer() {
             <p className="text-[0.95rem] text-[#F5F5F0]/60">{tr("Návrh webstránky – do 24 hodín, zadarmo.")}</p>
           </div>
           <MagneticButton
-            to={localLink("/#formular")}
+            to={proposalLink}
             size="lg"
             onClick={() => {
-              if (location.pathname === "/") scrollTo("formular");
+              if (location.pathname === proposalLink.split("#")[0]) scrollTo("formular");
             }}
             className="whitespace-nowrap"
           >{tr("Chcem návrh zadarmo")}</MagneticButton>

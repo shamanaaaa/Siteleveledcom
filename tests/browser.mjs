@@ -14,7 +14,7 @@ const server = app.listen(0, '127.0.0.1');
 await new Promise(resolve => server.once('listening', resolve));
 const base = `http://127.0.0.1:${server.address().port}`;
 // Before React takes over, a form without a method would send its fields as a GET into the URL
-for (const [route, form] of [['/', 'lead-form'], ['/kontakt/', 'contact-form'], ['/seo-audit/', 'audit-form'], ['/en/', 'lead-form']]) {
+for (const [route, form] of [['/', 'lead-form'], ['/kontakt/', 'contact-form'], ['/seo-audit/', 'audit-form'], ['/en/', 'lead-form'], ['/redizajn-webu/', 'lead-form']]) {
   const html = await (await fetch(base + route)).text();
   const formHtml = html.slice(html.indexOf(`id="${form}"`));
   const button = formHtml.match(/<button[^>]*type="submit"[^>]*>/)?.[0] || '';
@@ -103,7 +103,7 @@ async function submitContact(page) {
 async function checkContrast() {
   // Measures every page in both languages: text and placeholders must stay readable, and links inside text must not rely on colour alone.
   const axe = require.resolve('axe-core/axe.min.js');
-  const routes = ['/en/', '/en/services/', '/en/online-stores/', '/en/pricing/', '/en/portfolio/', '/en/process/', '/en/about/', '/en/contact/', '/en/seo-audit/', '/en/privacy/', '/en/city/springnitra/', '/', '/sluzby/', '/tvorba-eshopu/', '/tvorba-webstranok-nitra/', '/cennik/', '/portfolio/', '/proces/', '/o-nas/', '/kontakt/', '/seo-audit/', '/ochrana-osobnych-udajov/', '/blog/', '/blog/kolko-stoji-webstranka/', '/blog/eshop-alebo-web/'];
+  const routes = ['/en/', '/en/services/', '/en/online-stores/', '/en/pricing/', '/en/portfolio/', '/en/process/', '/en/about/', '/en/contact/', '/en/seo-audit/', '/en/privacy/', '/en/city/springnitra/', '/', '/sluzby/', '/tvorba-eshopu/', '/tvorba-webstranok-nitra/', '/redizajn-webu/', '/cennik/', '/portfolio/', '/proces/', '/o-nas/', '/kontakt/', '/seo-audit/', '/ochrana-osobnych-udajov/', '/blog/', '/blog/kolko-stoji-webstranka/', '/blog/eshop-alebo-web/'];
   const problems = [];
   for (const width of [1440, 390]) {
     const context = await browser.createBrowserContext();
@@ -159,6 +159,85 @@ async function checkUnavailableBrowserPreferences() {
     } finally {
       await context.close();
     }
+  }
+}
+async function checkRedesign() {
+  const context = await browser.createBrowserContext();
+  const page = await newPage(1440, { languages: ['sk-SK'], language: 'sk-SK' }, context);
+  try {
+    await ready(page, '/portfolio/');
+    await clickLink(page, '/redizajn-webu/');
+    assert.equal(await page.$eval('link[rel="canonical"]', el => el.href), 'https://siteleveled.com/redizajn-webu/');
+    assert.equal(await page.$$eval('link[rel="alternate"][hreflang]', els => els.length), 0);
+    assert.match(await page.$eval('main h1', el => el.textContent), /Redizajn a prerábka webu/);
+    // Shared enquiry buttons retain this page's form, including any details already entered.
+    await page.type('#lead-name', 'Alex Example');
+    await page.$eval('nav a[href="/redizajn-webu/#formular"]', el => el.click());
+    await page.waitForFunction(() => location.hash === '#formular');
+    assert.equal(await page.$eval('#lead-name', el => el.value), 'Alex Example');
+    assert.ok(await page.$('footer a[href="/redizajn-webu/#formular"]'));
+    // A failed request stays editable and does not count as a lead; a successful retry counts once.
+    await page.evaluate(() => {
+      window.enquiryEvents = [];
+      window.umami = { track: (event, data) => window.enquiryEvents.push({ event, data }) };
+    });
+    await page.type('#lead-email', 'alex@example.test');
+    await page.type('#lead-company', 'Example Co');
+    await page.type('#lead-web', 'www.example.test');
+    formMode = 'failure';
+    await page.$eval('#lead-form button[type="submit"]', el => el.click());
+    await page.waitForSelector('#lead-form [role="alert"]');
+    assert.equal(await page.$eval('#lead-web', el => el.value), 'www.example.test');
+    assert.deepEqual(await page.evaluate(() => window.enquiryEvents), []);
+    formMode = 'success';
+    await page.$eval('#lead-form button[type="submit"]', el => el.click());
+    await page.waitForFunction(() => document.querySelector('#formular')?.innerText.includes('Váš formulár bol odoslaný'));
+    assert.equal(submitted.at(-1).locale, 'sk');
+    assert.equal(submitted.at(-1).notes, 'Záujem: Redizajn webu');
+    assert.equal(submitted.at(-1).hasWeb, 'ano');
+    assert.equal(submitted.at(-1).webUrl, 'https://www.example.test');
+    assert.deepEqual(await page.evaluate(() => window.enquiryEvents), [{ event: 'dopyt', data: { formular: 'redizajn', jazyk: 'sk' } }]);
+    for (const width of [1440, 390, 320]) {
+      await page.setViewport({ width, height: 1000, isMobile: width < 768, hasTouch: width < 768 });
+      await ready(page, '/redizajn-webu/');
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `Redesign overflow at ${width}px`);
+      await page.$$eval('main img', async images => {
+        images.forEach(image => { image.loading = 'eager'; });
+        await Promise.all(images.map(image => image.decode()));
+      });
+      if (width < 768) {
+        await page.click('button[aria-label="Otvoriť menu"]');
+        await page.waitForSelector('.fixed.inset-0.z-40 a[href="/redizajn-webu/#formular"]');
+        await page.$eval('.fixed.inset-0.z-40 a[href="/redizajn-webu/#formular"]', el => el.click());
+        await page.waitForFunction(() => location.pathname === '/redizajn-webu/' && location.hash === '#formular');
+        await page.waitForFunction(() => !document.querySelector('.fixed.inset-0.z-40'));
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await page.waitForSelector('aside a[href="/redizajn-webu/#formular"]', { visible: true });
+        await page.$eval('aside a[href="/redizajn-webu/#formular"]', el => el.click());
+        await page.waitForFunction(() => document.querySelector('#formular').getBoundingClientRect().top < innerHeight);
+      }
+      // FAQ works with a keyboard and exposes the answer to assistive technology.
+      await page.focus('main button[aria-controls]');
+      await page.keyboard.press('Enter');
+      assert.equal(await page.$eval('main button[aria-controls]', el => el.getAttribute('aria-expanded')), 'true');
+      const answer = await page.$eval('main button[aria-controls]', el => document.getElementById(el.getAttribute('aria-controls')).textContent);
+      assert.match(answer, /300 €/);
+      await page.addScriptTag({ path: require.resolve('axe-core/axe.min.js') });
+      await page.waitForFunction(() => [...document.querySelectorAll('main button[aria-expanded="true"][aria-controls]')].every(button => getComputedStyle(document.getElementById(button.getAttribute('aria-controls'))).opacity === '1'));
+      await page.waitForFunction(() => [...document.querySelectorAll('aside')].every(el => getComputedStyle(el).opacity === '1'));
+      const violations = await page.evaluate(async () => (await window.axe.run(document, { resultTypes: ['violations'] })).violations.map(v => ({ id: v.id, targets: v.nodes.map(n => n.target) })));
+      assert.deepEqual(violations, [], `Redesign accessibility at ${width}px`);
+    }
+    const noJs = await newPage(390, { languages: ['sk-SK'], language: 'sk-SK' }, context);
+    await noJs.setJavaScriptEnabled(false);
+    await ready(noJs, '/redizajn-webu/');
+    assert.match(await text(noJs), /Redizajn a prerábka webu/i);
+    assert.ok(await noJs.$('main a[href="#formular"]'));
+    assert.ok(await noJs.$('nav a[href="/redizajn-webu/#formular"]'));
+    assert.ok(await noJs.$('#lead-form button[disabled]'));
+  } finally {
+    formMode = 'success';
+    await context.close();
   }
 }
 try {
@@ -357,6 +436,7 @@ try {
   assert.equal(await blocked.$eval('html', el => el.lang), 'sk');
   await blocked.close();
   await checkUnavailableBrowserPreferences();
+  await checkRedesign();
   await checkContrast();
   assert.deepEqual(failures, []);
   await ready(page, '/en/');

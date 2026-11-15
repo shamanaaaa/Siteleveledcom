@@ -134,8 +134,8 @@ test('built files have localized body, metadata, alternates, preloads, and sitem
       assert.equal((footer.match(/href="mailto:/g) || []).length, 1, `Footer email rows: ${page.path}`);
     }
   }
-  // The Nitra page names the website service it sells, and the home page links to it
-  assert.match(fs.readFileSync('dist/tvorba-webstranok-nitra/index.html', 'utf8'), /"@id":"https:\/\/siteleveled\.com\/sluzby\/#tvorba-webu"/);
+  // The Nitra and redesign pages name the website service they sell, and the home page links to the Nitra page
+  for (const path of ['tvorba-webstranok-nitra', 'redizajn-webu']) assert.match(fs.readFileSync(`dist/${path}/index.html`, 'utf8'), /"@id":"https:\/\/siteleveled\.com\/sluzby\/#tvorba-webu"/, path);
   assert.match(fs.readFileSync('dist/index.html', 'utf8'), /href="\/tvorba-webstranok-nitra\/"/);
   const home = fs.readFileSync('dist/en/index.html', 'utf8');
   const portfolio = fs.readFileSync('dist/en/portfolio/index.html', 'utf8');
