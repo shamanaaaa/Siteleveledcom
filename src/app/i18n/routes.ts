@@ -17,6 +17,13 @@ export const ROUTES = [
   { id: "cityClient", module: "HomePage", sk: "/mesto/:slug/", en: "/en/city/:slug/" },
 ] as const;
 export type PageId = typeof ROUTES[number]["id"];
+// Slovak-only pages: no English twin, so no hreflang pair, and the language switch leads to the English home.
+// Each needs its metadata in seo/pages.ts and its loader in routes.ts (blog articles are listed in blog/posts.ts).
+export const SK_ONLY_ROUTES = [
+  { id: "blog", module: "BlogPage", path: "/blog/" },
+  { id: "nitra", module: "NitraPage", path: "/tvorba-webstranok-nitra/" },
+] as const;
+export type SkOnlyId = typeof SK_ONLY_ROUTES[number]["id"];
 export const normalizePath = (path: string) => `${path.replace(/\/+$/, "")}/`;
 export const localeForPath = (path: string): Locale => /^\/en(?:\/|$)/.test(path) ? "en" : "sk";
 export function routeMatch(pathname: string) {

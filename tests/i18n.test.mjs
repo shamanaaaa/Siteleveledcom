@@ -124,6 +124,7 @@ test('built files have localized body, metadata, alternates, preloads, and sitem
       assert.match(html, /rel="modulepreload" href="\/assets\/en-/);
       assert.ok(!html.includes(`"image":"${metadata.SITE}/og/siteleveled.png"`), `Slovak schema image: ${page.path}`);
       assert.ok(!html.includes('to="/sluzby/"'));
+      for (const route of routes.SK_ONLY_ROUTES) assert.ok(!html.includes(`href="${route.path}"`), `Slovak-only link ${route.path} on ${page.path}`);
       assert.ok(!html.includes('href="tel:'));
       assert.ok(!html.includes('0910 803 993'), `English phone promise: ${page.path}`);
       assert.ok(!html.includes('Návrh zadarmo'), page.path);
@@ -133,6 +134,9 @@ test('built files have localized body, metadata, alternates, preloads, and sitem
       assert.equal((footer.match(/href="mailto:/g) || []).length, 1, `Footer email rows: ${page.path}`);
     }
   }
+  // The Nitra page names the website service it sells, and the home page links to it
+  assert.match(fs.readFileSync('dist/tvorba-webstranok-nitra/index.html', 'utf8'), /"@id":"https:\/\/siteleveled\.com\/sluzby\/#tvorba-webu"/);
+  assert.match(fs.readFileSync('dist/index.html', 'utf8'), /href="\/tvorba-webstranok-nitra\/"/);
   const home = fs.readFileSync('dist/en/index.html', 'utf8');
   const portfolio = fs.readFileSync('dist/en/portfolio/index.html', 'utf8');
   for (const preview of fs.readdirSync('public').filter(file => file.endsWith('-preview.webp'))) {

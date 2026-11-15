@@ -42,7 +42,9 @@ export function BioSection() {
               <div className="space-y-4 text-[0.95rem] leading-relaxed text-[#F5F5F0]/60">
                 <p>{tr("Webstránky a e-shopy robíme pre firmy, ktoré chcú rásť. Navrhuje a programuje ich")}{" "}
                   <span className="text-[#F5F5F0]/90">{tr("Mário Doman")}</span>{tr(", spoločnosť DOMAN s.r.o. vedie konateľka ")}<span className="text-[#F5F5F0]/90">{tr("Mária Domanová")}</span>{"."}</p>
-                <p>{tr("Sídlo máme v Cabaji-Čápore pri Nitre a pracujeme pre firmy z celého Slovenska.")}</p>
+                <p>{tr("Sídlo máme v Cabaji-Čápore pri Nitre a pracujeme pre firmy z celého Slovenska.")}
+                  {/* The Nitra page is Slovak only. Underlined: a link inside a sentence must not rely on colour alone */}
+                  {locale === "sk" && <>{" "}<Link to="/tvorba-webstranok-nitra/" className="text-[#9F97FF] underline underline-offset-2 hover:text-[#F5F5F0]">Weby pre firmy z Nitry a okolia</Link>.</>}</p>
                 <p>{tr("Každý projekt berieme osobne – preto ponúkame návrh zadarmo. Nechceme predávať. Chceme, aby ste videli, čo pre vás vieme spraviť.")}</p>
               </div>
               <div className="mt-7 flex items-center gap-5">

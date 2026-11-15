@@ -1,4 +1,4 @@
-import { ROUTES, localeForPath, normalizePath, type Locale, type PageId } from "../i18n/routes";
+import { ROUTES, SK_ONLY_ROUTES, localeForPath, normalizePath, type Locale, type PageId, type SkOnlyId } from "../i18n/routes";
 import { POSTS, postPath } from "../blog/posts";
 /*
  * Search metadata of every route. scripts/seoPages.ts writes a static dist/<path>/index.html
@@ -11,7 +11,7 @@ export const SITE = "https://siteleveled.com";
 
 export interface PageMeta {
   /** Articles get their own id each, so alternates() never pairs two of them */
-  id: PageId | "blog" | `blog:${string}` | "admin" | "notFound";
+  id: PageId | SkOnlyId | `blog:${string}` | "admin" | "notFound";
   locale: Locale;
   image?: string;
   imageAlt?: string;
@@ -51,6 +51,14 @@ const SK_PAGES = [
     title: "Tvorba e-shopu na mieru od 1 000 € | SiteLeveled",
     description:
       "Tvorba e-shopu na mieru od 1 000 €, hotový do 14 dní. Návrh dostanete zadarmo do 24 hodín, bez zálohy – platíte až po spustení.",
+  },
+  {
+    // Slovak only: local search for a studio based near Nitra
+    path: "/tvorba-webstranok-nitra/",
+    name: "Tvorba webstránok Nitra",
+    title: "Tvorba webstránok Nitra – od 300 € do 7 dní | SiteLeveled",
+    description:
+      "Tvorba webstránok pre firmy z Nitry a okolia. Web od 300 € do 7 dní, návrh zadarmo do 24 hodín, bez zálohy. Sídlime v Cabaji-Čápore pri Nitre.",
   },
   {
     path: "/cennik/",
@@ -131,7 +139,7 @@ const EN_META: Record<string, [string, string, string?]> = {
   privacy: ["Privacy policy | SiteLeveled", "How DOMAN s.r.o. processes inquiries and SEO audits, uses browser storage, and handles your personal data and rights.", "Privacy policy"],
 };
 export const PAGES: PageMeta[] = [
-  ...SK_PAGES.map(page => ({ ...page, locale: "sk" as const, id: ROUTES.find(route => route.sk === page.path)?.id ?? (page.path === "/blog/" ? "blog" as const : "admin" as const) })),
+  ...SK_PAGES.map(page => ({ ...page, locale: "sk" as const, id: ROUTES.find(route => route.sk === page.path)?.id ?? SK_ONLY_ROUTES.find(route => route.path === page.path)?.id ?? "admin" as const })),
   ...POSTS.map(post => ({
     id: `blog:${post.slug}` as const, locale: "sk" as const, path: postPath(post.slug),
     title: post.title, description: post.description, name: post.heading,

@@ -307,7 +307,7 @@ export function EshopPage() {
         </div>
       </section>
 
-      <LeadFormSection interest="E-shop" />
+      <LeadFormSection interest="E-shop" form="eshop" />
     </>
   );
 }

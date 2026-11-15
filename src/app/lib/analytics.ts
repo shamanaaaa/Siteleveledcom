@@ -11,7 +11,9 @@ declare global {
 }
 
 /** Call once /api/navrh has accepted an enquiry. Does nothing when the tracker is blocked or not loaded */
-export function trackEnquiry(form: "uvod" | "kontakt" | "eshop", locale: string) {
+export type EnquiryForm = "uvod" | "kontakt" | "eshop" | "nitra";
+
+export function trackEnquiry(form: EnquiryForm, locale: string) {
   try {
     window.umami?.track("dopyt", { formular: form, jazyk: locale });
   } catch {

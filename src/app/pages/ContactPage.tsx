@@ -345,6 +345,10 @@ export function ContactPage() {
                         <Clock size={18} className="shrink-0 text-[#6C63FF]" />{tr("Odpovieme do 24 hodín v pracovný deň")}</div>
                       <div className="flex items-center gap-3 text-[0.875rem] text-[#F5F5F0]/60">
                         <MapPin size={18} className="shrink-0 text-[#6C63FF]" />{tr("Cabaj-Čápor pri Nitre · pracujeme pre celé Slovensko")}</div>
+                      {/* The Nitra page is Slovak only */}
+                      {language === "sk" && (
+                        <Link to="/tvorba-webstranok-nitra/" className="block pl-[30px] text-[0.875rem] text-[#9F97FF] transition-colors hover:text-[#F5F5F0]">Tvorba webstránok v Nitre a okolí →</Link>
+                      )}
                     </div>
                   </GlowCard>
 

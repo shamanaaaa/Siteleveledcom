@@ -2,7 +2,7 @@
 
 The site counts visits with [Umami](https://umami.is), self-hosted on the same VPS at `https://stats.siteleveled.com`. It sets no cookies and stores no IP addresses, so the privacy page (`src/app/pages/PrivacyPage.tsx`, "Štatistika návštevnosti") stays true without a consent banner. Keep this setup and that text in step: the policy promises **2 years of retention** (step 5) and that the tool **runs on our own server**.
 
-What the site sends: page views, the referrer, UTM parameters, Core Web Vitals (`data-performance`), and one `dopyt` event when `/api/navrh` accepts an enquiry, with `formular` (`uvod`, `kontakt` or `eshop`) and `jazyk` (`sk` or `en`). The tag lives in `index.html`, and the event in `src/app/lib/analytics.ts`. The `audit` id from `/seo-audit/?audit=…` is removed before anything is sent, because it opens someone's audit results.
+What the site sends: page views, the referrer, UTM parameters, Core Web Vitals (`data-performance`), and one `dopyt` event when `/api/navrh` accepts an enquiry, with `formular` (`uvod`, `kontakt`, `eshop` or `nitra`) and `jazyk` (`sk` or `en`). The tag lives in `index.html`, and the event in `src/app/lib/analytics.ts`. The `audit` id from `/seo-audit/?audit=…` is removed before anything is sent, because it opens someone's audit results.
 
 Pinned version: **Umami 3.4.1** (`ghcr.io/umami-software/umami:3.4.1`) with PostgreSQL 15. 3.5.0 came out on 2026-11-12, the day this was written. Upgrade once it has been out a few weeks (see "Updating").
 

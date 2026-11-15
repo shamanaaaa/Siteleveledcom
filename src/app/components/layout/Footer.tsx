@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Ako to funguje", hash: "ako-to-funguje" },
   { label: "Služby", href: "/sluzby/" },
   { label: "Tvorba e-shopu", href: "/tvorba-eshopu/" },
+  { label: "Tvorba webstránok Nitra", href: "/tvorba-webstranok-nitra/", skOnly: true },
   { label: "Cenník", href: "/cennik/" },
   { label: "Portfólio", href: "/portfolio/" },
   { label: "Proces spolupráce", href: "/proces/" },

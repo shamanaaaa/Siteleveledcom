@@ -1,6 +1,6 @@
 import { loadMessages } from "../src/app/i18n/messages";
 import { jsonLd } from "../src/app/seo/schema";
-import { LOCALES, ROUTES } from "../src/app/i18n/routes";
+import { LOCALES, ROUTES, SK_ONLY_ROUTES } from "../src/app/i18n/routes";
 import { CLIENTS } from "../src/app/city/cityData";
 import { cityMeta } from "../src/app/seo/city";
 import { POSTS, postPath } from "../src/app/blog/posts";
@@ -75,7 +75,10 @@ export function seoPages(): Plugin {
     async buildStart() {
       if (!isBuild) return;
       await loadMessages("en");
-      const missing = ROUTES.filter(route => route.id !== "cityClient").flatMap(route => LOCALES.filter(locale => !PAGES.some(page => page.id === route.id && page.locale === locale)).map(locale => route[locale]));
+      const missing = [
+        ...ROUTES.filter(route => route.id !== "cityClient").flatMap(route => LOCALES.filter(locale => !PAGES.some(page => page.id === route.id && page.locale === locale)).map(locale => route[locale])),
+        ...SK_ONLY_ROUTES.filter(route => !PAGES.some(page => page.path === route.path)).map(route => route.path),
+      ];
       if (missing.length) this.error(`Missing metadata: ${missing.join(", ")}`);
       const images = fs.readdirSync(path.join(root, "public"));
       const noPhoneVersion = images.filter(
@@ -113,7 +116,7 @@ export function seoPages(): Plugin {
       const chunks = Object.values(bundle).flatMap(file => file.type === "chunk" ? [file] : []);
       const entries = new Set(chunks.filter(chunk => chunk.isEntry).map(chunk => chunk.fileName));
       const modules = [...ROUTES.flatMap(route => LOCALES.flatMap(locale => route.id === "cityClient" ? CLIENTS.map(client => ({ path: route[locale].replace(":slug", client.id), module: route.module })) : [{ path: route[locale], module: route.module }])),
-        { path: "/blog/", module: "BlogPage" }, ...POSTS.map(post => ({ path: postPath(post.slug), module: "BlogPostPage" })),
+        ...SK_ONLY_ROUTES.map(route => ({ path: route.path, module: route.module })), ...POSTS.map(post => ({ path: postPath(post.slug), module: "BlogPostPage" })),
         { path: "/seo-audit/admin/", module: "SeoAuditAdminPage" },
         { path: NOT_FOUND.path, module: "NotFoundPage" }, { path: EN_NOT_FOUND.path, module: "NotFoundPage" }];
       for (const route of modules) {

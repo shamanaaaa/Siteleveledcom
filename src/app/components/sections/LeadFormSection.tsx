@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { useTypedBeforeLoad } from "../../lib/useTypedBeforeLoad";
-import { trackEnquiry } from "../../lib/analytics";
+import { trackEnquiry, type EnquiryForm } from "../../lib/analytics";
 import { useTurnstile } from "../../lib/turnstile";
 import { CheckCircle2, Send } from "lucide-react";
 import { AnimateIn } from "../AnimateIn";
@@ -16,7 +16,8 @@ const inputClass = (error?: string) =>
     error ? "border-red-500/50" : "border-white/8"
   }`;
 
-export function LeadFormSection({ interest }: { interest?: string }) {
+/** `interest` goes into the enquiry e-mail as "Záujem: …"; `form` is the label the statistics count it under */
+export function LeadFormSection({ interest, form = "uvod" }: { interest?: string; form?: EnquiryForm }) {
   const { t: tr, link: localLink, locale: language } = useI18n();
   const [formData, setFormData] = useState({
     name: "",
@@ -92,8 +93,7 @@ export function LeadFormSection({ interest }: { interest?: string }) {
         // While the backend restarts (a few seconds per deploy) nginx answers 502 with HTML, not JSON
         throw new Error(errorMessage(body, language, tr(SEND_FAILED)));
       }
-      // Home has no interest, the e-shop page passes "E-shop"
-      trackEnquiry(interest === "E-shop" ? "eshop" : "uvod", language);
+      trackEnquiry(form, language);
       setSubmitted(true);
     } catch (err) {
       turnstile.renew();
